@@ -1,4 +1,4 @@
-/* Slightly tweaked version of Josh Comeau's custom css reset https://www.joshwcomeau.com/css/custom-css-reset/ */
+/* TWEAKED VERSION OF JOSH COMEAU'S CUSTOM CSS RESET @link https://www.joshwcomeau.com/css/custom-css-reset/ */
 
 /*
   1. Use a more-intuitive box-sizing model.
@@ -63,3 +63,64 @@ h6 {
   overflow-wrap: break-word;
 }
 /*
+
+/* GLOBAL STYLING */
+
+/* Fluid type system from @link https://utopia.fyi/type/calculator?c=320,16,1.2,1920,24,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+:root {
+  --step--2: clamp(0.69rem, calc(0.64rem + 0.27vw), 0.96rem);
+  --step--1: clamp(0.83rem, calc(0.76rem + 0.37vw), 1.2rem);
+  --step-0: clamp(1rem, calc(0.9rem + 0.5vw), 1.5rem);
+  --step-1: clamp(1.2rem, calc(1.07rem + 0.68vw), 1.88rem);
+  --step-2: clamp(1.44rem, calc(1.26rem + 0.9vw), 2.34rem);
+  --step-3: clamp(1.73rem, calc(1.49rem + 1.2vw), 2.93rem);
+  --step-4: clamp(2.07rem, calc(1.76rem + 1.59vw), 3.66rem);
+  --step-5: clamp(2.49rem, calc(2.07rem + 2.09vw), 4.58rem);
+}
+
+/* Fluid spacing system from @link https://utopia.fyi/space/calculator?c=320,16,1.2,1920,24,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+:root {
+  --space-3xs: clamp(0.25rem, calc(0.23rem + 0.13vw), 0.38rem);
+  --space-2xs: clamp(0.5rem, calc(0.45rem + 0.25vw), 0.75rem);
+  --space-xs: clamp(0.75rem, calc(0.68rem + 0.38vw), 1.13rem);
+  --space-s: clamp(1rem, calc(0.9rem + 0.5vw), 1.5rem);
+  --space-m: clamp(1.5rem, calc(1.35rem + 0.75vw), 2.25rem);
+  --space-l: clamp(2rem, calc(1.8rem + 1vw), 3rem);
+  --space-xl: clamp(3rem, calc(2.7rem + 1.5vw), 4.5rem);
+  --space-2xl: clamp(4rem, calc(3.6rem + 2vw), 6rem);
+  --space-3xl: clamp(6rem, calc(5.4rem + 3vw), 9rem);
+
+  /* One-up pairs */
+  --space-3xs-2xs: clamp(0.25rem, calc(0.15rem + 0.5vw), 0.75rem);
+  --space-2xs-xs: clamp(0.5rem, calc(0.38rem + 0.63vw), 1.13rem);
+  --space-xs-s: clamp(0.75rem, calc(0.6rem + 0.75vw), 1.5rem);
+  --space-s-m: clamp(1rem, calc(0.75rem + 1.25vw), 2.25rem);
+  --space-m-l: clamp(1.5rem, calc(1.2rem + 1.5vw), 3rem);
+  --space-l-xl: clamp(2rem, calc(1.5rem + 2.5vw), 4.5rem);
+  --space-xl-2xl: clamp(3rem, calc(2.4rem + 3vw), 6rem);
+  --space-2xl-3xl: clamp(4rem, calc(3rem + 5vw), 9rem);
+
+  /* Custom pairs */
+  --space-s-l: clamp(1rem, calc(0.6rem + 2vw), 3rem);
+}
+
+/* Fluid grid system from @link https://utopia.fyi/grid/calculator?c=320,16,1.2,1920,24,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+:root {
+  --grid-max-width: 93rem;
+  --grid-gutter: var(--space-s-l, clamp(1rem, calc(0.45rem + 2.74vw), 3rem));
+  --grid-columns: 12;
+}
+
+.u-container {
+  max-width: var(--grid-max-width);
+  padding-inline: var(--grid-gutter);
+  margin-inline: auto;
+}
+
+.u-grid {
+  display: grid;
+  gap: var(--grid-gutter);
+}
