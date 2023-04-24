@@ -1,38 +1,180 @@
 ---
-import "../styles/global.css";
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-    <div class="u-container">
-      <h1>Hi, I’m Hans Sandberg.</h1>
-      <p>
-        I’m a product designer working on a design system at Pleo in Copenhagen.
-        Bridging the gap between design and development is what I do best and
-        enjoy most.
-      </p>
-      <h2>About me</h2>
-      <p>
-        I’ve been working as a designer for over ten years. I love to design and
-        help build accessible, human-centered products.
-      </p>
-      <p>
-        For the past four years, I've mainly worked on design systems. Before
-        that, I worked on consumer and enterprise apps for desktop, web and
-        mobile. My key skills are user-centered design, front-end development,
-        and design systems.
-      </p>
-      <p>
-        I’ve worked for UX research agencies and SaaS companies. I’m now at
-        Pleo, where I'm part of the Design Systems Team.
-      </p>
-    </div>
-  </body>
-</html>
+<BaseLayout pageTitle="Home Page">
+  <h1>Hi, I’m Hans Sandberg.</h1>
+  <p>
+    I’m a product designer working on a design system at <a
+      href="https://www.pleo.io/">Pleo</a
+    > in Copenhagen. Bridging the gap between design and development is what I do
+    best and enjoy most.
+  </p>
+  <h2 id="about-me">About me</h2>
+  <p>
+    I’ve been working as a designer for over ten years. I love to design and
+    help build accessible, human-centered products.
+  </p>
+  <p>
+    For the past four years, I've mainly worked on design systems. Before that,
+    I worked on consumer and enterprise apps for desktop, web and mobile. My key
+    skills are user-centered design, front-end development, and design systems.
+  </p>
+  <p>
+    I’ve worked for UX research agencies and SaaS companies. I’m now at
+    <a href="https://www.pleo.io/">Pleo</a>, where I'm part of the Design
+    Systems Team.
+  </p>
+  <h2 id="experience">Experience</h2>
+  <h3>Pleo</h3>
+  <p>Senior DesignOps Designer</p>
+  <p>x months</p>
+  <p>June 2022 - Present</p>
+  <ul>
+    <li>Design system stuff</li>
+    <li>DesignOps stuff</li>
+    <li>Other stuff</li>
+  </ul>
+  <p><a href="https://www.pleo.io/">Pleo</a></p>
+  <p>Copenhagen, Denmark</p>
+  <h3>Siteimprove</h3>
+  <p>Senior UX Designer</p>
+  <p>4 years, 7 months</p>
+  <p>December 2017 - June 2022</p>
+  <ul>
+    <li>
+      Helped build a design system for an R&D department with 100+ members.
+      Designed and helped code accessible UI components, wrote UX guidelines and
+      created a UI kit in Figma.
+    </li>
+    <li>
+      Designed various features for a data-heavy enterprise web application,
+      such as a dashboard, account settings and recurring reports.
+    </li>
+    <li>
+      Worked with developers, product owners, UX designers, UX writers, and
+      accessibility experts.
+    </li>
+  </ul>
+  <p><a href="https://www.siteimprove.com">Siteimprove</a></p>
+  <p>Copenhagen, Denmark</p>
+  <h3>DSW Zorgverzekeraar</h3>
+  <p>UX Designer</p>
+  <p>3 years</p>
+  <p>July 2014 - June 2017</p>
+  <ul>
+    <li>
+      Created wireframes, mockups and prototypes for customer-facing websites
+      and iOS and Android apps.
+    </li>
+    <li>Implemented website designs using Bootstrap, HTML and CSS.</li>
+    <li>Conducted usability tests, expert reviews and a top task analysis.</li>
+  </ul>
+  <p>
+    <a href="https://www.dsw.nl/Consumenten">DSW Zorgverzekeraar</a>
+  </p>
+  <p>Schiedam, Netherlands</p>
+  <h3>Netmarketing</h3>
+  <p>UX Researcher</p>
+  <p>5 months</p>
+  <p>October 2013 - February 2014</p>
+  <ul>
+    <li>
+      Wrote test scripts, coordinated participant recruitment, moderated
+      usability tests, created personas and user scenarios, and wrote reports
+      with mockups illustrating recommendations for discovered usability issues.
+    </li>
+    <li>
+      Worked on projects for clients from various industries, such as banking,
+      public transport, pension funds, and online classified ads.
+    </li>
+  </ul>
+  <p>Rotterdam, Netherlands</p>
+  <h3>Perceptive Software</h3>
+  <p>UX Designer</p>
+  <p>1 year</p>
+  <p>October 2012 - October 2013 (1 year)</p>
+  <ul>
+    <li>
+      Created wireframes, mockups and prototypes for enterprise desktop and web
+      applications.
+    </li>
+    <li>
+      Was a member of an international UX team and collaborated with developers,
+      business stakeholders and other UX designers.
+    </li>
+  </ul>
+  <p>
+    <a href="https://en.wikipedia.org/wiki/Perceptive_Software">
+      Perceptive Software
+    </a>
+    (now <a href="https://www.hyland.com/en">Hyland</a>)
+  </p>
+  <p>Apeldoorn, Netherlands</p>
+  <h3>Perceptive Software</h3>
+  <p>UX Design Intern</p>
+  <p>8 months</p>
+  <p>February 2012 - September 2012</p>
+  <ul>
+    <li>
+      Conducted contextual inquiries, stakeholder interviews and a heuristic
+      evaluation to evaluate the UX of a complex enterprise application.
+    </li>
+    <li>
+      Wrote an in-depth report describing the discovered UX issues, user group
+      descriptions, and recommendations accompanied by illustrative mockups.
+    </li>
+  </ul>
+  <p>
+    <a href="https://en.wikipedia.org/wiki/Perceptive_Software">
+      Perceptive Software
+    </a>
+    (now <a href="https://www.hyland.com/en">Hyland</a>)
+  </p>
+  <p>Apeldoorn, Netherlands</p>
+  <h3>Valsplat</h3>
+  <p>UX Research Intern</p>
+  <p>6 months</p>
+  <p>March 2012 - August 2010</p>
+  <ul>
+    <li>
+      Recruited participants, wrote test scripts, moderated usability tests,
+      analyzed test results and wrote reports with mockups illustrating
+      recommendations for discovered usability issues.
+    </li>
+    <li>
+      Worked on projects for clients such as PayPal, Microsoft Netherlands, the
+      Dutch government, ING Bank, KPN (telecom company) and KLM Royal Dutch
+      Airlines.
+    </li>
+  </ul>
+  <p><a href="https://valsplat.nl">Valsplat</a></p>
+  <p>Amsterdam, Netherlands</p>
+  <h2 id="portfolio">Portfolio</h2>
+  <h3><a href="#">Improving the UX of a design system</a></h3>
+  <p>
+    The goal of this project was to evaluate and improve the UX of the design
+    system I was working on. Here, I describe the steps I took to improve the
+    experience for one of the design system’s main user groups: designers.
+  </p>
+  <h3><a href="#">Moving a design system to Figma</a></h3>
+  <p>
+    This case study describes how I moved a design system from Sketch to Figma.
+    Specifically, how I convinced management to approve the switch, created a
+    new UI kit from scratch, and onboarded a team of designers.
+  </p>
+  <h3><a href="#">Ideal Elevator Experience</a></h3>
+  <p>
+    I was once given the task to design the ideal elevator experience, as part
+    of a job interview. In this case study, I walk you through my user-centered
+    design process for tackling such design challenges.
+  </p>
+  <h2 id="contact">Contact</h2>
+  <h3>Email</h3>
+  <p>sandberg.hans@gmail.com</p>
+  <button>Copy email address</button>
+  <a href="mailto:sandberg.hans@gmail.com">Compose email</a>
+  <h3>LinkedIn</h3>
+  <p>@hans-sandberg</p>
+  <a href="mailto:sandberg.hans@gmail.com">Visit LinkedIn profile</a>
+</BaseLayout>
