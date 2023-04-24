@@ -61,6 +61,7 @@ h4,
 h5,
 h6 {
   overflow-wrap: break-word;
+  hyphens: auto;
 }
 /*
 
@@ -126,8 +127,8 @@ h6 {
 }
 
 :root {
-  --color-dark: #000;
-  --color-light: #a4f6de;
+  --color-dark: #393939;
+  --color-light: #ffffff;
   --system-ui: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
@@ -135,8 +136,8 @@ h6 {
 body {
   font-family: var(--system-ui);
   font-size: var(--step-0);
-  color: var(--color-light);
-  background: var(--color-dark);
+  color: var(--color-dark);
+  background: var(--color-light);
 }
 
 h1,
