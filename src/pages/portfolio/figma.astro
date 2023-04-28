@@ -4,4 +4,170 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
 <BaseLayout>
   <h1>Migrating a design system to Figma</h1>
+  <p>
+    This case study describes how I migrated a design system from Sketch to
+    Figma. Specifically, how I convinced management to approve the switch,
+    created a new UI kit from scratch, and onboarded a team of designers.
+  </p>
+  <h2><span>Step 1.</span> Convince management</h2>
+  <p>
+    The first step was to convince management to approve the purchase of Figma.
+  </p>
+  <p>
+    The main arguments were lower costs and fewer UI design tools, since Figma
+    would not only replace Sketch, but also Axure and InVision.
+  </p>
+  <p>
+    However, to strengthen our case, I helped create an extensive comparison of
+    Figma and Sketch, which you can see here.
+  </p>
+  <h2><span>Step 2.</span> Create foundation</h2>
+  <p>
+    After gaining approval from management to purchase Figma, it was time to lay
+    the foundation for the new UI kit.
+  </p>
+  <p>
+    I had read various online articles about people’s experiences with moving
+    from Sketch to Figma. A recurring theme was that it wasn’t worth the effort
+    to import a UI kit from Sketch and update it. It was better to start from
+    scratch.
+  </p>
+  <p>
+    So, that’s what I did. I started by creating color styles, text styles, and
+    effect styles based on the design system’s design tokens. These would serve
+    as the foundation for all the Figma components to be created.
+  </p>
+  <h2><span>Step 3.</span> Create components</h2>
+  <p>The next step was to get to work and build the components.</p>
+  <p>Over the course of several months, I built 40+ components.</p>
+  <p>
+    My main priority was to match the Figma components as much as possible to
+    their counterparts in code. That meant they should look the same, be named
+    the same (including variants/properties), and be categorized the same way.
+  </p>
+  <p>
+    The aim of these efforts was to enable designers and developers to speak the
+    same language and thereby collaborate more efficiently. When inspecting a
+    mockup, it should be easy for developers to find out which components they
+    should use to build the design in code.
+  </p>
+  <p>
+    Part of creating the components, was utilizing some of Figma’s unique
+    features as much as possible.
+  </p>
+  <p>
+    These are features that made it worthwhile to move to Figma in the first
+    place. Two of the most important ones are highlighted here.
+  </p>
+  <h3>Component variants</h3>
+  <p>
+    Sketch has something similar to component variants. However, you need to
+    navigate through nested menus to switch between them. In contrast, Figma
+    offers a clear overview with simple menus and toggles for every property.
+  </p>
+  <h3>Interactive components</h3>
+  <p>
+    The interactive components feature enables you to provide components with
+    built-in interactions between their variants. This saves designers a lot of
+    time and effort when creating prototypes. I added as many
+    hover/press/state/etc. interactions as possible.
+  </p>
+  <h2><span>Step 4.</span> Add descriptions and documentation links</h2>
+  <p>
+    Once I had created all the components, I added two things to them:
+    descriptions and links to their pages on the documentation site.
+  </p>
+  <h3>Descriptions</h3>
+  <p>
+    The descriptions simply say “Lib” or “Lab”. These terms indicate whether or
+    not a component satisfies the Definition of Done (DoD). The DoD is a list of
+    requirements related to development, UX, accessibility, process, and
+    documentation. New components start out in “Lab” and end up in “Lib”, when
+    they satisfy all DoD requirements. As such, these terms are meant to signal
+    a certain level of quality.
+  </p>
+  <h3>Documentation links</h3>
+  <p>
+    The documentation links help designers look up a component’s guidelines
+    concerning when and how to use it, UX writing, and accessibility. They also
+    help developers, by providing them with implementation guidelines, example
+    code, and information about the component’s API.
+  </p>
+  <h2><span>Step 5.</span> Introduce new UI kit</h2>
+  <p>
+    It was now time to inform my fellow product designers that the new UI kit
+    was ready and available for use.
+  </p>
+  <h3>Announcement</h3>
+  <p>
+    I announced the availability of the new UI kit on Slack. In the message, I
+    explained how to install it, what it contains, and how to get started with
+    using its components. I also mentioned a Figma plugin I installed for
+    everyone, to make it easy to check for accessible color contrast levels.
+  </p>
+  <h3>Video walkthrough</h3>
+  <p>
+    Next, I recorded and shared a video wherein I walked through the UI kit’s
+    features in detail and explained how to use them.
+  </p>
+  <h2><span>Step 6.</span> Create FAQ</h2>
+  <p>
+    Next, I added an FAQ about the Figma UI kit to the documentation site. It
+    contains much of the same information that I covered in the video
+    walkthrough.
+  </p>
+  <p>
+    However, I wanted designers to be able to access this information in a
+    faster and more convenient way. Also, the FAQ page is better suited to be
+    continuously updated.
+  </p>
+  <h2><span>Step 7.</span> Follow up with designers</h2>
+  <p>
+    The last step was to follow up with the designers in the weeks following the
+    launch of the new UI kit.
+  </p>
+  <p>
+    I wanted to hear about their first impressions of both Figma and the UI kit
+    and any issues they’d run into. The most important learnings are summarized
+    here.
+  </p>
+  <ul>
+    <li>
+      <h3>Import issue</h3>
+      <p>
+        Designers that had started migrating, mentioned it wasn’t pain free.
+        Their Sketch mockups got pretty messed up when importing them into
+        Figma. One designer noted it took him two full weeks to make everything
+        look correct again. Sadly, other than encouraging words, there wasn’t
+        much I could do to help them through this initial phase.
+      </p>
+    </li>
+    <li>
+      <h3>Not automatically available</h3>
+      <p>
+        A designer mentioned it was annoying that she had to add the UI kit to
+        every new file. This surprised me, as I had expected the UI kit to be
+        automatically available in all new files. Apparently, this was a setting
+        I had to enable, which I promptly did.
+      </p>
+    </li>
+    <li>
+      <h3>Small bugs</h3>
+      <p>
+        Several designers had encountered small bugs in the UI kit. These ranged
+        from color and shadow styles not matching our design tokens, to
+        components lacking correct responsive behavior. I made an effort to
+        correct these mistakes as fast as possible.
+      </p>
+    </li>
+    <li>
+      <h3>Generally happy</h3>
+      <p>
+        Although not perfect, Figma and the UI kit made a generally good first
+        impression. The designers were excited to start using this new industry
+        leading design tool. Some mentioned already not being able to live
+        without some of its unique features, such as auto layout.
+      </p>
+    </li>
+  </ul>
 </BaseLayout>
