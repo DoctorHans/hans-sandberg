@@ -1,3 +1,7 @@
+---
+import "../styles/global.css";
+---
+
 <header>
   <nav>
     <ul>
@@ -19,3 +23,20 @@
     </ul>
   </nav>
 </header>
+
+<style>
+  header {
+    --flow-space: 0;
+    padding-inline: var(--grid-gutter);
+    padding-block: var(--space-s);
+    display: flex;
+    justify-content: flex-end;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+  }
+</style>
