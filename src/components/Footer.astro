@@ -1,6 +1,37 @@
-<footer>
-  <a href="mailto:sandberg.hans@gmail.com">sandberg.hans@gmail.com</a>
-  <a href="https://www.linkedin.com/in/hans-sandberg/">LinkedIn</a>
-  <a href="#">Back to top</a>
+---
+import "../styles/global.css";
+---
+
+<footer class="u-container">
+  <div class="divider"></div>
+  <div class="links-wrapper">
+    <a href="mailto:sandberg.hans@gmail.com">Email</a>
+    <a href="https://www.linkedin.com/in/hans-sandberg/">LinkedIn</a>
+    <a href="#">Back to top</a>
+  </div>
   <p>© 2023 Hans Sandberg</p>
 </footer>
+
+<style>
+  footer {
+    --flow-space: 0;
+    padding-block: var(--space-s);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    color: var(--color-text-subtle);
+  }
+
+  .divider {
+    border-top: 1px solid var(--color-border-subtle);
+  }
+
+  .links-wrapper {
+    display: flex;
+    gap: var(--space-2xs);
+  }
+
+  .links-wrapper a:last-of-type {
+    margin-inline-start: auto;
+  }
+</style>
