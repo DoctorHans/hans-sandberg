@@ -127,23 +127,24 @@ h6 {
 }
 
 :root {
-  --color-dark: #393939;
-  --color-light: #ffffff;
   --system-ui: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  --neutral-900: oklch(10% 0.004 248.27);
-  --neutral-800: oklch(17.57% 0.0079 248.27);
-  --neutral-700: oklch(30% 0.014 248.27);
-  --neutral-600: oklch(39.5% 0.019 248.27);
-  --neutral-500: oklch(49.5% 0.024 248.27);
-  --neutral-400: oklch(59.5% 0.029 248.27);
-  --neutral-300: oklch(69.5% 0.03 248.27);
-  --neutral-200: oklch(79% 0.019 248.27);
-  --neutral-100: oklch(89% 0.009 248.27);
-  --neutral-0: oklch(99% 0.001 248.27);
+  --neutral-900: oklch(0% 0 0);
+  --neutral-800: oklch(11% 0 137.33);
+  --neutral-700: oklch(22% 0 137.33);
+  --neutral-600: oklch(33.5% 0 137.33);
+  --neutral-500: oklch(44.5% 0 137.33);
+  --neutral-400: oklch(55.5% 0 137.33);
+  --neutral-300: oklch(66.5% 0 137.33);
+  --neutral-200: oklch(78% 0 137.33);
+  --neutral-100: oklch(89% 0 137.33);
+  --neutral-0: oklch(100% 0 137.33);
   --color-text: var(--neutral-600);
+  --color-text-subtle: var(--neutral-400);
   --color-text-loud: var(--neutral-800);
   --color-background: var(--neutral-0);
+  --color-border: var(--neutral-300);
+  --color-border-subtle: var(--neutral-100);
 }
 
 body {
