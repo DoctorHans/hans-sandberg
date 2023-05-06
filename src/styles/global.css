@@ -17,10 +17,10 @@
 /*
     3. Allow percentage-based heights in the application
   */
-html,
+/* html,
 body {
-  height: 100%;
-}
+  height: 100%; Turned off to enable sticky top nav
+} */
 /*
     Typographic tweaks!
     4. Add accessible line-height
@@ -145,6 +145,7 @@ h6 {
   --color-background: var(--neutral-0);
   --color-border: var(--neutral-300);
   --color-border-subtle: var(--neutral-100);
+  --color-focusring: var(--neutral-900);
 }
 
 body {
@@ -152,6 +153,7 @@ body {
   font-size: var(--step-0);
   color: var(--color-text);
   background: var(--color-background);
+  margin-top: 0; /* TO DO: REMOVE */
 }
 
 h1,
@@ -162,6 +164,7 @@ h5 {
   line-height: 1.2;
   max-width: 25ch;
   color: var(--color-text-loud);
+  scroll-margin-top: calc(var(--space-2xl) + 1.5rem);
 }
 
 p,
@@ -194,7 +197,7 @@ a {
 }
 
 :focus {
-  outline: 2px solid var(--color-light);
+  outline: 2px solid var(--color-focusring);
   outline-offset: 0.25rem;
 }
 
