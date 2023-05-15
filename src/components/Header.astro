@@ -69,6 +69,7 @@ import "../styles/global.css";
         --nav-list-height: auto;
         --nav-list-width: 100%;
         --nav-list-shadow: none;
+        --nav-list-transform: none;
         --nav-list-visibility: visible;
       }
     }
@@ -97,7 +98,15 @@ import "../styles/global.css";
       visibility: var(--nav-list-visibility, visible);
     }
 
+    @media (prefers-reduced-motion: no-preference) {
+      ul {
+        transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55),
+          visibility 0.3s linear;
+      }
+    }
+
     [aria-expanded="false"] + ul {
+      transform: var(--nav-list-transform, translateX(100%));
       visibility: var(--nav-list-visibility, hidden);
     }
 
@@ -126,9 +135,21 @@ import "../styles/global.css";
   const mobileButton = templateMobileButtonClone.querySelector("button");
 
   // Toggle aria-expanded attribute
+  function toggleMobileButton() {
+    const isOpen = mobileButton?.getAttribute("aria-expanded") === "false";
+    mobileButton?.setAttribute("aria-expanded", String(isOpen));
+  }
+
+  // Toggle aria-expanded attribute when button is clicked
   mobileButton?.addEventListener("click", (e) => {
-    const isOpen = mobileButton.getAttribute("aria-expanded") === "true";
-    mobileButton.setAttribute("aria-expanded", String(!isOpen));
+    toggleMobileButton();
+  });
+
+  // Toggle aria-expanded attribute when link is clicked
+  nav.addEventListener("click", (e) => {
+    if ((e.target as HTMLElement).tagName.toLowerCase() === "a") {
+      toggleMobileButton();
+    }
   });
 
   // Hide list on keydown Escape
