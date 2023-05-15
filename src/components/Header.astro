@@ -4,6 +4,17 @@ import "../styles/global.css";
 
 <header>
   <nav id="nav">
+    <button
+      id="mobile-menu-button"
+      type="button"
+      aria-expanded="false"
+      aria-label="Menu"
+      aria-controls="nav"
+    >
+      <svg width="24" height="24" aria-hidden="true">
+        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"> </path>
+      </svg>
+    </button>
     <ul role="list">
       <li>
         <a href="/">Home</a>
@@ -23,61 +34,23 @@ import "../styles/global.css";
     </ul>
   </nav>
 
-  <template id="mobile-menu-button">
-    <button
-      type="button"
-      aria-expanded="false"
-      aria-label="Menu"
-      aria-controls="nav"
-    >
-      <svg width="24" height="24" aria-hidden="true">
-        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"> </path>
-      </svg>
-    </button>
-  </template>
-
   <style>
     header {
       --flow-space: 0;
-      /* padding-inline: var(--grid-gutter);
+      padding-inline: var(--grid-gutter);
       padding-block: var(--space-s);
       display: flex;
       justify-content: flex-end;
       border-bottom: 1px solid var(--color-border);
       position: sticky;
-      top: 0;
-      background-color: var(--color-background); */
-    }
-    a {
-      text-decoration: none;
-      color: var(--color-text-subtle);
-      &:hover {
-        color: var(--color-text);
-      }
-    }
-
-    @media (min-width: 48rem) {
-      nav {
-        --nav-button-display: none;
-        --nav-position: static;
-      }
-
-      ul {
-        --nav-list-layout: row;
-        --nav-list-position: static;
-        --nav-list-padding: 0;
-        --nav-list-height: auto;
-        --nav-list-width: 100%;
-        --nav-list-shadow: none;
-        --nav-list-transform: none;
-        --nav-list-visibility: visible;
-      }
+      inset-block-start: 0;
+      background-color: var(--color-background);
     }
 
     nav {
-      position: var(--nav-position, fixed);
-      inset-block-start: var(--space-s);
-      inset-inline-end: var(--space-s);
+      @media (min-width: 48rem) {
+        --nav-button-display: none;
+      }
     }
 
     ul {
@@ -96,43 +69,48 @@ import "../styles/global.css";
       inset-inline-end: 0;
       width: var(--nav-list-width, min(22rem, 100vw));
       visibility: var(--nav-list-visibility, visible);
-    }
 
-    @media (prefers-reduced-motion: no-preference) {
-      ul {
-        transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55),
-          visibility 0.3s linear;
+      @media (min-width: 48rem) {
+        --nav-list-layout: row;
+        --nav-list-position: static;
+        --nav-list-padding: 0;
+        --nav-list-height: auto;
+        --nav-list-width: 100%;
+        --nav-list-shadow: none;
+        --nav-list-transform: none;
+        --nav-list-visibility: visible;
+        transition: transform 0s, visibility 0s;
+      }
+
+      [aria-expanded="false"] + & {
+        transform: var(--nav-list-transform, translateX(100%));
+        visibility: var(--nav-list-visibility, hidden);
       }
     }
 
-    [aria-expanded="false"] + ul {
-      transform: var(--nav-list-transform, translateX(100%));
-      visibility: var(--nav-list-visibility, hidden);
-    }
-
-    /* Reset button styling */
     button {
       all: unset;
       display: var(--nav-button-display, flex);
       position: relative;
       z-index: 1;
+      cursor: pointer;
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--color-text-subtle);
+      &:hover {
+        color: var(--color-text);
+      }
     }
   </style>
 </header>
 
 <script>
-  const nav = document.querySelector("#nav") as HTMLElement;
-  const list = nav?.querySelector("ul") as HTMLUListElement;
-
-  const templateMobileButton = document.querySelector(
+  const nav: HTMLElement | null = document.querySelector("#nav");
+  const mobileButton: HTMLElement | null = document.querySelector(
     "#mobile-menu-button"
-  ) as HTMLTemplateElement | null;
-
-  const templateMobileButtonClone = templateMobileButton?.content.cloneNode(
-    true
-  ) as HTMLElement;
-
-  const mobileButton = templateMobileButtonClone.querySelector("button");
+  );
 
   // Toggle aria-expanded attribute
   function toggleMobileButton() {
@@ -141,24 +119,19 @@ import "../styles/global.css";
   }
 
   // Toggle aria-expanded attribute when button is clicked
-  mobileButton?.addEventListener("click", (e) => {
-    toggleMobileButton();
-  });
+  mobileButton?.addEventListener("click", toggleMobileButton);
 
   // Toggle aria-expanded attribute when link is clicked
-  nav.addEventListener("click", (e) => {
+  nav?.addEventListener("click", (e) => {
     if ((e.target as HTMLElement).tagName.toLowerCase() === "a") {
       toggleMobileButton();
     }
   });
 
   // Hide list on keydown Escape
-  nav.addEventListener("keyup", (e) => {
+  nav?.addEventListener("keyup", (e) => {
     if (e.code === "Escape") {
       mobileButton?.setAttribute("aria-expanded", "false");
     }
   });
-
-  // Add the button to the page
-  nav.insertBefore(templateMobileButtonClone, list);
 </script>
