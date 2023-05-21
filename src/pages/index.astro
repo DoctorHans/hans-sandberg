@@ -1,9 +1,20 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { Picture } from "@astrojs/image/components";
+import meImage from "../images/me.jpeg";
 ---
 
 <BaseLayout pageTitle="Home Page">
   <h1>Hello, I’m Hans.</h1>
+  <Picture
+    src={meImage}
+    widths={[760, 1520, 2280]}
+    aspectRatio="3:2"
+    sizes="(max-width: 800px) 100vw, 760px"
+    alt="Me sitting at a table outdoors, smiling and looking directly at the camera"
+    position="top"
+    class="hero"
+  />
   <p>
     I’m a product designer working on a design system at <a
       href="https://www.pleo.io/">Pleo</a
