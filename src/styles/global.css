@@ -143,6 +143,7 @@ h6 {
   --color-text-subtle: var(--neutral-400);
   --color-text-loud: var(--neutral-800);
   --color-background: var(--neutral-0);
+  --color-background-subtle: var(--neutral-100);
   --color-border: var(--neutral-300);
   --color-border-subtle: var(--neutral-100);
   --color-focusring: var(--neutral-900);
