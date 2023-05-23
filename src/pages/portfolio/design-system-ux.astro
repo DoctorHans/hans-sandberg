@@ -1,4 +1,6 @@
 ---
+import Highlight from "../../components/Highlight.astro";
+import HighlightCollection from "../../components/HighlightCollection.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 ---
 
@@ -69,33 +71,24 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     complete picture, I also asked more general questions about their
     experiences with the design system.
   </p>
-  <ul>
-    <li>
-      <h3>Have you experienced this issue?</h3>
-      <p>
-        The survey’s results showed that the designers didn’t always agree on
-        whether the design system was achieving a certain key objective or not.
-        As a result, for every discovered issue, I had to check whether the
-        designer I was interviewing actually agreed it was an issue for them.
-      </p>
-    </li>
-    <li>
-      <h3>How and when does the issue impact your work?</h3>
-      <p>
-        The aim of this question was to better understand how the design system
-        was failing to achieve a certain key objective within the context of a
-        designer’s daily work.
-      </p>
-    </li>
-    <li>
-      <h3>How can we do better?</h3>
-      <p>
-        I had some ideas about how to tackle the discovered issues. However, I
-        was curious to hear what the designers thought would be the best
-        approach. They provided me with great input and helpful suggestions.
-      </p>
-    </li>
-  </ul>
+  <HighlightCollection>
+    <Highlight title="Have you experienced this issue?">
+      The survey’s results showed that the designers didn’t always agree on
+      whether the design system was achieving a certain key objective or not. As
+      a result, for every discovered issue, I had to check whether the designer
+      I was interviewing actually agreed it was an issue for them.
+    </Highlight>
+    <Highlight title="How and when does the issue impact your work?">
+      The aim of this question was to better understand how the design system
+      was failing to achieve a certain key objective within the context of a
+      designer’s daily work.
+    </Highlight>
+    <Highlight title="How can we do better?">
+      I had some ideas about how to tackle the discovered issues. However, I was
+      curious to hear what the designers thought would be the best approach.
+      They provided me with great input and helpful suggestions.
+    </Highlight>
+  </HighlightCollection>
   <h2><span>Step 3.</span> Implement changes</h2>
   <h3>Make documentation site more designer oriented</h3>
   <p>
@@ -112,7 +105,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
   </p>
   <ul>
     <li>
-      <h3>Role-specific guideline sections</h3>
+      <h4>Role-specific guideline sections</h4>
       <p>
         Before, guidelines for developers, designers, and UX writers could be
         found in a single section called “Guidelines”. Now, this section is
@@ -121,7 +114,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       </p>
     </li>
     <li>
-      <h3>Icons FAQ</h3>
+      <h4>Icons FAQ</h4>
       <p>
         A up-to-date and single-source of truth for guidelines about how to work
         with icons had always been missing. To address this issue, I created an
@@ -129,7 +122,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       </p>
     </li>
     <li>
-      <h3>Accessibility checklist for designers</h3>
+      <h4>Accessibility checklist for designers</h4>
       <p>
         Enabling designers to create accessible user experiences is one of the
         design system’s main goals. However, the documentation site was missing
@@ -138,7 +131,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       </p>
     </li>
     <li>
-      <h3>Improve icons overview page</h3>
+      <h4>Improve icons overview page</h4>
       <p>
         The icons overview page was cluttered, making it difficult for designers
         to scan the page and find the icon they were looking for. I cleaned up
@@ -158,7 +151,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
   </p>
   <ul>
     <li>
-      <h3>Shorten and simplify documentation URL</h3>
+      <h4>Shorten and simplify documentation URL</h4>
       <p>
         The documentation site is the design system’s official single source of
         truth. However, its URL was quite long and difficult to remember.
@@ -166,7 +159,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       </p>
     </li>
     <li>
-      <h3>Move guidelines to documentation site</h3>
+      <h4>Move guidelines to documentation site</h4>
       <p>
         Some documentation could only be found outside of the official
         documentation site. That helps explain the designers’ confusion with
@@ -175,7 +168,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       </p>
     </li>
     <li>
-      <h3>Add warnings to deprecated pages</h3>
+      <h4>Add warnings to deprecated pages</h4>
       <p>
         Some deprecated documentation pages could not be removed, due to still
         being relevant for internal use in the design system team. Warning
@@ -197,7 +190,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     I added a general FAQ for designers to the documentation site to create such
     a knowledge repository.
   </p>
-  <h4>Keep designers up-to-date</h4>
+  <h3>Keep designers up-to-date</h3>
   <p>
     During the interviews, several designers expressed a desire to be kept more
     up-to-date about the latest changes and additions to the design system.
@@ -205,7 +198,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
   <p>Two initiatives were started to accommodate this request.</p>
   <ul>
     <li>
-      <h5>Changelogs</h5>
+      <h4>Changelogs</h4>
       <p>
         Public changelogs were added to the documentation site. The changelogs
         are written in a manner intended to be understandable to a non-technical
@@ -213,14 +206,14 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       </p>
     </li>
     <li>
-      <h5>More frequent updates</h5>
+      <h4>More frequent updates</h4>
       <p>
         News about the design system is now posted about more frequently in a
         Slack channel specifically for designers.
       </p>
     </li>
   </ul>
-  <h4>Improve review process</h4>
+  <h3>Improve review process</h3>
   <p>
     The interviews revealed it was unclear to designers how and when to get
     their wireframes and mockups reviewed by the design system team.
@@ -233,7 +226,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
   </p>
   <ul>
     <li>
-      <h5>Multi-disciplinary feedback</h5>
+      <h4>Multi-disciplinary feedback</h4>
       <p>
         At the new review sessions, not just members of the design system team
         would be present, but also accessibility experts and UX writers. That
@@ -244,7 +237,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       </p>
     </li>
     <li>
-      <h5>Open for all designers</h5>
+      <h4>Open for all designers</h4>
       <p>
         Multiple designers expressed an interest in attending review sessions of
         other designers. That way, they could learn from the feedback given
@@ -254,7 +247,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       </p>
     </li>
     <li>
-      <h5>Optional and informal</h5>
+      <h4>Optional and informal</h4>
       <p>
         The designers emphasized they didn’t want the review sessions to be
         obligatory. They didn’t feel like they always needed feedback on every
