@@ -41,36 +41,28 @@ import HighlightCollection from "../../components/HighlightCollection.astro";
     I created extra requirements and constraints, to give the project a clearer
     focus.
   </p>
-  <ul>
-    <li>
-      <h3>Client</h3>
-      <p>
-        I interviewed 9 people about their experiences with elevators. They
-        mentioned 30 different things they disliked about them, such as social
-        awkwardness and dirty, cramped interiors. However, waiting for the
-        elevator was by far their biggest complaint.
-      </p>
-    </li>
-    <li>
-      <h3>User groups</h3>
-      <p>
-        Residential elevators are used by different groups of people, such as
-        guests of residents, janitors, and maintenance personnel. However, the
-        main user group are residents. These can be people of any age and some
-        may have sensory, motor, or other disabilities.
-      </p>
-    </li>
-    <li>
-      <h3>Physical and technical constraints</h3>
-      <p>
-        The elevator should work in luxury residential buildings with 4 to 12
-        floors, in any country around the world, and use the "collective
-        control" algorithm. In short, that means the elevator will only switch
-        direction when requests to continue in the current direction have been
-        exhausted.
-      </p>
-    </li>
-  </ul>
+  <HighlightCollection>
+    <Highlight title="Client">
+      I interviewed 9 people about their experiences with elevators. They
+      mentioned 30 different things they disliked about them, such as social
+      awkwardness and dirty, cramped interiors. However, waiting for the
+      elevator was by far their biggest complaint.
+    </Highlight>
+
+    <Highlight title="User groups">
+      Residential elevators are used by different groups of people, such as
+      guests of residents, janitors, and maintenance personnel. However, the
+      main user group are residents. These can be people of any age and some may
+      have sensory, motor, or other disabilities.
+    </Highlight>
+    <Highlight title="Physical and technical constraints">
+      The elevator should work in luxury residential buildings with 4 to 12
+      floors, in any country around the world, and use the "collective control"
+      algorithm. In short, that means the elevator will only switch direction
+      when requests to continue in the current direction have been exhausted.
+    </Highlight>
+  </HighlightCollection>
+
   <h2><span>Step 3.</span> Problem statement</h2>
   <p>
     I distilled my research, requirements and constraints into a concise problem
@@ -85,77 +77,52 @@ import HighlightCollection from "../../components/HighlightCollection.astro";
     I used what I had learned about elevators and the psychology of waiting, to
     come up with various features that would reduce perceived waiting time.
   </p>
-  <ul>
-    <li>
-      <h3>Speed</h3>
-      <p>
-        The elevator will travel up at 83 km/h (above which people get sick) and
-        down at 36 km/h (above which people experience the sensation of
-        falling). This will reduce both actual and perceived waiting time.
-      </p>
-    </li>
-    <li>
-      <h3>Mirrors</h3>
-      <p>
-        The shaft doors will feature mirrors. Occupied time feels shorter and
-        people have a natural tendency to check their personal appearance. This
-        is one of the oldest tricks to reduce perceived elevator waiting time.
-      </p>
-    </li>
-    <li>
-      <h3>Time</h3>
-      <p>
-        Computer screens will be installed behind the semi-transparent mirrors
-        on the shaft doors. One door will display the current time, since people
-        overestimate waiting time and clocks counteract this tendency.
-      </p>
-    </li>
-    <li>
-      <h3>Weather</h3>
-      <p>
-        Weather information will be shown on the other shaft door. This can be
-        effective, since residents may be on their way out and information
-        relevant to a waiting setting reduces perceived waiting time. It may
-        also start conversations, which enhances the feeling of being part of a
-        group, and waiting in a group feels shorter than waiting alone.
-      </p>
-    </li>
-    <li>
-      <h3>Color</h3>
-      <p>
-        Warm colors increase perceived waiting time, while cool colors have the
-        opposite effect. Therefore, the waiting area will be painted in a cool
-        color, such as blue.
-      </p>
-    </li>
-    <li>
-      <h3>Light</h3>
-      <p>
-        High light levels increase perceived waiting time, while low light
-        levels have the opposite effect. Therefore, the waiting area will be
-        dimly lit.
-      </p>
-    </li>
-    <li>
-      <h3>Scent</h3>
-      <p>
-        Certain fragrances, such as lavender and nutmeg, have been found to
-        reduce anxiety and anxiety increases perceived waiting time. Therefore,
-        a scent diffuser will emit a low-concentration blend of such fragrances.
-      </p>
-    </li>
-    <li>
-      <h3>Accessibility</h3>
-      <p>
-        The call buttons will be placed low enough for people in wheelchairs
-        (and children) to reach them. They will also give tactile feedback and
-        feature braille to facilitate use by visually impaired people. Lastly, a
-        voice UI will announce the current floor, the location of the elevator,
-        the direction in which it is traveling, and at which floors it is going
-        to stop.
-      </p>
-    </li>
-  </ul>
+  <HighlightCollection>
+    <Highlight title="Speed">
+      The elevator will travel up at 83 km/h (above which people get sick) and
+      down at 36 km/h (above which people experience the sensation of falling).
+      This will reduce both actual and perceived waiting time.
+    </Highlight>
+    <Highlight title="Mirrors">
+      The shaft doors will feature mirrors. Occupied time feels shorter and
+      people have a natural tendency to check their personal appearance. This is
+      one of the oldest tricks to reduce perceived elevator waiting time.
+    </Highlight>
+    <Highlight title="Time">
+      Computer screens will be installed behind the semi-transparent mirrors on
+      the shaft doors. One door will display the current time, since people
+      overestimate waiting time and clocks counteract this tendency.
+    </Highlight>
+    <Highlight title="Weather">
+      Weather information will be shown on the other shaft door. This can be
+      effective, since residents may be on their way out and information
+      relevant to a waiting setting reduces perceived waiting time. It may also
+      start conversations, which enhances the feeling of being part of a group,
+      and waiting in a group feels shorter than waiting alone.
+    </Highlight>
+    <Highlight title="Color">
+      Warm colors increase perceived waiting time, while cool colors have the
+      opposite effect. Therefore, the waiting area will be painted in a cool
+      color, such as blue.
+    </Highlight>
+    <Highlight title="Light">
+      High light levels increase perceived waiting time, while low light levels
+      have the opposite effect. Therefore, the waiting area will be dimly lit.
+    </Highlight>
+    <Highlight title="Scent">
+      Certain fragrances, such as lavender and nutmeg, have been found to reduce
+      anxiety and anxiety increases perceived waiting time. Therefore, a scent
+      diffuser will emit a low-concentration blend of such fragrances.
+    </Highlight>
+    <Highlight title="Accessibility">
+      The call buttons will be placed low enough for people in wheelchairs (and
+      children) to reach them. They will also give tactile feedback and feature
+      braille to facilitate use by visually impaired people. Lastly, a voice UI
+      will announce the current floor, the location of the elevator, the
+      direction in which it is traveling, and at which floors it is going to
+      stop.
+    </Highlight>
+  </HighlightCollection>
   <h2><span>Step 5.</span> Explore Visual UI Concepts</h2>
   <p>
     The elevator will also feature a visual UI. This UI will communicate the
@@ -168,34 +135,25 @@ import HighlightCollection from "../../components/HighlightCollection.astro";
     This made me more aware of the choices I had to make, such as the ones shown
     here.
   </p>
-  <ul>
-    <li>
-      <h3>Orientation</h3>
-      <p>
-        Should the UI be vertical or horizontal? Vertical matches the elevator’s
-        axis of movement. However, a horizontal UI can be placed above the
-        elevator doors, which enhances visibility.
-      </p>
-    </li>
-    <li>
-      <h3>Floor indicator</h3>
-      <p>
-        Should floors be indicated with numbers or shapes? Numbers are more
-        informative, but can lead to cultural challenges. For instance, some
-        countries use 0 for the ground floor, while others use 1. Also, some
-        countries don’t use certain “unlucky” floor numbers.
-      </p>
-    </li>
-    <li>
-      <h3>Cause of stop</h3>
-      <p>
-        Should the UI show whether stops are due to passenger pickup or drop
-        off? Waiting time is perceived as shorter, when people know the cause.
-        On the other hand, this information might create excessive visual
-        clutter.
-      </p>
-    </li>
-  </ul>
+  <HighlightCollection>
+    <Highlight title="Orientation">
+      Should the UI be vertical or horizontal? Vertical matches the elevator’s
+      axis of movement. However, a horizontal UI can be placed above the
+      elevator doors, which enhances visibility.
+    </Highlight>
+    <Highlight title="Floor indicator">
+      Should floors be indicated with numbers or shapes? Numbers are more
+      informative, but can lead to cultural challenges. For instance, some
+      countries use 0 for the ground floor, while others use 1. Also, some
+      countries don’t use certain “unlucky” floor numbers.
+    </Highlight>
+    <Highlight title="Cause of stop">
+      Should the UI show whether stops are due to passenger pickup or drop off?
+      Waiting time is perceived as shorter, when people know the cause. On the
+      other hand, this information might create excessive visual clutter.
+    </Highlight>
+  </HighlightCollection>
+
   <h2><span>Step 6.</span> Create Hi-Fi Mockups</h2>
   <p>
     I created various iterations of high-fidelity mockups, after having settled
