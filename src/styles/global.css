@@ -175,6 +175,7 @@ li {
 
 h1 {
   font-size: var(--step-4);
+  margin-block-start: var(--space-2xl);
 }
 
 h2 {
