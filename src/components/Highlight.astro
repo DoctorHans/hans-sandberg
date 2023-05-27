@@ -2,12 +2,14 @@
 import "../styles/global.css";
 interface Props {
   title: string;
+  headingLevel?: string;
 }
-const { title } = Astro.props;
+const { title, headingLevel = "3" } = Astro.props;
+const Heading = `h${headingLevel}`;
 ---
 
 <li class="wrapper">
-  <h3>{title}</h3>
+  <Heading>{title}</Heading>
   <p><slot /></p>
 </li>
 
