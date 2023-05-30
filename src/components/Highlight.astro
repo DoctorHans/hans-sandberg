@@ -1,16 +1,16 @@
 ---
 import "../styles/global.css";
-import type { HTMLTag } from "astro/types";
 interface Props {
   title: string;
   headingLevel?: "1" | "2" | "3" | "4" | "5" | "6";
 }
+type Heading = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 const { title, headingLevel = "3" } = Astro.props;
-const Heading: HTMLTag = `h${headingLevel}`;
+const Title = `h${headingLevel}` as Heading;
 ---
 
 <li class="wrapper">
-  <Heading>{title}</Heading>
+  <Title>{title}</Title>
   <p><slot /></p>
 </li>
 
