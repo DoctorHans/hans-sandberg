@@ -3,15 +3,17 @@ import "../styles/global.css";
 interface Props {
   title: string;
   headingLevel?: "1" | "2" | "3" | "4" | "5" | "6";
+  blockquote?: boolean;
 }
 type Heading = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
-const { title, headingLevel = "3" } = Astro.props;
+const { title, headingLevel = "3", blockquote = false } = Astro.props;
 const Title = `h${headingLevel}` as Heading;
+const Content = blockquote ? "blockquote" : "p";
 ---
 
 <li class="wrapper">
   <Title>{title}</Title>
-  <p><slot /></p>
+  <Content><slot /></Content>
 </li>
 
 <style lang="scss">
