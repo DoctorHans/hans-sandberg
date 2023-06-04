@@ -2,6 +2,8 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Highlight from "../../components/Highlight.astro";
 import HighlightCollection from "../../components/HighlightCollection.astro";
+import FeatureCollection from "../../components/FeatureCollection.astro";
+import Feature from "../../components/Feature.astro";
 ---
 
 <BaseLayout>
@@ -159,12 +161,12 @@ import HighlightCollection from "../../components/HighlightCollection.astro";
     I created various iterations of high-fidelity mockups, after having settled
     on only showing:
   </p>
-  <ul>
-    <li>The floor the user is on</li>
-    <li>The floor the elevator is on</li>
-    <li>The floors the elevator will stop on</li>
-    <li>The direction of the elevator</li>
-  </ul>
+  <FeatureCollection>
+    <Feature>The floor the user is on</Feature>
+    <Feature>The floor the elevator is on</Feature>
+    <Feature>The floors the elevator will stop on</Feature>
+    <Feature>The direction of the elevator</Feature>
+  </FeatureCollection>
   <h2><span>Step 7.</span> User Tests and Iteration</h2>
   <p>
     I tested two high-fidelity mockups with users and iterated based on the test
@@ -191,16 +193,15 @@ import HighlightCollection from "../../components/HighlightCollection.astro";
     I combined the findings and insights from my research into the following
     recommended features:
   </p>
-  <ul>
-    <li>High speed elevator</li>
-    <li>Semi-transparent mirrors</li>
-    <li>Weather info on mirror doors</li>
-    <li>Display time on mirror doors</li>
-    <li>Cool paint color in waiting area</li>
-    <li>Dim lighting in waiting area</li>
-    <li>Anxiety-reducing fragrances</li>
-    <li>Low placed braille buttons</li>
-    <li>Voice UI</li>
-    <li>Semi-transparent mirrors</li>
-  </ul>
+  <FeatureCollection>
+    <Feature>High speed elevator</Feature>
+    <Feature>Semi-transparent mirrors</Feature>
+    <Feature>Weather info on mirror doors</Feature>
+    <Feature>Display time on mirror doors</Feature>
+    <Feature>Cool paint color in waiting area</Feature>
+    <Feature>Dim lighting in waiting area</Feature>
+    <Feature>Anxiety-reducing fragrances</Feature>
+    <Feature>Low placed braille buttons</Feature>
+    <Feature>Voice UI</Feature>
+  </FeatureCollection>
 </BaseLayout>
