@@ -1,11 +1,12 @@
 ---
+import Heading from "../../components/Heading.astro";
 import Highlight from "../../components/Highlight.astro";
 import HighlightCollection from "../../components/HighlightCollection.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout>
-  <h1>Improving a design system’s UX</h1>
+  <Heading level="1">Improving a design system’s UX</Heading>
   <p>
     The goal of this project was to evaluate and improve the UX of the design
     system I was working on. The project focused on the design system’s two main
@@ -13,7 +14,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     with regards to the UX of designers, so that’s what I’ve chosen to focus on
     here.
   </p>
-  <h2><span>Step 1.</span> Quantitative research</h2>
+  <Heading level="2" step="1">Quantitative research</Heading>
   <p>
     My first step was to send out an anonymous survey to all product designers.
   </p>
@@ -48,7 +49,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       differently?
     </Highlight>
   </HighlightCollection>
-  <h2><span>Step 2.</span> Qualitative research</h2>
+  <Heading level="2" step="2">Qualitative research</Heading>
   <p>
     My second step was to interview every designer about the results of the
     survey.
@@ -77,8 +78,10 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       They provided me with great input and helpful suggestions.
     </Highlight>
   </HighlightCollection>
-  <h2><span>Step 3.</span> Implement changes</h2>
-  <h3>Make documentation site more designer oriented</h3>
+  <Heading level="2" step="3">Implement changes</Heading>
+  <Heading level="3" step="3">
+    Make documentation site more designer oriented
+  </Heading>
   <p>
     A main finding was that the design system’s documentation site was too
     focused on developers.
@@ -114,7 +117,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       page and added a link to the new “Icons FAQ” page.
     </Highlight>
   </HighlightCollection>
-  <h3>Clarify single source of truth</h3>
+  <Heading level="3">Clarify single source of truth</Heading>
   <p>
     The research also revealed it was sometimes unclear for designers what the
     single source of truth was, when it came to component documentation,
@@ -142,7 +145,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       messages were added to prevent designers from consulting these pages.
     </Highlight>
   </HighlightCollection>
-  <h3>Clarify terminology and processes</h3>
+  <Heading level="3">Clarify terminology and processes</Heading>
   <p>
     Another main finding was that certain terminology and processes for working
     with the design system were unclear to some designers.
@@ -156,7 +159,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     I added a general FAQ for designers to the documentation site to create such
     a knowledge repository.
   </p>
-  <h3>Keep designers up-to-date</h3>
+  <Heading level="3">Keep designers up-to-date</Heading>
   <p>
     During the interviews, several designers expressed a desire to be kept more
     up-to-date about the latest changes and additions to the design system.
@@ -173,7 +176,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       Slack channel specifically for designers.
     </Highlight>
   </HighlightCollection>
-  <h3>Improve review process</h3>
+  <Heading level="3">Improve review process</Heading>
   <p>
     The interviews revealed it was unclear to designers how and when to get
     their wireframes and mockups reviewed by the design system team.
@@ -209,7 +212,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       efficient way to get feedback from different disciplines.
     </Highlight>
   </HighlightCollection>
-  <h2><span>Step 4.</span> Presentation</h2>
+  <Heading level="2" step="4">Presentation</Heading>
   <p>The last step was to give a presentation to the designers.</p>
   <p>This presentation served multiple purposes, highlighted here.</p>
   <HighlightCollection>

@@ -2,10 +2,11 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { Picture } from "@astrojs/image/components";
 import meImage from "../images/me.jpeg";
+import Heading from "../components/Heading.astro";
 ---
 
 <BaseLayout pageTitle="Home Page">
-  <h1>Hello, I’m Hans.</h1>
+  <Heading level={"1"}>Hello, I’m Hans.</Heading>
   <Picture
     src={meImage}
     widths={[760, 1520, 2280]}
