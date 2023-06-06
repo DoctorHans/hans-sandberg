@@ -1,12 +1,12 @@
 ---
 import "../styles/global.css";
 interface Props {
-  headingLevel: "1" | "2" | "3" | "4" | "5" | "6";
+  level: "1" | "2" | "3" | "4" | "5" | "6";
   step?: string;
 }
 type Heading = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
-const { headingLevel, step } = Astro.props;
-const Heading = `h${headingLevel}` as Heading;
+const { level, step } = Astro.props;
+const Heading = `h${level}` as Heading;
 ---
 
 <Heading class:list={[{ wrapper: step }]}>
