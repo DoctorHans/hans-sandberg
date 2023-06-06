@@ -1,17 +1,18 @@
 ---
+import Heading from "../../components/Heading.astro";
 import Highlight from "../../components/Highlight.astro";
 import HighlightCollection from "../../components/HighlightCollection.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout>
-  <h1>Moving a design system to Figma</h1>
+  <Heading level="1">Moving a design system to Figma</Heading>
   <p>
     This case study describes how I moved a design system from Sketch to Figma.
     Specifically, how I convinced management to approve the switch, created a
     new UI kit from scratch, and onboarded a team of designers.
   </p>
-  <h2><span>Step 1.</span> Convince management</h2>
+  <Heading level="2" step="1">Convince management</Heading>
   <p>
     The first step was to convince management to approve the purchase of Figma.
     The main arguments were lower costs and fewer UI design tools, since Figma
@@ -19,7 +20,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     strengthen our case, I helped create an extensive comparison of Figma and
     Sketch, which you can see here.
   </p>
-  <h2><span>Step 2.</span> Create foundation</h2>
+  <Heading level="2" step="2">Create foundation</Heading>
   <p>
     After gaining approval from management to purchase Figma, it was time to lay
     the foundation for the new UI kit.
@@ -35,7 +36,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     effect styles based on the design system’s design tokens. These would serve
     as the foundation for all the Figma components to be created.
   </p>
-  <h2><span>Step 3.</span> Create components</h2>
+  <Heading level="2" step="3">Create components</Heading>
   <p>The next step was to get to work and build the components.</p>
   <p>Over the course of several months, I built 40+ components.</p>
   <p>
@@ -57,25 +58,25 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     These are features that made it worthwhile to move to Figma in the first
     place. Two of the most important ones are highlighted here.
   </p>
-  <h3>Component variants</h3>
+  <Heading level="3">Component variants</Heading>
   <p>
     Sketch has something similar to component variants. However, you need to
     navigate through nested menus to switch between them. In contrast, Figma
     offers a clear overview with simple menus and toggles for every property.
   </p>
-  <h3>Interactive components</h3>
+  <Heading level="3">Interactive components</Heading>
   <p>
     The interactive components feature enables you to provide components with
     built-in interactions between their variants. This saves designers a lot of
     time and effort when creating prototypes. I added as many
     hover/press/state/etc. interactions as possible.
   </p>
-  <h2><span>Step 4.</span> Add descriptions and documentation links</h2>
+  <Heading level="2" step="4">Add descriptions and documentation links</Heading>
   <p>
     Once I had created all the components, I added two things to them:
     descriptions and links to their pages on the documentation site.
   </p>
-  <h3>Descriptions</h3>
+  <Heading level="3">Descriptions</Heading>
   <p>
     The descriptions simply say “Lib” or “Lab”. These terms indicate whether or
     not a component satisfies the Definition of Done (DoD). The DoD is a list of
@@ -84,14 +85,14 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     they satisfy all DoD requirements. As such, these terms are meant to signal
     a certain level of quality.
   </p>
-  <h3>Documentation links</h3>
+  <Heading level="3">Documentation links</Heading>
   <p>
     The documentation links help designers look up a component’s guidelines
     concerning when and how to use it, UX writing, and accessibility. They also
     help developers, by providing them with implementation guidelines, example
     code, and information about the component’s API.
   </p>
-  <h2><span>Step 5.</span> Introduce new UI kit</h2>
+  <Heading level="2" step="5">Introduce new UI kit</Heading>
   <p>
     It was now time to inform my fellow product designers that the new UI kit
     was ready and available for use.
@@ -103,12 +104,12 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     using its components. I also mentioned a Figma plugin I installed for
     everyone, to make it easy to check for accessible color contrast levels.
   </p>
-  <h3>Video walkthrough</h3>
+  <Heading level="3">Video walkthrough</Heading>
   <p>
     Next, I recorded and shared a video wherein I walked through the UI kit’s
     features in detail and explained how to use them.
   </p>
-  <h2><span>Step 6.</span> Create FAQ</h2>
+  <Heading level="2" step="6">Create FAQ</Heading>
   <p>
     Next, I added an FAQ about the Figma UI kit to the documentation site. It
     contains much of the same information that I covered in the video
@@ -119,7 +120,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     faster and more convenient way. Also, the FAQ page is better suited to be
     continuously updated.
   </p>
-  <h2><span>Step 7.</span> Follow up with designers</h2>
+  <Heading level="2" step="7">Follow up with designers</Heading>
   <p>
     The last step was to follow up with the designers in the weeks following the
     launch of the new UI kit.

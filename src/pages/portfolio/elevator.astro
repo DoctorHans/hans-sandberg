@@ -4,16 +4,17 @@ import Highlight from "../../components/Highlight.astro";
 import HighlightCollection from "../../components/HighlightCollection.astro";
 import FeatureCollection from "../../components/FeatureCollection.astro";
 import Feature from "../../components/Feature.astro";
+import Heading from "../../components/Heading.astro";
 ---
 
 <BaseLayout>
-  <h1>Ideal Elevator Experience</h1>
+  <Heading level="1">Ideal Elevator Experience</Heading>
   <p>
     I was once given the task to design the ideal elevator experience, as part
     of a job interview. In this case study, I walk you through my user-centered
     design process for tackling such design challenges.
   </p>
-  <h2><span>Step 1.</span> Research</h2>
+  <Heading level="2" step="1">Research</Heading>
   <p>
     My first step was to learn more about elevators and people’s experiences
     with them.
@@ -38,7 +39,7 @@ import Feature from "../../components/Feature.astro";
       it’s perceived as unfair.
     </Highlight>
   </HighlightCollection>
-  <h2><span>Step 2.</span> Requirements & Constraints</h2>
+  <Heading level="2" step="2">Requirements & Constraints</Heading>
   <p>
     I created extra requirements and constraints, to give the project a clearer
     focus.
@@ -64,8 +65,7 @@ import Feature from "../../components/Feature.astro";
       when requests to continue in the current direction have been exhausted.
     </Highlight>
   </HighlightCollection>
-
-  <h2><span>Step 3.</span> Problem statement</h2>
+  <Heading level="2" step="3">Problem statement</Heading>
   <p>
     I distilled my research, requirements and constraints into a concise problem
     statement.
@@ -74,7 +74,7 @@ import Feature from "../../components/Feature.astro";
     Improve the elevator experience of residents of 4 to 12 story luxury
     apartment buildings by reducing perceived waiting time.
   </blockquote>
-  <h2><span>Step 4.</span> Use Research Insights</h2>
+  <Heading level="2" step="4">Use Research Insights</Heading>
   <p>
     I used what I had learned about elevators and the psychology of waiting, to
     come up with various features that would reduce perceived waiting time.
@@ -125,7 +125,7 @@ import Feature from "../../components/Feature.astro";
       stop.
     </Highlight>
   </HighlightCollection>
-  <h2><span>Step 5.</span> Explore Visual UI Concepts</h2>
+  <Heading level="2" step="5">Explore Visual UI Concepts</Heading>
   <p>
     The elevator will also feature a visual UI. This UI will communicate the
     same information as the voice UI to sighted and hearing impaired residents.
@@ -155,8 +155,7 @@ import Feature from "../../components/Feature.astro";
       other hand, this information might create excessive visual clutter.
     </Highlight>
   </HighlightCollection>
-
-  <h2><span>Step 6.</span> Create Hi-Fi Mockups</h2>
+  <Heading level="2" step="6">Create Hi-Fi Mockups</Heading>
   <p>
     I created various iterations of high-fidelity mockups, after having settled
     on only showing:
@@ -167,7 +166,7 @@ import Feature from "../../components/Feature.astro";
     <Feature>The floors the elevator will stop on</Feature>
     <Feature>The direction of the elevator</Feature>
   </FeatureCollection>
-  <h2><span>Step 7.</span> User Tests and Iteration</h2>
+  <Heading level="2" step="7">User Tests and Iteration</Heading>
   <p>
     I tested two high-fidelity mockups with users and iterated based on the test
     results.
@@ -188,7 +187,7 @@ import Feature from "../../components/Feature.astro";
     everyone which floor they were on, though. A different visual indicator and
     a floor number sign next to the elevator might resolve this issue.
   </p>
-  <h2><span>Step 8.</span> Final Result</h2>
+  <Heading level="2" step="8">Final Result</Heading>
   <p>
     I combined the findings and insights from my research into the following
     recommended features:
