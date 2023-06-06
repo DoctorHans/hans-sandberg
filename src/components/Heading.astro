@@ -1,0 +1,64 @@
+---
+import "../styles/global.css";
+interface Props {
+  headingLevel: "1" | "2" | "3" | "4" | "5" | "6";
+  step?: string;
+}
+type Heading = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+const { headingLevel, step } = Astro.props;
+const Heading = `h${headingLevel}` as Heading;
+---
+
+<Heading class:list={[{ wrapper: step }]}>
+  {step && <span class="step">Step {step}.</span>}
+  <slot />
+</Heading>
+
+<style lang="scss">
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: 1.2;
+    max-width: 25ch;
+    color: var(--color-text-loud);
+    scroll-margin-top: calc(var(--space-2xl) + 1.5rem);
+  }
+
+  h1 {
+    font-size: var(--step-4);
+    margin-block-start: var(--space-2xl);
+  }
+
+  h2 {
+    font-size: var(--step-3);
+  }
+
+  h3 {
+    font-size: var(--step-2);
+  }
+
+  h4 {
+    font-size: var(--step-1);
+  }
+
+  h5 {
+    font-size: var(--step--1);
+  }
+
+  h6 {
+    font-size: var(--step--2);
+  }
+
+  .step {
+    color: var(--color-text-subtle);
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+</style>
