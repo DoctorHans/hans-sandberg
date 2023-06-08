@@ -3,16 +3,17 @@ import "../styles/global.css";
 interface Props {
   level: "1" | "2" | "3" | "4" | "5" | "6";
   step?: string;
+  id?: string;
 }
-type Heading = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
-const { level, step } = Astro.props;
-const Heading = `h${level}` as Heading;
+type H = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+const { level, step, id } = Astro.props;
+const H = `h${level}` as H;
 ---
 
-<Heading class:list={[{ wrapper: step }]}>
+<H class:list={[{ wrapper: step }]} id={id}>
   {step && <span class="step">Step {step}.</span>}
   <slot />
-</Heading>
+</H>
 
 <style lang="scss">
   h1,
