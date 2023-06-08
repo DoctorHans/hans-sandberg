@@ -2,32 +2,33 @@
 import Heading from "../../components/Heading.astro";
 import Highlight from "../../components/Highlight.astro";
 import HighlightCollection from "../../components/HighlightCollection.astro";
+import Paragraph from "../../components/Paragraph.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout>
   <Heading level="1">Improving a design system’s UX</Heading>
-  <p>
+  <Paragraph intro>
     The goal of this project was to evaluate and improve the UX of the design
     system I was working on. The project focused on the design system’s two main
     user groups: designers and developers. There was most room for improvement
     with regards to the UX of designers, so that’s what I’ve chosen to focus on
     here.
-  </p>
+  </Paragraph>
   <Heading level="2" step="1">Quantitative research</Heading>
-  <p>
+  <Paragraph>
     My first step was to send out an anonymous survey to all product designers.
-  </p>
-  <p>
+  </Paragraph>
+  <Paragraph>
     The aim was to find out whether the design system was living up to key
     objectives across various areas.
-  </p>
-  <p>
+  </Paragraph>
+  <Paragraph>
     The survey consisted of 17 questions across five categories. Most were
     phrased as statements. The designers were asked to specify on a five-point
     scale to what degree they agreed or disagreed with the statements. Here are
     example statements from the different categories:
-  </p>
+  </Paragraph>
   <HighlightCollection>
     <Highlight title="General" blockquote>
       It's clear what the design system’s single source of truth is, when it
@@ -50,16 +51,18 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     </Highlight>
   </HighlightCollection>
   <Heading level="2" step="2">Qualitative research</Heading>
-  <p>
+  <Paragraph>
     My second step was to interview every designer about the results of the
     survey.
-  </p>
-  <p>The goal was to get more detailed insight into the discovered issues.</p>
-  <p>
+  </Paragraph>
+  <Paragraph>
+    The goal was to get more detailed insight into the discovered issues.
+  </Paragraph>
+  <Paragraph>
     The main questions I asked for every issue, can be seen here. To get a more
     complete picture, I also asked more general questions about their
     experiences with the design system.
-  </p>
+  </Paragraph>
   <HighlightCollection>
     <Highlight title="Have you experienced this issue?">
       The survey’s results showed that the designers didn’t always agree on
@@ -80,18 +83,18 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
   </HighlightCollection>
   <Heading level="2" step="3">Implement changes</Heading>
   <Heading level="3">Make documentation site more designer oriented</Heading>
-  <p>
+  <Paragraph>
     A main finding was that the design system’s documentation site was too
     focused on developers.
-  </p>
-  <p>
+  </Paragraph>
+  <Paragraph>
     Designers felt like much of the content was too technical and they had
     difficulty finding information that was relevant to them.
-  </p>
-  <p>
+  </Paragraph>
+  <Paragraph>
     Several changes were made to the documentation site to address this issue.
     Some of these changes are highlighted here.
-  </p>
+  </Paragraph>
   <HighlightCollection>
     <Highlight title="Role-specific guideline sections" headingLevel="4">
       Before, guidelines for developers, designers, and UX writers could be
@@ -116,15 +119,15 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     </Highlight>
   </HighlightCollection>
   <Heading level="3">Clarify single source of truth</Heading>
-  <p>
+  <Paragraph>
     The research also revealed it was sometimes unclear for designers what the
     single source of truth was, when it came to component documentation,
     guidelines, design tokens, etc.
-  </p>
-  <p>
+  </Paragraph>
+  <Paragraph>
     Here you can see some of the actions that were taken to solidify the
     documentation site as the one and only source of truth.
-  </p>
+  </Paragraph>
   <HighlightCollection>
     <Highlight title="Shorten and simplify documentation URL" headingLevel="4">
       The documentation site is the design system’s official single source of
@@ -144,25 +147,27 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     </Highlight>
   </HighlightCollection>
   <Heading level="3">Clarify terminology and processes</Heading>
-  <p>
+  <Paragraph>
     Another main finding was that certain terminology and processes for working
     with the design system were unclear to some designers.
-  </p>
-  <p>
+  </Paragraph>
+  <Paragraph>
     These terms and processes had been explained informally on multiple
     occasions. However, they had never been collected in a central, easily
     accessible location.
-  </p>
-  <p>
+  </Paragraph>
+  <Paragraph>
     I added a general FAQ for designers to the documentation site to create such
     a knowledge repository.
-  </p>
+  </Paragraph>
   <Heading level="3">Keep designers up-to-date</Heading>
-  <p>
+  <Paragraph>
     During the interviews, several designers expressed a desire to be kept more
     up-to-date about the latest changes and additions to the design system.
-  </p>
-  <p>Two initiatives were started to accommodate this request.</p>
+  </Paragraph>
+  <Paragraph>
+    Two initiatives were started to accommodate this request.
+  </Paragraph>
   <HighlightCollection>
     <Highlight title="Changelogs" headingLevel="4">
       Public changelogs were added to the documentation site. The changelogs are
@@ -175,16 +180,16 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     </Highlight>
   </HighlightCollection>
   <Heading level="3">Improve review process</Heading>
-  <p>
+  <Paragraph>
     The interviews revealed it was unclear to designers how and when to get
     their wireframes and mockups reviewed by the design system team.
-  </p>
-  <p>
+  </Paragraph>
+  <Paragraph>
     I discussed different options with the designers, to see what suited their
     needs best. This collaborative effort resulted in a proposal for a new
     review session format. Key characteristics of this new format are described
     here.
-  </p>
+  </Paragraph>
   <HighlightCollection>
     <Highlight title="Multi-disciplinary feedback" headingLevel="4">
       At the new review sessions, not just members of the design system team
@@ -211,8 +216,12 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     </Highlight>
   </HighlightCollection>
   <Heading level="2" step="4">Presentation</Heading>
-  <p>The last step was to give a presentation to the designers.</p>
-  <p>This presentation served multiple purposes, highlighted here.</p>
+  <Paragraph>
+    The last step was to give a presentation to the designers.
+  </Paragraph>
+  <Paragraph>
+    This presentation served multiple purposes, highlighted here.
+  </Paragraph>
   <HighlightCollection>
     <Highlight title="Show appreciation">
       First of all, I wanted to thank the designers for their participation in

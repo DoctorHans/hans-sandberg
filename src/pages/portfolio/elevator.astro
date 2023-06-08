@@ -5,20 +5,21 @@ import HighlightCollection from "../../components/HighlightCollection.astro";
 import FeatureCollection from "../../components/FeatureCollection.astro";
 import Feature from "../../components/Feature.astro";
 import Heading from "../../components/Heading.astro";
+import Paragraph from "../../components/Paragraph.astro";
 ---
 
 <BaseLayout>
   <Heading level="1">Ideal Elevator Experience</Heading>
-  <p>
+  <Paragraph intro>
     I was once given the task to design the ideal elevator experience, as part
     of a job interview. In this case study, I walk you through my user-centered
     design process for tackling such design challenges.
-  </p>
+  </Paragraph>
   <Heading level="2" step="1">Research</Heading>
-  <p>
+  <Paragraph>
     My first step was to learn more about elevators and people’s experiences
     with them.
-  </p>
+  </Paragraph>
   <HighlightCollection>
     <Highlight title="Interview users">
       I interviewed 9 people about their experiences with elevators. They
@@ -40,10 +41,10 @@ import Heading from "../../components/Heading.astro";
     </Highlight>
   </HighlightCollection>
   <Heading level="2" step="2">Requirements & Constraints</Heading>
-  <p>
+  <Paragraph>
     I created extra requirements and constraints, to give the project a clearer
     focus.
-  </p>
+  </Paragraph>
   <HighlightCollection>
     <Highlight title="Client">
       My client is Mitsubishi, one of the world's largest elevator
@@ -66,19 +67,19 @@ import Heading from "../../components/Heading.astro";
     </Highlight>
   </HighlightCollection>
   <Heading level="2" step="3">Problem statement</Heading>
-  <p>
+  <Paragraph>
     I distilled my research, requirements and constraints into a concise problem
     statement.
-  </p>
+  </Paragraph>
   <blockquote>
     Improve the elevator experience of residents of 4 to 12 story luxury
     apartment buildings by reducing perceived waiting time.
   </blockquote>
   <Heading level="2" step="4">Use Research Insights</Heading>
-  <p>
+  <Paragraph>
     I used what I had learned about elevators and the psychology of waiting, to
     come up with various features that would reduce perceived waiting time.
-  </p>
+  </Paragraph>
   <HighlightCollection>
     <Highlight title="Speed">
       The elevator will travel up at 83 km/h (above which people get sick) and
@@ -126,17 +127,17 @@ import Heading from "../../components/Heading.astro";
     </Highlight>
   </HighlightCollection>
   <Heading level="2" step="5">Explore Visual UI Concepts</Heading>
-  <p>
+  <Paragraph>
     The elevator will also feature a visual UI. This UI will communicate the
     same information as the voice UI to sighted and hearing impaired residents.
     Perceived waiting time will be reduced, since the UI will explain why the
     elevator has not yet arrived at the current floor.
-  </p>
-  <p>
+  </Paragraph>
+  <Paragraph>
     I sketched various concepts to explore both what to show and how to show it.
     This made me more aware of the choices I had to make, such as the ones shown
     here.
-  </p>
+  </Paragraph>
   <HighlightCollection>
     <Highlight title="Orientation">
       Should the UI be vertical or horizontal? Vertical matches the elevator’s
@@ -156,10 +157,10 @@ import Heading from "../../components/Heading.astro";
     </Highlight>
   </HighlightCollection>
   <Heading level="2" step="6">Create Hi-Fi Mockups</Heading>
-  <p>
+  <Paragraph>
     I created various iterations of high-fidelity mockups, after having settled
     on only showing:
-  </p>
+  </Paragraph>
   <FeatureCollection>
     <Feature>The floor the user is on</Feature>
     <Feature>The floor the elevator is on</Feature>
@@ -167,31 +168,31 @@ import Heading from "../../components/Heading.astro";
     <Feature>The direction of the elevator</Feature>
   </FeatureCollection>
   <Heading level="2" step="7">User Tests and Iteration</Heading>
-  <p>
+  <Paragraph>
     I tested two high-fidelity mockups with users and iterated based on the test
     results.
-  </p>
+  </Paragraph>
   <h3>First round</h3>
-  <p>
+  <Paragraph>
     I showed the 2 concepts below to 3 participants. I asked them which floor
     the elevator was on, whether the elevator was going up or down, where the
     elevator was going to stop, and which floor they themselves were on. The top
     concept was easier to understand, but the elevator’s direction and
     participants’ floor were not clear to all.
-  </p>
+  </Paragraph>
   <h3>Second round</h3>
-  <p>
+  <Paragraph>
     To address these issues, I created the new concept shown below. I performed
     the same user test with 4 new participants. This time, the elevator’s
     direction was obvious to all participants. It was still not clear to
     everyone which floor they were on, though. A different visual indicator and
     a floor number sign next to the elevator might resolve this issue.
-  </p>
+  </Paragraph>
   <Heading level="2" step="8">Final Result</Heading>
-  <p>
+  <Paragraph>
     I combined the findings and insights from my research into the following
     recommended features:
-  </p>
+  </Paragraph>
   <FeatureCollection>
     <Feature>High speed elevator</Feature>
     <Feature>Semi-transparent mirrors</Feature>

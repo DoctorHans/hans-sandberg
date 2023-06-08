@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { Picture } from "@astrojs/image/components";
 import meImage from "../images/me.jpeg";
 import Heading from "../components/Heading.astro";
+import Paragraph from "../components/Paragraph.astro";
 ---
 
 <BaseLayout pageTitle="Home Page">
@@ -16,43 +17,43 @@ import Heading from "../components/Heading.astro";
     position="top"
     class="hero"
   />
-  <p>
+  <Paragraph intro>
     I’m a product designer working on a design system at <a
       href="https://www.pleo.io/">Pleo</a
     > in Copenhagen. Bridging the gap between design and development is what I do
     best and enjoy most.
-  </p>
-  <h2 id="about-me">About me</h2>
-  <p>
+  </Paragraph>
+  <Heading level="2" id="about-me">About me</Heading>
+  <Paragraph>
     I’ve been working as a designer for over ten years. I love to design and
     help build accessible, human-centered products.
-  </p>
-  <p>
+  </Paragraph>
+  <Paragraph>
     For the past four years, I've mainly worked on design systems. Before that,
     I worked on consumer and enterprise apps for desktop, web and mobile. My key
     skills are user-centered design, front-end development, and design systems.
-  </p>
-  <p>
+  </Paragraph>
+  <Paragraph>
     I’ve worked for UX research agencies and SaaS companies. I’m now at
     <a href="https://www.pleo.io/">Pleo</a>, where I'm part of the Design
     Systems Team.
-  </p>
-  <h2 id="experience">Experience</h2>
-  <h3>Pleo</h3>
-  <p>Senior DesignOps Designer</p>
-  <p>x months</p>
-  <p>June 2022 - Present</p>
+  </Paragraph>
+  <Heading level="2" id="experience">Experience</Heading>
+  <Heading level="3">Pleo</Heading>
+  <Paragraph>Senior DesignOps Designer</Paragraph>
+  <Paragraph>x months</Paragraph>
+  <Paragraph>June 2022 - Present</Paragraph>
   <ul>
     <li>Design system stuff</li>
     <li>DesignOps stuff</li>
     <li>Other stuff</li>
   </ul>
-  <p><a href="https://www.pleo.io/">Pleo</a></p>
-  <p>Copenhagen, Denmark</p>
+  <Paragraph><a href="https://www.pleo.io/">Pleo</a></Paragraph>
+  <Paragraph>Copenhagen, Denmark</Paragraph>
   <h3>Siteimprove</h3>
-  <p>Senior UX Designer</p>
-  <p>4 years, 7 months</p>
-  <p>December 2017 - June 2022</p>
+  <Paragraph>Senior UX Designer</Paragraph>
+  <Paragraph>4 years, 7 months</Paragraph>
+  <Paragraph>December 2017 - June 2022</Paragraph>
   <ul>
     <li>
       Helped build a design system for an R&D department with 100+ members.
@@ -68,12 +69,12 @@ import Heading from "../components/Heading.astro";
       accessibility experts.
     </li>
   </ul>
-  <p><a href="https://www.siteimprove.com">Siteimprove</a></p>
-  <p>Copenhagen, Denmark</p>
+  <Paragraph><a href="https://www.siteimprove.com">Siteimprove</a></Paragraph>
+  <Paragraph>Copenhagen, Denmark</Paragraph>
   <h3>DSW Zorgverzekeraar</h3>
-  <p>UX Designer</p>
-  <p>3 years</p>
-  <p>July 2014 - June 2017</p>
+  <Paragraph>UX Designer</Paragraph>
+  <Paragraph>3 years</Paragraph>
+  <Paragraph>July 2014 - June 2017</Paragraph>
   <ul>
     <li>
       Created wireframes, mockups and prototypes for customer-facing websites
@@ -82,14 +83,14 @@ import Heading from "../components/Heading.astro";
     <li>Implemented website designs using Bootstrap, HTML and CSS.</li>
     <li>Conducted usability tests, expert reviews and a top task analysis.</li>
   </ul>
-  <p>
+  <Paragraph>
     <a href="https://www.dsw.nl/Consumenten">DSW Zorgverzekeraar</a>
-  </p>
-  <p>Schiedam, Netherlands</p>
-  <h3>Netmarketing</h3>
-  <p>UX Researcher</p>
-  <p>5 months</p>
-  <p>October 2013 - February 2014</p>
+  </Paragraph>
+  <Paragraph>Schiedam, Netherlands</Paragraph>
+  <Heading level="3">Netmarketing</Heading>
+  <Paragraph>UX Researcher</Paragraph>
+  <Paragraph>5 months</Paragraph>
+  <Paragraph>October 2013 - February 2014</Paragraph>
   <ul>
     <li>
       Wrote test scripts, coordinated participant recruitment, moderated
@@ -101,11 +102,11 @@ import Heading from "../components/Heading.astro";
       public transport, pension funds, and online classified ads.
     </li>
   </ul>
-  <p>Rotterdam, Netherlands</p>
-  <h3>Perceptive Software</h3>
-  <p>UX Designer</p>
-  <p>1 year</p>
-  <p>October 2012 - October 2013 (1 year)</p>
+  <Paragraph>Rotterdam, Netherlands</Paragraph>
+  <Heading level="3">Perceptive Software</Heading>
+  <Paragraph>UX Designer</Paragraph>
+  <Paragraph>1 year</Paragraph>
+  <Paragraph>October 2012 - October 2013 (1 year)</Paragraph>
   <ul>
     <li>
       Created wireframes, mockups and prototypes for enterprise desktop and web
@@ -116,17 +117,17 @@ import Heading from "../components/Heading.astro";
       business stakeholders and other UX designers.
     </li>
   </ul>
-  <p>
+  <Paragraph>
     <a href="https://en.wikipedia.org/wiki/Perceptive_Software">
       Perceptive Software
     </a>
     (now <a href="https://www.hyland.com/en">Hyland</a>)
-  </p>
-  <p>Apeldoorn, Netherlands</p>
-  <h3>Perceptive Software</h3>
-  <p>UX Design Intern</p>
-  <p>8 months</p>
-  <p>February 2012 - September 2012</p>
+  </Paragraph>
+  <Paragraph>Apeldoorn, Netherlands</Paragraph>
+  <Heading level="3">Perceptive Software</Heading>
+  <Paragraph>UX Design Intern</Paragraph>
+  <Paragraph>8 months</Paragraph>
+  <Paragraph>February 2012 - September 2012</Paragraph>
   <ul>
     <li>
       Conducted contextual inquiries, stakeholder interviews and a heuristic
@@ -137,17 +138,17 @@ import Heading from "../components/Heading.astro";
       descriptions, and recommendations accompanied by illustrative mockups.
     </li>
   </ul>
-  <p>
+  <Paragraph>
     <a href="https://en.wikipedia.org/wiki/Perceptive_Software">
       Perceptive Software
     </a>
     (now <a href="https://www.hyland.com/en">Hyland</a>)
-  </p>
-  <p>Apeldoorn, Netherlands</p>
-  <h3>Valsplat</h3>
-  <p>UX Research Intern</p>
-  <p>6 months</p>
-  <p>March 2012 - August 2010</p>
+  </Paragraph>
+  <Paragraph>Apeldoorn, Netherlands</Paragraph>
+  <Heading level="3">Valsplat</Heading>
+  <Paragraph>UX Research Intern</Paragraph>
+  <Paragraph>6 months</Paragraph>
+  <Paragraph>March 2012 - August 2010</Paragraph>
   <ul>
     <li>
       Recruited participants, wrote test scripts, moderated usability tests,
@@ -160,35 +161,39 @@ import Heading from "../components/Heading.astro";
       Airlines.
     </li>
   </ul>
-  <p><a href="https://valsplat.nl">Valsplat</a></p>
-  <p>Amsterdam, Netherlands</p>
-  <h2 id="portfolio">Portfolio</h2>
-  <h3>
+  <Paragraph><a href="https://valsplat.nl">Valsplat</a></Paragraph>
+  <Paragraph>Amsterdam, Netherlands</Paragraph>
+  <Heading level="2" id="portfolio">Portfolio</Heading>
+  <Heading level="3">
     <a href="/portfolio/design-system-ux">Improving a design system's UX</a>
-  </h3>
-  <p>
+  </Heading>
+  <Paragraph>
     The goal of this project was to evaluate and improve the UX of the design
     system I was working on. Here, I describe the steps I took to improve the
     experience for one of the design system’s main user groups: designers.
-  </p>
-  <h3><a href="/portfolio/figma">Moving a design system to Figma</a></h3>
-  <p>
+  </Paragraph>
+  <Heading level="3">
+    <a href="/portfolio/figma">Moving a design system to Figma</a>
+  </Heading>
+  <Paragraph>
     This case study describes how I moved a design system from Sketch to Figma.
     Specifically, how I convinced management to approve the switch, created a
     new UI kit from scratch, and onboarded a team of designers.
-  </p>
-  <h3><a href="/portfolio/elevator">Ideal Elevator Experience</a></h3>
-  <p>
+  </Paragraph>
+  <Heading level="3">
+    <a href="/portfolio/elevator">Ideal Elevator Experience</a>
+  </Heading>
+  <Paragraph>
     I was once given the task to design the ideal elevator experience, as part
     of a job interview. In this case study, I walk you through my user-centered
     design process for tackling such design challenges.
-  </p>
-  <h2 id="contact">Contact</h2>
-  <h3>Email</h3>
-  <p>sandberg.hans@gmail.com</p>
+  </Paragraph>
+  <Heading level="2" id="contact">Contact</Heading>
+  <Heading level="3">Email</Heading>
+  <Paragraph>sandberg.hans@gmail.com</Paragraph>
   <button>Copy email address</button>
   <a href="mailto:sandberg.hans@gmail.com">Compose email</a>
-  <h3>LinkedIn</h3>
-  <p>@hans-sandberg</p>
+  <Heading level="3">LinkedIn</Heading>
+  <Paragraph>@hans-sandberg</Paragraph>
   <a href="mailto:sandberg.hans@gmail.com">Visit LinkedIn profile</a>
 </BaseLayout>
