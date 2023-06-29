@@ -3,35 +3,23 @@ import "../styles/global.css";
 ---
 
 <footer class="u-container">
-  <div class="divider"></div>
-  <div class="links-wrapper">
-    <a href="mailto:sandberg.hans@gmail.com">Email</a>
-    <a href="https://www.linkedin.com/in/hans-sandberg/">LinkedIn</a>
+  <div class="wrapper">
+    <p>© 2023 Hans Sandberg</p>
     <a href="#">Back to top</a>
   </div>
-  <p>© 2023 Hans Sandberg</p>
 </footer>
 
 <style>
-  footer {
+  .wrapper {
     --flow-space: 0;
-    padding-block: var(--space-s);
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-xs);
     color: var(--color-text-subtle);
-  }
-
-  .divider {
+    font-size: var(--step--1);
+    padding-block: var(--space-s);
     border-top: 1px solid var(--color-border-subtle);
-  }
-
-  .links-wrapper {
     display: flex;
     gap: var(--space-2xs);
-  }
-
-  .links-wrapper a:last-of-type {
-    margin-inline-start: auto;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
   }
 </style>
