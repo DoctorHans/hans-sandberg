@@ -20,7 +20,7 @@ import "../styles/global.css";
         <a href="/">Home</a>
       </li>
       <li>
-        <a href="about">About me</a>
+        <a href="about">About</a>
       </li>
       <li>
         <a href="experience">Experience</a>
@@ -42,7 +42,6 @@ import "../styles/global.css";
     padding-block: var(--space-s);
     display: flex;
     justify-content: flex-end;
-    border-bottom: 1px solid var(--color-border);
     background-color: var(--color-background);
   }
 
@@ -66,7 +65,7 @@ import "../styles/global.css";
     position: var(--nav-list-position, fixed);
     inset-block-start: 0;
     inset-inline-end: 0;
-    width: var(--nav-list-width, min(22rem, 100vw));
+    width: var(--nav-list-width, 100vw);
     visibility: var(--nav-list-visibility, visible);
     transition: transform 0.25s ease-in-out, visibility 0.25s;
 
@@ -118,13 +117,6 @@ import "../styles/global.css";
 
   // Toggle aria-expanded attribute when button is clicked
   mobileButton?.addEventListener("click", toggleMobileButton);
-
-  // Toggle aria-expanded attribute when link is clicked
-  nav?.addEventListener("click", (e) => {
-    if ((e.target as HTMLElement).tagName.toLowerCase() === "a") {
-      toggleMobileButton();
-    }
-  });
 
   // Hide list on keydown Escape
   nav?.addEventListener("keyup", (e) => {
