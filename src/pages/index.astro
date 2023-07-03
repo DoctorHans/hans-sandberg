@@ -4,11 +4,13 @@ import { Picture } from "@astrojs/image/components";
 import meImage from "../images/me.jpeg";
 import Heading from "../components/Heading.astro";
 import Paragraph from "../components/Paragraph.astro";
+import BlockLink from "../components/BlockLink.astro";
+import BlockLinkCollection from "../components/BlockLinkCollection.astro";
 ---
 
 <BaseLayout pageTitle="Home Page">
   <Heading level={"1"}>Hello, I’m Hans.</Heading>
-  <Picture
+  <!-- <Picture
     src={meImage}
     widths={[760, 1520, 2280]}
     aspectRatio="3:2"
@@ -16,11 +18,33 @@ import Paragraph from "../components/Paragraph.astro";
     alt="Me sitting at a table outdoors, smiling and looking directly at the camera"
     position="top"
     class="hero"
-  />
+  /> -->
   <Paragraph intro>
     I’m a product designer working on a design system at <a
       href="https://www.pleo.io/">Pleo</a
     > in Copenhagen. Building bridges between design and development is what I do
     best and enjoy most.
   </Paragraph>
+  <BlockLinkCollection>
+    <BlockLink
+      title="About"
+      subTitle="Get to know me a bit better"
+      url="about"
+    />
+    <BlockLink
+      title="Experience"
+      subTitle="Learn about where I’ve worked and what I’ve worked on"
+      url="experience"
+    />
+    <BlockLink
+      title="Portfolio"
+      subTitle="Get a feel for how I tackle design challenges"
+      url="portfolio"
+    />
+    <BlockLink
+      title="Contact"
+      subTitle="Find out how to get in touch"
+      url="contact"
+    />
+  </BlockLinkCollection>
 </BaseLayout>

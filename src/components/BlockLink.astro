@@ -1,0 +1,84 @@
+---
+import "../styles/global.css";
+import Heading from "./Heading.astro";
+
+interface Props {
+  title: string;
+  subTitle: string;
+  url: string;
+}
+const { title = "Title", subTitle = "Subtitle", url } = Astro.props;
+---
+
+<li>
+  <article>
+    <div class="wrapper">
+      <Heading level="2"><a href={url}>{title}</a></Heading>
+      <svg
+        width="36"
+        height="36"
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        class="feather feather-arrow-right"
+        viewBox="0 0 24 24"
+      >
+        <path d="M5 12h14M12 5l7 7-7 7"></path>
+      </svg>
+    </div>
+    <p>{subTitle}</p>
+  </article>
+</li>
+
+<style lang="scss">
+  article {
+    --flow-space: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xs);
+    padding-block: var(--space-m);
+    border-bottom: 1px solid var(--color-border-subtle);
+    position: relative;
+    transition: border-color 0.2s;
+
+    &:hover {
+      border-color: var(--color-border);
+      border-top-width: 2px;
+
+      .feather-arrow-right {
+        color: var(--color-content);
+        transform: translateX(-25%);
+      }
+    }
+  }
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  a::before {
+    content: "";
+    display: block;
+    inset: 0;
+    position: absolute;
+  }
+
+  p {
+    color: var(--color-content-subtle);
+  }
+
+  .feather-arrow-right {
+    color: var(--color-content-subtle);
+    width: var(--step-3);
+    height: var(--step-3);
+    transition: color, transform 0.2s;
+  }
+</style>
