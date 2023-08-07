@@ -5,14 +5,14 @@ import "../styles/global.css";
 <header>
   <nav id="nav">
     <button
-      id="mobile-menu-button"
+      id="nav-toggle"
       type="button"
       aria-expanded="false"
       aria-label="Menu"
       aria-controls="nav"
     >
       <svg width="24" height="24" aria-hidden="true">
-        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"> </path>
+        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
       </svg>
     </button>
     <ul role="list">
@@ -68,6 +68,7 @@ import "../styles/global.css";
     width: var(--nav-list-width, 100vw);
     visibility: var(--nav-list-visibility, visible);
     transition: transform 0.25s ease-in-out, visibility 0.25s;
+    z-index: var(--nav-list-z-index, 1);
 
     @media (min-width: 48rem) {
       --nav-list-layout: row;
@@ -78,6 +79,7 @@ import "../styles/global.css";
       --nav-list-shadow: none;
       --nav-list-transform: none;
       --nav-list-visibility: visible;
+      --nav-list-z-index: reset;
     }
 
     [aria-expanded="false"] + & {
@@ -90,7 +92,7 @@ import "../styles/global.css";
     all: unset;
     display: var(--nav-button-display, flex);
     position: relative;
-    z-index: 1;
+    z-index: 2;
     cursor: pointer;
   }
 
@@ -105,23 +107,57 @@ import "../styles/global.css";
 
 <script>
   const nav: HTMLElement | null = document.querySelector("#nav");
-  const mobileButton: HTMLElement | null = document.querySelector(
-    "#mobile-menu-button"
-  );
+  const navToggle: HTMLElement | null = document.querySelector("#nav-toggle");
+  let isNavVisible = navToggle?.getAttribute("aria-expanded") === "true";
 
   // Toggle aria-expanded attribute
-  function toggleMobileButton() {
-    const isOpen = mobileButton?.getAttribute("aria-expanded") === "false";
-    mobileButton?.setAttribute("aria-expanded", String(isOpen));
+  function toggleNavVisibility() {
+    isNavVisible = !isNavVisible;
+    navToggle?.setAttribute("aria-expanded", String(isNavVisible));
+    isNavVisible
+      ? nav?.addEventListener("keydown", trapFocus)
+      : nav?.removeEventListener("keydown", trapFocus);
   }
 
   // Toggle aria-expanded attribute when button is clicked
-  mobileButton?.addEventListener("click", toggleMobileButton);
+  navToggle?.addEventListener("click", toggleNavVisibility);
 
-  // Hide list on keydown Escape
+  // Hide navigation when Escape is pressed
   nav?.addEventListener("keyup", (e) => {
     if (e.code === "Escape") {
-      mobileButton?.setAttribute("aria-expanded", "false");
+      navToggle?.setAttribute("aria-expanded", "false");
+      // Return focus to nav toggle
+      navToggle?.focus();
+      // Remove event listener for focus trap
+      nav?.removeEventListener("keydown", trapFocus);
     }
   });
+
+  // Trap focus
+  const focusableElements: Array<HTMLAnchorElement | HTMLButtonElement> =
+    nav?.querySelectorAll("a, button") as any;
+  const firstFocusableElement: HTMLAnchorElement | HTMLButtonElement =
+    focusableElements?.[0];
+  const lastFocusableElement: HTMLAnchorElement | HTMLButtonElement =
+    focusableElements?.[focusableElements.length - 1];
+
+  function trapFocus(e: KeyboardEvent) {
+    var isTabPressed = e.code === "Tab";
+
+    if (!isTabPressed) {
+      return;
+    }
+
+    /* shift + tab */ if (e.shiftKey) {
+      if (document.activeElement === firstFocusableElement) {
+        lastFocusableElement?.focus();
+        e.preventDefault();
+      }
+    } /* tab */ else {
+      if (document.activeElement === lastFocusableElement) {
+        firstFocusableElement?.focus();
+        e.preventDefault();
+      }
+    }
+  }
 </script>
