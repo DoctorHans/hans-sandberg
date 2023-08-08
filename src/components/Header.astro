@@ -102,6 +102,9 @@ import "../styles/global.css";
     &:hover {
       color: var(--color-content);
     }
+    &[aria-current="page"] {
+      font-weight: var(--font-weight-bold);
+    }
   }
 </style>
 
@@ -160,4 +163,11 @@ import "../styles/global.css";
       }
     }
   }
+
+  // Indicate active page to screen readers
+  nav?.querySelectorAll("a").forEach((link) => {
+    if (link.href === window.location.href) {
+      link.setAttribute("aria-current", "page");
+    }
+  });
 </script>
