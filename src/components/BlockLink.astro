@@ -52,6 +52,16 @@ const { title = "Title", subTitle = "Subtitle", url } = Astro.props;
         transform: translateX(-25%);
       }
     }
+
+    &:active {
+      .feather-arrow-right {
+        transform: revert;
+      }
+    }
+
+    &:focus-within {
+      outline: 2px solid var(--color-focusring);
+    }
   }
 
   .wrapper {
@@ -62,6 +72,9 @@ const { title = "Title", subTitle = "Subtitle", url } = Astro.props;
 
   a {
     text-decoration: none;
+    &:focus {
+      outline: none;
+    }
   }
 
   a::before {
