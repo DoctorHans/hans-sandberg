@@ -1,33 +1,27 @@
 ---
+import BlockLink from "../components/BlockLink.astro";
+import BlockLinkCollection from "../components/BlockLinkCollection.astro";
 import Heading from "../components/Heading.astro";
-import Paragraph from "../components/Paragraph.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout>
   <Heading level="1" id="portfolio">Portfolio</Heading>
-  <Heading level="2">
-    <a href="/portfolio/design-system-ux">Improving a design system's UX</a>
-  </Heading>
-  <Paragraph>
-    The goal of this project was to evaluate and improve the UX of the design
-    system I was working on. Here, I describe the steps I took to improve the
-    experience for one of the design system’s main user groups: designers.
-  </Paragraph>
-  <Heading level="2">
-    <a href="/portfolio/figma">Moving a design system to Figma</a>
-  </Heading>
-  <Paragraph>
-    This case study describes how I moved a design system from Sketch to Figma.
-    Specifically, how I convinced management to approve the switch, created a
-    new UI kit from scratch, and onboarded a team of designers.
-  </Paragraph>
-  <Heading level="2">
-    <a href="/portfolio/elevator">Ideal Elevator Experience</a>
-  </Heading>
-  <Paragraph>
-    I was once given the task to design the ideal elevator experience, as part
-    of a job interview. In this case study, I walk you through my user-centered
-    design process for tackling such design challenges.
-  </Paragraph>
+  <BlockLinkCollection>
+    <BlockLink
+      title="Improving a design system's UX"
+      subTitle="The goal of this project was to evaluate and improve the UX of the design system I was working on. Here, I describe the steps I took to improve the experience for one of the design system’s main user groups: designers."
+      url="/portfolio/design-system-ux"
+    />
+    <BlockLink
+      title="Moving a design system to Figma"
+      subTitle="This case study describes how I moved a design system from Sketch to Figma. Specifically, how I convinced managament to approve the switch, created a new UI kit from scratch, and onboarded a team of designers."
+      url="/portfolio/design-system-ux"
+    />
+    <BlockLink
+      title="Ideal Elevator Experience"
+      subTitle="I was once given the task to design the ideal elevator experience, as part of a job interview. In this case study, I walk you through my user-centered design process for tackling such design challenges."
+      url="/portfolio/elevator"
+    />
+  </BlockLinkCollection>
 </BaseLayout>
