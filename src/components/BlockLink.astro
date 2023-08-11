@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import Heading from "./Heading.astro";
+import Paragraph from "./Paragraph.astro";
 
 interface Props {
   title: string;
@@ -28,7 +29,7 @@ const { title = "Title", subTitle = "Subtitle", url } = Astro.props;
         <path d="M5 12h14M12 5l7 7-7 7"></path>
       </svg>
     </div>
-    <p>{subTitle}</p>
+    <Paragraph subtle>{subTitle}</Paragraph>
   </article>
 </li>
 
@@ -68,6 +69,7 @@ const { title = "Title", subTitle = "Subtitle", url } = Astro.props;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: var(--space-m);
   }
 
   a {
@@ -93,5 +95,6 @@ const { title = "Title", subTitle = "Subtitle", url } = Astro.props;
     width: var(--step-3);
     height: var(--step-3);
     transition: color, transform 0.2s;
+    flex-shrink: 0;
   }
 </style>
