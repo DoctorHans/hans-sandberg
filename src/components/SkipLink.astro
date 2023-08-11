@@ -1,0 +1,26 @@
+---
+import "../styles/global.css";
+---
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<style lang="scss">
+  .skip-link {
+    position: absolute;
+    display: block;
+    background-color: var(--color-content);
+    padding-inline: var(--space-xs);
+    padding-block: var(--space-s);
+    border-radius: 0 0 0.5rem 0.5rem;
+    left: var(--grid-gutter);
+    top: 0;
+    text-decoration: none;
+    color: var(--color-background);
+    transform: translateY(calc(-100% - var(--space-s)));
+    transition: transform ease-out 200ms;
+    &:focus {
+      transform: translateY(0%);
+      outline-offset: 0;
+    }
+  }
+</style>
