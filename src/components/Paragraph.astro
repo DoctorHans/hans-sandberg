@@ -2,11 +2,12 @@
 import "../styles/global.css";
 interface Props {
   intro?: boolean;
+  subtle?: boolean;
 }
-const { intro } = Astro.props;
+const { intro, subtle } = Astro.props;
 ---
 
-<p class:list={[{ intro: intro }]}><slot /></p>
+<p class:list={[{ intro: intro, subtle: subtle }]}><slot /></p>
 
 <style>
   p {
@@ -17,5 +18,8 @@ const { intro } = Astro.props;
     font-size: var(--step-1);
     color: var(--color-content-subtle);
     max-width: 40ch;
+  }
+  .subtle {
+    color: var(--color-content-subtle);
   }
 </style>
