@@ -1,25 +1,37 @@
 ---
+import type { HTMLAttributes } from "astro/types";
 import "../styles/global.css";
-interface Props {
+interface Props extends HTMLAttributes<"p"> {
   intro?: boolean;
-  subtle?: boolean;
+  color?: "regular" | "subtle" | "loud";
+  weight?: "regular" | "semibold" | "bold";
+  size?: "-2" | "-1" | "0" | "1" | "2" | "3" | "4" | "5";
 }
-const { intro, subtle } = Astro.props;
+const {
+  intro,
+  color = "regular",
+  weight = "regular",
+  size = "0",
+  ...rest
+} = Astro.props;
+
+const textColor = `var(--color-content-${color})`;
+const fontWeight = `var(--font-weight-${weight})`;
+const fontSize = `var(--step-${size})`;
 ---
 
-<p class:list={[{ intro: intro, subtle: subtle }]}><slot /></p>
+<p class:list={[{ intro: intro }]} {...rest}><slot /></p>
 
-<style>
+<style define:vars={{ textColor, fontWeight, fontSize }}>
   p {
-    font-size: var(--step-0);
+    font-size: var(--fontSize);
+    color: var(--textColor);
+    font-weight: var(--fontWeight);
     max-width: 50ch;
   }
   .intro {
     font-size: var(--step-1);
     color: var(--color-content-subtle);
     max-width: 40ch;
-  }
-  .subtle {
-    color: var(--color-content-subtle);
   }
 </style>
