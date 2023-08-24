@@ -29,7 +29,7 @@ const { title = "Title", subTitle = "Subtitle", url } = Astro.props;
         <path d="M5 12h14M12 5l7 7-7 7"></path>
       </svg>
     </div>
-    <Paragraph subtle>{subTitle}</Paragraph>
+    <Paragraph color="subtle">{subTitle}</Paragraph>
   </article>
 </li>
 
@@ -49,7 +49,7 @@ const { title = "Title", subTitle = "Subtitle", url } = Astro.props;
       border-top-width: 2px;
 
       .feather-arrow-right {
-        color: var(--color-content);
+        color: var(--color-content-regular);
         transform: translateX(-25%);
       }
     }

@@ -129,17 +129,19 @@ h6 {
 :root {
   --system-ui: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  --neutral-900: oklch(0% 0 0);
-  --neutral-800: oklch(11% 0 137.33);
-  --neutral-700: oklch(22% 0 137.33);
-  --neutral-600: oklch(33.5% 0 137.33);
-  --neutral-500: oklch(44.5% 0 137.33);
-  --neutral-400: oklch(55.5% 0 137.33);
-  --neutral-300: oklch(66.5% 0 137.33);
-  --neutral-200: oklch(78% 0 137.33);
-  --neutral-100: oklch(89% 0 137.33);
-  --neutral-0: oklch(100% 0 137.33);
-  --color-content: var(--neutral-600);
+  --hue: 0;
+  --chroma: 0%;
+  --neutral-900: oklch(0% var(--chroma) var(--hue));
+  --neutral-800: oklch(11% var(--chroma) var(--hue));
+  --neutral-700: oklch(22% var(--chroma) var(--hue));
+  --neutral-600: oklch(33.5% var(--chroma) var(--hue));
+  --neutral-500: oklch(44.5% var(--chroma) var(--hue));
+  --neutral-400: oklch(55.5% var(--chroma) var(--hue));
+  --neutral-300: oklch(66.5% var(--chroma) var(--hue));
+  --neutral-200: oklch(78% var(--chroma) var(--hue));
+  --neutral-100: oklch(89% var(--chroma) var(--hue));
+  --neutral-0: oklch(100% var(--chroma) var(--hue));
+  --color-content-regular: var(--neutral-600);
   --color-content-subtle: var(--neutral-400);
   --color-content-loud: var(--neutral-800);
   --color-background: var(--neutral-0);
@@ -155,7 +157,7 @@ h6 {
 body {
   font-family: var(--system-ui);
   font-size: var(--step-0);
-  color: var(--color-content);
+  color: var(--color-content-regular);
   background: var(--color-background);
   margin-top: 0; /* TO DO: REMOVE */
 }
