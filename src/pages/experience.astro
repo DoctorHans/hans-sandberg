@@ -2,20 +2,25 @@
 import Heading from "../components/Heading.astro";
 import Paragraph from "../components/Paragraph.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import ExperienceItem from "../components/ExperienceItem.astro";
 ---
 
 <BaseLayout>
   <Heading level="1" id="experience">Experience</Heading>
+  <ExperienceItem />
   <Heading level="2">Pleo</Heading>
-  <Paragraph>Senior DesignOps Designer</Paragraph>
-  <Paragraph>x months</Paragraph>
+  <Paragraph color="loud">Senior DesignOps Designer</Paragraph>
+  <Paragraph color="subtle" size="-2" weight="bold">x months</Paragraph>
   <Paragraph>June 2022 - Present</Paragraph>
   <ul>
     <li>Design system stuff</li>
     <li>DesignOps stuff</li>
     <li>Other stuff</li>
   </ul>
-  <Paragraph><a href="https://www.pleo.io/">Pleo</a></Paragraph>
+  <Paragraph><a href="
+    https:
+    www.pleo.io
+    "> Pleo</a></Paragraph>
   <Paragraph>Copenhagen, Denmark</Paragraph>
   <h3>Siteimprove</h3>
   <Paragraph>Senior UX Designer</Paragraph>
