@@ -1,68 +1,64 @@
 ---
 import "../styles/global.css";
+import Heading from "./Heading.astro";
 import Paragraph from "./Paragraph.astro";
+
+interface Props {
+  title: string;
+  org: string;
+  orgLink: string;
+  location: string;
+  duration: string;
+  dateRange: string;
+}
+
+const { title, org, orgLink, location, duration, dateRange } = Astro.props;
 ---
 
-<div class="wrapper">
+<article class="wrapper">
+  <div class="what">
+    <h2 id="title">{title}</h2>
+  </div>
   <div class="where">
     <Paragraph color="loud" weight="semibold">
-      Senior UX Designer @ Siteimprove
+      <a href=`${orgLink}`>{org}</a>
     </Paragraph>
-    <Paragraph color="subtle">Copenhagen, Denmark</Paragraph>
+    <Paragraph color="subtle">{location}</Paragraph>
   </div>
   <div class="when">
-    <Paragraph color="loud" weight="semibold">4 years, 7 months</Paragraph>
-    <Paragraph color="subtle">December 2017 - June 2022</Paragraph>
+    <Paragraph color="loud" weight="semibold">{duration}</Paragraph>
+    <Paragraph color="subtle">{dateRange}</Paragraph>
   </div>
-  <div class="what">
-    <ul>
-      <li>
-        Helped build a design system for an R&D department with 100+ members.
-        Designed and helped code accessible UI components, wrote UX guidelines
-        and created a UI kit in Figma.
-      </li>
-      <li>
-        Designed various features for a data-heavy enterprise web application,
-        such as a dashboard, account settings and recurring reports.
-      </li>
-      <li>
-        Worked with developers, product owners, UX designers, UX writers, and
-        accessibility experts.
-      </li>
-    </ul>
-  </div>
-</div>
+</article>
 
 <style lang="scss">
   .wrapper {
     --flow-space: 0;
     display: grid;
-    grid-template-areas: "topleft topright" "bottomleft bottomright";
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: var(--space-m) var(--space-xl);
+    border-block-end: 1px solid var(--color-border-subtle);
+    padding-block: var(--space-m);
   }
 
-  ul {
-    padding-inline-start: 0;
-    list-style: circle;
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-2xs);
+  #title {
+    color: var(--color-content-loud);
+    font-size: var(--step-0);
+    font-weight: var(--font-weight-semibold);
   }
 
   .where {
-    grid-area: topright;
     display: flex;
     flex-direction: column;
     gap: var(--space-3xs);
   }
+
   .when {
-    grid-area: topleft;
     display: flex;
     flex-direction: column;
     gap: var(--space-3xs);
   }
+
   .what {
-    grid-area: bottomright;
   }
 </style>
