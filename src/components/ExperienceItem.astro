@@ -15,28 +15,35 @@ interface Props {
 const { title, org, orgLink, location, duration, dateRange } = Astro.props;
 ---
 
-<article class="wrapper">
-  <div class="what">
-    <h2 id="title">{title}</h2>
-  </div>
-  <div class="where">
-    <Paragraph color="loud" weight="semibold">
-      <a href=`${orgLink}`>{org}</a>
-    </Paragraph>
-    <Paragraph color="subtle">{location}</Paragraph>
-  </div>
-  <div class="when">
-    <Paragraph color="loud" weight="semibold">{duration}</Paragraph>
-    <Paragraph color="subtle">{dateRange}</Paragraph>
-  </div>
-</article>
+<div class="container">
+  <article>
+    <div class="what">
+      <h2 id="title">{title}</h2>
+    </div>
+    <div class="where">
+      <Paragraph color="loud">
+        <a href=`${orgLink}`>{org}</a>
+      </Paragraph>
+      <Paragraph color="subtle">{location}</Paragraph>
+    </div>
+    <div class="when">
+      <Paragraph color="loud">{duration}</Paragraph>
+      <Paragraph color="subtle">{dateRange}</Paragraph>
+    </div>
+    <div class="details"><slot /></div>
+  </article>
+</div>
 
 <style lang="scss">
-  .wrapper {
+  .container {
+    container: my-container / inline-size;
+  }
+
+  article {
     --flow-space: 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: var(--space-m) var(--space-xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
     border-block-end: 1px solid var(--color-border-subtle);
     padding-block: var(--space-m);
   }
@@ -44,21 +51,34 @@ const { title, org, orgLink, location, duration, dateRange } = Astro.props;
   #title {
     color: var(--color-content-loud);
     font-size: var(--step-0);
-    font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-bold);
   }
 
-  .where {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-3xs);
-  }
-
+  .where,
   .when {
     display: flex;
-    flex-direction: column;
-    gap: var(--space-3xs);
+    flex-direction: row;
+    justify-content: space-between;
+    gap: var(--space-m);
   }
 
-  .what {
+  .details {
+    display: none;
+  }
+
+  @container my-container (min-width: 50ch) {
+    article {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: var(--space-m) var(--space-xl);
+    }
+
+    .where,
+    .when {
+      display: flex;
+      flex-direction: column;
+      justify-content: revert;
+      gap: var(--space-3xs);
+    }
   }
 </style>
