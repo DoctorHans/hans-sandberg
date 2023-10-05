@@ -1,0 +1,28 @@
+---
+
+---
+
+<button class="disclosure-button" aria-expanded="false">Details</button>
+<div hidden="true"><slot /></div>
+
+<script>
+    const disclosureButtons = document.querySelectorAll(".disclosure-button");
+
+    disclosureButtons.forEach((disclosureButton, idx) => {
+        const content: Element | null = disclosureButton.nextElementSibling;
+        content?.setAttribute("id", `content-${idx + 1}`);
+        disclosureButton.setAttribute("aria-controls", `content-${idx + 1}`);
+
+        function toggleDisclosure() {
+            if (disclosureButton.getAttribute("aria-expanded") === "false") {
+                disclosureButton.setAttribute("aria-expanded", "true");
+                content?.removeAttribute("hidden");
+            } else {
+                disclosureButton.setAttribute("aria-expanded", "false");
+                content?.setAttribute("hidden", "");
+            }
+        }
+
+        disclosureButton.addEventListener("click", toggleDisclosure);
+    });
+</script>
