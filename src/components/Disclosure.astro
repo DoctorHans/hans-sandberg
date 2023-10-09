@@ -1,9 +1,47 @@
 ---
-
+import "../styles/global.css";
 ---
 
-<button class="disclosure-button" aria-expanded="false">Details</button>
+<button class="disclosure-button" aria-expanded="false"
+    >Details<svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="36"
+        height="36"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="feather feather-chevron-right"
+        ><polyline points="9 18 15 12 9 6"></polyline></svg
+    ></button
+>
 <div hidden="true"><slot /></div>
+
+<style lang="scss">
+    .disclosure-button {
+        all: unset;
+        display: flex;
+        gap: var(--space-3xs);
+        align-items: center;
+        color: var(--color-content-subtle);
+        cursor: pointer;
+    }
+
+    .disclosure-button[aria-expanded="true"] {
+        svg {
+            transform: rotate(90deg);
+        }
+    }
+
+    .feather-chevron-right {
+        width: var(--step-1);
+        height: var(--step-1);
+        flex-shrink: 0;
+        transition: transform 0.2s;
+    }
+</style>
 
 <script>
     const disclosureButtons = document.querySelectorAll(".disclosure-button");

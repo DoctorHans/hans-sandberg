@@ -1,6 +1,6 @@
 ---
 import "../styles/global.css";
-import Heading from "./Heading.astro";
+import Disclosure from "./Disclosure.astro";
 import Paragraph from "./Paragraph.astro";
 
 interface Props {
@@ -30,7 +30,7 @@ const { title, org, orgLink, location, duration, dateRange } = Astro.props;
       <Paragraph color="loud">{duration}</Paragraph>
       <Paragraph color="subtle">{dateRange}</Paragraph>
     </div>
-    <div class="details"><slot /></div>
+    <Disclosure><slot /></Disclosure>
   </article>
 </div>
 
@@ -60,10 +60,6 @@ const { title, org, orgLink, location, duration, dateRange } = Astro.props;
     flex-direction: row;
     justify-content: space-between;
     gap: var(--space-m);
-  }
-
-  .details {
-    display: none;
   }
 
   @container my-container (min-width: 50ch) {
