@@ -1,9 +1,17 @@
 ---
 import "../styles/global.css";
+
+interface Props {
+    label: string;
+}
+
+const { label } = Astro.props;
 ---
 
 <button class="disclosure-button" aria-expanded="false"
-    >Details<svg
+    ><span class="visible-label" aria-hidden="true">Details</span><span
+        class="sr-only">{label}</span
+    ><svg
         xmlns="http://www.w3.org/2000/svg"
         width="36"
         height="36"
@@ -17,7 +25,7 @@ import "../styles/global.css";
         ><polyline points="9 18 15 12 9 6"></polyline></svg
     ></button
 >
-<div hidden="true"><slot /></div>
+<div hidden="true" class="details"><slot /></div>
 
 <style lang="scss">
     .disclosure-button {
@@ -27,6 +35,17 @@ import "../styles/global.css";
         align-items: center;
         color: var(--color-content-subtle);
         cursor: pointer;
+        transition: color var(--transition-duration-regular);
+        align-self: flex-start;
+
+        &:hover {
+            color: var(--color-content-loud);
+        }
+
+        &:focus-visible {
+            outline: var(--focusring);
+            outline-offset: var(--offset-focusring);
+        }
     }
 
     .disclosure-button[aria-expanded="true"] {
@@ -39,7 +58,13 @@ import "../styles/global.css";
         width: var(--step-1);
         height: var(--step-1);
         flex-shrink: 0;
-        transition: transform 0.2s;
+        transition: transform var(--transition-duration-regular);
+    }
+
+    @container my-container (min-width: 50ch) {
+        .visible-label {
+            display: none;
+        }
     }
 </style>
 

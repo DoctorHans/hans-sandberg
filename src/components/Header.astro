@@ -69,7 +69,9 @@ import SkipLink from "./SkipLink.astro";
     inset-inline-end: 0;
     width: var(--nav-list-width, 100vw);
     visibility: var(--nav-list-visibility, visible);
-    transition: transform 0.25s ease-in-out, visibility 0.25s;
+    transition:
+      transform var(--transition-duration-regular) ease-in-out,
+      visibility var(--transition-duration-regular);
     z-index: var(--nav-list-z-index, 1);
 
     @media (min-width: 48rem) {

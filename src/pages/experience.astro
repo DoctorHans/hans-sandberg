@@ -3,6 +3,7 @@ import Heading from "../components/Heading.astro";
 import Paragraph from "../components/Paragraph.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ExperienceItem from "../components/ExperienceItem.astro";
+import ExperienceItemList from "../components/ExperienceItemList.astro";
 ---
 
 <BaseLayout>
@@ -15,11 +16,11 @@ import ExperienceItem from "../components/ExperienceItem.astro";
     dateRange="Jun 2022 – Present"
     duration="1 year, 6 months"
   >
-    <ul>
+    <ExperienceItemList>
       <li>Design system stuff</li>
       <li>DesignOps stuff</li>
       <li>Other stuff</li>
-    </ul>
+    </ExperienceItemList>
   </ExperienceItem>
   <ExperienceItem
     title="Senior UX Designer"
@@ -29,22 +30,19 @@ import ExperienceItem from "../components/ExperienceItem.astro";
     dateRange="Dec 2017 – Jun 2022"
     duration="4 years, 7 months"
   >
-    <ul>
+    <ExperienceItemList>
+      <li>Helped found a design systems team.</li>
       <li>
-        Helped build a design system for an R&D department with 100+ members.
-        Designed and helped code accessible UI components, wrote UX guidelines
-        and created a UI kit in Figma.
+        Designed and helped code accessible UI components, wrote UX guidelines,
+        and created UI kits in Sketch and Figma.
       </li>
       <li>
-        Designed various features for a data-heavy enterprise web application,
-        such as a dashboard, account settings and recurring reports.
+        Designed features for a data-heavy enterprise web application, such as a
+        dashboard and account settings.
       </li>
-      <li>
-        Worked with developers, product owners, UX designers, UX writers, and
-        accessibility experts.
-      </li>
-    </ul>
+    </ExperienceItemList>
   </ExperienceItem>
+
   <ExperienceItem
     title="UX Designer"
     org="DSW"
@@ -53,16 +51,14 @@ import ExperienceItem from "../components/ExperienceItem.astro";
     dateRange="Jul 2014 – Jun 2017"
     duration="3 years"
   >
-    <ul>
+    <ExperienceItemList>
       <li>
         Created wireframes, mockups and prototypes for customer-facing websites
         and iOS and Android apps.
       </li>
       <li>Implemented website designs using Bootstrap, HTML and CSS.</li>
-      <li>
-        Conducted usability tests, expert reviews and a top task analysis.
-      </li>
-    </ul>
+      <li>Conducted usability tests and a top task analysis.</li>
+    </ExperienceItemList>
   </ExperienceItem>
   <ExperienceItem
     title="UX Researcher"
@@ -72,18 +68,17 @@ import ExperienceItem from "../components/ExperienceItem.astro";
     dateRange="Oct 2013 – Feb 2014"
     duration="5 months"
   >
-    <ul>
+    <ExperienceItemList>
       <li>
-        Wrote test scripts, coordinated participant recruitment, moderated
-        usability tests, created personas and user scenarios, and wrote reports
-        with mockups illustrating recommendations for discovered usability
-        issues.
+        Coordinated participant recruitment, wrote test scripts, moderated
+        usability tests, and wrote reports.
       </li>
+      <li>Created wireframes to clarify reccommendations.</li>
       <li>
-        Worked on projects for clients from various industries, such as banking,
-        public transport, pension funds, and online classified ads.
+        Worked for clients from various industries, such as banking, public
+        transport, pension funds, and online classified ads.
       </li>
-    </ul>
+    </ExperienceItemList>
   </ExperienceItem>
 
   <ExperienceItem
@@ -94,16 +89,16 @@ import ExperienceItem from "../components/ExperienceItem.astro";
     dateRange="Dec 2017 – Jun 2022"
     duration="1 year"
   >
-    <ul>
+    <ExperienceItemList>
       <li>
-        Created wireframes, mockups and prototypes for enterprise desktop and
+        Created wireframes, mockups, and prototypes for enterprise desktop and
         web applications.
       </li>
       <li>
-        Was a member of an international UX team and collaborated with
-        developers, business stakeholders and other UX designers.
+        Was part of an international UX team and collaborated with developers,
+        business stakeholders and other UX designers.
       </li>
-    </ul>
+    </ExperienceItemList>
   </ExperienceItem>
   <ExperienceItem
     title="UX Design Intern"
@@ -113,16 +108,16 @@ import ExperienceItem from "../components/ExperienceItem.astro";
     dateRange="Oct 2012 – Oct 2013"
     duration="1 year"
   >
-    <ul>
+    <ExperienceItemList>
       <li>
-        Conducted contextual inquiries, stakeholder interviews and a heuristic
-        evaluation to evaluate the UX of a complex enterprise application.
+        Evaluated a complex enterprise application through contextual inquiries,
+        stakeholder interviews, and a heuristic evaluation.
       </li>
       <li>
-        Wrote an in-depth report describing the discovered UX issues, user group
-        descriptions, and recommendations accompanied by illustrative mockups.
+        Wrote report containing discovered UX issues, user group descriptions,
+        and recommendations accompanied by mockups.
       </li>
-    </ul>
+    </ExperienceItemList>
   </ExperienceItem>
   <ExperienceItem
     title="UX Research Intern"
@@ -132,17 +127,16 @@ import ExperienceItem from "../components/ExperienceItem.astro";
     dateRange="Mar 2012 – Aug 2010"
     duration="6 months"
   >
-    <ul>
+    <ExperienceItemList>
       <li>
         Recruited participants, wrote test scripts, moderated usability tests,
-        analyzed test results and wrote reports with mockups illustrating
-        recommendations for discovered usability issues.
+        analyzed test results, and wrote reports.
       </li>
+      <li>Created wireframes to clarify reccommendations.</li>
       <li>
-        Worked on projects for clients such as PayPal, Microsoft Netherlands,
-        the Dutch government, ING Bank, KPN (telecom company) and KLM Royal
-        Dutch Airlines.
+        Worked on projects for clients such as PayPal, Microsoft, the Dutch
+        government, ING Bank, and KLM Royal Dutch Airlines.
       </li>
-    </ul>
+    </ExperienceItemList>
   </ExperienceItem>
 </BaseLayout>

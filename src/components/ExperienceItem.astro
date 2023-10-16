@@ -1,6 +1,6 @@
 ---
 import "../styles/global.css";
-import Disclosure from "./Disclosure.astro";
+import ExperienceDisclosure from "./ExperienceDisclosure.astro";
 import Paragraph from "./Paragraph.astro";
 
 interface Props {
@@ -13,6 +13,8 @@ interface Props {
 }
 
 const { title, org, orgLink, location, duration, dateRange } = Astro.props;
+
+const DisclosureLabel: string = `Details about ${title} position at ${org}`;
 ---
 
 <div class="container">
@@ -30,12 +32,14 @@ const { title, org, orgLink, location, duration, dateRange } = Astro.props;
       <Paragraph color="loud">{duration}</Paragraph>
       <Paragraph color="subtle">{dateRange}</Paragraph>
     </div>
-    <Disclosure><slot /></Disclosure>
+    <ExperienceDisclosure label={DisclosureLabel}>
+      <slot />
+    </ExperienceDisclosure>
   </article>
 </div>
 
 <style lang="scss">
-  .container {
+  :global(.container) {
     container: my-container / inline-size;
   }
 
@@ -65,7 +69,7 @@ const { title, org, orgLink, location, duration, dateRange } = Astro.props;
   @container my-container (min-width: 50ch) {
     article {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: repeat(3, 1fr) auto;
       gap: var(--space-m) var(--space-xl);
     }
 
@@ -75,6 +79,10 @@ const { title, org, orgLink, location, duration, dateRange } = Astro.props;
       flex-direction: column;
       justify-content: revert;
       gap: var(--space-3xs);
+    }
+
+    :global(.details) {
+      grid-column: 2 / -1;
     }
   }
 </style>

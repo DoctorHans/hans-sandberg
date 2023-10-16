@@ -9,10 +9,11 @@
   box-sizing: border-box;
 }
 /*
-    2. Remove default margin
+    2. Remove default margin and padding
   */
 * {
   margin: 0;
+  padding: 0;
 }
 /*
     3. Allow percentage-based heights in the application
@@ -152,6 +153,11 @@ h6 {
   --font-weight-regular: 400;
   --font-weight-semibold: 500;
   --font-weight-bold: 700;
+  --transition-duration-regular: 200ms;
+  --size-focusring: 2px;
+  --offset-focusring: var(--space-3xs);
+  --focusring: var(--size-focusring) solid var(--color-focusring);
+  --border-radius-regular: 0.5rem;
 }
 
 body {
@@ -167,10 +173,17 @@ a {
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-focusring);
-  outline-offset: 0.25rem;
+  outline: var(--focusring);
+  outline-offset: var(--offset-focusring);
 }
 
-* + * {
-  margin-top: var(--flow-space, 1em);
+/* Source: https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html */
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0); 
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap; 
+  width: 1px;
 }
