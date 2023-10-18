@@ -139,8 +139,8 @@ h6 {
   --neutral-500: oklch(44.5% var(--chroma) var(--hue));
   --neutral-400: oklch(55.5% var(--chroma) var(--hue));
   --neutral-300: oklch(66.5% var(--chroma) var(--hue));
-  --neutral-200: oklch(78% var(--chroma) var(--hue));
-  --neutral-100: oklch(89% var(--chroma) var(--hue));
+  --neutral-200: oklch(85% var(--chroma) var(--hue));
+  --neutral-100: oklch(95% var(--chroma) var(--hue));
   --neutral-0: oklch(100% var(--chroma) var(--hue));
   --color-content-regular: var(--neutral-600);
   --color-content-subtle: var(--neutral-400);
