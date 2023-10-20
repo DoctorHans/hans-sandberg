@@ -154,6 +154,8 @@ h6 {
   --font-weight-semibold: 500;
   --font-weight-bold: 700;
   --transition-duration-regular: 200ms;
+  --transition-duration-fast: 100ms;
+  --transition-duration-slow: 500ms;
   --size-focusring: 2px;
   --offset-focusring: var(--space-3xs);
   --focusring: var(--size-focusring) solid var(--color-focusring);
