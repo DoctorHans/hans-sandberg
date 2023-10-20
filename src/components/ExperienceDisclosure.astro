@@ -25,7 +25,9 @@ const { label } = Astro.props;
         ><polyline points="9 18 15 12 9 6"></polyline></svg
     ></button
 >
-<div hidden="true" class="details"><slot /></div>
+<div aria-hidden="true" class="details">
+    <div class="details-inner"><slot /></div>
+</div>
 
 <style lang="scss">
     .disclosure-button {
@@ -85,6 +87,30 @@ const { label } = Astro.props;
             display: none;
         }
     }
+
+    .details {
+        display: grid;
+
+        &[aria-hidden="false"] {
+            grid-template-rows: 1fr;
+            opacity: 1;
+            transition:
+                opacity var(--transition-duration-slow),
+                grid-template-rows var(--transition-duration-fast);
+        }
+
+        &[aria-hidden="true"] {
+            grid-template-rows: 0fr;
+            opacity: 0;
+            transition:
+                opacity var(--transition-duration-fast),
+                grid-template-rows var(--transition-duration-regular);
+        }
+    }
+
+    .details-inner {
+        overflow: hidden;
+    }
 </style>
 
 <script>
@@ -98,10 +124,10 @@ const { label } = Astro.props;
         function toggleDisclosure() {
             if (disclosureButton.getAttribute("aria-expanded") === "false") {
                 disclosureButton.setAttribute("aria-expanded", "true");
-                content?.removeAttribute("hidden");
+                content?.setAttribute("aria-hidden", "false");
             } else {
                 disclosureButton.setAttribute("aria-expanded", "false");
-                content?.setAttribute("hidden", "");
+                content?.setAttribute("aria-hidden", "true");
             }
         }
 
