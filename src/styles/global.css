@@ -160,6 +160,7 @@ h6 {
   --offset-focusring: var(--space-3xs);
   --focusring: var(--size-focusring) solid var(--color-focusring);
   --border-radius-regular: 0.5rem;
+  --border-size-regular: 1px;
 }
 
 body {
