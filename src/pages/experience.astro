@@ -5,10 +5,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import ExperienceItem from "../components/ExperienceItem.astro";
 import ExperienceItemList from "../components/ExperienceItemList.astro";
 import Button from "../components/Button.astro";
+import PageHeader from "../components/PageHeader.astro";
 ---
 
 <BaseLayout>
-  <Heading level="1" id="experience">Experience</Heading>
+  <PageHeader title="Experience">
+    Learn about where I’ve worked and what I’ve worked on
+  </PageHeader>
   <div class="button-wrapper">
     <Button>
       Download CV<svg
@@ -191,5 +194,6 @@ import Button from "../components/Button.astro";
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(16rem, 100%), 1fr));
     gap: var(--space-s);
+    margin-block-end: var(--space-xl);
   }
 </style>

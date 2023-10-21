@@ -5,25 +5,16 @@ import Heading from "../components/Heading.astro";
 import Paragraph from "../components/Paragraph.astro";
 import BlockLink from "../components/BlockLink.astro";
 import BlockLinkCollection from "../components/BlockLinkCollection.astro";
+import PageHeader from "../components/PageHeader.astro";
 ---
 
 <BaseLayout pageTitle="Home Page">
-  <Heading level={"1"}>Hello, I’m Hans.</Heading>
-  <!-- <Picture
-    src={meImage}
-    widths={[760, 1520, 2280]}
-    aspectRatio="3:2"
-    sizes="(max-width: 800px) 100vw, 760px"
-    alt="Me sitting at a table outdoors, smiling and looking directly at the camera"
-    position="top"
-    class="hero"
-  /> -->
-  <Paragraph intro>
+  <PageHeader title="Hello, I'm Hans">
     I’m a designer working on a design system at <a href="https://www.pleo.io/"
       >Pleo</a
     > in Copenhagen. Building bridges between design and development is what I
     do best and enjoy most.
-  </Paragraph>
+  </PageHeader>
   <BlockLinkCollection>
     <BlockLink
       title="About"
