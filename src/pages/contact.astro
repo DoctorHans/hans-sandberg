@@ -1,4 +1,5 @@
 ---
+import Button from "../components/Button.astro";
 import Heading from "../components/Heading.astro";
 import PageHeader from "../components/PageHeader.astro";
 import Paragraph from "../components/Paragraph.astro";
@@ -7,11 +8,31 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 <BaseLayout>
   <PageHeader title="About me">Find out how to get in touch</PageHeader>
-  <Heading level="2">Email</Heading>
-  <Paragraph>sandberg.hans@gmail.com</Paragraph>
-  <button>Copy email address</button>
-  <a href="mailto:sandberg.hans@gmail.com">Compose email</a>
-  <Heading level="2">LinkedIn</Heading>
-  <Paragraph>@hans-sandberg</Paragraph>
-  <a href="mailto:sandberg.hans@gmail.com">Visit LinkedIn profile</a>
+  <div class="wrapper">
+    <section>
+      <Heading level="2">Email</Heading>
+      <Paragraph color="subtle">sandberg.hans@gmail.com</Paragraph>
+      <Button>Copy email address</Button>
+      <Button>Compose email</Button>
+    </section>
+    <section>
+      <Heading level="2">LinkedIn</Heading>
+      <Paragraph color="subtle">@hans-sandberg</Paragraph>
+      <Button>Visit LinkedIn profile</Button>
+    </section>
+  </div>
 </BaseLayout>
+
+<style>
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(16rem, 100%), 1fr));
+    gap: var(--space-l);
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+</style>
