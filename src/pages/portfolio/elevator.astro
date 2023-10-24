@@ -9,199 +9,205 @@ import Paragraph from "../../components/Paragraph.astro";
 ---
 
 <BaseLayout>
-  <Heading level="1">Ideal Elevator Experience</Heading>
-  <Paragraph intro>
-    I was once given the task to design the ideal elevator experience, as part
-    of a job interview. In this case study, I walk you through my user-centered
-    design process for tackling such design challenges.
-  </Paragraph>
-  <Heading level="2" step="1">Research</Heading>
-  <Paragraph>
-    My first step was to learn more about elevators and people’s experiences
-    with them.
-  </Paragraph>
-  <HighlightCollection>
-    <Highlight title="Interview users">
-      I interviewed 9 people about their experiences with elevators. They
-      mentioned 30 different things they disliked about them, such as social
-      awkwardness and dirty, cramped interiors. However, waiting for the
-      elevator was by far their biggest complaint.
-    </Highlight>
-    <Highlight title="Research Elevators">
-      I read around 20 articles about elevators and learned many interesting
-      things. For instance, it’s a myth that all close-door buttons don’t work.
-      The main insight, though, was that elevator experts agree that waiting is
-      the thing that people dislike most about elevators.
-    </Highlight>
-    <Highlight title="Research psychology of waiting">
-      I read up on the psychology of waiting. I learned that many factors
-      influence our perception of waiting time. For instance, waiting time seems
-      longer when we don’t know how long it’ll be, what is causing it, or when
-      it’s perceived as unfair.
-    </Highlight>
-  </HighlightCollection>
-  <Heading level="2" step="2">Requirements & Constraints</Heading>
-  <Paragraph>
-    I created extra requirements and constraints, to give the project a clearer
-    focus.
-  </Paragraph>
-  <HighlightCollection>
-    <Highlight title="Client">
-      My client is Mitsubishi, one of the world's largest elevator
-      manufacturers. The elevator speed race is over, so Mitsubishi wants to
-      differentiate its elevators by offering a better overall experience. They
-      plan to install and test a prototype in a 12 story luxury residential
-      apartment building.
-    </Highlight>
-    <Highlight title="User groups">
-      Residential elevators are used by different groups of people, such as
-      guests of residents, janitors, and maintenance personnel. However, the
-      main user group are residents. These can be people of any age and some may
-      have sensory, motor, or other disabilities.
-    </Highlight>
-    <Highlight title="Physical and technical constraints">
-      The elevator should work in luxury residential buildings with 4 to 12
-      floors, in any country around the world, and use the "collective control"
-      algorithm. In short, that means the elevator will only switch direction
-      when requests to continue in the current direction have been exhausted.
-    </Highlight>
-  </HighlightCollection>
-  <Heading level="2" step="3">Problem statement</Heading>
-  <Paragraph>
-    I distilled my research, requirements and constraints into a concise problem
-    statement.
-  </Paragraph>
-  <blockquote>
-    Improve the elevator experience of residents of 4 to 12 story luxury
-    apartment buildings by reducing perceived waiting time.
-  </blockquote>
-  <Heading level="2" step="4">Use Research Insights</Heading>
-  <Paragraph>
-    I used what I had learned about elevators and the psychology of waiting, to
-    come up with various features that would reduce perceived waiting time.
-  </Paragraph>
-  <HighlightCollection>
-    <Highlight title="Speed">
-      The elevator will travel up at 83 km/h (above which people get sick) and
-      down at 36 km/h (above which people experience the sensation of falling).
-      This will reduce both actual and perceived waiting time.
-    </Highlight>
-    <Highlight title="Mirrors">
-      The shaft doors will feature mirrors. Occupied time feels shorter and
-      people have a natural tendency to check their personal appearance. This is
-      one of the oldest tricks to reduce perceived elevator waiting time.
-    </Highlight>
-    <Highlight title="Time">
-      Computer screens will be installed behind the semi-transparent mirrors on
-      the shaft doors. One door will display the current time, since people
-      overestimate waiting time and clocks counteract this tendency.
-    </Highlight>
-    <Highlight title="Weather">
-      Weather information will be shown on the other shaft door. This can be
-      effective, since residents may be on their way out and information
-      relevant to a waiting setting reduces perceived waiting time. It may also
-      start conversations, which enhances the feeling of being part of a group,
-      and waiting in a group feels shorter than waiting alone.
-    </Highlight>
-    <Highlight title="Color">
-      Warm colors increase perceived waiting time, while cool colors have the
-      opposite effect. Therefore, the waiting area will be painted in a cool
-      color, such as blue.
-    </Highlight>
-    <Highlight title="Light">
-      High light levels increase perceived waiting time, while low light levels
-      have the opposite effect. Therefore, the waiting area will be dimly lit.
-    </Highlight>
-    <Highlight title="Scent">
-      Certain fragrances, such as lavender and nutmeg, have been found to reduce
-      anxiety and anxiety increases perceived waiting time. Therefore, a scent
-      diffuser will emit a low-concentration blend of such fragrances.
-    </Highlight>
-    <Highlight title="Accessibility">
-      The call buttons will be placed low enough for people in wheelchairs (and
-      children) to reach them. They will also give tactile feedback and feature
-      braille to facilitate use by visually impaired people. Lastly, a voice UI
-      will announce the current floor, the location of the elevator, the
-      direction in which it is traveling, and at which floors it is going to
-      stop.
-    </Highlight>
-  </HighlightCollection>
-  <Heading level="2" step="5">Explore Visual UI Concepts</Heading>
-  <Paragraph>
-    The elevator will also feature a visual UI. This UI will communicate the
-    same information as the voice UI to sighted and hearing impaired residents.
-    Perceived waiting time will be reduced, since the UI will explain why the
-    elevator has not yet arrived at the current floor.
-  </Paragraph>
-  <Paragraph>
-    I sketched various concepts to explore both what to show and how to show it.
-    This made me more aware of the choices I had to make, such as the ones shown
-    here.
-  </Paragraph>
-  <HighlightCollection>
-    <Highlight title="Orientation">
-      Should the UI be vertical or horizontal? Vertical matches the elevator’s
-      axis of movement. However, a horizontal UI can be placed above the
-      elevator doors, which enhances visibility.
-    </Highlight>
-    <Highlight title="Floor indicator">
-      Should floors be indicated with numbers or shapes? Numbers are more
-      informative, but can lead to cultural challenges. For instance, some
-      countries use 0 for the ground floor, while others use 1. Also, some
-      countries don’t use certain “unlucky” floor numbers.
-    </Highlight>
-    <Highlight title="Cause of stop">
-      Should the UI show whether stops are due to passenger pickup or drop off?
-      Waiting time is perceived as shorter, when people know the cause. On the
-      other hand, this information might create excessive visual clutter.
-    </Highlight>
-  </HighlightCollection>
-  <Heading level="2" step="6">Create Hi-Fi Mockups</Heading>
-  <Paragraph>
-    I created various iterations of high-fidelity mockups, after having settled
-    on only showing:
-  </Paragraph>
-  <FeatureCollection>
-    <Feature>The floor the user is on</Feature>
-    <Feature>The floor the elevator is on</Feature>
-    <Feature>The floors the elevator will stop on</Feature>
-    <Feature>The direction of the elevator</Feature>
-  </FeatureCollection>
-  <Heading level="2" step="7">User Tests and Iteration</Heading>
-  <Paragraph>
-    I tested two high-fidelity mockups with users and iterated based on the test
-    results.
-  </Paragraph>
-  <Heading level="3">First round</Heading>
-  <Paragraph>
-    I showed the 2 concepts below to 3 participants. I asked them which floor
-    the elevator was on, whether the elevator was going up or down, where the
-    elevator was going to stop, and which floor they themselves were on. The top
-    concept was easier to understand, but the elevator’s direction and
-    participants’ floor were not clear to all.
-  </Paragraph>
-  <Heading level="3">Second round</Heading>
-  <Paragraph>
-    To address these issues, I created the new concept shown below. I performed
-    the same user test with 4 new participants. This time, the elevator’s
-    direction was obvious to all participants. It was still not clear to
-    everyone which floor they were on, though. A different visual indicator and
-    a floor number sign next to the elevator might resolve this issue.
-  </Paragraph>
-  <Heading level="2" step="8">Final Result</Heading>
-  <Paragraph>
-    I combined the findings and insights from my research into the following
-    recommended features:
-  </Paragraph>
-  <FeatureCollection>
-    <Feature>High speed elevator</Feature>
-    <Feature>Semi-transparent mirrors</Feature>
-    <Feature>Weather info on mirror doors</Feature>
-    <Feature>Display time on mirror doors</Feature>
-    <Feature>Cool paint color in waiting area</Feature>
-    <Feature>Dim lighting in waiting area</Feature>
-    <Feature>Anxiety-reducing fragrances</Feature>
-    <Feature>Low placed braille buttons</Feature>
-    <Feature>Voice UI</Feature>
-  </FeatureCollection>
+  <div class="flow">
+    <Heading level="1">Ideal Elevator Experience</Heading>
+    <Paragraph>
+      I was once given the task to design the ideal elevator experience, as part
+      of a job interview. In this case study, I walk you through my
+      user-centered design process for tackling such design challenges.
+    </Paragraph>
+    <Heading level="2" step="1">Research</Heading>
+    <Paragraph>
+      My first step was to learn more about elevators and people’s experiences
+      with them.
+    </Paragraph>
+    <HighlightCollection>
+      <Highlight title="Interview users">
+        I interviewed 9 people about their experiences with elevators. They
+        mentioned 30 different things they disliked about them, such as social
+        awkwardness and dirty, cramped interiors. However, waiting for the
+        elevator was by far their biggest complaint.
+      </Highlight>
+      <Highlight title="Research Elevators">
+        I read around 20 articles about elevators and learned many interesting
+        things. For instance, it’s a myth that all close-door buttons don’t
+        work. The main insight, though, was that elevator experts agree that
+        waiting is the thing that people dislike most about elevators.
+      </Highlight>
+      <Highlight title="Research psychology of waiting">
+        I read up on the psychology of waiting. I learned that many factors
+        influence our perception of waiting time. For instance, waiting time
+        seems longer when we don’t know how long it’ll be, what is causing it,
+        or when it’s perceived as unfair.
+      </Highlight>
+    </HighlightCollection>
+    <Heading level="2" step="2">Requirements & Constraints</Heading>
+    <Paragraph>
+      I created extra requirements and constraints, to give the project a
+      clearer focus.
+    </Paragraph>
+    <HighlightCollection>
+      <Highlight title="Client">
+        My client is Mitsubishi, one of the world's largest elevator
+        manufacturers. The elevator speed race is over, so Mitsubishi wants to
+        differentiate its elevators by offering a better overall experience.
+        They plan to install and test a prototype in a 12 story luxury
+        residential apartment building.
+      </Highlight>
+      <Highlight title="User groups">
+        Residential elevators are used by different groups of people, such as
+        guests of residents, janitors, and maintenance personnel. However, the
+        main user group are residents. These can be people of any age and some
+        may have sensory, motor, or other disabilities.
+      </Highlight>
+      <Highlight title="Physical and technical constraints">
+        The elevator should work in luxury residential buildings with 4 to 12
+        floors, in any country around the world, and use the "collective
+        control" algorithm. In short, that means the elevator will only switch
+        direction when requests to continue in the current direction have been
+        exhausted.
+      </Highlight>
+    </HighlightCollection>
+    <Heading level="2" step="3">Problem statement</Heading>
+    <Paragraph>
+      I distilled my research, requirements and constraints into a concise
+      problem statement.
+    </Paragraph>
+    <blockquote>
+      Improve the elevator experience of residents of 4 to 12 story luxury
+      apartment buildings by reducing perceived waiting time.
+    </blockquote>
+    <Heading level="2" step="4">Use Research Insights</Heading>
+    <Paragraph>
+      I used what I had learned about elevators and the psychology of waiting,
+      to come up with various features that would reduce perceived waiting time.
+    </Paragraph>
+    <HighlightCollection>
+      <Highlight title="Speed">
+        The elevator will travel up at 83 km/h (above which people get sick) and
+        down at 36 km/h (above which people experience the sensation of
+        falling). This will reduce both actual and perceived waiting time.
+      </Highlight>
+      <Highlight title="Mirrors">
+        The shaft doors will feature mirrors. Occupied time feels shorter and
+        people have a natural tendency to check their personal appearance. This
+        is one of the oldest tricks to reduce perceived elevator waiting time.
+      </Highlight>
+      <Highlight title="Time">
+        Computer screens will be installed behind the semi-transparent mirrors
+        on the shaft doors. One door will display the current time, since people
+        overestimate waiting time and clocks counteract this tendency.
+      </Highlight>
+      <Highlight title="Weather">
+        Weather information will be shown on the other shaft door. This can be
+        effective, since residents may be on their way out and information
+        relevant to a waiting setting reduces perceived waiting time. It may
+        also start conversations, which enhances the feeling of being part of a
+        group, and waiting in a group feels shorter than waiting alone.
+      </Highlight>
+      <Highlight title="Color">
+        Warm colors increase perceived waiting time, while cool colors have the
+        opposite effect. Therefore, the waiting area will be painted in a cool
+        color, such as blue.
+      </Highlight>
+      <Highlight title="Light">
+        High light levels increase perceived waiting time, while low light
+        levels have the opposite effect. Therefore, the waiting area will be
+        dimly lit.
+      </Highlight>
+      <Highlight title="Scent">
+        Certain fragrances, such as lavender and nutmeg, have been found to
+        reduce anxiety and anxiety increases perceived waiting time. Therefore,
+        a scent diffuser will emit a low-concentration blend of such fragrances.
+      </Highlight>
+      <Highlight title="Accessibility">
+        The call buttons will be placed low enough for people in wheelchairs
+        (and children) to reach them. They will also give tactile feedback and
+        feature braille to facilitate use by visually impaired people. Lastly, a
+        voice UI will announce the current floor, the location of the elevator,
+        the direction in which it is traveling, and at which floors it is going
+        to stop.
+      </Highlight>
+    </HighlightCollection>
+    <Heading level="2" step="5">Explore Visual UI Concepts</Heading>
+    <Paragraph>
+      The elevator will also feature a visual UI. This UI will communicate the
+      same information as the voice UI to sighted and hearing impaired
+      residents. Perceived waiting time will be reduced, since the UI will
+      explain why the elevator has not yet arrived at the current floor.
+    </Paragraph>
+    <Paragraph>
+      I sketched various concepts to explore both what to show and how to show
+      it. This made me more aware of the choices I had to make, such as the ones
+      shown here.
+    </Paragraph>
+    <HighlightCollection>
+      <Highlight title="Orientation">
+        Should the UI be vertical or horizontal? Vertical matches the elevator’s
+        axis of movement. However, a horizontal UI can be placed above the
+        elevator doors, which enhances visibility.
+      </Highlight>
+      <Highlight title="Floor indicator">
+        Should floors be indicated with numbers or shapes? Numbers are more
+        informative, but can lead to cultural challenges. For instance, some
+        countries use 0 for the ground floor, while others use 1. Also, some
+        countries don’t use certain “unlucky” floor numbers.
+      </Highlight>
+      <Highlight title="Cause of stop">
+        Should the UI show whether stops are due to passenger pickup or drop
+        off? Waiting time is perceived as shorter, when people know the cause.
+        On the other hand, this information might create excessive visual
+        clutter.
+      </Highlight>
+    </HighlightCollection>
+    <Heading level="2" step="6">Create Hi-Fi Mockups</Heading>
+    <Paragraph>
+      I created various iterations of high-fidelity mockups, after having
+      settled on only showing:
+    </Paragraph>
+    <FeatureCollection>
+      <Feature>The floor the user is on</Feature>
+      <Feature>The floor the elevator is on</Feature>
+      <Feature>The floors the elevator will stop on</Feature>
+      <Feature>The direction of the elevator</Feature>
+    </FeatureCollection>
+    <Heading level="2" step="7">User Tests and Iteration</Heading>
+    <Paragraph>
+      I tested two high-fidelity mockups with users and iterated based on the
+      test results.
+    </Paragraph>
+    <Heading level="3">First round</Heading>
+    <Paragraph>
+      I showed the 2 concepts below to 3 participants. I asked them which floor
+      the elevator was on, whether the elevator was going up or down, where the
+      elevator was going to stop, and which floor they themselves were on. The
+      top concept was easier to understand, but the elevator’s direction and
+      participants’ floor were not clear to all.
+    </Paragraph>
+    <Heading level="3">Second round</Heading>
+    <Paragraph>
+      To address these issues, I created the new concept shown below. I
+      performed the same user test with 4 new participants. This time, the
+      elevator’s direction was obvious to all participants. It was still not
+      clear to everyone which floor they were on, though. A different visual
+      indicator and a floor number sign next to the elevator might resolve this
+      issue.
+    </Paragraph>
+    <Heading level="2" step="8">Final Result</Heading>
+    <Paragraph>
+      I combined the findings and insights from my research into the following
+      recommended features:
+    </Paragraph>
+    <FeatureCollection>
+      <Feature>High speed elevator</Feature>
+      <Feature>Semi-transparent mirrors</Feature>
+      <Feature>Weather info on mirror doors</Feature>
+      <Feature>Display time on mirror doors</Feature>
+      <Feature>Cool paint color in waiting area</Feature>
+      <Feature>Dim lighting in waiting area</Feature>
+      <Feature>Anxiety-reducing fragrances</Feature>
+      <Feature>Low placed braille buttons</Feature>
+      <Feature>Voice UI</Feature>
+    </FeatureCollection>
+  </div>
 </BaseLayout>
