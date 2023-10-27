@@ -8,6 +8,7 @@
 *::after {
   box-sizing: border-box;
 }
+
 /*
     2. Remove default margin and padding
   */
@@ -15,6 +16,7 @@
   margin: 0;
   padding: 0;
 }
+
 /*
     3. Allow percentage-based heights in the application
   */
@@ -22,6 +24,7 @@ html,
 body {
   height: 100%;
 }
+
 /*
     Typographic tweaks!
     4. Add accessible line-height
@@ -31,6 +34,7 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
+
 /*
     6. Improve media defaults
   */
@@ -42,6 +46,7 @@ svg {
   display: block;
   max-width: 100%;
 }
+
 /*
     7. Remove built-in form typography styles
   */
@@ -51,6 +56,7 @@ textarea,
 select {
   font: inherit;
 }
+
 /*
     8. Avoid text overflows
   */
@@ -63,6 +69,7 @@ h5,
 h6 {
   overflow-wrap: break-word;
 }
+
 /*
 
 /* GLOBAL STYLING */
@@ -116,6 +123,7 @@ h6 {
 }
 
 .u-container {
+  width: 100%;
   max-width: var(--grid-max-width);
   padding-inline: var(--grid-gutter);
   margin-inline: auto;
@@ -126,7 +134,7 @@ h6 {
   gap: var(--grid-gutter);
 }
 
-.flow > * + * {
+.flow>*+* {
   margin-block-start: 1em;
 }
 
@@ -171,7 +179,8 @@ body {
   font-size: var(--step-0);
   color: var(--color-content-regular);
   background: var(--color-background);
-  margin-top: 0; /* TO DO: REMOVE */
+  margin-top: 0;
+  /* TO DO: REMOVE */
 }
 
 a {
@@ -185,11 +194,11 @@ a {
 
 /* Source: https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html */
 .sr-only:not(:focus):not(:active) {
-  clip: rect(0 0 0 0); 
+  clip: rect(0 0 0 0);
   clip-path: inset(50%);
   height: 1px;
   overflow: hidden;
   position: absolute;
-  white-space: nowrap; 
+  white-space: nowrap;
   width: 1px;
 }

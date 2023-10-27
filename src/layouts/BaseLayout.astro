@@ -14,10 +14,24 @@ const { pageTitle } = Astro.props;
     <title>{pageTitle}</title>
   </head>
   <body>
-    <Header />
-    <main id="main" class="u-container">
-      <slot />
-    </main>
-    <Footer />
+    <div class="wrapper">
+      <Header />
+      <main id="main" class="u-container">
+        <slot />
+      </main>
+      <Footer />
+    </div>
   </body>
 </html>
+
+<style>
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+  }
+
+  main {
+    margin-block-end: var(--space-2xl);
+  }
+</style>
