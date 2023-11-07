@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import Heading from "./Heading.astro";
+import Icon from "./Icon.astro";
 import Paragraph from "./Paragraph.astro";
 
 interface Props {
@@ -15,19 +16,7 @@ const { title = "Title", subTitle = "Subtitle", url } = Astro.props;
   <article>
     <div class="wrapper">
       <Heading level="2"><a href={url}>{title}</a></Heading>
-      <svg
-        width="36"
-        height="36"
-        fill="none"
-        stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        class="feather feather-arrow-right"
-        viewBox="0 0 24 24"
-      >
-        <path d="M5 12h14M12 5l7 7-7 7"></path>
-      </svg>
+      <Icon name="arrowRight" class="icon-arrow-right" />
     </div>
     <Paragraph color="subtle">{subTitle}</Paragraph>
   </article>
@@ -47,14 +36,14 @@ const { title = "Title", subTitle = "Subtitle", url } = Astro.props;
       border-color: var(--color-border);
       border-top-width: 2px;
 
-      .feather-arrow-right {
+      .icon-arrow-right {
         color: var(--color-content-regular);
         transform: translateX(-25%);
       }
     }
 
     &:active {
-      .feather-arrow-right {
+      .icon-arrow-right {
         transform: revert;
       }
     }
@@ -89,7 +78,7 @@ const { title = "Title", subTitle = "Subtitle", url } = Astro.props;
     color: var(--color-content-subtle);
   }
 
-  .feather-arrow-right {
+  .icon-arrow-right {
     color: var(--color-content-subtle);
     width: var(--step-3);
     height: var(--step-3);
