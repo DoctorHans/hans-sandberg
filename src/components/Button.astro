@@ -1,13 +1,16 @@
 ---
 import type { HTMLAttributes } from "astro/types";
 import "../styles/global.css";
+import Icon from "./Icon.astro";
 
-interface Props extends HTMLAttributes<"button"> {}
+interface Props extends HTMLAttributes<"button"> {
+  icon: "arrowRight" | "chevronRight" | "download" | "linkedin";
+}
 
-const { ...rest } = Astro.props;
+const { icon = "download", ...rest } = Astro.props;
 ---
 
-<button {...rest}><slot /><slot name="icon" /></button>
+<button {...rest}><slot /><Icon name={icon} class="icon" /></button>
 
 <style lang="scss">
   button {
@@ -19,11 +22,22 @@ const { ...rest } = Astro.props;
     background-color: var(--color-background);
     border-radius: var(--border-radius-regular);
     cursor: pointer;
-    transition: border-color var(--transition-duration-regular);
     text-align: left;
+    transition: border-color var(--transition-duration-regular);
 
     &:hover {
       border-color: var(--color-border-hover);
+
+      .icon {
+        color: var(--color-content-regular);
+      }
+    }
+
+    .icon {
+      height: var(--step-1);
+      width: var(--step-1);
+      color: var(--color-content-subtle);
+      transition: color var(--transition-duration-regular);
     }
   }
 </style>

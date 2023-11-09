@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import Icon from "./Icon.astro";
 
 interface Props {
     label: string;
@@ -11,20 +12,8 @@ const { label } = Astro.props;
 <button class="disclosure-button" aria-expanded="false"
     ><span class="visible-label" aria-hidden="true">Details</span><span
         class="sr-only">{label}</span
-    ><svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="36"
-        height="36"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        class="feather feather-chevron-right"
-        ><polyline points="9 18 15 12 9 6"></polyline></svg
-    ></button
->
+    ><Icon name="chevronRight" class="icon-chevron-right" />
+</button>
 <div aria-hidden="true" class="details">
     <div class="details-inner"><slot /></div>
 </div>
@@ -51,12 +40,12 @@ const { label } = Astro.props;
     }
 
     .disclosure-button[aria-expanded="true"] {
-        .feather-chevron-right {
+        .icon-chevron-right {
             transform: rotate(90deg);
         }
     }
 
-    .feather-chevron-right {
+    .icon-chevron-right {
         width: var(--step-1);
         height: var(--step-1);
         flex-shrink: 0;
@@ -72,12 +61,12 @@ const { label } = Astro.props;
             display: grid;
             place-content: center;
 
-            .feather-chevron-right {
+            .icon-chevron-right {
                 transform: rotate(90deg);
             }
 
             &[aria-expanded="true"] {
-                .feather-chevron-right {
+                .icon-chevron-right {
                     transform: rotate(270deg);
                 }
             }
