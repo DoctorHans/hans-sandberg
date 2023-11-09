@@ -13,7 +13,13 @@ import Icon from "../components/Icon.astro";
   </PageHeader>
   <div class="button-wrapper">
     <Button icon="download">Download CV</Button>
-    <Button icon="linkedin">Visit LinkedIn Profile</Button>
+    <Button
+      icon="linkedin"
+      as="a"
+      href="https://www.linkedin.com/in/hans-sandberg/"
+    >
+      Visit LinkedIn Profile
+    </Button>
   </div>
   <ExperienceItem
     title="Senior DesignOps Designer"

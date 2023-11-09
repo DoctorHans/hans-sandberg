@@ -1,19 +1,21 @@
 ---
-import type { HTMLAttributes } from "astro/types";
+import type { HTMLTag, Polymorphic } from "astro/types";
 import "../styles/global.css";
 import Icon from "./Icon.astro";
 
-interface Props extends HTMLAttributes<"button"> {
-  icon: "arrowRight" | "chevronRight" | "download" | "linkedin";
-}
+type Props<Tag extends HTMLTag> = Polymorphic<{
+  as: Tag;
+  icon?: "arrowRight" | "chevronRight" | "download" | "linkedin";
+}>;
 
-const { icon = "download", ...rest } = Astro.props;
+const { as: Tag = "button", icon = "download", ...props } = Astro.props;
 ---
 
-<button {...rest}><slot /><Icon name={icon} class="icon" /></button>
+<Tag {...props}><slot /><Icon name={icon} class="icon" /></Tag>
 
 <style lang="scss">
-  button {
+  button,
+  a {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -39,5 +41,9 @@ const { icon = "download", ...rest } = Astro.props;
       color: var(--color-content-subtle);
       transition: color var(--transition-duration-regular);
     }
+  }
+
+  a {
+    text-decoration: none;
   }
 </style>
