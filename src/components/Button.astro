@@ -5,7 +5,13 @@ import Icon from "./Icon.astro";
 
 type Props<Tag extends HTMLTag> = Polymorphic<{
   as: Tag;
-  icon?: "arrowRight" | "chevronRight" | "download" | "linkedin";
+  icon?:
+    | "arrowRight"
+    | "copy"
+    | "compose"
+    | "chevronRight"
+    | "download"
+    | "linkedin";
 }>;
 
 const { as: Tag = "button", icon = "download", ...props } = Astro.props;
