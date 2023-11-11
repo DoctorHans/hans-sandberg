@@ -27,6 +27,7 @@ const { as: Tag = "button", icon = "download", ...props } = Astro.props;
     justify-content: space-between;
     padding: var(--space-xs) var(--space-m);
     border: var(--border-size-regular) solid var(--color-border);
+    color: var(--color-content-regular);
     background-color: var(--color-background);
     border-radius: var(--border-radius-regular);
     cursor: pointer;
@@ -35,9 +36,10 @@ const { as: Tag = "button", icon = "download", ...props } = Astro.props;
 
     &:hover {
       border-color: var(--color-border-hover);
+      color: var(--color-content-loud);
 
       .icon {
-        color: var(--color-content-regular);
+        color: var(--color-content-loud);
       }
     }
 
