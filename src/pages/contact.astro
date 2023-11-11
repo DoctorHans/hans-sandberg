@@ -13,7 +13,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <Heading level="2">Email</Heading>
       <Paragraph color="subtle">sandberg.hans@gmail.com</Paragraph>
       <Button icon="copy">Copy email address</Button>
-      <Button icon="compose">Compose email</Button>
+      <Button icon="compose" as="a" href="mailto:sandberg.hans@gmail.com">
+        Compose email
+      </Button>
     </section>
     <section>
       <Heading level="2">LinkedIn</Heading>
