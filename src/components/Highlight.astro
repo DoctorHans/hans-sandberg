@@ -1,28 +1,59 @@
 ---
 import "../styles/global.css";
+import Icon from "./Icon.astro";
 interface Props {
   title: string;
   headingLevel?: "1" | "2" | "3" | "4" | "5" | "6";
   blockquote?: boolean;
+  icon?:
+    | "arrowRight"
+    | "copy"
+    | "compose"
+    | "chevronRight"
+    | "download"
+    | "linkedin";
 }
 type Heading = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
-const { title, headingLevel = "3", blockquote = false } = Astro.props;
+const {
+  title,
+  headingLevel = "3",
+  blockquote = false,
+  icon = "download",
+} = Astro.props;
 const Title = `h${headingLevel}` as Heading;
 const Content = blockquote ? "blockquote" : "p";
 ---
 
 <li class="wrapper">
+  <div class="icon-wrapper">
+    <Icon name={icon} class="icon" />
+  </div>
   <Title>{title}</Title>
   <Content><slot /></Content>
 </li>
 
 <style lang="scss">
   .wrapper {
-    background: var(--color-background-subtle);
+    background: var(--color-background-loud);
     border-radius: 0.75rem;
     display: flex;
     flex-direction: column;
     gap: var(--space-xs);
     padding: var(--space-m);
+    max-width: 32ch;
+  }
+
+  .icon {
+    width: var(--step-0);
+    height: var(--step-0);
+  }
+
+  .icon-wrapper {
+    display: grid;
+    place-content: center;
+    width: fit-content;
+    border-radius: var(--border-radius-round);
+    padding: var(--space-xs);
+    background-color: var(--color-background-louder);
   }
 </style>
