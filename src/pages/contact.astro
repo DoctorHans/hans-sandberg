@@ -12,7 +12,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <section>
       <Heading level="2">Email</Heading>
       <Paragraph color="subtle">sandberg.hans@gmail.com</Paragraph>
-      <Button icon="copy">Copy email address</Button>
+      <Button icon="copy" id="copy-button">Copy email address</Button>
       <Button icon="compose" as="a" href="mailto:sandberg.hans@gmail.com">
         Compose email
       </Button>
@@ -44,3 +44,20 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     gap: var(--space-s);
   }
 </style>
+
+<script>
+  function copyEmailToClipboard() {
+    navigator.clipboard.writeText("sandberg.hans@gmail.com").then(
+      () => {
+        /* clipboard successfully set */
+      },
+      () => {
+        /* clipboard write failed */
+      },
+    );
+  }
+
+  const copyButton: HTMLButtonElement | null =
+    document.querySelector("#copy-button");
+  copyButton?.addEventListener("click", copyEmailToClipboard);
+</script>
