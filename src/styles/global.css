@@ -157,7 +157,8 @@ h6 {
   --color-content-subtle: var(--neutral-400);
   --color-content-loud: var(--neutral-800);
   --color-background: var(--neutral-0);
-  --color-background-subtle: var(--neutral-100);
+  --color-background-loud: var(--neutral-100);
+  --color-background-louder: var(--neutral-200);
   --color-border: var(--neutral-300);
   --color-border-subtle: var(--neutral-100);
   --color-focusring: var(--neutral-900);
@@ -171,6 +172,7 @@ h6 {
   --offset-focusring: var(--space-3xs);
   --focusring: var(--size-focusring) solid var(--color-focusring);
   --border-radius-regular: 0.75rem;
+  --border-radius-round: 99999rem;
   --border-size-regular: 1px;
 }
 
