@@ -1,9 +1,11 @@
 ---
 import "../styles/global.css";
+import Heading from "./Heading.astro";
 import Icon from "./Icon.astro";
+import Paragraph from "./Paragraph.astro";
 interface Props {
   title: string;
-  headingLevel?: "1" | "2" | "3" | "4" | "5" | "6";
+  headingLevel?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
   blockquote?: boolean;
   icon?:
     | "arrowRight"
@@ -13,23 +15,21 @@ interface Props {
     | "download"
     | "linkedin";
 }
-type Heading = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 const {
   title,
-  headingLevel = "3",
+  headingLevel = "h3",
   blockquote = false,
   icon = "download",
 } = Astro.props;
-const Title = `h${headingLevel}` as Heading;
-const Content = blockquote ? "blockquote" : "p";
+const Content = blockquote ? "blockquote" : "div";
 ---
 
 <li class="wrapper">
   <div class="icon-wrapper">
     <Icon name={icon} class="icon" />
   </div>
-  <Title>{title}</Title>
-  <Content><slot /></Content>
+  <Heading as={headingLevel} class="title">{title}</Heading>
+  <Content><Paragraph><slot /></Paragraph></Content>
 </li>
 
 <style lang="scss">
@@ -57,5 +57,9 @@ const Content = blockquote ? "blockquote" : "p";
     border-radius: var(--border-radius-round);
     padding: var(--space-xs);
     background-color: var(--color-background-louder);
+  }
+
+  .title {
+    font-size: var(--step-0);
   }
 </style>

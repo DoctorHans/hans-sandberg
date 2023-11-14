@@ -1,19 +1,19 @@
 ---
+import type { HTMLTag, Polymorphic } from "astro/types";
 import "../styles/global.css";
-interface Props {
-  level: "1" | "2" | "3" | "4" | "5" | "6";
+import type { Code, Debug } from "astro:components";
+type Props<Tag extends HTMLTag> = Polymorphic<{
+  as: Tag;
   step?: string;
-  id?: string;
-}
-type H = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
-const { level, step, id } = Astro.props;
-const H = `h${level}` as H;
+}>;
+
+const { as: Tag, step, ...props } = Astro.props;
 ---
 
-<H class:list={[{ wrapper: step }]} id={id}>
+<Tag {...props} class:list={[{ wrapper: step }]}>
   {step && <span class="step">Step {step}.</span>}
   <slot />
-</H>
+</Tag>
 
 <style lang="scss">
   h1,

@@ -11,7 +11,7 @@ const { title } = Astro.props;
 ---
 
 <div class="wrapper">
-    <Heading level="1">{title}</Heading>
+    <Heading as="h1">{title}</Heading>
     <Paragraph class="subtitle" color="subtle" size="1"><slot /></Paragraph>
 </div>
 

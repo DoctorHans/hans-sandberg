@@ -8,7 +8,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
 <BaseLayout>
   <div class="flow">
-    <Heading level="1">Improving a design system’s UX</Heading>
+    <Heading as="h1">Improving a design system’s UX</Heading>
     <Paragraph>
       The goal of this project was to evaluate and improve the UX of the design
       system I was working on. The project focused on the design system’s two
@@ -16,7 +16,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       improvement with regards to the UX of designers, so that’s what I’ve
       chosen to focus on here.
     </Paragraph>
-    <Heading level="2" step="1">Quantitative research</Heading>
+    <Heading as="h2" step="1">Quantitative research</Heading>
     <Paragraph>
       My first step was to send out an anonymous survey to all product
       designers.
@@ -52,7 +52,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
         differently?
       </Highlight>
     </HighlightCollection>
-    <Heading level="2" step="2">Qualitative research</Heading>
+    <Heading as="h2" step="2">Qualitative research</Heading>
     <Paragraph>
       My second step was to interview every designer about the results of the
       survey.
@@ -83,8 +83,8 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
         approach. They provided me with great input and helpful suggestions.
       </Highlight>
     </HighlightCollection>
-    <Heading level="2" step="3">Implement changes</Heading>
-    <Heading level="3">Make documentation site more designer oriented</Heading>
+    <Heading as="h2" step="3">Implement changes</Heading>
+    <Heading as="h3">Make documentation site more designer oriented</Heading>
     <Paragraph>
       A main finding was that the design system’s documentation site was too
       focused on developers.
@@ -98,30 +98,33 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       Some of these changes are highlighted here.
     </Paragraph>
     <HighlightCollection>
-      <Highlight title="Role-specific guideline sections" headingLevel="4">
+      <Highlight title="Role-specific guideline sections" headingLevel="h4">
         Before, guidelines for developers, designers, and UX writers could be
         found in a single section called “Guidelines”. Now, this section is
         split up into role-specific “Developing”, “Writing”, and “Designing”
         sections.
       </Highlight>
-      <Highlight title="Icons FAQ" headingLevel="4">
+      <Highlight title="Icons FAQ" headingLevel="h4">
         A up-to-date and single-source of truth for guidelines about how to work
         with icons had always been missing. To address this issue, I created an
         “Icons FAQ” page and added it to the “Designing” section.
       </Highlight>
-      <Highlight title="Accessibility checklist for designers" headingLevel="4">
+      <Highlight
+        title="Accessibility checklist for designers"
+        headingLevel="h4"
+      >
         Enabling designers to create accessible user experiences is one of the
         design system’s main goals. However, the documentation site was missing
         accessibility guidelines concerning UI design. I collaborated with
         accessibility experts to create a checklist specifically for designers.
       </Highlight>
-      <Highlight title="Improve icons overview page" headingLevel="4">
+      <Highlight title="Improve icons overview page" headingLevel="h4">
         The icons overview page was cluttered, making it difficult for designers
         to scan the page and find the icon they were looking for. I cleaned up
         the page and added a link to the new “Icons FAQ” page.
       </Highlight>
     </HighlightCollection>
-    <Heading level="3">Clarify single source of truth</Heading>
+    <Heading as="h3">Clarify single source of truth</Heading>
     <Paragraph>
       The research also revealed it was sometimes unclear for designers what the
       single source of truth was, when it came to component documentation,
@@ -134,25 +137,28 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     <HighlightCollection>
       <Highlight
         title="Shorten and simplify documentation URL"
-        headingLevel="4"
+        headingLevel="h4"
       >
         The documentation site is the design system’s official single source of
         truth. However, its URL was quite long and difficult to remember.
         Therefore, it was simplified and shortened to fancy.siteimprove.com.
       </Highlight>
-      <Highlight title="Move guidelines to documentation site" headingLevel="4">
+      <Highlight
+        title="Move guidelines to documentation site"
+        headingLevel="h4"
+      >
         Some documentation could only be found outside of the official
         documentation site. That helps explain the designers’ confusion with
         regards to the true single source of truth. Documentation that was still
         relevant and up-to-date was moved to the documentation site.
       </Highlight>
-      <Highlight title="Add warnings to deprecated pages" headingLevel="4">
+      <Highlight title="Add warnings to deprecated pages" headingLevel="h4">
         Some deprecated documentation pages could not be removed, due to still
         being relevant for internal use in the design system team. Warning
         messages were added to prevent designers from consulting these pages.
       </Highlight>
     </HighlightCollection>
-    <Heading level="3">Clarify terminology and processes</Heading>
+    <Heading as="h3">Clarify terminology and processes</Heading>
     <Paragraph>
       Another main finding was that certain terminology and processes for
       working with the design system were unclear to some designers.
@@ -166,7 +172,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       I added a general FAQ for designers to the documentation site to create
       such a knowledge repository.
     </Paragraph>
-    <Heading level="3">Keep designers up-to-date</Heading>
+    <Heading as="h3">Keep designers up-to-date</Heading>
     <Paragraph>
       During the interviews, several designers expressed a desire to be kept
       more up-to-date about the latest changes and additions to the design
@@ -176,17 +182,17 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       Two initiatives were started to accommodate this request.
     </Paragraph>
     <HighlightCollection>
-      <Highlight title="Changelogs" headingLevel="4">
+      <Highlight title="Changelogs" headingLevel="h4">
         Public changelogs were added to the documentation site. The changelogs
         are written in a manner intended to be understandable to a non-technical
         audience.
       </Highlight>
-      <Highlight title="More frequent updates" headingLevel="4">
+      <Highlight title="More frequent updates" headingLevel="h4">
         News about the design system is now posted about more frequently in a
         Slack channel specifically for designers.
       </Highlight>
     </HighlightCollection>
-    <Heading level="3">Improve review process</Heading>
+    <Heading as="h3">Improve review process</Heading>
     <Paragraph>
       The interviews revealed it was unclear to designers how and when to get
       their wireframes and mockups reviewed by the design system team.
@@ -198,7 +204,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       described here.
     </Paragraph>
     <HighlightCollection>
-      <Highlight title="Multi-disciplinary feedback" headingLevel="4">
+      <Highlight title="Multi-disciplinary feedback" headingLevel="h4">
         At the new review sessions, not just members of the design system team
         would be present, but also accessibility experts and UX writers. That
         way, designers would no longer have to schedule separate feedback
@@ -206,14 +212,14 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
         feedback from the different disciplines can immediately be discussed and
         resolved.
       </Highlight>
-      <Highlight title="Open for all designers" headingLevel="4">
+      <Highlight title="Open for all designers" headingLevel="h4">
         Multiple designers expressed an interest in attending review sessions of
         other designers. That way, they could learn from the feedback given
         during the session. It would also enable them to give their fellow
         designers feedback from a UX perspective. This would in turn strengthen
         the feedback culture within the UX team.
       </Highlight>
-      <Highlight title="Optional and informal" headingLevel="4">
+      <Highlight title="Optional and informal" headingLevel="h4">
         The designers emphasized they didn’t want the review sessions to be
         obligatory. They didn’t feel like they always needed feedback on every
         wireframe on mockup. Furthermore, they were worried the sessions would
@@ -223,7 +229,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
         efficient way to get feedback from different disciplines.
       </Highlight>
     </HighlightCollection>
-    <Heading level="2" step="4">Presentation</Heading>
+    <Heading as="h2" step="4">Presentation</Heading>
     <Paragraph>
       The last step was to give a presentation to the designers.
     </Paragraph>
