@@ -1,14 +1,9 @@
 ---
 import type { HTMLAttributes } from "astro/types";
+import type { IconName } from "../types/IconName";
 import "../styles/global.css";
 interface Props extends HTMLAttributes<"svg"> {
-    name:
-        | "arrowRight"
-        | "copy"
-        | "compose"
-        | "chevronRight"
-        | "download"
-        | "linkedin";
+    name: IconName;
 }
 
 const { name = "download", ...rest } = Astro.props;

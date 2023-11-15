@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import type { IconName } from "../types/IconName";
 import Heading from "./Heading.astro";
 import Icon from "./Icon.astro";
 import Paragraph from "./Paragraph.astro";
@@ -7,13 +8,7 @@ interface Props {
   title: string;
   headingLevel?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
   blockquote?: boolean;
-  icon?:
-    | "arrowRight"
-    | "copy"
-    | "compose"
-    | "chevronRight"
-    | "download"
-    | "linkedin";
+  icon?: IconName;
 }
 const {
   title,

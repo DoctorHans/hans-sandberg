@@ -1,17 +1,12 @@
 ---
 import type { HTMLTag, Polymorphic } from "astro/types";
+import type { IconName } from "../types/IconName";
 import "../styles/global.css";
 import Icon from "./Icon.astro";
 
 type Props<Tag extends HTMLTag> = Polymorphic<{
   as: Tag;
-  icon?:
-    | "arrowRight"
-    | "copy"
-    | "compose"
-    | "chevronRight"
-    | "download"
-    | "linkedin";
+  icon?: IconName;
 }>;
 
 const { as: Tag = "button", icon = "download", ...props } = Astro.props;

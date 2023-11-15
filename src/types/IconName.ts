@@ -1,0 +1,1 @@
+export type IconName = "arrowRight" | "copy" | "compose" | "chevronRight" | "download" | "linkedin";
