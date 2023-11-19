@@ -1,20 +1,30 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import meImage from "../images/me.jpeg";
-import Heading from "../components/Heading.astro";
-import Paragraph from "../components/Paragraph.astro";
 import BlockLink from "../components/BlockLink.astro";
 import BlockLinkCollection from "../components/BlockLinkCollection.astro";
 import PageHeader from "../components/PageHeader.astro";
+import { Image } from "astro:assets";
+import Portrait from "../images/me.jpeg";
 ---
 
 <BaseLayout pageTitle="Home Page">
-  <PageHeader title="Hello, I'm Hans">
-    I’m a designer working on a design system at <a href="https://www.pleo.io/"
-      >Pleo</a
-    > in Copenhagen. Building bridges between design and development is what I
-    do best and enjoy most.
-  </PageHeader>
+  <div class="wrapper-image-header">
+    <div class="image-container">
+      <Image
+        src={Portrait}
+        alt="john"
+        width="320"
+        densities={[2, 3, 4]}
+        class="image-portrait"
+      />
+    </div>
+    <PageHeader heading="Hello, I'm Hans" spaceAtTop={false}>
+      I’m a designer working on a design system at <a
+        href="https://www.pleo.io/">Pleo</a
+      > in Copenhagen. Building bridges between design and development is what I
+      do best and enjoy most.
+    </PageHeader>
+  </div>
   <BlockLinkCollection>
     <BlockLink
       title="About"
@@ -38,3 +48,25 @@ import PageHeader from "../components/PageHeader.astro";
     />
   </BlockLinkCollection>
 </BaseLayout>
+
+<style>
+  .image-portrait {
+    filter: grayscale();
+    object-fit: cover;
+    object-position: 54% -16px;
+  }
+
+  .image-container {
+    width: calc(2 * var(--space-3xl));
+    height: calc(2 * var(--space-3xl));
+    overflow: hidden;
+    border-radius: 50%;
+    margin-block-start: var(--space-2xl);
+  }
+
+  .wrapper-image-header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-l);
+  }
+</style>

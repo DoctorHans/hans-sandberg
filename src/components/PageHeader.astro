@@ -2,25 +2,33 @@
 import "../styles/global.css";
 import Heading from "../components/Heading.astro";
 import Paragraph from "../components/Paragraph.astro";
+import type { HTMLAttributes } from "astro/types";
 
-interface Props {
-    title: String;
+interface Props extends HTMLAttributes<"div"> {
+    heading: String;
+    spaceAtTop?: Boolean;
 }
 
-const { title } = Astro.props;
+const { heading, spaceAtTop = "true", ...props } = Astro.props;
+
+const marginBlockStart = spaceAtTop ? "var(--space-2xl)" : "0";
 ---
 
 <div class="wrapper">
-    <Heading as="h1">{title}</Heading>
+    <Heading as="h1" class="title">{heading}</Heading>
     <Paragraph class="subtitle" color="subtle" size="1"><slot /></Paragraph>
 </div>
 
-<style>
+<style define:vars={{ marginBlockStart }}>
     .wrapper {
         display: flex;
         flex-direction: column;
         gap: var(--space-xs);
         padding-block-end: var(--space-2xl);
+    }
+
+    .title {
+        margin-block-start: var(--marginBlockStart);
     }
 
     .subtitle {
