@@ -6,16 +6,19 @@ import FeatureCollection from "../../components/FeatureCollection.astro";
 import Feature from "../../components/Feature.astro";
 import Heading from "../../components/Heading.astro";
 import Paragraph from "../../components/Paragraph.astro";
+import PageHeader from "../../components/PageHeader.astro";
+import { Image } from "astro:assets";
+import ImageStep6 from "../../images/portfolio/elevator/step6.png";
+import ImageWrapper from "../../components/ImageWrapper.astro";
 ---
 
 <BaseLayout>
   <div class="flow">
-    <Heading as="h1">Ideal Elevator Experience</Heading>
-    <Paragraph>
+    <PageHeader heading="Ideal Elevator Experience">
       I was once given the task to design the ideal elevator experience, as part
       of a job interview. In this case study, I walk you through my
       user-centered design process for tackling such design challenges.
-    </Paragraph>
+    </PageHeader>
     <Heading as="h2" step="1">Research</Heading>
     <Paragraph>
       My first step was to learn more about elevators and people’s experiences
@@ -165,49 +168,51 @@ import Paragraph from "../../components/Paragraph.astro";
       I created various iterations of high-fidelity mockups, after having
       settled on only showing:
     </Paragraph>
-    <FeatureCollection>
-      <Feature>The floor the user is on</Feature>
-      <Feature>The floor the elevator is on</Feature>
-      <Feature>The floors the elevator will stop on</Feature>
-      <Feature>The direction of the elevator</Feature>
-    </FeatureCollection>
-    <Heading as="h2" step="7">User Tests and Iteration</Heading>
-    <Paragraph>
-      I tested two high-fidelity mockups with users and iterated based on the
-      test results.
-    </Paragraph>
-    <Heading as="h3">First round</Heading>
-    <Paragraph>
-      I showed the 2 concepts below to 3 participants. I asked them which floor
-      the elevator was on, whether the elevator was going up or down, where the
-      elevator was going to stop, and which floor they themselves were on. The
-      top concept was easier to understand, but the elevator’s direction and
-      participants’ floor were not clear to all.
-    </Paragraph>
-    <Heading as="h3">Second round</Heading>
-    <Paragraph>
-      To address these issues, I created the new concept shown below. I
-      performed the same user test with 4 new participants. This time, the
-      elevator’s direction was obvious to all participants. It was still not
-      clear to everyone which floor they were on, though. A different visual
-      indicator and a floor number sign next to the elevator might resolve this
-      issue.
-    </Paragraph>
-    <Heading as="h2" step="8">Final Result</Heading>
-    <Paragraph>
-      I combined the findings and insights from my research into the following
-      recommended features:
-    </Paragraph>
-    <FeatureCollection>
-      <Feature>High speed elevator</Feature>
-      <Feature>Semi-transparent mirrors</Feature>
-      <Feature>Weather info on mirror doors</Feature>
-      <Feature>Display time on mirror doors</Feature>
-      <Feature>Cool paint color in waiting area</Feature>
-      <Feature>Dim lighting in waiting area</Feature>
-      <Feature>Anxiety-reducing fragrances</Feature>
-      <Feature>Low placed braille buttons</Feature>
-      <Feature>Voice UI</Feature>
-    </FeatureCollection>
+    <ImageWrapper>
+      <Image src={ImageStep6} alt="john" width="800" densities={[2, 3, 4]} />
+    </ImageWrapper>
   </div>
+  <FeatureCollection>
+    <Feature>The floor the user is on</Feature>
+    <Feature>The floor the elevator is on</Feature>
+    <Feature>The floors the elevator will stop on</Feature>
+    <Feature>The direction of the elevator</Feature>
+  </FeatureCollection>
+  <Heading as="h2" step="7">User Tests and Iteration</Heading>
+  <Paragraph>
+    I tested two high-fidelity mockups with users and iterated based on the test
+    results.
+  </Paragraph>
+  <Heading as="h3">First round</Heading>
+  <Paragraph>
+    I showed the 2 concepts below to 3 participants. I asked them which floor
+    the elevator was on, whether the elevator was going up or down, where the
+    elevator was going to stop, and which floor they themselves were on. The top
+    concept was easier to understand, but the elevator’s direction and
+    participants’ floor were not clear to all.
+  </Paragraph>
+  <Heading as="h3">Second round</Heading>
+  <Paragraph>
+    To address these issues, I created the new concept shown below. I performed
+    the same user test with 4 new participants. This time, the elevator’s
+    direction was obvious to all participants. It was still not clear to
+    everyone which floor they were on, though. A different visual indicator and
+    a floor number sign next to the elevator might resolve this issue.
+  </Paragraph>
+  <Heading as="h2" step="8">Final Result</Heading>
+  <Paragraph>
+    I combined the findings and insights from my research into the following
+    recommended features:
+  </Paragraph>
+  <FeatureCollection>
+    <Feature>High speed elevator</Feature>
+    <Feature>Semi-transparent mirrors</Feature>
+    <Feature>Weather info on mirror doors</Feature>
+    <Feature>Display time on mirror doors</Feature>
+    <Feature>Cool paint color in waiting area</Feature>
+    <Feature>Dim lighting in waiting area</Feature>
+    <Feature>Anxiety-reducing fragrances</Feature>
+    <Feature>Low placed braille buttons</Feature>
+    <Feature>Voice UI</Feature>
+  </FeatureCollection>
 </BaseLayout>

@@ -1,0 +1,18 @@
+---
+import "../styles/global.css";
+---
+
+<div class="wrapper">
+    <slot />
+</div>
+
+<style lang="scss">
+    .wrapper {
+        display: grid;
+        place-content: center;
+        padding-block: var(--space-l);
+        padding-inline: var(--space-xl);
+        background-color: var(--color-background-loud);
+        border-radius: var(--border-radius-regular);
+    }
+</style>
