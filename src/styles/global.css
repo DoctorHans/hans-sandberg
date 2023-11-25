@@ -71,6 +71,14 @@ h6 {
 }
 
 /*
+    9. Make Astro Image components responsive
+  */
+
+img {
+  height: unset;
+}
+
+/*
 
 /* GLOBAL STYLING */
 
