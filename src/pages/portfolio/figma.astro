@@ -2,18 +2,18 @@
 import Heading from "../../components/Heading.astro";
 import Highlight from "../../components/Highlight.astro";
 import HighlightCollection from "../../components/HighlightCollection.astro";
+import PageHeader from "../../components/PageHeader.astro";
 import Paragraph from "../../components/Paragraph.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout>
   <div class="flow">
-    <Heading as="h1">Moving a design system to Figma</Heading>
-    <Paragraph>
+    <PageHeader heading="Moving a design system to Figma">
       This case study describes how I moved a design system from Sketch to
       Figma. Specifically, how I convinced management to approve the switch,
       created a new UI kit from scratch, and onboarded a team of designers.
-    </Paragraph>
+    </PageHeader>
     <Heading as="h2" step="1">Convince management</Heading>
     <Paragraph>
       The first step was to convince management to approve the purchase of

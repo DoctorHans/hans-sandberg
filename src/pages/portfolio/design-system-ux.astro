@@ -2,20 +2,20 @@
 import Heading from "../../components/Heading.astro";
 import Highlight from "../../components/Highlight.astro";
 import HighlightCollection from "../../components/HighlightCollection.astro";
+import PageHeader from "../../components/PageHeader.astro";
 import Paragraph from "../../components/Paragraph.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout>
   <div class="flow">
-    <Heading as="h1">Improving a design system’s UX</Heading>
-    <Paragraph>
+    <PageHeader heading="Improving a design system’s UX">
       The goal of this project was to evaluate and improve the UX of the design
       system I was working on. The project focused on the design system’s two
       main user groups: designers and developers. There was most room for
       improvement with regards to the UX of designers, so that’s what I’ve
       chosen to focus on here.
-    </Paragraph>
+    </PageHeader>
     <Heading as="h2" step="1">Quantitative research</Heading>
     <Paragraph>
       My first step was to send out an anonymous survey to all product
