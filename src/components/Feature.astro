@@ -1,18 +1,45 @@
 ---
+import type { HTMLAttributes } from "astro/types";
 import "../styles/global.css";
+import type { IconName } from "../types/IconName";
+import Icon from "./Icon.astro";
+import Paragraph from "./Paragraph.astro";
+
+interface Props extends HTMLAttributes<"li"> {
+  icon?: IconName;
+}
+
+const { icon = "arrowRight", ...rest } = Astro.props;
 ---
 
-<li class="wrapper">
-  <slot />
+<li class="wrapper" {...rest}>
+  <div class="icon-wrapper">
+    <Icon name={icon} class="icon" />
+  </div><Paragraph size="-1" weight="semibold"><slot /></Paragraph>
 </li>
 
 <style lang="scss">
   .wrapper {
     background: var(--color-background-loud);
-    border-radius: 0.75rem;
+    border-radius: var(--border-radius-regular);
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
     gap: var(--space-xs);
-    padding: var(--space-m);
+    padding: var(--space-s);
+  }
+
+  .icon-wrapper {
+    flex-shrink: 0;
+    display: grid;
+    place-content: center;
+    padding: var(--space-2xs);
+    background: var(--color-background-louder);
+    border-radius: var(--border-radius-round);
+  }
+
+  .icon {
+    width: var(--step-0);
+    height: var(--step-0);
   }
 </style>

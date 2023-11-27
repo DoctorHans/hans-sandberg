@@ -10,8 +10,8 @@ import "../styles/global.css";
   ul {
     padding: 0;
     list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-m);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(24rem, 100%), 1fr));
+    gap: var(--space-s);
   }
 </style>
