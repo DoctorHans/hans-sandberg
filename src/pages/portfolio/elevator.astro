@@ -8,7 +8,11 @@ import Heading from "../../components/Heading.astro";
 import Paragraph from "../../components/Paragraph.astro";
 import PageHeader from "../../components/PageHeader.astro";
 import { Image } from "astro:assets";
+import ImageStep5 from "../../images/portfolio/elevator/step5.png";
 import ImageStep6 from "../../images/portfolio/elevator/step6.png";
+import ImageStep7a from "../../images/portfolio/elevator/step7a.png";
+import ImageStep7b from "../../images/portfolio/elevator/step7b.png";
+import ImageStep8 from "../../images/portfolio/elevator/step8.png";
 import ImageWrapper from "../../components/ImageWrapper.astro";
 ---
 
@@ -144,6 +148,9 @@ import ImageWrapper from "../../components/ImageWrapper.astro";
       it. This made me more aware of the choices I had to make, such as the ones
       shown here.
     </Paragraph>
+    <ImageWrapper>
+      <Image src={ImageStep5} alt="john" width="800" densities={[2, 3, 4]} />
+    </ImageWrapper>
     <HighlightCollection>
       <Highlight title="Orientation">
         Should the UI be vertical or horizontal? Vertical matches the elevator’s
@@ -190,7 +197,13 @@ import ImageWrapper from "../../components/ImageWrapper.astro";
       top concept was easier to understand, but the elevator’s direction and
       participants’ floor were not clear to all.
     </Paragraph>
+    <ImageWrapper>
+      <Image src={ImageStep7a} alt="john" width="800" densities={[2, 3, 4]} />
+    </ImageWrapper>
     <Heading as="h3">Second round</Heading>
+    <ImageWrapper>
+      <Image src={ImageStep7b} alt="john" width="800" densities={[2, 3, 4]} />
+    </ImageWrapper>
     <Paragraph>
       To address these issues, I created the new concept shown below. I
       performed the same user test with 4 new participants. This time, the
@@ -215,5 +228,8 @@ import ImageWrapper from "../../components/ImageWrapper.astro";
       <Feature>Low placed braille buttons</Feature>
       <Feature>Voice UI</Feature>
     </FeatureCollection>
+    <ImageWrapper>
+      <Image src={ImageStep8} alt="john" width="800" densities={[2, 3, 4]} />
+    </ImageWrapper>
   </div>
 </BaseLayout>
