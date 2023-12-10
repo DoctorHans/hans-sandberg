@@ -5,6 +5,17 @@ import HighlightCollection from "../../components/HighlightCollection.astro";
 import PageHeader from "../../components/PageHeader.astro";
 import Paragraph from "../../components/Paragraph.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import ImageStep1 from "../../images/portfolio/figma/step1.png";
+import ImageStep3a from "../../images/portfolio/figma/step3a.png";
+import ImageStep3b from "../../images/portfolio/figma/step3b.png";
+import ImageStep3c from "../../images/portfolio/figma/step3c.png";
+import ImageStep4a from "../../images/portfolio/figma/step4a.png";
+import ImageStep4b from "../../images/portfolio/figma/step4b.png";
+import ImageStep5a from "../../images/portfolio/figma/step5a.png";
+import ImageStep5b from "../../images/portfolio/figma/step5b.png";
+import ImageStep6 from "../../images/portfolio/figma/step6.png";
+import ImageWrapper from "../../components/ImageWrapper.astro";
 ---
 
 <BaseLayout>
@@ -22,6 +33,9 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       However, to strengthen our case, I helped create an extensive comparison
       of Figma and Sketch, which you can see here.
     </Paragraph>
+    <ImageWrapper>
+      <Image src={ImageStep1} alt="john" width="800" densities={[2, 3, 4]} />
+    </ImageWrapper>
     <Heading as="h2" step="2">Create foundation</Heading>
     <Paragraph>
       After gaining approval from management to purchase Figma, it was time to
@@ -56,6 +70,9 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       inspecting a mockup, it should be easy for developers to find out which
       components they should use to build the design in code.
     </Paragraph>
+    <ImageWrapper>
+      <Image src={ImageStep3a} alt="john" width="400" densities={[2, 3, 4]} />
+    </ImageWrapper>
     <Paragraph>
       Part of creating the components, was utilizing some of Figma’s unique
       features as much as possible.
@@ -70,6 +87,9 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       navigate through nested menus to switch between them. In contrast, Figma
       offers a clear overview with simple menus and toggles for every property.
     </Paragraph>
+    <ImageWrapper>
+      <Image src={ImageStep3b} alt="john" width="400" densities={[2, 3, 4]} />
+    </ImageWrapper>
     <Heading as="h3">Interactive components</Heading>
     <Paragraph>
       The interactive components feature enables you to provide components with
@@ -77,6 +97,9 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       of time and effort when creating prototypes. I added as many
       hover/press/state/etc. interactions as possible.
     </Paragraph>
+    <ImageWrapper>
+      <Image src={ImageStep3c} alt="john" width="800" densities={[2, 3, 4]} />
+    </ImageWrapper>
     <Heading as="h2" step="4">Add descriptions and documentation links</Heading>
     <Paragraph>
       Once I had created all the components, I added two things to them:
@@ -91,6 +114,9 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       when they satisfy all DoD requirements. As such, these terms are meant to
       signal a certain level of quality.
     </Paragraph>
+    <ImageWrapper>
+      <Image src={ImageStep4a} alt="john" width="320" densities={[2, 3, 4]} />
+    </ImageWrapper>
     <Heading as="h3">Documentation links</Heading>
     <Paragraph>
       The documentation links help designers look up a component’s guidelines
@@ -98,6 +124,9 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       also help developers, by providing them with implementation guidelines,
       example code, and information about the component’s API.
     </Paragraph>
+    <ImageWrapper>
+      <Image src={ImageStep4b} alt="john" width="320" densities={[2, 3, 4]} />
+    </ImageWrapper>
     <Heading as="h2" step="5">Introduce new UI kit</Heading>
     <Paragraph>
       It was now time to inform my fellow product designers that the new UI kit
@@ -110,11 +139,17 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       using its components. I also mentioned a Figma plugin I installed for
       everyone, to make it easy to check for accessible color contrast levels.
     </Paragraph>
+    <ImageWrapper>
+      <Image src={ImageStep5a} alt="john" width="800" densities={[2, 3, 4]} />
+    </ImageWrapper>
     <Heading as="h3">Video walkthrough</Heading>
     <Paragraph>
       Next, I recorded and shared a video wherein I walked through the UI kit’s
       features in detail and explained how to use them.
     </Paragraph>
+    <ImageWrapper>
+      <Image src={ImageStep5b} alt="john" width="800" densities={[2, 3, 4]} />
+    </ImageWrapper>
     <Heading as="h2" step="6">Create FAQ</Heading>
     <Paragraph>
       Next, I added an FAQ about the Figma UI kit to the documentation site. It
@@ -126,6 +161,9 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       faster and more convenient way. Also, the FAQ page is better suited to be
       continuously updated.
     </Paragraph>
+    <ImageWrapper>
+      <Image src={ImageStep6} alt="john" width="600" densities={[2, 3, 4]} />
+    </ImageWrapper>
     <Heading as="h2" step="7">Follow up with designers</Heading>
     <Paragraph>
       The last step was to follow up with the designers in the weeks following
