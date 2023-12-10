@@ -5,6 +5,16 @@ import HighlightCollection from "../../components/HighlightCollection.astro";
 import PageHeader from "../../components/PageHeader.astro";
 import Paragraph from "../../components/Paragraph.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import ImageStep3a from "../../images/portfolio/design-system-ux/step3a.png";
+import ImageStep3b from "../../images/portfolio/design-system-ux/step3b.png";
+import ImageStep3c from "../../images/portfolio/design-system-ux/step3c.png";
+import ImageStep3d from "../../images/portfolio/design-system-ux/step3d.png";
+import ImageStep3e from "../../images/portfolio/design-system-ux/step3e.png";
+import ImageStep3f from "../../images/portfolio/design-system-ux/step3f.png";
+import ImageStep3g from "../../images/portfolio/design-system-ux/step3g.png";
+import ImageStep3h from "../../images/portfolio/design-system-ux/step3h.png";
+import ImageWrapper from "../../components/ImageWrapper.astro";
 ---
 
 <BaseLayout>
@@ -97,33 +107,39 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       Several changes were made to the documentation site to address this issue.
       Some of these changes are highlighted here.
     </Paragraph>
-    <HighlightCollection>
-      <Highlight title="Role-specific guideline sections" headingLevel="h4">
-        Before, guidelines for developers, designers, and UX writers could be
-        found in a single section called “Guidelines”. Now, this section is
-        split up into role-specific “Developing”, “Writing”, and “Designing”
-        sections.
-      </Highlight>
-      <Highlight title="Icons FAQ" headingLevel="h4">
-        A up-to-date and single-source of truth for guidelines about how to work
-        with icons had always been missing. To address this issue, I created an
-        “Icons FAQ” page and added it to the “Designing” section.
-      </Highlight>
-      <Highlight
-        title="Accessibility checklist for designers"
-        headingLevel="h4"
-      >
-        Enabling designers to create accessible user experiences is one of the
-        design system’s main goals. However, the documentation site was missing
-        accessibility guidelines concerning UI design. I collaborated with
-        accessibility experts to create a checklist specifically for designers.
-      </Highlight>
-      <Highlight title="Improve icons overview page" headingLevel="h4">
-        The icons overview page was cluttered, making it difficult for designers
-        to scan the page and find the icon they were looking for. I cleaned up
-        the page and added a link to the new “Icons FAQ” page.
-      </Highlight>
-    </HighlightCollection>
+    <Highlight title="Role-specific guideline sections" headingLevel="h4">
+      Before, guidelines for developers, designers, and UX writers could be
+      found in a single section called “Guidelines”. Now, this section is split
+      up into role-specific “Developing”, “Writing”, and “Designing” sections.
+    </Highlight>
+    <ImageWrapper>
+      <Image src={ImageStep3a} alt="john" width="400" densities={[2, 3, 4]} />
+    </ImageWrapper>
+    <Highlight title="Icons FAQ" headingLevel="h4">
+      A up-to-date and single-source of truth for guidelines about how to work
+      with icons had always been missing. To address this issue, I created an
+      “Icons FAQ” page and added it to the “Designing” section.
+    </Highlight>
+    <ImageWrapper>
+      <Image src={ImageStep3b} alt="john" width="1000" densities={[2, 3, 4]} />
+    </ImageWrapper>
+    <Highlight title="Accessibility checklist for designers" headingLevel="h4">
+      Enabling designers to create accessible user experiences is one of the
+      design system’s main goals. However, the documentation site was missing
+      accessibility guidelines concerning UI design. I collaborated with
+      accessibility experts to create a checklist specifically for designers.
+    </Highlight>
+    <ImageWrapper>
+      <Image src={ImageStep3c} alt="john" width="1000" densities={[2, 3, 4]} />
+    </ImageWrapper>
+    <Highlight title="Improve icons overview page" headingLevel="h4">
+      The icons overview page was cluttered, making it difficult for designers
+      to scan the page and find the icon they were looking for. I cleaned up the
+      page and added a link to the new “Icons FAQ” page.
+    </Highlight>
+    <ImageWrapper>
+      <Image src={ImageStep3d} alt="john" width="1000" densities={[2, 3, 4]} />
+    </ImageWrapper>
     <Heading as="h3">Clarify single source of truth</Heading>
     <Paragraph>
       The research also revealed it was sometimes unclear for designers what the
@@ -158,6 +174,9 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
         messages were added to prevent designers from consulting these pages.
       </Highlight>
     </HighlightCollection>
+    <ImageWrapper>
+      <Image src={ImageStep3e} alt="john" width="800" densities={[2, 3, 4]} />
+    </ImageWrapper>
     <Heading as="h3">Clarify terminology and processes</Heading>
     <Paragraph>
       Another main finding was that certain terminology and processes for
@@ -172,6 +191,9 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       I added a general FAQ for designers to the documentation site to create
       such a knowledge repository.
     </Paragraph>
+    <ImageWrapper>
+      <Image src={ImageStep3f} alt="john" width="1000" densities={[2, 3, 4]} />
+    </ImageWrapper>
     <Heading as="h3">Keep designers up-to-date</Heading>
     <Paragraph>
       During the interviews, several designers expressed a desire to be kept
@@ -192,6 +214,12 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
         Slack channel specifically for designers.
       </Highlight>
     </HighlightCollection>
+    <ImageWrapper>
+      <Image src={ImageStep3g} alt="john" width="800" densities={[2, 3, 4]} />
+    </ImageWrapper>
+    <ImageWrapper>
+      <Image src={ImageStep3h} alt="john" width="800" densities={[2, 3, 4]} />
+    </ImageWrapper>
     <Heading as="h3">Improve review process</Heading>
     <Paragraph>
       The interviews revealed it was unclear to designers how and when to get
