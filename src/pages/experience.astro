@@ -1,10 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ExperienceItem from "../components/ExperienceItem.astro";
-import ExperienceItemList from "../components/ExperienceItemDetails.astro";
+import ExperienceItemDetails from "../components/ExperienceItemDetails.astro";
 import Button from "../components/Button.astro";
 import PageHeader from "../components/PageHeader.astro";
-import Icon from "../components/Icon.astro";
 ---
 
 <BaseLayout>
@@ -29,11 +28,11 @@ import Icon from "../components/Icon.astro";
     dateRange="Jun 2022 – Present"
     duration="1 year, 6 months"
   >
-    <ExperienceItemList>
+    <ExperienceItemDetails>
       <li>Design system stuff</li>
       <li>DesignOps stuff</li>
       <li>Other stuff</li>
-    </ExperienceItemList>
+    </ExperienceItemDetails>
   </ExperienceItem>
   <ExperienceItem
     title="Senior UX Designer"
@@ -43,7 +42,7 @@ import Icon from "../components/Icon.astro";
     dateRange="Dec 2017 – Jun 2022"
     duration="4 years, 7 months"
   >
-    <ExperienceItemList>
+    <ExperienceItemDetails>
       <li>Helped found a design systems team.</li>
       <li>
         Designed and helped code accessible UI components, wrote UX guidelines,
@@ -53,9 +52,8 @@ import Icon from "../components/Icon.astro";
         Designed features for a data-heavy enterprise web application, such as a
         dashboard and account settings.
       </li>
-    </ExperienceItemList>
+    </ExperienceItemDetails>
   </ExperienceItem>
-
   <ExperienceItem
     title="UX Designer"
     org="DSW"
@@ -64,14 +62,14 @@ import Icon from "../components/Icon.astro";
     dateRange="Jul 2014 – Jun 2017"
     duration="3 years"
   >
-    <ExperienceItemList>
+    <ExperienceItemDetails>
       <li>
         Created wireframes, mockups and prototypes for customer-facing websites
         and iOS and Android apps.
       </li>
       <li>Implemented website designs using Bootstrap, HTML and CSS.</li>
       <li>Conducted usability tests and a top task analysis.</li>
-    </ExperienceItemList>
+    </ExperienceItemDetails>
   </ExperienceItem>
   <ExperienceItem
     title="UX Researcher"
@@ -81,7 +79,7 @@ import Icon from "../components/Icon.astro";
     dateRange="Oct 2013 – Feb 2014"
     duration="5 months"
   >
-    <ExperienceItemList>
+    <ExperienceItemDetails>
       <li>
         Coordinated participant recruitment, wrote test scripts, moderated
         usability tests, and wrote reports.
@@ -91,9 +89,8 @@ import Icon from "../components/Icon.astro";
         Worked for clients from various industries, such as banking, public
         transport, pension funds, and online classified ads.
       </li>
-    </ExperienceItemList>
+    </ExperienceItemDetails>
   </ExperienceItem>
-
   <ExperienceItem
     title="UX Designer"
     org="Perceptive Software"
@@ -102,7 +99,7 @@ import Icon from "../components/Icon.astro";
     dateRange="Dec 2017 – Jun 2022"
     duration="1 year"
   >
-    <ExperienceItemList>
+    <ExperienceItemDetails>
       <li>
         Created wireframes, mockups, and prototypes for enterprise desktop and
         web applications.
@@ -111,7 +108,7 @@ import Icon from "../components/Icon.astro";
         Was part of an international UX team and collaborated with developers,
         business stakeholders and other UX designers.
       </li>
-    </ExperienceItemList>
+    </ExperienceItemDetails>
   </ExperienceItem>
   <ExperienceItem
     title="UX Design Intern"
@@ -121,7 +118,7 @@ import Icon from "../components/Icon.astro";
     dateRange="Oct 2012 – Oct 2013"
     duration="1 year"
   >
-    <ExperienceItemList>
+    <ExperienceItemDetails>
       <li>
         Evaluated a complex enterprise application through contextual inquiries,
         stakeholder interviews, and a heuristic evaluation.
@@ -130,7 +127,7 @@ import Icon from "../components/Icon.astro";
         Wrote report containing discovered UX issues, user group descriptions,
         and recommendations accompanied by mockups.
       </li>
-    </ExperienceItemList>
+    </ExperienceItemDetails>
   </ExperienceItem>
   <ExperienceItem
     title="UX Research Intern"
@@ -140,7 +137,7 @@ import Icon from "../components/Icon.astro";
     dateRange="Mar 2012 – Aug 2010"
     duration="6 months"
   >
-    <ExperienceItemList>
+    <ExperienceItemDetails>
       <li>
         Recruited participants, wrote test scripts, moderated usability tests,
         analyzed test results, and wrote reports.
@@ -150,7 +147,7 @@ import Icon from "../components/Icon.astro";
         Worked on projects for clients such as PayPal, Microsoft, the Dutch
         government, ING Bank, and KLM Royal Dutch Airlines.
       </li>
-    </ExperienceItemList>
+    </ExperienceItemDetails>
   </ExperienceItem>
 </BaseLayout>
 

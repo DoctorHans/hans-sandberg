@@ -1,6 +1,6 @@
 ---
 import BlockLink from "../components/BlockLink.astro";
-import BlockLinkCollection from "../components/BlockLinkList.astro";
+import BlockLinkList from "../components/BlockLinkList.astro";
 import PageHeader from "../components/PageHeader.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
@@ -9,21 +9,26 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <PageHeader heading="About me">
     Get a feel for how I tackle design challenges
   </PageHeader>
-  <BlockLinkCollection>
-    <BlockLink
-      title="Improving a design system's UX"
-      subTitle="The goal of this project was to evaluate and improve the UX of the design system I was working on. Here, I describe the steps I took to improve the experience for one of the design system’s main user groups: designers."
-      url="/portfolio/design-system-ux"
-    />
-    <BlockLink
-      title="Moving a design system to Figma"
-      subTitle="This case study describes how I moved a design system from Sketch to Figma. Specifically, how I convinced managament to approve the switch, created a new UI kit from scratch, and onboarded a team of designers."
-      url="/portfolio/figma"
-    />
-    <BlockLink
-      title="Ideal Elevator Experience"
-      subTitle="I was once given the task to design the ideal elevator experience, as part of a job interview. In this case study, I walk you through my user-centered design process for tackling such design challenges."
-      url="/portfolio/elevator"
-    />
-  </BlockLinkCollection>
+  <BlockLinkList>
+    <li>
+      <BlockLink
+        title="Improving a design system's UX"
+        subTitle="The goal of this project was to evaluate and improve the UX of the design system I was working on. Here, I describe the steps I took to improve the experience for one of the design system’s main user groups: designers."
+        url="/portfolio/design-system-ux"
+      />
+    </li><li>
+      <BlockLink
+        title="Moving a design system to Figma"
+        subTitle="This case study describes how I moved a design system from Sketch to Figma. Specifically, how I convinced managament to approve the switch, created a new UI kit from scratch, and onboarded a team of designers."
+        url="/portfolio/figma"
+      />
+    </li>
+    <li>
+      <BlockLink
+        title="Ideal Elevator Experience"
+        subTitle="I was once given the task to design the ideal elevator experience, as part of a job interview. In this case study, I walk you through my user-centered design process for tackling such design challenges."
+        url="/portfolio/elevator"
+      />
+    </li>
+  </BlockLinkList>
 </BaseLayout>
