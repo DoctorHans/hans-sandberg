@@ -12,15 +12,13 @@ interface Props {
 const { title = "Title", subTitle = "Subtitle", url } = Astro.props;
 ---
 
-<li>
-  <article>
-    <div class="wrapper">
-      <Heading as="h2"><a href={url}>{title}</a></Heading>
-      <Icon name="arrowRight" class="icon-arrow-right" />
-    </div>
-    <Paragraph color="subtle">{subTitle}</Paragraph>
-  </article>
-</li>
+<article>
+  <div class="wrapper">
+    <Heading as="h2"><a href={url}>{title}</a></Heading>
+    <Icon name="arrowRight" class="icon-arrow-right" />
+  </div>
+  <Paragraph color="subtle">{subTitle}</Paragraph>
+</article>
 
 <style lang="scss">
   article {
