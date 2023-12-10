@@ -19,13 +19,13 @@ const {
 const Content = blockquote ? "blockquote" : "div";
 ---
 
-<li class="wrapper">
+<div class="wrapper">
   <div class="icon-wrapper">
     <Icon name={icon} class="icon" />
   </div>
   <Heading as={headingLevel} class="title">{title}</Heading>
   <Content><Paragraph size="-1"><slot /></Paragraph></Content>
-</li>
+</div>
 
 <style lang="scss">
   .wrapper {

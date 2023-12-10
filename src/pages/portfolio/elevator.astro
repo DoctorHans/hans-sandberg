@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Highlight from "../../components/Highlight.astro";
-import HighlightCollection from "../../components/HighlightCollection.astro";
+import HighlightList from "../../components/HighlightList.astro";
 import FeatureCollection from "../../components/FeatureCollection.astro";
 import Feature from "../../components/Feature.astro";
 import Heading from "../../components/Heading.astro";
@@ -28,7 +28,7 @@ import ImageWrapper from "../../components/ImageWrapper.astro";
       My first step was to learn more about elevators and people’s experiences
       with them.
     </Paragraph>
-    <HighlightCollection>
+    <HighlightList>
       <Highlight title="Interview users">
         I interviewed 9 people about their experiences with elevators. They
         mentioned 30 different things they disliked about them, such as social
@@ -47,13 +47,13 @@ import ImageWrapper from "../../components/ImageWrapper.astro";
         seems longer when we don’t know how long it’ll be, what is causing it,
         or when it’s perceived as unfair.
       </Highlight>
-    </HighlightCollection>
+    </HighlightList>
     <Heading as="h2" step="2">Requirements & Constraints</Heading>
     <Paragraph>
       I created extra requirements and constraints, to give the project a
       clearer focus.
     </Paragraph>
-    <HighlightCollection>
+    <HighlightList>
       <Highlight title="Client">
         My client is Mitsubishi, one of the world's largest elevator
         manufacturers. The elevator speed race is over, so Mitsubishi wants to
@@ -74,7 +74,7 @@ import ImageWrapper from "../../components/ImageWrapper.astro";
         direction when requests to continue in the current direction have been
         exhausted.
       </Highlight>
-    </HighlightCollection>
+    </HighlightList>
     <Heading as="h2" step="3">Problem statement</Heading>
     <Paragraph>
       I distilled my research, requirements and constraints into a concise
@@ -89,7 +89,7 @@ import ImageWrapper from "../../components/ImageWrapper.astro";
       I used what I had learned about elevators and the psychology of waiting,
       to come up with various features that would reduce perceived waiting time.
     </Paragraph>
-    <HighlightCollection>
+    <HighlightList>
       <Highlight title="Speed">
         The elevator will travel up at 83 km/h (above which people get sick) and
         down at 36 km/h (above which people experience the sensation of
@@ -135,7 +135,7 @@ import ImageWrapper from "../../components/ImageWrapper.astro";
         the direction in which it is traveling, and at which floors it is going
         to stop.
       </Highlight>
-    </HighlightCollection>
+    </HighlightList>
     <Heading as="h2" step="5">Explore Visual UI Concepts</Heading>
     <Paragraph>
       The elevator will also feature a visual UI. This UI will communicate the
@@ -151,7 +151,7 @@ import ImageWrapper from "../../components/ImageWrapper.astro";
     <ImageWrapper>
       <Image src={ImageStep5} alt="john" width="800" densities={[2, 3, 4]} />
     </ImageWrapper>
-    <HighlightCollection>
+    <HighlightList>
       <Highlight title="Orientation">
         Should the UI be vertical or horizontal? Vertical matches the elevator’s
         axis of movement. However, a horizontal UI can be placed above the
@@ -169,7 +169,7 @@ import ImageWrapper from "../../components/ImageWrapper.astro";
         On the other hand, this information might create excessive visual
         clutter.
       </Highlight>
-    </HighlightCollection>
+    </HighlightList>
     <Heading as="h2" step="6">Create Hi-Fi Mockups</Heading>
     <Paragraph>
       I created various iterations of high-fidelity mockups, after having

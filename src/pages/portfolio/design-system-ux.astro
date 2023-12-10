@@ -1,7 +1,7 @@
 ---
 import Heading from "../../components/Heading.astro";
 import Highlight from "../../components/Highlight.astro";
-import HighlightCollection from "../../components/HighlightCollection.astro";
+import HighlightList from "../../components/HighlightList.astro";
 import PageHeader from "../../components/PageHeader.astro";
 import Paragraph from "../../components/Paragraph.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
@@ -41,7 +41,7 @@ import ImageWrapper from "../../components/ImageWrapper.astro";
       scale to what degree they agreed or disagreed with the statements. Here
       are example statements from the different categories:
     </Paragraph>
-    <HighlightCollection>
+    <HighlightList>
       <Highlight title="General" blockquote>
         It's clear what the design system’s single source of truth is, when it
         comes to components, design tokens, guidelines, etc.
@@ -61,7 +61,7 @@ import ImageWrapper from "../../components/ImageWrapper.astro";
         What's the most important thing the design system team should do
         differently?
       </Highlight>
-    </HighlightCollection>
+    </HighlightList>
     <Heading as="h2" step="2">Qualitative research</Heading>
     <Paragraph>
       My second step was to interview every designer about the results of the
@@ -75,7 +75,7 @@ import ImageWrapper from "../../components/ImageWrapper.astro";
       more complete picture, I also asked more general questions about their
       experiences with the design system.
     </Paragraph>
-    <HighlightCollection>
+    <HighlightList>
       <Highlight title="Have you experienced this issue?">
         The survey’s results showed that the designers didn’t always agree on
         whether the design system was achieving a certain key objective or not.
@@ -92,7 +92,7 @@ import ImageWrapper from "../../components/ImageWrapper.astro";
         was curious to hear what the designers thought would be the best
         approach. They provided me with great input and helpful suggestions.
       </Highlight>
-    </HighlightCollection>
+    </HighlightList>
     <Heading as="h2" step="3">Implement changes</Heading>
     <Heading as="h3">Make documentation site more designer oriented</Heading>
     <Paragraph>
@@ -150,7 +150,7 @@ import ImageWrapper from "../../components/ImageWrapper.astro";
       Here you can see some of the actions that were taken to solidify the
       documentation site as the one and only source of truth.
     </Paragraph>
-    <HighlightCollection>
+    <HighlightList>
       <Highlight
         title="Shorten and simplify documentation URL"
         headingLevel="h4"
@@ -173,7 +173,7 @@ import ImageWrapper from "../../components/ImageWrapper.astro";
         being relevant for internal use in the design system team. Warning
         messages were added to prevent designers from consulting these pages.
       </Highlight>
-    </HighlightCollection>
+    </HighlightList>
     <ImageWrapper>
       <Image src={ImageStep3e} alt="john" width="800" densities={[2, 3, 4]} />
     </ImageWrapper>
@@ -203,7 +203,7 @@ import ImageWrapper from "../../components/ImageWrapper.astro";
     <Paragraph>
       Two initiatives were started to accommodate this request.
     </Paragraph>
-    <HighlightCollection>
+    <HighlightList>
       <Highlight title="Changelogs" headingLevel="h4">
         Public changelogs were added to the documentation site. The changelogs
         are written in a manner intended to be understandable to a non-technical
@@ -213,7 +213,7 @@ import ImageWrapper from "../../components/ImageWrapper.astro";
         News about the design system is now posted about more frequently in a
         Slack channel specifically for designers.
       </Highlight>
-    </HighlightCollection>
+    </HighlightList>
     <ImageWrapper>
       <Image src={ImageStep3g} alt="john" width="800" densities={[2, 3, 4]} />
     </ImageWrapper>
@@ -231,7 +231,7 @@ import ImageWrapper from "../../components/ImageWrapper.astro";
       review session format. Key characteristics of this new format are
       described here.
     </Paragraph>
-    <HighlightCollection>
+    <HighlightList>
       <Highlight title="Multi-disciplinary feedback" headingLevel="h4">
         At the new review sessions, not just members of the design system team
         would be present, but also accessibility experts and UX writers. That
@@ -256,7 +256,7 @@ import ImageWrapper from "../../components/ImageWrapper.astro";
         it clear that the sessions were optional and nothing more than an
         efficient way to get feedback from different disciplines.
       </Highlight>
-    </HighlightCollection>
+    </HighlightList>
     <Heading as="h2" step="4">Presentation</Heading>
     <Paragraph>
       The last step was to give a presentation to the designers.
@@ -264,7 +264,7 @@ import ImageWrapper from "../../components/ImageWrapper.astro";
     <Paragraph>
       This presentation served multiple purposes, highlighted here.
     </Paragraph>
-    <HighlightCollection>
+    <HighlightList>
       <Highlight title="Show appreciation">
         First of all, I wanted to thank the designers for their participation in
         the project. They had invested significant time filling out the survey
@@ -287,6 +287,6 @@ import ImageWrapper from "../../components/ImageWrapper.astro";
         way, the design system will iteratively become better at serving its
         users.
       </Highlight>
-    </HighlightCollection>
+    </HighlightList>
   </div>
 </BaseLayout>
