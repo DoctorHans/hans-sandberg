@@ -79,6 +79,14 @@ img {
 }
 
 /*
+    10. Remove list styles without affecting semantics (https://www.matuzo.at/blog/2023/removing-list-styles-without-affecting-semantics)
+  */
+
+ul {
+  list-style-type: "";
+}
+
+/*
 
 /* GLOBAL STYLING */
 
