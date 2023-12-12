@@ -15,6 +15,7 @@ import ImageStep3f from "../../images/portfolio/design-system-ux/step3f.png";
 import ImageStep3g from "../../images/portfolio/design-system-ux/step3g.png";
 import ImageStep3h from "../../images/portfolio/design-system-ux/step3h.png";
 import ImageWrapper from "../../components/ImageWrapper.astro";
+import HighlightAndImageLayout from "../../components/HighlightAndImageLayout.astro";
 ---
 
 <BaseLayout>
@@ -107,39 +108,91 @@ import ImageWrapper from "../../components/ImageWrapper.astro";
       Several changes were made to the documentation site to address this issue.
       Some of these changes are highlighted here.
     </Paragraph>
-    <Highlight title="Role-specific guideline sections" headingLevel="h4">
-      Before, guidelines for developers, designers, and UX writers could be
-      found in a single section called “Guidelines”. Now, this section is split
-      up into role-specific “Developing”, “Writing”, and “Designing” sections.
-    </Highlight>
-    <ImageWrapper>
-      <Image src={ImageStep3a} alt="john" width="400" densities={[2, 3, 4]} />
-    </ImageWrapper>
-    <Highlight title="Icons FAQ" headingLevel="h4">
-      A up-to-date and single-source of truth for guidelines about how to work
-      with icons had always been missing. To address this issue, I created an
-      “Icons FAQ” page and added it to the “Designing” section.
-    </Highlight>
-    <ImageWrapper>
-      <Image src={ImageStep3b} alt="john" width="1000" densities={[2, 3, 4]} />
-    </ImageWrapper>
-    <Highlight title="Accessibility checklist for designers" headingLevel="h4">
-      Enabling designers to create accessible user experiences is one of the
-      design system’s main goals. However, the documentation site was missing
-      accessibility guidelines concerning UI design. I collaborated with
-      accessibility experts to create a checklist specifically for designers.
-    </Highlight>
-    <ImageWrapper>
-      <Image src={ImageStep3c} alt="john" width="1000" densities={[2, 3, 4]} />
-    </ImageWrapper>
-    <Highlight title="Improve icons overview page" headingLevel="h4">
-      The icons overview page was cluttered, making it difficult for designers
-      to scan the page and find the icon they were looking for. I cleaned up the
-      page and added a link to the new “Icons FAQ” page.
-    </Highlight>
-    <ImageWrapper>
-      <Image src={ImageStep3d} alt="john" width="1000" densities={[2, 3, 4]} />
-    </ImageWrapper>
+    <ul>
+      <li>
+        <HighlightAndImageLayout>
+          <Highlight
+            slot="highlight"
+            title="Role-specific guideline sections"
+            headingLevel="h4"
+          >
+            Before, guidelines for developers, designers, and UX writers could
+            be found in a single section called “Guidelines”. Now, this section
+            is split up into role-specific “Developing”, “Writing”, and
+            “Designing” sections.
+          </Highlight>
+          <ImageWrapper slot="image">
+            <Image
+              src={ImageStep3a}
+              alt="john"
+              width="400"
+              densities={[2, 3, 4]}
+            />
+          </ImageWrapper>
+        </HighlightAndImageLayout>
+      </li>
+      <li>
+        <HighlightAndImageLayout>
+          <Highlight slot="highlight" title="Icons FAQ" headingLevel="h4">
+            A up-to-date and single-source of truth for guidelines about how to
+            work with icons had always been missing. To address this issue, I
+            created an “Icons FAQ” page and added it to the “Designing” section.
+          </Highlight>
+          <ImageWrapper slot="image">
+            <Image
+              src={ImageStep3b}
+              alt="john"
+              width="1000"
+              densities={[2, 3, 4]}
+            />
+          </ImageWrapper>
+        </HighlightAndImageLayout>
+      </li>
+      <li>
+        <HighlightAndImageLayout>
+          <Highlight
+            slot="highlight"
+            title="Accessibility checklist for designers"
+            headingLevel="h4"
+          >
+            Enabling designers to create accessible user experiences is one of
+            the design system’s main goals. However, the documentation site was
+            missing accessibility guidelines concerning UI design. I
+            collaborated with accessibility experts to create a checklist
+            specifically for designers.
+          </Highlight>
+          <ImageWrapper slot="image">
+            <Image
+              src={ImageStep3c}
+              alt="john"
+              width="1000"
+              densities={[2, 3, 4]}
+            />
+          </ImageWrapper>
+        </HighlightAndImageLayout>
+      </li>
+      <li>
+        <HighlightAndImageLayout>
+          <Highlight
+            slot="highlight"
+            title="Improve icons overview page"
+            headingLevel="h4"
+          >
+            The icons overview page was cluttered, making it difficult for
+            designers to scan the page and find the icon they were looking for.
+            I cleaned up the page and added a link to the new “Icons FAQ” page.
+          </Highlight>
+          <ImageWrapper slot="image">
+            <Image
+              src={ImageStep3d}
+              alt="john"
+              width="1000"
+              densities={[2, 3, 4]}
+            />
+          </ImageWrapper>
+        </HighlightAndImageLayout>
+      </li>
+    </ul>
     <Heading as="h3">Clarify single source of truth</Heading>
     <Paragraph>
       The research also revealed it was sometimes unclear for designers what the
