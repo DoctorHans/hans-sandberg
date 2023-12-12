@@ -1,10 +1,11 @@
 ---
+import type { HTMLAttributes } from "astro/types";
 import "../styles/global.css";
 import type { IconName } from "../types/IconName";
 import Heading from "./Heading.astro";
 import Icon from "./Icon.astro";
 import Paragraph from "./Paragraph.astro";
-interface Props {
+interface Props extends HTMLAttributes<"div"> {
   title: string;
   headingLevel?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
   blockquote?: boolean;
@@ -15,11 +16,13 @@ const {
   headingLevel = "h3",
   blockquote = false,
   icon = "download",
+  class: className,
+  ...rest
 } = Astro.props;
 const Content = blockquote ? "blockquote" : "div";
 ---
 
-<div class="wrapper">
+<div class:list={["wrapper", className]} {...rest}>
   <div class="icon-wrapper">
     <Icon name={icon} class="icon" />
   </div>
