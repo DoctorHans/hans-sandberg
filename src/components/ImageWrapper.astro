@@ -4,17 +4,22 @@ import "../styles/global.css";
 const { class: className, ...rest } = Astro.props;
 ---
 
-<div class:list={["wrapper", className]} {...rest}>
+<div class:list={["image-wrapper", className]} {...rest}>
     <slot />
 </div>
 
 <style lang="scss">
-    .wrapper {
+    .image-wrapper {
         display: grid;
         place-content: center;
         padding-block: var(--space-l);
         padding-inline: var(--space-m);
         background-color: var(--color-background-loud);
         border-radius: var(--border-radius-regular);
+
+        & :global(img) {
+            border-radius: var(--border-radius-small);
+            box-shadow: var(--shadow-elevation-medium);
+        }
     }
 </style>
