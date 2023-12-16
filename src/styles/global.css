@@ -187,9 +187,29 @@ ul {
   --size-focusring: 2px;
   --offset-focusring: var(--space-3xs);
   --focusring: var(--size-focusring) solid var(--color-focusring);
+  --border-radius-small: 0.5rem;
   --border-radius-regular: 0.75rem;
   --border-radius-round: 99999rem;
   --border-size-regular: 1px;
+  --shadow-color: 0deg 0% 68%;
+  --shadow-elevation-low:
+    0.3px 0.5px 0.5px hsl(var(--shadow-color) / 0.38),
+    0.3px 0.7px 0.7px -2px hsl(var(--shadow-color) / 0.29),
+    0.9px 1.7px 1.7px -4px hsl(var(--shadow-color) / 0.19);
+  --shadow-elevation-medium:
+    0.3px 0.5px 0.5px hsl(var(--shadow-color) / 0.4),
+    0.5px 1.1px 1.1px -1.3px hsl(var(--shadow-color) / 0.32),
+    1.6px 3.1px 3.1px -2.7px hsl(var(--shadow-color) / 0.25),
+    4.3px 8.5px 8.6px -4px hsl(var(--shadow-color) / 0.17);
+  --shadow-elevation-high:
+    0.3px 0.5px 0.5px hsl(var(--shadow-color) / 0.37),
+    0.6px 1.2px 1.2px -0.6px hsl(var(--shadow-color) / 0.34),
+    1.2px 2.4px 2.4px -1.1px hsl(var(--shadow-color) / 0.3),
+    2.2px 4.5px 4.5px -1.7px hsl(var(--shadow-color) / 0.27),
+    4.1px 8.2px 8.3px -2.3px hsl(var(--shadow-color) / 0.23),
+    7.1px 14.1px 14.2px -2.9px hsl(var(--shadow-color) / 0.2),
+    11.4px 22.9px 23px -3.4px hsl(var(--shadow-color) / 0.16),
+    17.5px 35px 35.2px -4px hsl(var(--shadow-color) / 0.13);
 }
 
 body {
