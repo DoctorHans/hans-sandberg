@@ -1,0 +1,27 @@
+---
+import "../styles/global.css";
+---
+
+<li class="container">
+    <div class="highlight-and-image">
+        <slot name="highlight" />
+        <slot name="image" />
+    </div>
+</li>
+
+<style>
+    .container {
+        container: my-container / inline-size;
+    }
+
+    .highlight-and-image {
+        display: grid;
+        gap: var(--space-m);
+    }
+
+    @container my-container (min-width: 70ch) {
+        .highlight-and-image {
+            grid-template-columns: 2fr 3fr;
+        }
+    }
+</style>

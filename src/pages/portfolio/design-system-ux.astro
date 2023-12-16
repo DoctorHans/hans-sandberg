@@ -1,7 +1,6 @@
 ---
 import Heading from "../../components/Heading.astro";
 import Highlight from "../../components/Highlight.astro";
-import HighlightList from "../../components/HighlightList.astro";
 import PageHeader from "../../components/PageHeader.astro";
 import Paragraph from "../../components/Paragraph.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
@@ -15,7 +14,10 @@ import ImageStep3f from "../../images/portfolio/design-system-ux/step3f.png";
 import ImageStep3g from "../../images/portfolio/design-system-ux/step3g.png";
 import ImageStep3h from "../../images/portfolio/design-system-ux/step3h.png";
 import ImageWrapper from "../../components/ImageWrapper.astro";
-import HighlightAndImageLayout from "../../components/HighlightAndImageLayout.astro";
+import HighlightAndImageItem from "../../layouts/HighlightAndImageItem.astro";
+import HorizontalScrollList from "../../layouts/HorizontalScrollList.astro";
+import HorizontalScrollItem from "../../layouts/HorizontalScrollItem.astro";
+import HighlightAndImageList from "../../layouts/HighlightAndImageList.astro";
 ---
 
 <BaseLayout>
@@ -42,27 +44,37 @@ import HighlightAndImageLayout from "../../components/HighlightAndImageLayout.as
       scale to what degree they agreed or disagreed with the statements. Here
       are example statements from the different categories:
     </Paragraph>
-    <HighlightList>
-      <Highlight title="General" blockquote>
-        It's clear what the design system’s single source of truth is, when it
-        comes to components, design tokens, guidelines, etc.
-      </Highlight>
-      <Highlight title="Finding and using components" blockquote>
-        It's clear what to do when a component doesn't exist or doesn't meet all
-        my requirements.
-      </Highlight>
-      <Highlight title="Contributing" blockquote>
-        I feel welcome to contribute new or improved components.
-      </Highlight>
-      <Highlight title="Help and communication" blockquote>
-        The design system team replies to questions and comments in a clear and
-        helpful way.
-      </Highlight>
-      <Highlight title="How can we do better?" blockquote>
-        What's the most important thing the design system team should do
-        differently?
-      </Highlight>
-    </HighlightList>
+    <HorizontalScrollList>
+      <HorizontalScrollItem>
+        <Highlight title="General" blockquote>
+          It's clear what the design system’s single source of truth is, when it
+          comes to components, design tokens, guidelines, etc.
+        </Highlight>
+      </HorizontalScrollItem>
+      <HorizontalScrollItem>
+        <Highlight title="Finding and using components" blockquote>
+          It's clear what to do when a component doesn't exist or doesn't meet
+          all my requirements.
+        </Highlight>
+      </HorizontalScrollItem>
+      <HorizontalScrollItem>
+        <Highlight title="Contributing" blockquote>
+          I feel welcome to contribute new or improved components.
+        </Highlight>
+      </HorizontalScrollItem>
+      <HorizontalScrollItem>
+        <Highlight title="Help and communication" blockquote>
+          The design system team replies to questions and comments in a clear
+          and helpful way.
+        </Highlight>
+      </HorizontalScrollItem>
+      <HorizontalScrollItem>
+        <Highlight title="How can we do better?" blockquote>
+          What's the most important thing the design system team should do
+          differently?
+        </Highlight>
+      </HorizontalScrollItem>
+    </HorizontalScrollList>
     <Heading as="h2" step="2">Qualitative research</Heading>
     <Paragraph>
       My second step was to interview every designer about the results of the
@@ -76,24 +88,31 @@ import HighlightAndImageLayout from "../../components/HighlightAndImageLayout.as
       more complete picture, I also asked more general questions about their
       experiences with the design system.
     </Paragraph>
-    <HighlightList>
-      <Highlight title="Have you experienced this issue?">
-        The survey’s results showed that the designers didn’t always agree on
-        whether the design system was achieving a certain key objective or not.
-        As a result, for every discovered issue, I had to check whether the
-        designer I was interviewing actually agreed it was an issue for them.
-      </Highlight>
-      <Highlight title="How and when does the issue impact your work?">
-        The aim of this question was to better understand how the design system
-        was failing to achieve a certain key objective within the context of a
-        designer’s daily work.
-      </Highlight>
-      <Highlight title="How can we do better?">
-        I had some ideas about how to tackle the discovered issues. However, I
-        was curious to hear what the designers thought would be the best
-        approach. They provided me with great input and helpful suggestions.
-      </Highlight>
-    </HighlightList>
+    <HorizontalScrollList>
+      <HorizontalScrollItem>
+        <Highlight title="Have you experienced this issue?">
+          The survey’s results showed that the designers didn’t always agree on
+          whether the design system was achieving a certain key objective or
+          not. As a result, for every discovered issue, I had to check whether
+          the designer I was interviewing actually agreed it was an issue for
+          them.
+        </Highlight>
+      </HorizontalScrollItem>
+      <HorizontalScrollItem>
+        <Highlight title="How and when does the issue impact your work?">
+          The aim of this question was to better understand how the design
+          system was failing to achieve a certain key objective within the
+          context of a designer’s daily work.
+        </Highlight>
+      </HorizontalScrollItem>
+      <HorizontalScrollItem>
+        <Highlight title="How can we do better?">
+          I had some ideas about how to tackle the discovered issues. However, I
+          was curious to hear what the designers thought would be the best
+          approach. They provided me with great input and helpful suggestions.
+        </Highlight>
+      </HorizontalScrollItem>
+    </HorizontalScrollList>
     <Heading as="h2" step="3">Implement changes</Heading>
     <Heading as="h3">Make documentation site more designer oriented</Heading>
     <Paragraph>
@@ -108,91 +127,83 @@ import HighlightAndImageLayout from "../../components/HighlightAndImageLayout.as
       Several changes were made to the documentation site to address this issue.
       Some of these changes are highlighted here.
     </Paragraph>
-    <ul>
-      <li>
-        <HighlightAndImageLayout>
-          <Highlight
-            slot="highlight"
-            title="Role-specific guideline sections"
-            headingLevel="h4"
-          >
-            Before, guidelines for developers, designers, and UX writers could
-            be found in a single section called “Guidelines”. Now, this section
-            is split up into role-specific “Developing”, “Writing”, and
-            “Designing” sections.
-          </Highlight>
-          <ImageWrapper slot="image">
-            <Image
-              src={ImageStep3a}
-              alt="john"
-              width="400"
-              densities={[2, 3, 4]}
-            />
-          </ImageWrapper>
-        </HighlightAndImageLayout>
-      </li>
-      <li>
-        <HighlightAndImageLayout>
-          <Highlight slot="highlight" title="Icons FAQ" headingLevel="h4">
-            A up-to-date and single-source of truth for guidelines about how to
-            work with icons had always been missing. To address this issue, I
-            created an “Icons FAQ” page and added it to the “Designing” section.
-          </Highlight>
-          <ImageWrapper slot="image">
-            <Image
-              src={ImageStep3b}
-              alt="john"
-              width="1000"
-              densities={[2, 3, 4]}
-            />
-          </ImageWrapper>
-        </HighlightAndImageLayout>
-      </li>
-      <li>
-        <HighlightAndImageLayout>
-          <Highlight
-            slot="highlight"
-            title="Accessibility checklist for designers"
-            headingLevel="h4"
-          >
-            Enabling designers to create accessible user experiences is one of
-            the design system’s main goals. However, the documentation site was
-            missing accessibility guidelines concerning UI design. I
-            collaborated with accessibility experts to create a checklist
-            specifically for designers.
-          </Highlight>
-          <ImageWrapper slot="image">
-            <Image
-              src={ImageStep3c}
-              alt="john"
-              width="1000"
-              densities={[2, 3, 4]}
-            />
-          </ImageWrapper>
-        </HighlightAndImageLayout>
-      </li>
-      <li>
-        <HighlightAndImageLayout>
-          <Highlight
-            slot="highlight"
-            title="Improve icons overview page"
-            headingLevel="h4"
-          >
-            The icons overview page was cluttered, making it difficult for
-            designers to scan the page and find the icon they were looking for.
-            I cleaned up the page and added a link to the new “Icons FAQ” page.
-          </Highlight>
-          <ImageWrapper slot="image">
-            <Image
-              src={ImageStep3d}
-              alt="john"
-              width="1000"
-              densities={[2, 3, 4]}
-            />
-          </ImageWrapper>
-        </HighlightAndImageLayout>
-      </li>
-    </ul>
+    <HighlightAndImageList>
+      <HighlightAndImageItem>
+        <Highlight
+          slot="highlight"
+          title="Role-specific guideline sections"
+          headingLevel="h4"
+        >
+          Before, guidelines for developers, designers, and UX writers could be
+          found in a single section called “Guidelines”. Now, this section is
+          split up into role-specific “Developing”, “Writing”, and “Designing”
+          sections.
+        </Highlight>
+        <ImageWrapper slot="image">
+          <Image
+            src={ImageStep3a}
+            alt="john"
+            width="400"
+            densities={[2, 3, 4]}
+          />
+        </ImageWrapper>
+      </HighlightAndImageItem>
+      <HighlightAndImageItem>
+        <Highlight slot="highlight" title="Icons FAQ" headingLevel="h4">
+          A up-to-date and single-source of truth for guidelines about how to
+          work with icons had always been missing. To address this issue, I
+          created an “Icons FAQ” page and added it to the “Designing” section.
+        </Highlight>
+        <ImageWrapper slot="image">
+          <Image
+            src={ImageStep3b}
+            alt="john"
+            width="1000"
+            densities={[2, 3, 4]}
+          />
+        </ImageWrapper>
+      </HighlightAndImageItem>
+      <HighlightAndImageItem>
+        <Highlight
+          slot="highlight"
+          title="Accessibility checklist for designers"
+          headingLevel="h4"
+        >
+          Enabling designers to create accessible user experiences is one of the
+          design system’s main goals. However, the documentation site was
+          missing accessibility guidelines concerning UI design. I collaborated
+          with accessibility experts to create a checklist specifically for
+          designers.
+        </Highlight>
+        <ImageWrapper slot="image">
+          <Image
+            src={ImageStep3c}
+            alt="john"
+            width="1000"
+            densities={[2, 3, 4]}
+          />
+        </ImageWrapper>
+      </HighlightAndImageItem>
+      <HighlightAndImageItem>
+        <Highlight
+          slot="highlight"
+          title="Improve icons overview page"
+          headingLevel="h4"
+        >
+          The icons overview page was cluttered, making it difficult for
+          designers to scan the page and find the icon they were looking for. I
+          cleaned up the page and added a link to the new “Icons FAQ” page.
+        </Highlight>
+        <ImageWrapper slot="image">
+          <Image
+            src={ImageStep3d}
+            alt="john"
+            width="1000"
+            densities={[2, 3, 4]}
+          />
+        </ImageWrapper>
+      </HighlightAndImageItem>
+    </HighlightAndImageList>
     <Heading as="h3">Clarify single source of truth</Heading>
     <Paragraph>
       The research also revealed it was sometimes unclear for designers what the
@@ -203,32 +214,38 @@ import HighlightAndImageLayout from "../../components/HighlightAndImageLayout.as
       Here you can see some of the actions that were taken to solidify the
       documentation site as the one and only source of truth.
     </Paragraph>
-    <HighlightList>
-      <Highlight
-        title="Shorten and simplify documentation URL"
-        headingLevel="h4"
-      >
-        The documentation site is the design system’s official single source of
-        truth. However, its URL was quite long and difficult to remember.
-        Therefore, it was simplified and shortened to fancy.siteimprove.com.
-      </Highlight>
-      <Highlight
-        title="Move guidelines to documentation site"
-        headingLevel="h4"
-      >
-        Some documentation could only be found outside of the official
-        documentation site. That helps explain the designers’ confusion with
-        regards to the true single source of truth. Documentation that was still
-        relevant and up-to-date was moved to the documentation site.
-      </Highlight>
-      <Highlight title="Add warnings to deprecated pages" headingLevel="h4">
-        Some deprecated documentation pages could not be removed, due to still
-        being relevant for internal use in the design system team. Warning
-        messages were added to prevent designers from consulting these pages.
-      </Highlight>
-    </HighlightList>
+    <HorizontalScrollList>
+      <HorizontalScrollItem>
+        <Highlight title="Add warnings to deprecated pages" headingLevel="h4">
+          Some deprecated documentation pages could not be removed, due to still
+          being relevant for internal use in the design system team. Warning
+          messages were added to prevent designers from consulting these pages.
+        </Highlight>
+      </HorizontalScrollItem>
+      <HorizontalScrollItem>
+        <Highlight
+          title="Shorten and simplify documentation URL"
+          headingLevel="h4"
+        >
+          The documentation site is the design system’s official single source
+          of truth. However, its URL was quite long and difficult to remember.
+          Therefore, it was simplified and shortened to fancy.siteimprove.com.
+        </Highlight>
+      </HorizontalScrollItem>
+      <HorizontalScrollItem>
+        <Highlight
+          title="Move guidelines to documentation site"
+          headingLevel="h4"
+        >
+          Some documentation could only be found outside of the official
+          documentation site. That helps explain the designers’ confusion with
+          regards to the true single source of truth. Documentation that was
+          still relevant and up-to-date was moved to the documentation site.
+        </Highlight>
+      </HorizontalScrollItem>
+    </HorizontalScrollList>
     <ImageWrapper>
-      <Image src={ImageStep3e} alt="john" width="800" densities={[2, 3, 4]} />
+      <Image src={ImageStep3e} alt="john" width="480" densities={[2, 3, 4]} />
     </ImageWrapper>
     <Heading as="h3">Clarify terminology and processes</Heading>
     <Paragraph>
@@ -245,7 +262,7 @@ import HighlightAndImageLayout from "../../components/HighlightAndImageLayout.as
       such a knowledge repository.
     </Paragraph>
     <ImageWrapper>
-      <Image src={ImageStep3f} alt="john" width="1000" densities={[2, 3, 4]} />
+      <Image src={ImageStep3f} alt="john" width="640" densities={[2, 3, 4]} />
     </ImageWrapper>
     <Heading as="h3">Keep designers up-to-date</Heading>
     <Paragraph>
@@ -256,23 +273,41 @@ import HighlightAndImageLayout from "../../components/HighlightAndImageLayout.as
     <Paragraph>
       Two initiatives were started to accommodate this request.
     </Paragraph>
-    <HighlightList>
-      <Highlight title="Changelogs" headingLevel="h4">
-        Public changelogs were added to the documentation site. The changelogs
-        are written in a manner intended to be understandable to a non-technical
-        audience.
-      </Highlight>
-      <Highlight title="More frequent updates" headingLevel="h4">
-        News about the design system is now posted about more frequently in a
-        Slack channel specifically for designers.
-      </Highlight>
-    </HighlightList>
-    <ImageWrapper>
-      <Image src={ImageStep3g} alt="john" width="800" densities={[2, 3, 4]} />
-    </ImageWrapper>
-    <ImageWrapper>
-      <Image src={ImageStep3h} alt="john" width="800" densities={[2, 3, 4]} />
-    </ImageWrapper>
+    <HighlightAndImageList>
+      <HighlightAndImageItem>
+        <Highlight slot="highlight" title="Changelogs" headingLevel="h4">
+          Public changelogs were added to the documentation site. The changelogs
+          are written in a manner intended to be understandable to a
+          non-technical audience.
+        </Highlight>
+        <ImageWrapper slot="image">
+          <Image
+            src={ImageStep3g}
+            alt="john"
+            width="640"
+            densities={[2, 3, 4]}
+          />
+        </ImageWrapper>
+      </HighlightAndImageItem>
+      <HighlightAndImageItem>
+        <Highlight
+          slot="highlight"
+          title="More frequent updates"
+          headingLevel="h4"
+        >
+          News about the design system is now posted about more frequently in a
+          Slack channel specifically for designers.
+        </Highlight>
+        <ImageWrapper slot="image">
+          <Image
+            src={ImageStep3h}
+            alt="john"
+            width="640"
+            densities={[2, 3, 4]}
+          />
+        </ImageWrapper>
+      </HighlightAndImageItem>
+    </HighlightAndImageList>
     <Heading as="h3">Improve review process</Heading>
     <Paragraph>
       The interviews revealed it was unclear to designers how and when to get
@@ -284,32 +319,38 @@ import HighlightAndImageLayout from "../../components/HighlightAndImageLayout.as
       review session format. Key characteristics of this new format are
       described here.
     </Paragraph>
-    <HighlightList>
-      <Highlight title="Multi-disciplinary feedback" headingLevel="h4">
-        At the new review sessions, not just members of the design system team
-        would be present, but also accessibility experts and UX writers. That
-        way, designers would no longer have to schedule separate feedback
-        sessions with each discipline. Another benefit is that conflicting
-        feedback from the different disciplines can immediately be discussed and
-        resolved.
-      </Highlight>
-      <Highlight title="Open for all designers" headingLevel="h4">
-        Multiple designers expressed an interest in attending review sessions of
-        other designers. That way, they could learn from the feedback given
-        during the session. It would also enable them to give their fellow
-        designers feedback from a UX perspective. This would in turn strengthen
-        the feedback culture within the UX team.
-      </Highlight>
-      <Highlight title="Optional and informal" headingLevel="h4">
-        The designers emphasized they didn’t want the review sessions to be
-        obligatory. They didn’t feel like they always needed feedback on every
-        wireframe on mockup. Furthermore, they were worried the sessions would
-        be formal affairs, where their work would be judged and they had to get
-        “official approval” for their designs. As a result, the plan was to make
-        it clear that the sessions were optional and nothing more than an
-        efficient way to get feedback from different disciplines.
-      </Highlight>
-    </HighlightList>
+    <HorizontalScrollList>
+      <HorizontalScrollItem>
+        <Highlight title="Multi-disciplinary feedback" headingLevel="h4">
+          At the new review sessions, not just members of the design system team
+          would be present, but also accessibility experts and UX writers. That
+          way, designers would no longer have to schedule separate feedback
+          sessions with each discipline. Another benefit is that conflicting
+          feedback from the different disciplines can immediately be discussed
+          and resolved.
+        </Highlight>
+      </HorizontalScrollItem>
+      <HorizontalScrollItem>
+        <Highlight title="Open for all designers" headingLevel="h4">
+          Multiple designers expressed an interest in attending review sessions
+          of other designers. That way, they could learn from the feedback given
+          during the session. It would also enable them to give their fellow
+          designers feedback from a UX perspective. This would in turn
+          strengthen the feedback culture within the UX team.
+        </Highlight>
+      </HorizontalScrollItem>
+      <HorizontalScrollItem>
+        <Highlight title="Optional and informal" headingLevel="h4">
+          The designers emphasized they didn’t want the review sessions to be
+          obligatory. They didn’t feel like they always needed feedback on every
+          wireframe on mockup. Furthermore, they were worried the sessions would
+          be formal affairs, where their work would be judged and they had to
+          get “official approval” for their designs. As a result, the plan was
+          to make it clear that the sessions were optional and nothing more than
+          an efficient way to get feedback from different disciplines.
+        </Highlight>
+      </HorizontalScrollItem>
+    </HorizontalScrollList>
     <Heading as="h2" step="4">Presentation</Heading>
     <Paragraph>
       The last step was to give a presentation to the designers.
@@ -317,29 +358,38 @@ import HighlightAndImageLayout from "../../components/HighlightAndImageLayout.as
     <Paragraph>
       This presentation served multiple purposes, highlighted here.
     </Paragraph>
-    <HighlightList>
-      <Highlight title="Show appreciation">
-        First of all, I wanted to thank the designers for their participation in
-        the project. They had invested significant time filling out the survey
-        and being interviewed, which I wanted to show my appreciation for.
-      </Highlight>
-      <Highlight title="Share findings and changes">
-        Secondly, I wanted the designers to know, that their time was well
-        spent. To that end, I reiterated the project’s purpose, shared the most
-        important findings, and showcased both the implemented and planned
-        changes.
-      </Highlight>
-      <Highlight title="Request feedback">
-        I was also curious to hear what the designers thought of the project and
-        especially the implemented and planned changes. Thankfully, their
-        initial reactions were positive.
-      </Highlight>
-      <Highlight title="Announce reoccurrence">
-        Lastly, wanted to announce that this wasn’t the first and last project
-        of its kind. The plan is to conduct a similar project every year. This
-        way, the design system will iteratively become better at serving its
-        users.
-      </Highlight>
-    </HighlightList>
+    <HorizontalScrollList>
+      <HorizontalScrollItem>
+        <Highlight title="Show appreciation">
+          First of all, I wanted to thank the designers for their participation
+          in the project. They had invested significant time filling out the
+          survey and being interviewed, which I wanted to show my appreciation
+          for.
+        </Highlight>
+      </HorizontalScrollItem>
+      <HorizontalScrollItem>
+        <Highlight title="Share findings and changes">
+          Secondly, I wanted the designers to know, that their time was well
+          spent. To that end, I reiterated the project’s purpose, shared the
+          most important findings, and showcased both the implemented and
+          planned changes.
+        </Highlight>
+      </HorizontalScrollItem>
+      <HorizontalScrollItem>
+        <Highlight title="Request feedback">
+          I was also curious to hear what the designers thought of the project
+          and especially the implemented and planned changes. Thankfully, their
+          initial reactions were positive.
+        </Highlight>
+      </HorizontalScrollItem>
+      <HorizontalScrollItem>
+        <Highlight title="Announce reoccurrence">
+          Lastly, wanted to announce that this wasn’t the first and last project
+          of its kind. The plan is to conduct a similar project every year. This
+          way, the design system will iteratively become better at serving its
+          users.
+        </Highlight>
+      </HorizontalScrollItem>
+    </HorizontalScrollList>
   </div>
 </BaseLayout>

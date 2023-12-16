@@ -1,0 +1,20 @@
+---
+import "../styles/global.css";
+---
+
+<ul>
+    <slot />
+</ul>
+
+<style lang="scss">
+    ul {
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        gap: var(--space-m);
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+        margin-block: var(--space-l);
+    }
+</style>
