@@ -16,7 +16,7 @@ const marginBlockStart = spaceAtTop ? "var(--space-2xl)" : "0";
 
 <div class="wrapper" {...rest}>
     <Heading as="h1" class="title">{heading}</Heading>
-    <Paragraph class="subtitle" color="subtle" size="1"><slot /></Paragraph>
+    <Paragraph class="subtitle" color="subtle" size="0"><slot /></Paragraph>
 </div>
 
 <style define:vars={{ marginBlockStart }}>

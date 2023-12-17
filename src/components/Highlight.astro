@@ -27,7 +27,7 @@ const Content = blockquote ? "blockquote" : "div";
     <Icon name={icon} class="icon" />
   </div>
   <Heading as={headingLevel} class="title">{title}</Heading>
-  <Content><Paragraph size="-1"><slot /></Paragraph></Content>
+  <Content><Paragraph><slot /></Paragraph></Content>
 </div>
 
 <style lang="scss">

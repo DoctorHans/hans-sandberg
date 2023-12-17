@@ -6,7 +6,7 @@ import "../styles/global.css";
     <slot />
 </ul>
 
-<style>
+<style lang="scss">
     ul {
         list-style-type: circle;
         display: flex;
@@ -15,5 +15,9 @@ import "../styles/global.css";
         background-color: var(--color-background-loud);
         padding: var(--space-s) var(--space-l);
         border-radius: var(--border-radius-regular);
+
+        & :global(li) {
+            font-size: var(--step--1);
+        }
     }
 </style>

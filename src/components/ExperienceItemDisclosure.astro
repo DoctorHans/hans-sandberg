@@ -46,16 +46,20 @@ const { label } = Astro.props;
     }
 
     .icon-chevron-right {
-        width: var(--step-1);
-        height: var(--step-1);
+        width: var(--step-0);
+        height: var(--step-0);
         flex-shrink: 0;
         transition: transform var(--transition-duration-regular);
     }
 
+    .visible-label {
+        font-size: var(--step--1);
+    }
+
     @container my-container (min-width: 50ch) {
         .disclosure-button {
-            width: var(--step-3);
-            height: var(--step-3);
+            width: var(--step-2);
+            height: var(--step-2);
             background-color: var(--color-background-loud);
             border-radius: 50%;
             display: grid;
