@@ -1,7 +1,6 @@
 ---
 import Heading from "../../components/Heading.astro";
 import Highlight from "../../components/Highlight.astro";
-import HighlightList from "../../components/HighlightList.astro";
 import PageHeader from "../../components/PageHeader.astro";
 import Paragraph from "../../components/Paragraph.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
@@ -16,6 +15,8 @@ import ImageStep5a from "../../images/portfolio/figma/step5a.png";
 import ImageStep5b from "../../images/portfolio/figma/step5b.png";
 import ImageStep6 from "../../images/portfolio/figma/step6.png";
 import ImageWrapper from "../../components/ImageWrapper.astro";
+import HorizontalScrollList from "../../layouts/HorizontalScrollList.astro";
+import HorizontalScrollItem from "../../layouts/HorizontalScrollItem.astro";
 ---
 
 <BaseLayout>
@@ -174,32 +175,40 @@ import ImageWrapper from "../../components/ImageWrapper.astro";
       kit and any issues they’d run into. The most important learnings are
       summarized here.
     </Paragraph>
-    <HighlightList>
-      <Highlight title="Import issue">
-        Designers that had started migrating, mentioned it wasn’t pain free.
-        Their Sketch mockups got pretty messed up when importing them into
-        Figma. One designer noted it took him two full weeks to make everything
-        look correct again. Sadly, other than encouraging words, there wasn’t
-        much I could do to help them through this initial phase.
-      </Highlight>
-      <Highlight title="Not automatically available">
-        A designer mentioned it was annoying that she had to add the UI kit to
-        every new file. This surprised me, as I had expected the UI kit to be
-        automatically available in all new files. Apparently, this was a setting
-        I had to enable, which I promptly did.
-      </Highlight>
-      <Highlight title="Small bugs">
-        Several designers had encountered small bugs in the UI kit. These ranged
-        from color and shadow styles not matching our design tokens, to
-        components lacking correct responsive behavior. I made an effort to
-        correct these mistakes as fast as possible.
-      </Highlight>
-      <Highlight title="Generally happy">
-        Although not perfect, Figma and the UI kit made a generally good first
-        impression. The designers were excited to start using this new industry
-        leading design tool. Some mentioned already not being able to live
-        without some of its unique features, such as auto layout.
-      </Highlight>
-    </HighlightList>
+    <HorizontalScrollList>
+      <HorizontalScrollItem>
+        <Highlight title="Import issue">
+          Designers that had started migrating, mentioned it wasn’t pain free.
+          Their Sketch mockups got pretty messed up when importing them into
+          Figma. One designer noted it took him two full weeks to make
+          everything look correct again. Sadly, other than encouraging words,
+          there wasn’t much I could do to help them through this initial phase.
+        </Highlight>
+      </HorizontalScrollItem>
+      <HorizontalScrollItem>
+        <Highlight title="Not automatically available">
+          A designer mentioned it was annoying that she had to add the UI kit to
+          every new file. This surprised me, as I had expected the UI kit to be
+          automatically available in all new files. Apparently, this was a
+          setting I had to enable, which I promptly did.
+        </Highlight>
+      </HorizontalScrollItem>
+      <HorizontalScrollItem>
+        <Highlight title="Small bugs">
+          Several designers had encountered small bugs in the UI kit. These
+          ranged from color and shadow styles not matching our design tokens, to
+          components lacking correct responsive behavior. I made an effort to
+          correct these mistakes as fast as possible.
+        </Highlight>
+      </HorizontalScrollItem>
+      <HorizontalScrollItem>
+        <Highlight title="Generally happy">
+          Although not perfect, Figma and the UI kit made a generally good first
+          impression. The designers were excited to start using this new
+          industry leading design tool. Some mentioned already not being able to
+          live without some of its unique features, such as auto layout.
+        </Highlight>
+      </HorizontalScrollItem>
+    </HorizontalScrollList>
   </div>
 </BaseLayout>
