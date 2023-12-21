@@ -2,11 +2,12 @@
 import Paragraph from "../components/Paragraph.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PageHeader from "../components/PageHeader.astro";
+import TextContainer from "../layouts/TextContainer.astro";
 ---
 
 <BaseLayout>
   <PageHeader heading="About me">Get to know me a bit better</PageHeader>
-  <div class="flow">
+  <TextContainer>
     <Paragraph>
       I’ve been working as a designer for over ten years. I love to design and
       help build accessible, human-centered products.
@@ -22,5 +23,5 @@ import PageHeader from "../components/PageHeader.astro";
       <a href="https://www.pleo.io/">Pleo</a>, where I'm part of the Design
       Systems Team.
     </Paragraph>
-  </div>
+  </TextContainer>
 </BaseLayout>

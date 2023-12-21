@@ -18,17 +18,18 @@ import HighlightAndImageItem from "../../layouts/HighlightAndImageItem.astro";
 import HorizontalScrollList from "../../layouts/HorizontalScrollList.astro";
 import HorizontalScrollItem from "../../layouts/HorizontalScrollItem.astro";
 import HighlightAndImageList from "../../layouts/HighlightAndImageList.astro";
+import TextContainer from "../../layouts/TextContainer.astro";
 ---
 
 <BaseLayout>
-  <div class="flow">
-    <PageHeader heading="Improving a design system’s UX">
-      The goal of this project was to evaluate and improve the UX of the design
-      system I was working on. The project focused on the design system’s two
-      main user groups: designers and developers. There was most room for
-      improvement with regards to the UX of designers, so that’s what I’ve
-      chosen to focus on here.
-    </PageHeader>
+  <PageHeader heading="Improving a design system’s UX">
+    The goal of this project was to evaluate and improve the UX of the design
+    system I was working on. The project focused on the design system’s two main
+    user groups: designers and developers. There was most room for improvement
+    with regards to the UX of designers, so that’s what I’ve chosen to focus on
+    here.
+  </PageHeader>
+  <TextContainer>
     <Heading as="h2" step="1">Quantitative research</Heading>
     <Paragraph>
       My first step was to send out an anonymous survey to all product
@@ -384,5 +385,5 @@ import HighlightAndImageList from "../../layouts/HighlightAndImageList.astro";
         </Highlight>
       </HorizontalScrollItem>
     </HorizontalScrollList>
-  </div>
+  </TextContainer>
 </BaseLayout>
