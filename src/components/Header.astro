@@ -6,6 +6,9 @@ import VisuallyHidden from "./VisuallyHidden.astro";
 
 <header class="u-container">
   <SkipLink />
+  <a id="logo" href="/"
+    ><span aria-hidden="true">h</span><VisuallyHidden>Home</VisuallyHidden></a
+  >
   <nav id="nav">
     <button
       id="nav-toggle"
@@ -17,12 +20,8 @@ import VisuallyHidden from "./VisuallyHidden.astro";
       Menu
     </button>
     <ul>
-      <li id="home-link">
-        <a href="/"
-          ><span aria-hidden="true">h</span><VisuallyHidden>
-            Home
-          </VisuallyHidden></a
-        >
+      <li>
+        <a href="/">Home</a>
       </li>
       <li>
         <a href="/about">About</a>
@@ -48,12 +47,34 @@ import VisuallyHidden from "./VisuallyHidden.astro";
     background-color: var(--color-background);
   }
 
+  #logo {
+    text-decoration: none;
+    margin-inline-end: auto;
+    color: var(--neutral-0);
+    font-weight: var(--font-weight-bold);
+    background-color: var(--neutral-800);
+    display: grid;
+    place-content: center;
+    height: var(--space-m);
+    width: var(--space-m);
+    border-radius: var(--border-radius-round);
+  }
+
   nav {
-    width: 100%;
-    display: flex;
-    justify-content: end;
     @media (min-width: 48rem) {
       --nav-button-display: none;
+    }
+
+    a {
+      font-size: var(--nav-list-font-size, var(--step-5));
+      text-decoration: none;
+      color: var(--color-content-subtle);
+      &:hover {
+        color: var(--color-content-regular);
+      }
+      &[aria-current="page"] {
+        font-weight: var(--font-weight-bold);
+      }
     }
   }
 
@@ -78,23 +99,8 @@ import VisuallyHidden from "./VisuallyHidden.astro";
       visibility var(--transition-duration-regular);
     z-index: var(--nav-list-z-index, 1);
 
-    #home-link {
-      margin-inline-end: auto;
-
-      a {
-        color: var(--neutral-0);
-        font-weight: var(--font-weight-bold);
-        background-color: var(--neutral-800);
-        display: grid;
-        place-content: center;
-        height: var(--space-m);
-        width: var(--space-m);
-        border-radius: var(--border-radius-round);
-      }
-    }
-
     @media (min-width: 48rem) {
-      --nav-list-font-size: unset;
+      --nav-list-font-size: var(--step--1);
       --nav-list-flex-direction: row;
       --nav-list-align-items: center;
       --nav-list-justify-content: start;
@@ -118,18 +124,7 @@ import VisuallyHidden from "./VisuallyHidden.astro";
     display: var(--nav-button-display, flex);
     z-index: 2;
     cursor: pointer;
-  }
-
-  a {
-    font-size: var(--step-5);
-    text-decoration: none;
-    color: var(--color-content-subtle);
-    &:hover {
-      color: var(--color-content-regular);
-    }
-    &[aria-current="page"] {
-      font-weight: var(--font-weight-bold);
-    }
+    position: relative;
   }
 </style>
 
