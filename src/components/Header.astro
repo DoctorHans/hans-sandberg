@@ -11,14 +11,12 @@ import VisuallyHidden from "./VisuallyHidden.astro";
       id="nav-toggle"
       type="button"
       aria-expanded="false"
-      aria-label="Menu"
+      aria-label="Toggle menu"
       aria-controls="nav"
     >
-      <svg width="24" height="24" aria-hidden="true">
-        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
-      </svg>
+      Menu
     </button>
-    <ul role="list">
+    <ul>
       <li id="home-link">
         <a href="/"
           ><span aria-hidden="true">h</span><VisuallyHidden>
@@ -52,6 +50,8 @@ import VisuallyHidden from "./VisuallyHidden.astro";
 
   nav {
     width: 100%;
+    display: flex;
+    justify-content: end;
     @media (min-width: 48rem) {
       --nav-button-display: none;
     }
@@ -59,14 +59,13 @@ import VisuallyHidden from "./VisuallyHidden.astro";
 
   ul {
     background: var(--color-background);
-    box-shadow: var(--nav-list-shadow, -5px 0 11px 0 rgb(0 0 0 / 0.2));
     display: flex;
-    align-items: center;
-    flex-direction: var(--nav-list-layout, column);
+    align-items: var(--nav-list-align-items, start);
+    justify-content: var(--nav-list-justify-content, end);
+    flex-direction: var(--nav-list-flex-direction, column);
     flex-wrap: wrap;
     gap: var(--space-m);
     height: var(--nav-list-height, 100vh);
-    list-style: none;
     margin: 0;
     padding: var(--nav-list-padding, var(--space-m));
     position: var(--nav-list-position, fixed);
@@ -95,12 +94,14 @@ import VisuallyHidden from "./VisuallyHidden.astro";
     }
 
     @media (min-width: 48rem) {
-      --nav-list-layout: row;
+      --nav-list-font-size: unset;
+      --nav-list-flex-direction: row;
+      --nav-list-align-items: center;
+      --nav-list-justify-content: start;
       --nav-list-position: static;
       --nav-list-padding: 0;
       --nav-list-height: auto;
       --nav-list-width: 100%;
-      --nav-list-shadow: none;
       --nav-list-transform: none;
       --nav-list-visibility: visible;
       --nav-list-z-index: reset;
@@ -115,13 +116,12 @@ import VisuallyHidden from "./VisuallyHidden.astro";
   button {
     all: unset;
     display: var(--nav-button-display, flex);
-    position: relative;
     z-index: 2;
     cursor: pointer;
   }
 
   a {
-    font-size: var(--step--1);
+    font-size: var(--step-5);
     text-decoration: none;
     color: var(--color-content-subtle);
     &:hover {
