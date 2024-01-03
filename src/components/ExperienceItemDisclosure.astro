@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import Icon from "./Icon.astro";
+import VisuallyHidden from "./VisuallyHidden.astro";
 
 interface Props {
     label: string;
@@ -10,9 +11,11 @@ const { label } = Astro.props;
 ---
 
 <button class="disclosure-button" aria-expanded="false"
-    ><span class="visible-label" aria-hidden="true">Details</span><span
-        class="sr-only">{label}</span
-    ><Icon name="chevronRight" class="icon-chevron-right" />
+    ><span class="visible-label" aria-hidden="true">Details</span
+    ><VisuallyHidden class="sr-only">{label}</VisuallyHidden><Icon
+        name="chevronRight"
+        class="icon-chevron-right"
+    />
 </button>
 <div aria-hidden="true" class="details">
     <div class="details-inner"><slot /></div>
@@ -20,7 +23,7 @@ const { label } = Astro.props;
 
 <style lang="scss">
     .disclosure-button {
-        all: unset;
+        border: none;
         display: flex;
         gap: var(--space-3xs);
         align-items: center;
@@ -31,11 +34,6 @@ const { label } = Astro.props;
 
         &:hover {
             color: var(--color-content-loud);
-        }
-
-        &:focus-visible {
-            outline: var(--focusring);
-            outline-offset: var(--offset-focusring);
         }
     }
 
