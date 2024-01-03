@@ -227,17 +227,6 @@ a {
   outline-offset: var(--offset-focusring);
 }
 
-/* Source: https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html */
-.sr-only:not(:focus):not(:active) {
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-}
-
 /* Source: https://robbowen.digital/wrote-about/locking-scroll-with-has/ */
 body:has(.scroll-lock[aria-expanded="true"]) {
   overflow: hidden;
