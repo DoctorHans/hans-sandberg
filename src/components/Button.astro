@@ -29,21 +29,26 @@ const { as: Tag = "button", icon = "download", ...props } = Astro.props;
     border-radius: var(--border-radius-regular);
     cursor: pointer;
     text-align: left;
-    transition: border-color var(--motion-duration-regular);
-
-    &:hover {
-      border-color: var(--color-border-loud);
-      color: var(--color-content-loud);
-
-      .icon {
-        color: var(--color-content-loud);
-      }
-    }
+    transition: var(--motion-exit-small);
+    transition-property: border-color, color;
 
     .icon {
       height: var(--step-0);
       width: var(--step-0);
-      transition: color var(--motion-duration-regular);
+      color: var(--color-content-regular);
+      transition: color var(--motion-exit-small);
+    }
+
+    &:hover {
+      border-color: var(--color-border-loud);
+      color: var(--color-content-loud);
+      transition: var(--motion-enter-small);
+      transition-property: border-color, color;
+
+      .icon {
+        color: var(--color-content-loud);
+        transition: color var(--motion-enter-small);
+      }
     }
   }
 

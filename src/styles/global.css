@@ -178,7 +178,7 @@ ul {
   --font-weight-regular: 400;
   --font-weight-semibold: 500;
   --font-weight-bold: 700;
-  --motion-duration-step: 120ms;
+  --motion-duration-step: 100ms;
   --motion-duration-fast: calc(1*var(--motion-duration-step));
   --motion-duration-regular: calc(2*var(--motion-duration-step));
   --motion-duration-slow: calc(3*var(--motion-duration-step));
