@@ -15,10 +15,10 @@ import VisuallyHidden from "./VisuallyHidden.astro";
       class="scroll-lock"
       type="button"
       aria-expanded="false"
-      aria-label="Toggle menu"
       aria-controls="nav"
     >
-      Menu
+      <VisuallyHidden>Menu</VisuallyHidden>
+      <span id="nav-toggle-visual-label" aria-hidden="true">Menu</span>
     </button>
     <ul>
       <li>
@@ -98,9 +98,9 @@ import VisuallyHidden from "./VisuallyHidden.astro";
     inset-inline-end: 0;
     width: var(--nav-list-width, 100vw);
     visibility: var(--nav-list-visibility, visible);
-    transition:
-      transform var(--transition-duration-regular) ease-in-out,
-      visibility var(--transition-duration-regular);
+    opacity: var(--nav-list-opacity, 1);
+    transition: opacity var(--motion-duration-regular)
+      var(--motion-easing-enter);
     z-index: var(--nav-list-z-index, 1);
 
     @media (min-width: 48rem) {
@@ -114,13 +114,17 @@ import VisuallyHidden from "./VisuallyHidden.astro";
       --nav-list-width: 100%;
       --nav-list-transform: none;
       --nav-list-visibility: visible;
+      --nav-list-opacity: 1;
       --nav-list-z-index: reset;
     }
+  }
 
-    [aria-expanded="false"] + & {
-      transform: var(--nav-list-transform, translateX(100%));
-      visibility: var(--nav-list-visibility, hidden);
-    }
+  button[aria-expanded="false"] + ul {
+    visibility: var(--nav-list-visibility, hidden);
+    opacity: var(--nav-list-opacity, 0);
+    transition:
+      opacity var(--motion-exit-large),
+      visibility 0ms var(--motion-duration-regular);
   }
 
   button {
@@ -151,12 +155,26 @@ import VisuallyHidden from "./VisuallyHidden.astro";
 <script>
   const nav: HTMLElement | null = document.querySelector("#nav");
   const navToggle: HTMLElement | null = document.querySelector("#nav-toggle");
+  const navToggleVisualLabel: HTMLElement | null = document.querySelector(
+    "#nav-toggle-visual-label",
+  );
   let isNavVisible = navToggle?.getAttribute("aria-expanded") === "true";
 
-  // Toggle aria-expanded attribute
   function toggleNavVisibility() {
     isNavVisible = !isNavVisible;
+
+    // Toggle aria-expanded attribute
     navToggle?.setAttribute("aria-expanded", String(isNavVisible));
+
+    // Toggle button visual label
+    if (navToggleVisualLabel != undefined) {
+      if (isNavVisible) {
+        navToggleVisualLabel.textContent = "Close";
+      } else {
+        navToggleVisualLabel.textContent = "Menu";
+      }
+    }
+
     isNavVisible
       ? nav?.addEventListener("keydown", trapFocus)
       : nav?.removeEventListener("keydown", trapFocus);

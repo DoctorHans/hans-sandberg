@@ -29,7 +29,7 @@ const { as: Tag = "button", icon = "download", ...props } = Astro.props;
     border-radius: var(--border-radius-regular);
     cursor: pointer;
     text-align: left;
-    transition: border-color var(--transition-duration-regular);
+    transition: border-color var(--motion-duration-regular);
 
     &:hover {
       border-color: var(--color-border-loud);
@@ -43,7 +43,7 @@ const { as: Tag = "button", icon = "download", ...props } = Astro.props;
     .icon {
       height: var(--step-0);
       width: var(--step-0);
-      transition: color var(--transition-duration-regular);
+      transition: color var(--motion-duration-regular);
     }
   }
 

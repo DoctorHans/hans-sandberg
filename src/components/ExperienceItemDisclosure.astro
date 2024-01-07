@@ -29,7 +29,7 @@ const { label } = Astro.props;
         align-items: center;
         color: var(--color-content-subtle);
         cursor: pointer;
-        transition: color var(--transition-duration-regular);
+        transition: color var(--motion-duration-regular);
         align-self: flex-start;
 
         &:hover {
@@ -47,7 +47,7 @@ const { label } = Astro.props;
         width: var(--step-0);
         height: var(--step-0);
         flex-shrink: 0;
-        transition: transform var(--transition-duration-regular);
+        transition: transform var(--motion-duration-regular);
     }
 
     .visible-label {
@@ -86,8 +86,8 @@ const { label } = Astro.props;
             grid-template-rows: 1fr;
             opacity: 1;
             transition:
-                opacity var(--transition-duration-slow),
-                grid-template-rows var(--transition-duration-fast);
+                opacity var(--motion-duration-extra-slow),
+                grid-template-rows var(--motion-duration-fast);
             margin-block-end: var(--space-m);
         }
 
@@ -95,8 +95,8 @@ const { label } = Astro.props;
             grid-template-rows: 0fr;
             opacity: 0;
             transition:
-                opacity var(--transition-duration-fast),
-                grid-template-rows var(--transition-duration-regular);
+                opacity var(--motion-duration-fast),
+                grid-template-rows var(--motion-duration-regular);
         }
     }
 
