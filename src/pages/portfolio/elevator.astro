@@ -32,7 +32,7 @@ import TextContainer from "../../layouts/TextContainer.astro";
     </Paragraph>
     <HorizontalScrollList>
       <HorizontalScrollItem>
-        <Highlight title="Interview users">
+        <Highlight title="Interview users" icon="qa">
           I interviewed 9 people about their experiences with elevators. They
           mentioned 30 different things they disliked about them, such as social
           awkwardness and dirty, cramped interiors. However, waiting for the
@@ -40,7 +40,7 @@ import TextContainer from "../../layouts/TextContainer.astro";
         </Highlight>
       </HorizontalScrollItem>
       <HorizontalScrollItem>
-        <Highlight title="Research Elevators">
+        <Highlight title="Research Elevators" icon="elevator">
           I read around 20 articles about elevators and learned many interesting
           things. For instance, it’s a myth that all close-door buttons don’t
           work. The main insight, though, was that elevator experts agree that
@@ -48,7 +48,7 @@ import TextContainer from "../../layouts/TextContainer.astro";
         </Highlight>
       </HorizontalScrollItem>
       <HorizontalScrollItem>
-        <Highlight title="Research psychology of waiting">
+        <Highlight title="Research psychology of waiting" icon="hourglass">
           I read up on the psychology of waiting. I learned that many factors
           influence our perception of waiting time. For instance, waiting time
           seems longer when we don’t know how long it’ll be, what is causing it,
@@ -63,7 +63,7 @@ import TextContainer from "../../layouts/TextContainer.astro";
     </Paragraph>
     <HorizontalScrollList>
       <HorizontalScrollItem>
-        <Highlight title="Client">
+        <Highlight title="Client" icon="mitsubishi">
           My client is Mitsubishi, one of the world's largest elevator
           manufacturers. The elevator speed race is over, so Mitsubishi wants to
           differentiate its elevators by offering a better overall experience.
@@ -72,7 +72,7 @@ import TextContainer from "../../layouts/TextContainer.astro";
         </Highlight>
       </HorizontalScrollItem>
       <HorizontalScrollItem>
-        <Highlight title="User groups">
+        <Highlight title="User groups" icon="groups">
           Residential elevators are used by different groups of people, such as
           guests of residents, janitors, and maintenance personnel. However, the
           main user group are residents. These can be people of any age and some
@@ -80,7 +80,7 @@ import TextContainer from "../../layouts/TextContainer.astro";
         </Highlight>
       </HorizontalScrollItem>
       <HorizontalScrollItem>
-        <Highlight title="Physical and technical constraints">
+        <Highlight title="Physical and technical constraints" icon="lock">
           The elevator should work in luxury residential buildings with 4 to 12
           floors, in any country around the world, and use the "collective
           control" algorithm. In short, that means the elevator will only switch
@@ -105,14 +105,14 @@ import TextContainer from "../../layouts/TextContainer.astro";
     </Paragraph>
     <HorizontalScrollList>
       <HorizontalScrollItem>
-        <Highlight title="Speed">
+        <Highlight title="Speed" icon="speed">
           The elevator will travel up at 83 km/h (above which people get sick)
           and down at 36 km/h (above which people experience the sensation of
           falling). This will reduce both actual and perceived waiting time.
         </Highlight>
       </HorizontalScrollItem>
       <HorizontalScrollItem>
-        <Highlight title="Mirrors">
+        <Highlight title="Mirrors" icon="mirror">
           The shaft doors will feature mirrors. Occupied time feels shorter and
           people have a natural tendency to check their personal appearance.
           This is one of the oldest tricks to reduce perceived elevator waiting
@@ -120,14 +120,14 @@ import TextContainer from "../../layouts/TextContainer.astro";
         </Highlight>
       </HorizontalScrollItem>
       <HorizontalScrollItem>
-        <Highlight title="Time">
+        <Highlight title="Time" icon="time">
           Computer screens will be installed behind the semi-transparent mirrors
           on the shaft doors. One door will display the current time, since
           people overestimate waiting time and clocks counteract this tendency.
         </Highlight>
       </HorizontalScrollItem>
       <HorizontalScrollItem>
-        <Highlight title="Weather">
+        <Highlight title="Weather" icon="sun">
           Weather information will be shown on the other shaft door. This can be
           effective, since residents may be on their way out and information
           relevant to a waiting setting reduces perceived waiting time. It may
@@ -136,21 +136,21 @@ import TextContainer from "../../layouts/TextContainer.astro";
         </Highlight>
       </HorizontalScrollItem>
       <HorizontalScrollItem>
-        <Highlight title="Color">
+        <Highlight title="Color" icon="paint">
           Warm colors increase perceived waiting time, while cool colors have
           the opposite effect. Therefore, the waiting area will be painted in a
           cool color, such as blue.
         </Highlight>
       </HorizontalScrollItem>
       <HorizontalScrollItem>
-        <Highlight title="Light">
+        <Highlight title="Light" icon="lightbulb">
           High light levels increase perceived waiting time, while low light
           levels have the opposite effect. Therefore, the waiting area will be
           dimly lit.
         </Highlight>
       </HorizontalScrollItem>
       <HorizontalScrollItem>
-        <Highlight title="Scent">
+        <Highlight title="Scent" icon="air">
           Certain fragrances, such as lavender and nutmeg, have been found to
           reduce anxiety and anxiety increases perceived waiting time.
           Therefore, a scent diffuser will emit a low-concentration blend of
@@ -158,7 +158,7 @@ import TextContainer from "../../layouts/TextContainer.astro";
         </Highlight>
       </HorizontalScrollItem>
       <HorizontalScrollItem>
-        <Highlight title="Accessibility">
+        <Highlight title="Accessibility" icon="accessibility">
           The call buttons will be placed low enough for people in wheelchairs
           (and children) to reach them. They will also give tactile feedback and
           feature braille to facilitate use by visually impaired people. Lastly,
@@ -256,15 +256,15 @@ import TextContainer from "../../layouts/TextContainer.astro";
       recommended features:
     </Paragraph>
     <FeatureCollection>
-      <Feature>High speed elevator</Feature>
-      <Feature>Semi-transparent mirrors</Feature>
-      <Feature>Weather info on mirror doors</Feature>
-      <Feature>Display time on mirror doors</Feature>
-      <Feature>Cool paint color in waiting area</Feature>
-      <Feature>Dim lighting in waiting area</Feature>
-      <Feature>Anxiety-reducing fragrances</Feature>
-      <Feature>Low placed braille buttons</Feature>
-      <Feature>Voice UI</Feature>
+      <Feature icon="speed">High speed elevator</Feature>
+      <Feature icon="mirror">Semi-transparent mirrors</Feature>
+      <Feature icon="sun">Weather info on mirror doors</Feature>
+      <Feature icon="time">Display time on mirror doors</Feature>
+      <Feature icon="paint">Cool paint color in waiting area</Feature>
+      <Feature icon="lightbulb">Dim lighting in waiting area</Feature>
+      <Feature icon="air">Anxiety-reducing fragrances</Feature>
+      <Feature icon="blind">Low placed braille buttons</Feature>
+      <Feature icon="mic">Voice UI</Feature>
     </FeatureCollection>
     <ImageWrapper>
       <Image src={ImageStep8} alt="john" width="800" densities={[2, 3, 4]} />
