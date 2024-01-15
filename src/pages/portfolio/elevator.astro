@@ -40,7 +40,7 @@ import TextContainer from "../../layouts/TextContainer.astro";
         </Highlight>
       </HorizontalScrollItem>
       <HorizontalScrollItem>
-        <Highlight title="Research Elevators" icon="elevator">
+        <Highlight title="Research Elevators" icon="upDown">
           I read around 20 articles about elevators and learned many interesting
           things. For instance, it’s a myth that all close-door buttons don’t
           work. The main insight, though, was that elevator experts agree that
@@ -185,14 +185,14 @@ import TextContainer from "../../layouts/TextContainer.astro";
     </ImageWrapper>
     <HorizontalScrollList>
       <HorizontalScrollItem>
-        <Highlight title="Orientation">
+        <Highlight title="Orientation" icon="upDown">
           Should the UI be vertical or horizontal? Vertical matches the
           elevator’s axis of movement. However, a horizontal UI can be placed
           above the elevator doors, which enhances visibility.
         </Highlight>
       </HorizontalScrollItem>
       <HorizontalScrollItem>
-        <Highlight title="Floor indicator">
+        <Highlight title="Floor indicator" icon="number">
           Should floors be indicated with numbers or shapes? Numbers are more
           informative, but can lead to cultural challenges. For instance, some
           countries use 0 for the ground floor, while others use 1. Also, some
@@ -200,7 +200,7 @@ import TextContainer from "../../layouts/TextContainer.astro";
         </Highlight>
       </HorizontalScrollItem>
       <HorizontalScrollItem>
-        <Highlight title="Cause of stop">
+        <Highlight title="Cause of stop" icon="stop">
           Should the UI show whether stops are due to passenger pickup or drop
           off? Waiting time is perceived as shorter, when people know the cause.
           On the other hand, this information might create excessive visual
@@ -214,10 +214,10 @@ import TextContainer from "../../layouts/TextContainer.astro";
       settled on only showing:
     </Paragraph>
     <FeatureCollection>
-      <Feature>The floor the user is on</Feature>
-      <Feature>The floor the elevator is on</Feature>
-      <Feature>The floors the elevator will stop on</Feature>
-      <Feature>The direction of the elevator</Feature>
+      <Feature icon="person">The floor the user is on</Feature>
+      <Feature icon="number">The floor the elevator is on</Feature>
+      <Feature icon="stop">The floors the elevator will stop on</Feature>
+      <Feature icon="upDown">The direction of the elevator</Feature>
     </FeatureCollection>
     <ImageWrapper>
       <Image src={ImageStep6} alt="john" width="800" densities={[2, 3, 4]} />
