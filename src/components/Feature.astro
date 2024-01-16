@@ -9,7 +9,7 @@ interface Props extends HTMLAttributes<"li"> {
   icon?: IconName;
 }
 
-const { icon = "arrowRight", ...rest } = Astro.props;
+const { icon = "chevronRight", ...rest } = Astro.props;
 ---
 
 <li class="wrapper" {...rest}>

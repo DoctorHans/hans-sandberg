@@ -15,39 +15,69 @@ const { title = "Title", subTitle = "Subtitle", url } = Astro.props;
 <article>
   <div class="wrapper">
     <Heading as="h2"><a href={url}>{title}</a></Heading>
-    <Icon name="arrowRight" class="icon-arrow-right" />
+    <div class="icon-wrapper">
+      <Icon name="chevronRight" class="icon" />
+    </div>
   </div>
   <Paragraph color="subtle">{subTitle}</Paragraph>
 </article>
 
 <style lang="scss">
+  .icon-wrapper {
+    width: var(--step-2);
+    height: var(--step-2);
+    flex-shrink: 0;
+    display: grid;
+    place-content: center;
+    background: var(--color-background-loud);
+    border-radius: var(--border-radius-round);
+    transition: var(--motion-exit-small);
+    transition-property: transform;
+
+    .icon {
+      width: var(--step-0);
+      height: var(--step-0);
+      flex-shrink: 0;
+      color: var(--color-content-subtle);
+      transition: var(--motion-exit-small);
+      transition-property: color;
+    }
+  }
+
   article {
     display: flex;
     flex-direction: column;
     gap: var(--space-2xs);
     padding-block: var(--space-m);
-    border-bottom: 1px solid var(--color-border-subtle);
+    border-bottom: var(--border-size-regular) solid var(--color-border-subtle);
     position: relative;
-    transition: border-color var(--motion-duration-regular);
+    transition: var(--motion-exit-large);
+    transition-property: border-color;
 
     &:hover {
       border-color: var(--color-border-regular);
-      border-top-width: 2px;
+      transition: var(--motion-enter-large);
+      transition-property: border-color;
 
-      .icon-arrow-right {
+      .icon {
         color: var(--color-content-regular);
+        transition: var(--motion-enter-small);
+      }
+
+      .icon-wrapper {
         transform: translateX(-25%);
+        transition: var(--motion-enter-small);
       }
     }
 
     &:active {
-      .icon-arrow-right {
+      .icon-wrapper {
         transform: revert;
       }
     }
 
     &:has(:focus-visible) {
-      outline: 2px solid var(--color-focusring);
+      outline: var(--focusring);
     }
   }
 
@@ -74,15 +104,5 @@ const { title = "Title", subTitle = "Subtitle", url } = Astro.props;
 
   p {
     color: var(--color-content-subtle);
-  }
-
-  .icon-arrow-right {
-    color: var(--color-content-subtle);
-    width: var(--step-2);
-    height: var(--step-2);
-    transition:
-      color,
-      transform 0.2s;
-    flex-shrink: 0;
   }
 </style>
