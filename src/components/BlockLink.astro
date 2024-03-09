@@ -12,39 +12,18 @@ interface Props {
 const { title = "Title", subTitle = "Subtitle", url } = Astro.props;
 ---
 
-<article>
-  <div class="wrapper">
+<div class="wrapper">
+  <div class="heading-wrapper">
     <Heading as="h2"><a href={url}>{title}</a></Heading>
     <div class="icon-wrapper">
       <Icon name="chevronRight" class="icon" />
     </div>
   </div>
   <Paragraph color="subtle">{subTitle}</Paragraph>
-</article>
+</div>
 
 <style lang="scss">
-  .icon-wrapper {
-    width: var(--step-2);
-    height: var(--step-2);
-    flex-shrink: 0;
-    display: grid;
-    place-content: center;
-    background: var(--color-background-loud);
-    border-radius: var(--border-radius-round);
-    transition: var(--motion-exit-small);
-    transition-property: transform;
-
-    .icon {
-      width: var(--step-0);
-      height: var(--step-0);
-      flex-shrink: 0;
-      color: var(--color-content-subtle);
-      transition: var(--motion-exit-small);
-      transition-property: color;
-    }
-  }
-
-  article {
+  .wrapper {
     display: flex;
     flex-direction: column;
     gap: var(--space-2xs);
@@ -81,7 +60,7 @@ const { title = "Title", subTitle = "Subtitle", url } = Astro.props;
     }
   }
 
-  .wrapper {
+  .heading-wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -100,6 +79,27 @@ const { title = "Title", subTitle = "Subtitle", url } = Astro.props;
     display: block;
     inset: 0;
     position: absolute;
+  }
+
+  .icon-wrapper {
+    width: var(--step-2);
+    height: var(--step-2);
+    flex-shrink: 0;
+    display: grid;
+    place-content: center;
+    background: var(--color-background-loud);
+    border-radius: var(--border-radius-round);
+    transition: var(--motion-exit-small);
+    transition-property: transform;
+
+    .icon {
+      width: var(--step-0);
+      height: var(--step-0);
+      flex-shrink: 0;
+      color: var(--color-content-subtle);
+      transition: var(--motion-exit-small);
+      transition-property: color;
+    }
   }
 
   p {
