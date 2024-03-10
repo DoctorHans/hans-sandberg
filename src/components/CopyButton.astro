@@ -1,0 +1,91 @@
+---
+import "../styles/global.css";
+import Icon from "./Icon.astro";
+import VisuallyHidden from "./VisuallyHidden.astro";
+interface Props {
+    successMessage: string;
+}
+
+const { successMessage } = Astro.props;
+---
+
+<VisuallyHidden>
+    <span
+        id="visually-hidden-status"
+        aria-live="polite"
+        data-success-message={successMessage}></span>
+</VisuallyHidden>
+<button id="copy-button"><slot /><Icon name={"copy"} class="icon" /></button>
+
+<style lang="scss">
+    button {
+        font-size: var(--step--1);
+        font-weight: var(--font-weight-semibold);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: var(--space-xs) var(--space-m);
+        border: var(--border-size-regular) solid var(--color-border-regular);
+        color: var(--color-content-regular);
+        background-color: var(--color-background);
+        border-radius: var(--border-radius-regular);
+        cursor: pointer;
+        text-align: left;
+        transition: var(--motion-exit-small);
+        transition-property: border-color, color;
+
+        .icon {
+            height: var(--step-0);
+            width: var(--step-0);
+            color: var(--color-content-regular);
+            transition: color var(--motion-exit-small);
+        }
+
+        &:hover {
+            border-color: var(--color-border-loud);
+            color: var(--color-content-loud);
+            transition: var(--motion-enter-small);
+            transition-property: border-color, color;
+
+            .icon {
+                color: var(--color-content-loud);
+                transition: color var(--motion-enter-small);
+            }
+        }
+    }
+</style>
+
+<script>
+    const visuallyHiddenLiveRegion: HTMLSpanElement | null =
+        document.querySelector("#visually-hidden-status");
+    const successMessage: string | null | undefined =
+        visuallyHiddenLiveRegion?.getAttribute("data-success-message");
+    const copyButton: HTMLButtonElement | null =
+        document.querySelector("#copy-button");
+
+    copyButton?.addEventListener("click", copyEmailToClipboard);
+
+    function copyEmailToClipboard() {
+        navigator.clipboard.writeText("sandberg.hans@gmail.com").then(
+            () => {
+                /* Clipboard successfully set */
+
+                /* Change content of visually hidden status to success message*/
+                if (visuallyHiddenLiveRegion) {
+                    visuallyHiddenLiveRegion.textContent =
+                        successMessage || "Copied";
+                }
+            },
+            () => {
+                /* Clipboard write failed */
+            },
+        );
+
+        /* Empty the  the live region after a short delay to prevent screen reader users from navigating to it  */
+        setTimeout(() => {
+            if (visuallyHiddenLiveRegion) {
+                visuallyHiddenLiveRegion.textContent = "";
+            }
+        }, 500);
+    }
+</script>
