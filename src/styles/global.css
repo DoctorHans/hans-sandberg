@@ -150,30 +150,80 @@ ul {
   gap: var(--grid-gutter);
 }
 
+/* Light color scheme (default and override) */
+:root,
+:root[data-force-color-scheme="light"] {
+  color-scheme: light;
+  --lightness-900: 0%;
+  --lightness-800: 21%;
+  --lightness-700: 41%;
+  --lightness-600: 54%;
+  --lightness-500: 65%;
+  --lightness-400: 74%;
+  --lightness-300: 83%;
+  --lightness-200: 91%;
+  --lightness-100: 95%;
+  --lightness-000: 100%;
+}
+
+/* Dark color scheme (system preference)  */
+@media(prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --lightness-900: 100%;
+    --lightness-800: 99%;
+    --lightness-700: 92%;
+    --lightness-600: 85%;
+    --lightness-500: 76%;
+    --lightness-400: 67%;
+    --lightness-300: 57%;
+    --lightness-200: 45%;
+    --lightness-100: 36%;
+    --lightness-000: 18%;
+  }
+}
+
+/* Dark color scheme (override) */
+:root[data-force-color-scheme="dark"] {
+  color-scheme: dark;
+  --lightness-900: 100%;
+  --lightness-800: 99%;
+  --lightness-700: 92%;
+  --lightness-600: 85%;
+  --lightness-500: 76%;
+  --lightness-400: 67%;
+  --lightness-300: 57%;
+  --lightness-200: 45%;
+  --lightness-100: 36%;
+  --lightness-000: 18%;
+}
+
 :root {
   --system-ui: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  --hue: 0;
-  --chroma: 0%;
-  --neutral-900: oklch(0% var(--chroma) var(--hue));
-  --neutral-800: oklch(11% var(--chroma) var(--hue));
-  --neutral-700: oklch(22% var(--chroma) var(--hue));
-  --neutral-600: oklch(33.5% var(--chroma) var(--hue));
-  --neutral-500: oklch(44.5% var(--chroma) var(--hue));
-  --neutral-400: oklch(55.5% var(--chroma) var(--hue));
-  --neutral-300: oklch(66.5% var(--chroma) var(--hue));
-  --neutral-200: oklch(85% var(--chroma) var(--hue));
-  --neutral-100: oklch(95% var(--chroma) var(--hue));
-  --neutral-0: oklch(100% var(--chroma) var(--hue));
-  --color-content-regular: var(--neutral-600);
-  --color-content-subtle: var(--neutral-400);
+  --hue-neutral: 0;
+  --chroma-neutral: 0%;
+  --neutral-900: oklch(var(--lightness-900) var(--chroma-neutral) var(--hue-neutral));
+  --neutral-800: oklch(var(--lightness-800) var(--chroma-neutral) var(--hue-neutral));
+  --neutral-700: oklch(var(--lightness-700) var(--chroma-neutral) var(--hue-neutral));
+  --neutral-600: oklch(var(--lightness-600) var(--chroma-neutral) var(--hue-neutral));
+  --neutral-500: oklch(var(--lightness-500) var(--chroma-neutral) var(--hue-neutral));
+  --neutral-400: oklch(var(--lightness-400) var(--chroma-neutral) var(--hue-neutral));
+  --neutral-300: oklch(var(--lightness-300) var(--chroma-neutral) var(--hue-neutral));
+  --neutral-200: oklch(var(--lightness-200) var(--chroma-neutral) var(--hue-neutral));
+  --neutral-100: oklch(var(--lightness-100) var(--chroma-neutral) var(--hue-neutral));
+  --neutral-000: oklch(var(--lightness-000) var(--chroma-neutral) var(--hue-neutral));
+  --color-content-inverted: var(--neutral-000);
+  --color-content-subtle: var(--neutral-600);
+  --color-content-regular: var(--neutral-700);
   --color-content-loud: var(--neutral-800);
-  --color-background: var(--neutral-0);
+  --color-background: var(--neutral-000);
   --color-background-loud: var(--neutral-100);
   --color-background-louder: var(--neutral-200);
-  --color-border-regular: var(--neutral-300);
-  --color-border-subtle: var(--neutral-100);
-  --color-border-loud: var(--neutral-900);
+  --color-border-subtle: var(--neutral-200);
+  --color-border-regular: var(--neutral-500);
+  --color-border-loud: var(--neutral-600);
+  --color-border-louder: var(--neutral-700);
   --color-focusring: var(--neutral-900);
   --font-weight-regular: 400;
   --font-weight-semibold: 500;
