@@ -152,7 +152,7 @@ ul {
 
 /* Light color scheme (default and override) */
 :root,
-:root[data-force-color-scheme="light"] {
+:root[data-theme="light"] {
   color-scheme: light;
   --lightness-900: 0%;
   --lightness-800: 21%;
@@ -184,7 +184,7 @@ ul {
 }
 
 /* Dark color scheme (override) */
-:root[data-force-color-scheme="dark"] {
+:root[data-theme="dark"] {
   color-scheme: dark;
   --lightness-900: 100%;
   --lightness-800: 99%;
