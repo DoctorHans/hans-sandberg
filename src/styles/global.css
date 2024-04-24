@@ -217,6 +217,7 @@ ul {
   --color-content-subtle: var(--neutral-600);
   --color-content-regular: var(--neutral-700);
   --color-content-loud: var(--neutral-800);
+  --color-background-inverted: var(--neutral-700);
   --color-background: var(--neutral-000);
   --color-background-loud: var(--neutral-100);
   --color-background-louder: var(--neutral-200);
