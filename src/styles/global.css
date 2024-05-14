@@ -201,8 +201,8 @@ ul {
 :root {
   --system-ui: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  --hue-neutral: 0;
   --chroma-neutral: 0%;
+  --hue-neutral: 0;
   --neutral-900: oklch(var(--lightness-900) var(--chroma-neutral) var(--hue-neutral));
   --neutral-800: oklch(var(--lightness-800) var(--chroma-neutral) var(--hue-neutral));
   --neutral-700: oklch(var(--lightness-700) var(--chroma-neutral) var(--hue-neutral));
