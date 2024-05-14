@@ -1,30 +1,31 @@
 ---
 import "../styles/global.css";
+import VisuallyHidden from "./VisuallyHidden.astro";
 ---
 
 <footer class="u-container">
   <div class="wrapper">
-    <p>© 2023 Hans Sandberg</p>
-    <a href="#">Back to top</a>
+    <p id="name">© 2023 Hans Sandberg</p>
+    <a href="#" id="back-to-top">Back to top</a>
     <fieldset id="theme-picker">
-      <legend>theme</legend>
+      <VisuallyHidden><legend>Theme</legend></VisuallyHidden>
       <label>
         <input name="theme" type="radio" value="system" checked />
-        system
+        <span>System</span>
       </label>
       <label>
         <input name="theme" type="radio" value="dark" />
-        dark
+        <span>Dark</span>
       </label>
       <label>
         <input name="theme" type="radio" value="light" />
-        light
+        <span>Light</span>
       </label>
     </fieldset>
   </div>
 </footer>
 
-<style>
+<style lang="scss">
   footer {
     margin-block-start: auto;
   }
@@ -37,5 +38,57 @@ import "../styles/global.css";
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+  }
+  #name {
+    font-size: var(--step--2);
+  }
+  #back-to-top {
+    font-size: var(--step--2);
+  }
+  fieldset {
+    display: flex;
+    gap: var(--space-3xs);
+    border: none;
+    padding: var(--space-3xs);
+    border-radius: var(--border-radius-round);
+
+    &:has(input[type="radio"]:focus-visible) {
+      outline: var(--focusring);
+    }
+  }
+  label {
+    font-size: var(--step--2);
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    padding-inline: var(--space-xs);
+    padding-block: var(--space-3xs);
+    border-radius: var(--border-radius-round);
+    background: var(--color-background-loud);
+    transition: transform var(--motion-exit-small);
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.03);
+      transition: transform var(--motion-enter-small);
+    }
+
+    &:active {
+      transform: scale(0.98);
+      transition: transform var(--motion-exit-small);
+    }
+
+    &:has(input[type="radio"]:checked) {
+      background: var(--color-background-inverted);
+      color: var(--color-content-inverted);
+      font-weight: var(--font-weight-semibold);
+    }
+  }
+  input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    inset: 0;
+    pointer-events: none;
   }
 </style>
