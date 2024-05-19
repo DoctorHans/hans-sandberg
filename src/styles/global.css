@@ -154,22 +154,41 @@ ul {
 :root,
 :root[data-theme="light"] {
   color-scheme: light;
-  --lightness-900: 0%;
+
+  --hue-accent: 30;
+  --chroma-neutral: 0;
+
+  --lightness-900: 10%;
   --lightness-800: 21%;
   --lightness-700: 41%;
-  --lightness-600: 54%;
+  --lightness-600: 52%;
   --lightness-500: 65%;
   --lightness-400: 74%;
   --lightness-300: 83%;
-  --lightness-200: 91%;
+  --lightness-200: 90%;
   --lightness-100: 95%;
-  --lightness-000: 100%;
+  --lightness-000: 99%;
+
+  --chroma-accent-900: 0.01;
+  --chroma-accent-800: 0.2;
+  --chroma-accent-700: 0.3;
+  --chroma-accent-600: 0.25;
+  --chroma-accent-500: 0.2;
+  --chroma-accent-400: 0.175;
+  --chroma-accent-300: 0.15;
+  --chroma-accent-200: 0.1;
+  --chroma-accent-100: 0.075;
+  --chroma-accent-000: 0.05;
 }
 
 /* Dark color scheme (system preference)  */
 @media(prefers-color-scheme: dark) {
   :root {
     color-scheme: dark;
+
+    --hue-accent: 90;
+    --chroma-neutral: 0.02;
+
     --lightness-900: 100%;
     --lightness-800: 99%;
     --lightness-700: 92%;
@@ -186,6 +205,10 @@ ul {
 /* Dark color scheme (override) */
 :root[data-theme="dark"] {
   color-scheme: dark;
+
+  --hue-accent: 90;
+  --chroma-neutral: 0.02;
+
   --lightness-900: 100%;
   --lightness-800: 99%;
   --lightness-700: 92%;
@@ -201,8 +224,7 @@ ul {
 :root {
   --system-ui: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  --chroma-neutral: 0%;
-  --hue-neutral: 0;
+  --hue-neutral: 270;
   --neutral-900: oklch(var(--lightness-900) var(--chroma-neutral) var(--hue-neutral));
   --neutral-800: oklch(var(--lightness-800) var(--chroma-neutral) var(--hue-neutral));
   --neutral-700: oklch(var(--lightness-700) var(--chroma-neutral) var(--hue-neutral));
@@ -213,19 +235,42 @@ ul {
   --neutral-200: oklch(var(--lightness-200) var(--chroma-neutral) var(--hue-neutral));
   --neutral-100: oklch(var(--lightness-100) var(--chroma-neutral) var(--hue-neutral));
   --neutral-000: oklch(var(--lightness-000) var(--chroma-neutral) var(--hue-neutral));
+  --accent-900: oklch(var(--lightness-900) var(--chroma-accent-900) var(--hue-accent));
+  --accent-800: oklch(var(--lightness-800) var(--chroma-accent-800) var(--hue-accent));
+  --accent-700: oklch(var(--lightness-700) var(--chroma-accent-700) var(--hue-accent));
+  --accent-600: oklch(var(--lightness-600) var(--chroma-accent-600) var(--hue-accent));
+  --accent-500: oklch(var(--lightness-500) var(--chroma-accent-500) var(--hue-accent));
+  --accent-400: oklch(var(--lightness-400) var(--chroma-accent-400) var(--hue-accent));
+  --accent-300: oklch(var(--lightness-300) var(--chroma-accent-300) var(--hue-accent));
+  --accent-200: oklch(var(--lightness-200) var(--chroma-accent-200) var(--hue-accent));
+  --accent-100: oklch(var(--lightness-100) var(--chroma-accent-100) var(--hue-accent));
+  --accent-000: oklch(var(--lightness-000) var(--chroma-accent-000) var(--hue-accent));
   --color-content-inverted: var(--neutral-000);
+  --color-content-inverted-accent: var(--accent-000);
   --color-content-subtle: var(--neutral-600);
+  --color-content-subtle-accent: var(--accent-600);
   --color-content-regular: var(--neutral-700);
+  --color-content-regular-accent: var(--accent-700);
   --color-content-loud: var(--neutral-800);
+  --color-content-loud-accent: var(--accent-800);
   --color-background-inverted: var(--neutral-700);
+  --color-background-inverted-accent: var(--accent-700);
   --color-background: var(--neutral-000);
+  --color-background-accent: var(--accent-000);
   --color-background-loud: var(--neutral-100);
+  --color-background-loud-accent: var(--accent-100);
   --color-background-louder: var(--neutral-200);
+  --color-background-louder-accent: var(--accent-200);
   --color-border-subtle: var(--neutral-200);
+  --color-border-subtle-accent: var(--accent-200);
   --color-border-regular: var(--neutral-500);
+  --color-border-regular-accent: var(--accent-500);
   --color-border-loud: var(--neutral-600);
+  --color-border-loud-accent: var(--accent-600);
   --color-border-louder: var(--neutral-700);
+  --color-border-louder-accent: var(--accent-700);
   --color-focusring: var(--neutral-900);
+  --color-focusring-accent: var(--accent-900);
   --font-weight-regular: 400;
   --font-weight-semibold: 500;
   --font-weight-bold: 700;
