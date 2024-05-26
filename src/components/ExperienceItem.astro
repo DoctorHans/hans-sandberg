@@ -26,11 +26,11 @@ const DisclosureLabel: string = `Details about ${title} position at ${org}`;
       <Paragraph color="loud">
         <a href=`${orgLink}`>{org}</a>
       </Paragraph>
-      <Paragraph color="subtle">{location}</Paragraph>
+      <Paragraph color="quiet">{location}</Paragraph>
     </div>
     <div class="when">
       <Paragraph color="loud">{duration}</Paragraph>
-      <Paragraph color="subtle">{dateRange}</Paragraph>
+      <Paragraph color="quiet">{dateRange}</Paragraph>
     </div>
     <ExperienceDisclosure label={DisclosureLabel}>
       <slot />
@@ -47,7 +47,7 @@ const DisclosureLabel: string = `Details about ${title} position at ${org}`;
     display: flex;
     flex-direction: column;
     gap: var(--space-xs);
-    border-block-end: 1px solid var(--color-border-subtle);
+    border-block-end: 1px solid var(--color-border-quiet);
     padding-block-start: var(--space-m);
   }
 

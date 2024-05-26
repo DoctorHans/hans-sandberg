@@ -247,8 +247,8 @@ ul {
   --accent-000: oklch(var(--lightness-000) var(--chroma-accent-000) var(--hue-accent));
   --color-content-inverted: var(--neutral-000);
   --color-content-inverted-accent: var(--accent-000);
-  --color-content-subtle: var(--neutral-600);
-  --color-content-subtle-accent: var(--accent-600);
+  --color-content-quiet: var(--neutral-600);
+  --color-content-quiet-accent: var(--accent-600);
   --color-content-regular: var(--neutral-700);
   --color-content-regular-accent: var(--accent-700);
   --color-content-loud: var(--neutral-800);
@@ -259,8 +259,8 @@ ul {
   --color-background-accent: var(--accent-000);
   --color-background-loud: var(--neutral-100);
   --color-background-loud-accent: var(--accent-100);
-  --color-border-subtle: var(--neutral-200);
-  --color-border-subtle-accent: var(--accent-200);
+  --color-border-quiet: var(--neutral-200);
+  --color-border-quiet-accent: var(--accent-200);
   --color-border-regular: var(--neutral-500);
   --color-border-regular-accent: var(--accent-500);
   --color-border-loud: var(--neutral-600);
