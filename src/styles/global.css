@@ -259,8 +259,6 @@ ul {
   --color-background-accent: var(--accent-000);
   --color-background-loud: var(--neutral-100);
   --color-background-loud-accent: var(--accent-100);
-  --color-background-louder: var(--neutral-200);
-  --color-background-louder-accent: var(--accent-200);
   --color-border-subtle: var(--neutral-200);
   --color-border-subtle-accent: var(--accent-200);
   --color-border-regular: var(--neutral-500);
