@@ -23,9 +23,7 @@ const Content = blockquote ? "blockquote" : "div";
 ---
 
 <div class:list={["wrapper", className]} {...rest}>
-  <div class="icon-wrapper">
-    <Icon name={icon} class="icon" />
-  </div>
+  <Icon name={icon} class="icon" />
   <Heading as={headingLevel} class="title">{title}</Heading>
   <Content><Paragraph><slot /></Paragraph></Content>
 </div>
@@ -44,15 +42,6 @@ const Content = blockquote ? "blockquote" : "div";
   .icon {
     width: var(--step-0);
     height: var(--step-0);
-  }
-
-  .icon-wrapper {
-    display: grid;
-    place-content: center;
-    width: fit-content;
-    border-radius: var(--border-radius-round);
-    padding: var(--space-xs);
-    background-color: var(--color-background-louder);
   }
 
   .title {
