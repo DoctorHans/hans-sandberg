@@ -13,9 +13,8 @@ const { icon = "chevronRight", ...rest } = Astro.props;
 ---
 
 <li class="wrapper" {...rest}>
-  <div class="icon-wrapper">
-    <Icon name={icon} class="icon" />
-  </div><Paragraph size="-1" weight="semibold"><slot /></Paragraph>
+  <Icon name={icon} class="icon" />
+  <Paragraph size="-1" weight="semibold"><slot /></Paragraph>
 </li>
 
 <style lang="scss">
@@ -27,15 +26,6 @@ const { icon = "chevronRight", ...rest } = Astro.props;
     align-items: center;
     gap: var(--space-xs);
     padding: var(--space-s);
-  }
-
-  .icon-wrapper {
-    flex-shrink: 0;
-    display: grid;
-    place-content: center;
-    padding: var(--space-2xs);
-    background: var(--color-background-louder);
-    border-radius: var(--border-radius-round);
   }
 
   .icon {
