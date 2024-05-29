@@ -34,12 +34,12 @@ const { title = "Title", subTitle = "Subtitle", url } = Astro.props;
     transition-property: border-color;
 
     &:hover {
-      border-color: var(--color-border-regular-accent);
+      border-color: var(--color-accent);
       transition: var(--motion-enter-large);
       transition-property: border-color;
 
       .heading {
-        color: var(--color-content-regular-accent);
+        color: var(--color-accent);
       }
 
       .icon-wrapper {
@@ -89,7 +89,7 @@ const { title = "Title", subTitle = "Subtitle", url } = Astro.props;
       width: var(--step-0);
       height: var(--step-0);
       flex-shrink: 0;
-      color: var(--color-content-regular-accent);
+      color: var(--color-accent);
       transition: var(--motion-exit-small);
       transition-property: color;
     }

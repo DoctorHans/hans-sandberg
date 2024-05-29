@@ -54,7 +54,7 @@ import VisuallyHidden from "./VisuallyHidden.astro";
     margin-inline-end: auto;
     color: var(--color-content-inverted);
     font-weight: var(--font-weight-bold);
-    background-color: var(--color-background-inverted-accent);
+    background-color: var(--color-accent);
     display: grid;
     place-content: center;
     height: max(var(--space-m), 2rem);
@@ -72,12 +72,12 @@ import VisuallyHidden from "./VisuallyHidden.astro";
       text-decoration: none;
       color: var(--color-content-quiet);
       &:hover {
-        color: var(--color-content-regular-accent);
+        color: var(--color-accent);
       }
       &[aria-current="page"] {
         color: var(--color-content-loud);
         text-decoration: underline;
-        text-decoration-color: var(--accent-600);
+        text-decoration-color: var(--color-accent);
         text-decoration-thickness: 0.125rem;
         text-underline-offset: var(--space-2xs);
       }
