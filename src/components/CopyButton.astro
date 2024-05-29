@@ -34,7 +34,8 @@ const { successMessage } = Astro.props;
         align-items: center;
         justify-content: space-between;
         padding: var(--space-xs) var(--space-m);
-        border: var(--border-size-regular) solid var(--color-border-regular);
+        border: var(--border-size-regular) solid
+            var(--color-border-regular-accent);
         color: var(--color-content-regular);
         background-color: var(--color-background);
         border-radius: var(--border-radius-regular);
@@ -51,13 +52,13 @@ const { successMessage } = Astro.props;
         }
 
         &:hover {
-            border-color: var(--color-border-loud);
+            border-color: var(--color-border-loud-accent);
             color: var(--color-content-loud);
             transition: var(--motion-enter-small);
             transition-property: border-color, color;
 
             .icon {
-                color: var(--color-content-loud);
+                color: var(--color-content-regular);
                 transition: color var(--motion-enter-small);
             }
         }

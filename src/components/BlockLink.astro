@@ -14,12 +14,12 @@ const { title = "Title", subTitle = "Subtitle", url } = Astro.props;
 
 <div class="wrapper">
   <div class="heading-wrapper">
-    <Heading as="h2"><a href={url}>{title}</a></Heading>
+    <Heading as="h2" class="heading"><a href={url}>{title}</a></Heading>
     <div class="icon-wrapper">
       <Icon name="chevronRight" class="icon" />
     </div>
   </div>
-  <Paragraph color="subtle">{subTitle}</Paragraph>
+  <Paragraph color="quiet">{subTitle}</Paragraph>
 </div>
 
 <style lang="scss">
@@ -28,24 +28,24 @@ const { title = "Title", subTitle = "Subtitle", url } = Astro.props;
     flex-direction: column;
     gap: var(--space-2xs);
     padding-block: var(--space-m);
-    border-bottom: var(--border-size-regular) solid var(--color-border-subtle);
+    border-bottom: var(--border-size-regular) solid var(--color-border-quiet);
     position: relative;
     transition: var(--motion-exit-large);
     transition-property: border-color;
 
     &:hover {
-      border-color: var(--color-border-regular);
+      border-color: var(--color-border-regular-accent);
       transition: var(--motion-enter-large);
       transition-property: border-color;
 
-      .icon {
-        color: var(--color-content-regular);
-        transition: var(--motion-enter-small);
+      .heading {
+        color: var(--color-content-regular-accent);
       }
 
       .icon-wrapper {
         transform: translateX(-25%);
         transition: var(--motion-enter-small);
+        transition-property: transform;
       }
     }
 
@@ -82,13 +82,6 @@ const { title = "Title", subTitle = "Subtitle", url } = Astro.props;
   }
 
   .icon-wrapper {
-    width: var(--step-2);
-    height: var(--step-2);
-    flex-shrink: 0;
-    display: grid;
-    place-content: center;
-    background: var(--color-background-loud);
-    border-radius: var(--border-radius-round);
     transition: var(--motion-exit-small);
     transition-property: transform;
 
@@ -96,13 +89,13 @@ const { title = "Title", subTitle = "Subtitle", url } = Astro.props;
       width: var(--step-0);
       height: var(--step-0);
       flex-shrink: 0;
-      color: var(--color-content-subtle);
+      color: var(--color-content-regular-accent);
       transition: var(--motion-exit-small);
       transition-property: color;
     }
   }
 
   p {
-    color: var(--color-content-subtle);
+    color: var(--color-content-quiet);
   }
 </style>

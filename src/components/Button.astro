@@ -23,7 +23,7 @@ const { as: Tag = "button", icon = "download", ...props } = Astro.props;
     align-items: center;
     justify-content: space-between;
     padding: var(--space-xs) var(--space-m);
-    border: var(--border-size-regular) solid var(--color-border-regular);
+    border: var(--border-size-regular) solid var(--color-border-regular-accent);
     color: var(--color-content-regular);
     background-color: var(--color-background);
     border-radius: var(--border-radius-regular);
@@ -40,13 +40,11 @@ const { as: Tag = "button", icon = "download", ...props } = Astro.props;
     }
 
     &:hover {
-      border-color: var(--color-border-loud);
-      color: var(--color-content-loud);
+      border-color: var(--color-border-loud-accent);
       transition: var(--motion-enter-small);
-      transition-property: border-color, color;
+      transition-property: border-color;
 
       .icon {
-        color: var(--color-content-loud);
         transition: color var(--motion-enter-small);
       }
     }
