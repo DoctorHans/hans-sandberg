@@ -58,20 +58,23 @@ import VisuallyHidden from "./VisuallyHidden.astro";
     }
   }
   label {
+    color: var(--color-content-regular);
     font-size: var(--step--2);
     position: relative;
     display: inline-flex;
     align-items: center;
     padding-inline: var(--space-xs);
     padding-block: var(--space-3xs);
+    border: var(--border-size-regular) solid var(--color-accent);
     border-radius: var(--border-radius-round);
-    background: var(--color-background-loud);
     transition: transform var(--motion-exit-small);
 
     &:hover {
       cursor: pointer;
+      color: var(--color-accent);
       transform: scale(1.03);
-      transition: transform var(--motion-enter-small);
+      transition: var(--motion-enter-small);
+      transition-property: color, transform;
     }
 
     &:active {
