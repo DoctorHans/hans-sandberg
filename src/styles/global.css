@@ -157,6 +157,7 @@ ul {
 
   --hue-accent: 30;
   --chroma-neutral: 0;
+  --shadow-color: 0deg 0% 58%;
 
   --lightness-800: 21%;
   --lightness-700: 41%;
@@ -176,6 +177,7 @@ ul {
 
     --hue-accent: 90;
     --chroma-neutral: 0.02;
+    --shadow-color: 0deg 0% 58%;
 
     --lightness-800: 95%;
     --lightness-700: 92%;
@@ -195,6 +197,7 @@ ul {
 
   --hue-accent: 90;
   --chroma-neutral: 0.02;
+  --shadow-color: 223deg 18% 10%;
 
   --lightness-800: 95%;
   --lightness-700: 92%;
@@ -261,7 +264,6 @@ ul {
   --border-radius-round: 99999rem;
   --border-size-regular: 1px;
 
-  --shadow-color: 0deg 0% 68%;
   --shadow-elevation-low:
     0.3px 0.5px 0.5px hsl(var(--shadow-color) / 0.38),
     0.3px 0.7px 0.7px -2px hsl(var(--shadow-color) / 0.29),
