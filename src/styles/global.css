@@ -297,10 +297,12 @@ a {
   color: currentColor;
   text-underline-offset: var(--space-3xs);
   text-decoration-color: var(--color-accent);
+  transition: color, text-underline-offset var(--motion-exit-small);
 
   &:hover {
     color: var(--color-accent);
-    text-decoration-thickness: 2px;
+    text-underline-offset: calc(var(--space-3xs) + 0.125rem);
+    transition: color, text-underline-offset var(--motion-enter-small)
   }
 }
 

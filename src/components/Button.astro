@@ -30,23 +30,24 @@ const { as: Tag = "button", icon = "download", ...props } = Astro.props;
     cursor: pointer;
     text-align: left;
     transition: var(--motion-exit-small);
-    transition-property: border-color, color;
+    transition-property: color, transform;
 
     .icon {
       height: var(--step-0);
       width: var(--step-0);
-      color: var(--color-content-regular);
-      transition: color var(--motion-exit-small);
+      color: var(--color-accent);
     }
 
     &:hover {
-      border-color: var(--color-accent);
+      color: var(--color-accent);
+      transform: scale(1.015);
       transition: var(--motion-enter-small);
-      transition-property: border-color;
+      transition-property: color, transform;
+    }
 
-      .icon {
-        transition: color var(--motion-enter-small);
-      }
+    &:active {
+      transform: scale(1);
+      transition: transform var(--motion-exit-small);
     }
   }
 

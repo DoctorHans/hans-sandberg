@@ -27,14 +27,27 @@ const { label } = Astro.props;
         display: flex;
         gap: var(--space-3xs);
         align-items: center;
-        color: var(--color-accent);
+        color: var(--color-content-regular);
         cursor: pointer;
-        transition: color var(--motion-duration-regular);
         align-self: flex-start;
         background-color: transparent;
+        transition: color var(--motion-exit-small);
+
+        .icon-chevron-right {
+            color: var(--color-accent);
+            transition:
+                color,
+                transform var(--motion-exit-small);
+        }
 
         &:hover {
             color: var(--color-accent);
+            transition: color var(--motion-enter-small);
+
+            .icon-chevron-right {
+                transform: rotate(90deg);
+                transition: transform var(--motion-enter-small);
+            }
         }
     }
 
@@ -55,23 +68,23 @@ const { label } = Astro.props;
         font-size: var(--step--1);
     }
 
-    @container my-container (min-width: 50ch) {
-        .disclosure-button {
-            .icon-chevron-right {
-                transform: rotate(90deg);
-            }
+    // // @container my-container (min-width: 50ch) {
+    // //     .disclosure-button {
+    // //         .icon-chevron-right {
+    // //             transform: rotate(90deg);
+    // //         }
 
-            &[aria-expanded="true"] {
-                .icon-chevron-right {
-                    transform: rotate(270deg);
-                }
-            }
-        }
+    // //         &[aria-expanded="true"] {
+    // //             .icon-chevron-right {
+    // //                 transform: rotate(270deg);
+    // //             }
+    // //         }
+    // //     }
 
-        .visible-label {
-            display: none;
-        }
-    }
+    //     // .visible-label {
+    //     //     display: none;
+    //     // }
+    // }
 
     .details {
         display: grid;

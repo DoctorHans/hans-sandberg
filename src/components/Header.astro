@@ -134,22 +134,27 @@ import VisuallyHidden from "./VisuallyHidden.astro";
     z-index: 2;
     cursor: pointer;
     position: relative;
-    height: max(var(--space-m), 2rem);
-    background: var(--color-background-regular);
-    color: var(--color-content-regular);
-    border: var(--border-size-regular) solid var(--color-border-regular);
-    place-content: center;
-    padding-inline: var(--space-2xs);
-    border-radius: var(--border-radius-regular);
     font-weight: var(--font-weight-semibold);
+    color: var(--color-content-regular);
+    background: var(--color-background-regular);
+    border: var(--border-size-regular) solid var(--color-accent);
+    border-radius: var(--border-radius-round);
+    place-content: center;
+    padding-block: var(--space-3xs);
+    padding-inline: var(--space-xs);
+    transition: var(--motion-exit-small);
+    transition-property: color, transform;
 
     &:hover {
-      color: var(--color-content-loud);
-      border-color: var(--color-border-loud);
+      color: var(--color-accent);
+      transform: scale(1.03);
+      transition: var(--motion-enter-small);
+      transition-property: color, transform;
     }
 
     &:active {
-      transform: translateY(0.125rem);
+      transform: scale(1);
+      transition: transform var(--motion-exit-small);
     }
   }
 </style>
