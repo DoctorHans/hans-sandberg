@@ -10,7 +10,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 <BaseLayout>
   <PageHeader heading="Contact">Find out how to get in touch</PageHeader>
   <div class="wrapper-contact">
-    <section>
+    <div class="wrapper-contact-section">
       <Heading as="h2">Email</Heading>
       <Paragraph color="quiet">sandberg.hans@gmail.com</Paragraph>
       <CopyButton successMessage="Email address copied to clipboard">
@@ -19,8 +19,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <Button icon="compose" as="a" href="mailto:sandberg.hans@gmail.com">
         Compose email
       </Button>
-    </section>
-    <section>
+    </div>
+    <div class="wrapper-contact-section">
       <Heading as="h2">LinkedIn</Heading>
       <Paragraph color="quiet">@hans-sandberg</Paragraph>
       <Button
@@ -30,7 +30,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       >
         Visit LinkedIn profile
       </Button>
-    </section>
+    </div>
   </div>
 
   <style>
@@ -40,7 +40,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       gap: var(--space-l);
     }
 
-    section {
+    .wrapper-contact-section {
       display: flex;
       flex-direction: column;
       gap: var(--space-s);
