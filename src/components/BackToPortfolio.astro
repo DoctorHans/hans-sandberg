@@ -1,0 +1,61 @@
+---
+import "../styles/global.css";
+import Icon from "./Icon.astro";
+---
+
+<div class="wrapper">
+  <a href="/portfolio"
+    ><Icon name={"arrowLeft"} class="icon" />Back to portfolio</a
+  >
+
+  <style>
+    .wrapper {
+      padding-block-start: var(--space-s);
+    }
+
+    @keyframes wiggle {
+      0% {
+        transform: translateX(0%);
+      }
+      50% {
+        transform: translateX(-20%);
+      }
+      100% {
+        transform: translateX(0%);
+      }
+    }
+
+    .icon {
+      color: var(--color-content-quiet);
+      width: var(--step-0);
+      height: var(--step-0);
+      flex-shrink: 0;
+      transition: var(--motion-exit-small);
+      transition-property: color;
+    }
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-3xs);
+      color: var(--color-content-quiet);
+      text-decoration: none;
+      transition: var(--motion-exit-small);
+      transition-property: color;
+
+      &:hover {
+        color: var(--color-accent);
+        transition: var(--motion-enter-small);
+        transition-property: color;
+
+        .icon {
+          color: var(--color-accent);
+          transition: var(--motion-enter-small);
+          transition-property: color;
+          animation: wiggle var(--motion-duration-slow)
+            var(--motion-easing-enter-and-exit) both;
+        }
+      }
+    }
+  </style>
+</div>
