@@ -1,0 +1,54 @@
+---
+import "../styles/global.css";
+import Icon from "./Icon.astro";
+---
+
+<a href="#">Back to top<Icon name={"arrowUp"} class="icon" /></a>
+
+<style>
+  @keyframes wiggle {
+    0% {
+      transform: translateY(0%);
+    }
+    50% {
+      transform: translateY(-20%);
+    }
+    100% {
+      transform: translateY(0%);
+    }
+  }
+
+  .icon {
+    color: var(--color-content-quiet);
+    width: var(--step--2);
+    height: var(--step--2);
+    flex-shrink: 0;
+    transition: var(--motion-exit-small);
+    transition-property: color;
+  }
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-3xs);
+    font-size: var(--step--2);
+    color: var(--color-content-quiet);
+    text-decoration: none;
+    transition: var(--motion-exit-small);
+    transition-property: color;
+
+    &:hover {
+      color: var(--color-accent);
+      transition: var(--motion-enter-small);
+      transition-property: color;
+
+      .icon {
+        color: var(--color-accent);
+        transition: var(--motion-enter-small);
+        transition-property: color;
+        animation: wiggle var(--motion-duration-slow)
+          var(--motion-easing-enter-and-exit) both;
+      }
+    }
+  }
+</style>
