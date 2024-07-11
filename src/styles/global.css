@@ -254,6 +254,7 @@ ul {
   --motion-exit-large: var(--motion-duration-regular) var(--motion-easing-exit);
   --motion-easing-enter: ease-out;
   --motion-easing-exit: ease-in;
+  --motion-easing-enter-and-exit: ease-in-out;
 
   --size-focusring: 2px;
   --offset-focusring: var(--space-3xs);
