@@ -29,13 +29,13 @@ import VisuallyHidden from "./VisuallyHidden.astro";
 <style lang="scss">
   footer {
     margin-block-start: auto;
+    margin-block-end: var(--space-m);
   }
   .wrapper {
     color: var(--color-content-quiet);
     font-size: var(--step--1);
-    padding-block: var(--space-s);
     display: flex;
-    gap: var(--space-2xs);
+    gap: var(--space-s);
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
@@ -48,7 +48,6 @@ import VisuallyHidden from "./VisuallyHidden.astro";
     display: flex;
     gap: var(--space-3xs);
     border: none;
-    padding: var(--space-3xs);
     border-radius: var(--border-radius-round);
 
     &:has(input[type="radio"]:focus-visible) {
