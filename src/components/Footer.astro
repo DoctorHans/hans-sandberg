@@ -1,12 +1,13 @@
 ---
 import "../styles/global.css";
+import BackToTop from "./BackToTop.astro";
 import VisuallyHidden from "./VisuallyHidden.astro";
 ---
 
 <footer class="u-container">
   <div class="wrapper">
     <p id="name">© 2023 Hans Sandberg</p>
-    <a href="#" id="back-to-top">Back to top</a>
+    <BackToTop />
     <fieldset id="theme-picker">
       <VisuallyHidden><legend>Theme</legend></VisuallyHidden>
       <label>
@@ -41,9 +42,6 @@ import VisuallyHidden from "./VisuallyHidden.astro";
     align-items: center;
   }
   #name {
-    font-size: var(--step--2);
-  }
-  #back-to-top {
     font-size: var(--step--2);
   }
   fieldset {
