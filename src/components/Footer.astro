@@ -1,28 +1,15 @@
 ---
 import "../styles/global.css";
 import BackToTop from "./BackToTop.astro";
-import VisuallyHidden from "./VisuallyHidden.astro";
+import ThemePicker from "./ThemePicker.astro";
+import Copyright from "./Copyright.astro";
 ---
 
 <footer class="u-container">
   <div class="wrapper">
-    <p id="name">© 2023 Hans Sandberg</p>
+    <Copyright />
     <BackToTop />
-    <fieldset id="theme-picker">
-      <VisuallyHidden><legend>Theme</legend></VisuallyHidden>
-      <label>
-        <input name="theme" type="radio" value="system" checked />
-        <span>System</span>
-      </label>
-      <label>
-        <input name="theme" type="radio" value="dark" />
-        <span>Dark</span>
-      </label>
-      <label>
-        <input name="theme" type="radio" value="light" />
-        <span>Light</span>
-      </label>
-    </fieldset>
+    <ThemePicker />
   </div>
 </footer>
 
@@ -40,55 +27,5 @@ import VisuallyHidden from "./VisuallyHidden.astro";
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-  }
-  #name {
-    font-size: var(--step--2);
-  }
-  fieldset {
-    display: flex;
-    gap: var(--space-3xs);
-    border: none;
-    border-radius: var(--border-radius-round);
-
-    &:has(input[type="radio"]:focus-visible) {
-      outline: var(--focusring);
-    }
-  }
-  label {
-    color: var(--color-content-regular);
-    font-size: var(--step--2);
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    padding-inline: var(--space-xs);
-    padding-block: var(--space-3xs);
-    border: var(--border-size-regular) solid var(--color-accent);
-    border-radius: var(--border-radius-round);
-    transition: transform var(--motion-exit-small);
-
-    &:hover {
-      cursor: pointer;
-      color: var(--color-accent);
-      transform: scale(1.03);
-      transition: var(--motion-enter-small);
-      transition-property: color, transform;
-    }
-
-    &:active {
-      transform: scale(1);
-      transition: transform var(--motion-exit-small);
-    }
-
-    &:has(input[type="radio"]:checked) {
-      background: var(--color-accent);
-      color: var(--color-content-inverted);
-      font-weight: var(--font-weight-semibold);
-    }
-  }
-  input[type="radio"] {
-    position: absolute;
-    opacity: 0;
-    inset: 0;
-    pointer-events: none;
   }
 </style>
