@@ -326,3 +326,8 @@ body:has(.scroll-lock[aria-expanded="true"]) {
     scroll-behavior: auto !important;
   }
 }
+
+::selection {
+  color: var(--color-background);
+  background-color: var(--color-accent);
+}
