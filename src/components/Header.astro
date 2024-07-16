@@ -1,37 +1,22 @@
 ---
 import "../styles/global.css";
 import SkipLink from "./SkipLink.astro";
-import VisuallyHidden from "./VisuallyHidden.astro";
 import Nav from "./Nav.astro";
+import Logo from "./Logo.astro";
 ---
 
 <header class="u-container">
   <SkipLink />
-  <a id="logo" href="/"
-    ><span aria-hidden="true">h</span><VisuallyHidden>Home</VisuallyHidden></a
-  >
+  <Logo />
   <Nav />
 </header>
 
-<style lang="scss">
+<style>
   header {
     padding-block: var(--space-s);
     display: flex;
     align-items: center;
     justify-content: flex-end;
     background-color: var(--color-background);
-  }
-
-  #logo {
-    text-decoration: none;
-    margin-inline-end: auto;
-    color: var(--color-content-inverted);
-    font-weight: var(--font-weight-bold);
-    background-color: var(--color-accent);
-    display: grid;
-    place-content: center;
-    height: max(var(--space-m), 2rem);
-    width: max(var(--space-m), 2rem);
-    border-radius: var(--border-radius-round);
   }
 </style>
