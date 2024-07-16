@@ -5,8 +5,8 @@ import Paragraph from "../components/Paragraph.astro";
 import type { HTMLAttributes } from "astro/types";
 
 interface Props extends HTMLAttributes<"div"> {
-    heading: String;
-    spaceAtTop?: Boolean;
+  heading: String;
+  spaceAtTop?: Boolean;
 }
 
 const { heading, spaceAtTop = "true", ...rest } = Astro.props;
@@ -15,20 +15,20 @@ const marginBlockStart = spaceAtTop ? "var(--space-2xl)" : "0";
 ---
 
 <div class="wrapper" {...rest}>
-    <Heading as="h1" class="title">{heading}</Heading>
-    <Paragraph class="subtitle" color="quiet" size="0"><slot /></Paragraph>
+  <Heading as="h1" class="title">{heading}</Heading>
+  <Paragraph class="subtitle" color="quiet" size="0"><slot /></Paragraph>
 </div>
 
 <style define:vars={{ marginBlockStart }}>
-    .wrapper {
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-xs);
-        padding-block-end: var(--space-2xl);
-    }
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    padding-block-end: var(--space-2xl);
+  }
 
-    .title {
-        margin-block-start: var(--marginBlockStart);
-        color: var(--color-accent);
-    }
+  .title {
+    margin-block-start: var(--marginBlockStart);
+    color: var(--color-accent);
+  }
 </style>
