@@ -283,6 +283,10 @@ ul {
     7.1px 14.1px 14.2px -2.9px hsl(var(--shadow-color) / 0.2),
     11.4px 22.9px 23px -3.4px hsl(var(--shadow-color) / 0.16),
     17.5px 35px 35.2px -4px hsl(var(--shadow-color) / 0.13);
+
+  --scale-up-large: 1.03;
+  --scale-up-small: 1.015;
+  --scale-down: 0.97;
 }
 
 body {
