@@ -16,13 +16,25 @@ const { title = "Title", subTitle = "Subtitle", url } = Astro.props;
   <div class="heading-wrapper">
     <Heading as="h2" class="heading"><a href={url}>{title}</a></Heading>
     <div class="icon-wrapper">
-      <Icon name="chevronRight" class="icon" />
+      <Icon name="arrowRight" class="icon" />
     </div>
   </div>
   <Paragraph color="quiet">{subTitle}</Paragraph>
 </div>
 
 <style lang="scss">
+  @keyframes left-right-wiggle {
+    0% {
+      transform: translateX(0%);
+    }
+    50% {
+      transform: translateX(-20%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+
   .wrapper {
     display: flex;
     flex-direction: column;
@@ -43,15 +55,8 @@ const { title = "Title", subTitle = "Subtitle", url } = Astro.props;
       }
 
       .icon-wrapper {
-        transform: translateX(-25%);
-        transition: var(--motion-enter-small);
-        transition-property: transform;
-      }
-    }
-
-    &:active {
-      .icon-wrapper {
-        transform: revert;
+        animation: left-right-wiggle var(--motion-duration-slow)
+          var(--motion-easing-enter-and-exit) both;
       }
     }
 
