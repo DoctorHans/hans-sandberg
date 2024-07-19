@@ -1,10 +1,11 @@
 ---
 import "../styles/global.css";
 import VisuallyHidden from "./VisuallyHidden.astro";
+import Icon from "./Icon.astro";
 ---
 
 <a href="/">
-  <span aria-hidden="true">h</span>
+  <span id="circle" aria-hidden="true"><Icon name={"logo"} id="vector" /></span>
   <VisuallyHidden>Home</VisuallyHidden>
 </a>
 
@@ -12,7 +13,25 @@ import VisuallyHidden from "./VisuallyHidden.astro";
   a {
     text-decoration: none;
     margin-inline-end: auto;
-    color: var(--color-content-inverted);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2xs);
+    border-radius: var(--border-radius-round);
+    transition: transform var(--motion-exit-small);
+
+    &:hover {
+      transform: scale(var(--scale-up-large));
+      transition: var(--motion-enter-small);
+      transition-property: color, transform;
+    }
+
+    &:active {
+      transform: scale(0.9);
+      transition: transform var(--motion-exit-small);
+    }
+  }
+
+  #circle {
     font-weight: var(--font-weight-bold);
     background-color: var(--color-accent);
     display: grid;
@@ -20,5 +39,11 @@ import VisuallyHidden from "./VisuallyHidden.astro";
     height: max(var(--space-m), 2rem);
     width: max(var(--space-m), 2rem);
     border-radius: var(--border-radius-round);
+  }
+
+  #vector {
+    color: var(--color-content-inverted);
+    height: var(--space-s);
+    width: var(--space-s);
   }
 </style>
