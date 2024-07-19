@@ -120,13 +120,13 @@ import VisuallyHidden from "./VisuallyHidden.astro";
 
     &:hover {
       color: var(--color-accent);
-      transform: scale(1.03);
+      transform: scale(var(--scale-up-large));
       transition: var(--motion-enter-small);
       transition-property: color, transform;
     }
 
     &:active {
-      transform: scale(1);
+      transform: scale(var(--scale-down));
       transition: transform var(--motion-exit-small);
     }
   }

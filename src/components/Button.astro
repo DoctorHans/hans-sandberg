@@ -40,7 +40,7 @@ const { as: Tag = "button", icon = "download", ...props } = Astro.props;
 
     &:hover {
       color: var(--color-accent);
-      transform: scale(1.015);
+      transform: scale(var(--scale-up-small));
       transition: var(--motion-enter-small);
       transition-property: color, transform;
     }

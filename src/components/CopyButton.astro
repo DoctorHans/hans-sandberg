@@ -3,190 +3,189 @@ import "../styles/global.css";
 import Icon from "./Icon.astro";
 import VisuallyHidden from "./VisuallyHidden.astro";
 interface Props {
-    successMessage: string;
+  successMessage: string;
 }
 
 const { successMessage } = Astro.props;
 ---
 
 <VisuallyHidden>
-    <span
-        id="visually-hidden-status"
-        aria-live="polite"
-        data-success-message={successMessage}></span>
+  <span
+    id="visually-hidden-status"
+    aria-live="polite"
+    data-success-message={successMessage}></span>
 </VisuallyHidden>
 <button id="copy-button">
-    <div class="animation-wrapper label">
-        <span class="animatedContent copy"><slot /></span>
-        <span aria-hidden="true" class="animatedContent success">Copied!</span>
-    </div>
-    <div class="animation-wrapper">
-        <Icon name={"copy"} class="animatedContent icon copy" />
-        <Icon name={"check"} class="animatedContent icon success" />
-    </div>
+  <div class="animation-wrapper label">
+    <span class="animatedContent copy"><slot /></span>
+    <span aria-hidden="true" class="animatedContent success">Copied!</span>
+  </div>
+  <div class="animation-wrapper">
+    <Icon name={"copy"} class="animatedContent icon copy" />
+    <Icon name={"check"} class="animatedContent icon success" />
+  </div>
 </button>
 
 <style lang="scss">
-    button {
-        font-size: var(--step--1);
-        font-weight: var(--font-weight-semibold);
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: var(--space-xs) var(--space-m);
-        border: var(--border-size-regular) solid var(--color-accent);
-        color: var(--color-content-regular);
-        background-color: var(--color-background);
-        border-radius: var(--border-radius-regular);
-        cursor: pointer;
-        text-align: left;
-        transition: var(--motion-exit-small);
-        transition-property: color, transform;
+  button {
+    font-size: var(--step--1);
+    font-weight: var(--font-weight-semibold);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-xs) var(--space-m);
+    border: var(--border-size-regular) solid var(--color-accent);
+    color: var(--color-content-regular);
+    background-color: var(--color-background);
+    border-radius: var(--border-radius-regular);
+    cursor: pointer;
+    text-align: left;
+    transition: var(--motion-exit-small);
+    transition-property: color, transform;
 
-        .icon {
-            height: var(--step-0);
-            width: var(--step-0);
-            color: var(--color-accent);
-        }
-
-        &:hover {
-            color: var(--color-accent);
-            transform: scale(1.015);
-            transition: var(--motion-enter-small);
-            transition-property: color, transform;
-        }
-
-        &:active {
-            transform: scale(1);
-            transition: transform var(--motion-exit-small);
-        }
+    .icon {
+      height: var(--step-0);
+      width: var(--step-0);
+      color: var(--color-accent);
     }
 
-    @keyframes copyContentAnimation {
-        0% {
-            opacity: 1;
-            transform: scale(1);
-        }
-        1% {
-            opacity: 0;
-            transform: scale(0);
-        }
-        92% {
-            opacity: 0;
-            transform: scale(0);
-        }
-        100% {
-            opacity: 1;
-            transform: scale(1);
-        }
+    &:hover {
+      color: var(--color-accent);
+      transform: scale(var(--scale-up-small));
+      transition: var(--motion-enter-small);
+      transition-property: color, transform;
     }
 
-    @keyframes successContentAnimation {
-        0% {
-            opacity: 0;
-            transform: scale(0);
-        }
-        2% {
-            opacity: 0;
-            transform: scale(0);
-        }
-        8% {
-            opacity: 1;
-            transform: scale(1);
-        }
-        83% {
-            opacity: 1;
-            transform: scale(1);
-        }
-        92% {
-            opacity: 0;
-            transform: scale(0);
-        }
-        100% {
-            opacity: 0;
-            transform: scale(0);
-        }
+    &:active {
+      transform: scale(1);
+      transition: transform var(--motion-exit-small);
     }
+  }
 
-    .copyContentAnimation {
-        animation: copyContentAnimation;
+  @keyframes copyContentAnimation {
+    0% {
+      opacity: 1;
+      transform: scale(1);
     }
-
-    .successContentAnimation {
-        animation: successContentAnimation;
+    1% {
+      opacity: 0;
+      transform: scale(0);
     }
-
-    .animatedContent {
-        animation-duration: 2000ms;
-        animation-fill-mode: both;
-        animation-timing-function: ease-in-out;
+    92% {
+      opacity: 0;
+      transform: scale(0);
     }
-
-    .animation-wrapper {
-        position: relative;
-
-        &.label {
-            flex: 1;
-        }
+    100% {
+      opacity: 1;
+      transform: scale(1);
     }
+  }
 
-    .success {
-        position: absolute;
-        top: 0;
-        left: 0;
-        opacity: 0;
+  @keyframes successContentAnimation {
+    0% {
+      opacity: 0;
+      transform: scale(0);
     }
+    2% {
+      opacity: 0;
+      transform: scale(0);
+    }
+    8% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    83% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    92% {
+      opacity: 0;
+      transform: scale(0);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0);
+    }
+  }
+
+  .copyContentAnimation {
+    animation: copyContentAnimation;
+  }
+
+  .successContentAnimation {
+    animation: successContentAnimation;
+  }
+
+  .animatedContent {
+    animation-duration: 2000ms;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+  }
+
+  .animation-wrapper {
+    position: relative;
+
+    &.label {
+      flex: 1;
+    }
+  }
+
+  .success {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+  }
 </style>
 
 <script>
-    const visuallyHiddenLiveRegion: HTMLSpanElement | null =
-        document.querySelector("#visually-hidden-status");
-    const successMessage: string | null | undefined =
-        visuallyHiddenLiveRegion?.getAttribute("data-success-message");
-    const copyButton: HTMLButtonElement | null =
-        document.querySelector("#copy-button");
-    const copyContent = document.querySelectorAll(".copy");
-    const successContent = document.querySelectorAll(".success");
+  const visuallyHiddenLiveRegion: HTMLSpanElement | null =
+    document.querySelector("#visually-hidden-status");
+  const successMessage: string | null | undefined =
+    visuallyHiddenLiveRegion?.getAttribute("data-success-message");
+  const copyButton: HTMLButtonElement | null =
+    document.querySelector("#copy-button");
+  const copyContent = document.querySelectorAll(".copy");
+  const successContent = document.querySelectorAll(".success");
 
-    copyButton?.addEventListener("click", copyEmailToClipboard);
+  copyButton?.addEventListener("click", copyEmailToClipboard);
 
-    function copyEmailToClipboard() {
-        navigator.clipboard.writeText("sandberg.hans@gmail.com").then(
-            () => {
-                /* Clipboard successfully set */
+  function copyEmailToClipboard() {
+    navigator.clipboard.writeText("sandberg.hans@gmail.com").then(
+      () => {
+        /* Clipboard successfully set */
 
-                /* Change content of visually hidden status to success message*/
-                if (visuallyHiddenLiveRegion) {
-                    visuallyHiddenLiveRegion.textContent =
-                        successMessage || "Copied";
-                }
+        /* Change content of visually hidden status to success message*/
+        if (visuallyHiddenLiveRegion) {
+          visuallyHiddenLiveRegion.textContent = successMessage || "Copied";
+        }
 
-                copyContent?.forEach((element) =>
-                    element.classList.add("copyContentAnimation"),
-                );
-                successContent?.forEach((element) =>
-                    element.classList.add("successContentAnimation"),
-                );
-            },
-            () => {
-                /* Clipboard write failed */
-            },
+        copyContent?.forEach((element) =>
+          element.classList.add("copyContentAnimation")
         );
+        successContent?.forEach((element) =>
+          element.classList.add("successContentAnimation")
+        );
+      },
+      () => {
+        /* Clipboard write failed */
+      }
+    );
 
-        setTimeout(() => {
-            copyContent?.forEach((element) =>
-                element.classList.remove("copyContentAnimation"),
-            );
-            successContent?.forEach((element) =>
-                element.classList.remove("successContentAnimation"),
-            );
-        }, 2000);
+    setTimeout(() => {
+      copyContent?.forEach((element) =>
+        element.classList.remove("copyContentAnimation")
+      );
+      successContent?.forEach((element) =>
+        element.classList.remove("successContentAnimation")
+      );
+    }, 2000);
 
-        /* Empty the  the live region after a short delay to prevent screen reader users from navigating to it  */
-        setTimeout(() => {
-            if (visuallyHiddenLiveRegion) {
-                visuallyHiddenLiveRegion.textContent = "";
-            }
-        }, 500);
-    }
+    /* Empty the  the live region after a short delay to prevent screen reader users from navigating to it  */
+    setTimeout(() => {
+      if (visuallyHiddenLiveRegion) {
+        visuallyHiddenLiveRegion.textContent = "";
+      }
+    }, 500);
+  }
 </script>
