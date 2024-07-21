@@ -133,103 +133,105 @@ import VisuallyHidden from "./VisuallyHidden.astro";
 </style>
 
 <script>
-  const nav: HTMLElement | null = document.querySelector("#nav");
-  const navToggle: HTMLElement | null = document.querySelector("#nav-toggle");
-  const navToggleVisualLabel: HTMLElement | null = document.querySelector(
-    "#nav-toggle-visual-label"
-  );
-  let isNavVisible = navToggle?.getAttribute("aria-expanded") === "true";
+  document.addEventListener("astro:page-load", () => {
+    const nav: HTMLElement | null = document.querySelector("#nav");
+    const navToggle: HTMLElement | null = document.querySelector("#nav-toggle");
+    const navToggleVisualLabel: HTMLElement | null = document.querySelector(
+      "#nav-toggle-visual-label"
+    );
+    let isNavVisible = navToggle?.getAttribute("aria-expanded") === "true";
 
-  function toggleNavVisibility() {
-    isNavVisible = !isNavVisible;
+    function toggleNavVisibility() {
+      isNavVisible = !isNavVisible;
 
-    // Toggle aria-expanded attribute
-    navToggle?.setAttribute("aria-expanded", String(isNavVisible));
+      // Toggle aria-expanded attribute
+      navToggle?.setAttribute("aria-expanded", String(isNavVisible));
 
-    // Toggle button visual label
-    if (navToggleVisualLabel != undefined) {
-      if (isNavVisible) {
-        navToggleVisualLabel.textContent = "Close";
-      } else {
-        navToggleVisualLabel.textContent = "Menu";
+      // Toggle button visual label
+      if (navToggleVisualLabel != undefined) {
+        if (isNavVisible) {
+          navToggleVisualLabel.textContent = "Close";
+        } else {
+          navToggleVisualLabel.textContent = "Menu";
+        }
+      }
+
+      isNavVisible
+        ? nav?.addEventListener("keydown", trapFocus)
+        : nav?.removeEventListener("keydown", trapFocus);
+    }
+
+    // Toggle aria-expanded attribute when button is clicked
+    navToggle?.addEventListener("click", toggleNavVisibility);
+
+    // Hide navigation when Escape is pressed
+    nav?.addEventListener("keyup", (e) => {
+      if (e.code === "Escape") {
+        navToggle?.setAttribute("aria-expanded", "false");
+        // Return focus to nav toggle
+        navToggle?.focus();
+        // Remove event listener for focus trap
+        nav?.removeEventListener("keydown", trapFocus);
+      }
+    });
+
+    // Trap focus
+    const focusableElements: Array<HTMLAnchorElement | HTMLButtonElement> =
+      nav?.querySelectorAll("a, button") as any;
+    const firstFocusableElement: HTMLAnchorElement | HTMLButtonElement =
+      focusableElements?.[0];
+    const lastFocusableElement: HTMLAnchorElement | HTMLButtonElement =
+      focusableElements?.[focusableElements.length - 1];
+
+    function trapFocus(e: KeyboardEvent) {
+      var isTabPressed = e.code === "Tab";
+
+      if (!isTabPressed) {
+        return;
+      }
+
+      /* shift + tab */ if (e.shiftKey) {
+        if (document.activeElement === firstFocusableElement) {
+          lastFocusableElement?.focus();
+          e.preventDefault();
+        }
+      } /* tab */ else {
+        if (document.activeElement === lastFocusableElement) {
+          firstFocusableElement?.focus();
+          e.preventDefault();
+        }
       }
     }
 
-    isNavVisible
-      ? nav?.addEventListener("keydown", trapFocus)
-      : nav?.removeEventListener("keydown", trapFocus);
-  }
-
-  // Toggle aria-expanded attribute when button is clicked
-  navToggle?.addEventListener("click", toggleNavVisibility);
-
-  // Hide navigation when Escape is pressed
-  nav?.addEventListener("keyup", (e) => {
-    if (e.code === "Escape") {
-      navToggle?.setAttribute("aria-expanded", "false");
-      // Return focus to nav toggle
-      navToggle?.focus();
-      // Remove event listener for focus trap
-      nav?.removeEventListener("keydown", trapFocus);
-    }
-  });
-
-  // Trap focus
-  const focusableElements: Array<HTMLAnchorElement | HTMLButtonElement> =
-    nav?.querySelectorAll("a, button") as any;
-  const firstFocusableElement: HTMLAnchorElement | HTMLButtonElement =
-    focusableElements?.[0];
-  const lastFocusableElement: HTMLAnchorElement | HTMLButtonElement =
-    focusableElements?.[focusableElements.length - 1];
-
-  function trapFocus(e: KeyboardEvent) {
-    var isTabPressed = e.code === "Tab";
-
-    if (!isTabPressed) {
-      return;
-    }
-
-    /* shift + tab */ if (e.shiftKey) {
-      if (document.activeElement === firstFocusableElement) {
-        lastFocusableElement?.focus();
-        e.preventDefault();
+    // Indicate active page visually and to screen readers
+    nav?.querySelectorAll("a").forEach((link) => {
+      if (link.href === window.location.href) {
+        link.setAttribute("aria-current", "page");
       }
-    } /* tab */ else {
-      if (document.activeElement === lastFocusableElement) {
-        firstFocusableElement?.focus();
-        e.preventDefault();
+
+      // Get the current path from the window location
+      // Example result: '/portfolio/design-system-ux'
+      const currentPath = window.location.pathname;
+
+      // Split the current path by "/", resulting in an array
+      // Example result: ['', 'portfolio', 'design-system-ux']
+      const currentPathSplit = currentPath.split("/");
+
+      // Get the first path segment after the root slash
+      // Example result: 'portfolio'
+      const currentPathFirstSegment = currentPathSplit[1];
+
+      // Get the path from the link element
+      // Example: '/portfolio'
+      const linkPath = link.pathname;
+
+      // Remove the leading "/" from the link's path to get the first segment
+      // Example: 'portfolio'
+      const linkPathFirstSegment = linkPath.slice(1);
+
+      if (currentPathFirstSegment === linkPathFirstSegment) {
+        link.classList.add("active");
       }
-    }
-  }
-
-  // Indicate active page visually and to screen readers
-  nav?.querySelectorAll("a").forEach((link) => {
-    if (link.href === window.location.href) {
-      link.setAttribute("aria-current", "page");
-    }
-
-    // Get the current path from the window location
-    // Example result: '/portfolio/design-system-ux'
-    const currentPath = window.location.pathname;
-
-    // Split the current path by "/", resulting in an array
-    // Example result: ['', 'portfolio', 'design-system-ux']
-    const currentPathSplit = currentPath.split("/");
-
-    // Get the first path segment after the root slash
-    // Example result: 'portfolio'
-    const currentPathFirstSegment = currentPathSplit[1];
-
-    // Get the path from the link element
-    // Example: '/portfolio'
-    const linkPath = link.pathname;
-
-    // Remove the leading "/" from the link's path to get the first segment
-    // Example: 'portfolio'
-    const linkPathFirstSegment = linkPath.slice(1);
-
-    if (currentPathFirstSegment === linkPathFirstSegment) {
-      link.classList.add("active");
-    }
+    });
   });
 </script>
