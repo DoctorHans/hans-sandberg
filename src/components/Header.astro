@@ -7,12 +7,14 @@ import Logo from "./Logo.astro";
 
 <header class="u-container">
   <SkipLink />
-  <Logo />
-  <Nav />
+  <div class="wrapper">
+    <Logo />
+    <Nav />
+  </div>
 </header>
 
 <style>
-  header {
+  .wrapper {
     padding-block: var(--space-s);
     display: flex;
     align-items: center;
