@@ -1,29 +1,39 @@
 ---
 import "../styles/global.css";
+import Icon from "./Icon.astro";
 ---
 
-<a href="#main" class="skip-link">Skip to content</a>
+<a href="#main">Skip to content<Icon name={"arrowDown"} class="icon" /></a>
 
 <style lang="scss">
-  .skip-link {
+  a {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3xs);
+    font-size: var(--step--2);
+    font-weight: var(--font-weight-semibold);
     position: absolute;
-    display: block;
-    background-color: var(--color-content-regular);
+    top: var(--space-xs);
+    background-color: var(--color-accent);
     padding-inline: var(--space-xs);
-    padding-block: var(--space-s);
-    border-radius: 0 0 0.5rem 0.5rem;
-    left: var(--grid-gutter);
-    top: 0;
+    padding-block: var(--space-2xs);
     text-decoration: none;
     color: var(--color-background);
-    transform: translateY(calc(-100% - var(--space-s)));
+    transform: translateY(calc(-100% - var(--space-xs)));
+    border-radius: var(--border-radius-round);
     transition: transform var(--motion-exit-small);
     will-change: transform;
     &:focus {
       transform: translateY(0%);
-      outline-offset: 0;
-      transition: transform var(--motion-exit-small);
+      outline: none;
+      transition: transform var(--motion-enter-small);
       will-change: transform;
     }
+  }
+
+  .icon {
+    color: var(--color-content-inverse);
+    width: var(--step--2);
+    height: var(--step--2);
   }
 </style>
