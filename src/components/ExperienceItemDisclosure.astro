@@ -4,132 +4,114 @@ import Icon from "./Icon.astro";
 import VisuallyHidden from "./VisuallyHidden.astro";
 
 interface Props {
-    label: string;
+  label: string;
 }
 
 const { label } = Astro.props;
 ---
 
 <button class="disclosure-button" aria-expanded="false"
-    ><span class="visible-label" aria-hidden="true">Details</span
-    ><VisuallyHidden class="sr-only">{label}</VisuallyHidden><Icon
-        name="chevronRight"
-        class="icon-chevron-right"
-    />
+  ><span class="visible-label" aria-hidden="true">Details</span>
+  <VisuallyHidden>{label}</VisuallyHidden><Icon
+    name="chevronRight"
+    class="icon-chevron-right"
+  />
 </button>
 <div aria-hidden="true" class="details">
-    <div class="details-inner"><slot /></div>
+  <div class="details-inner"><slot /></div>
 </div>
 
 <style lang="scss">
-    .disclosure-button {
-        border: none;
-        display: flex;
-        gap: var(--space-3xs);
-        align-items: center;
-        color: var(--color-content-regular);
-        cursor: pointer;
-        align-self: flex-start;
-        background-color: transparent;
-        transition: color var(--motion-exit-small);
-
-        .icon-chevron-right {
-            color: var(--color-accent);
-            transition:
-                color,
-                transform var(--motion-exit-small);
-        }
-
-        &:hover {
-            color: var(--color-accent);
-            transition: color var(--motion-enter-small);
-
-            .icon-chevron-right {
-                transform: rotate(90deg);
-                transition: transform var(--motion-enter-small);
-            }
-        }
-    }
-
-    .disclosure-button[aria-expanded="true"] {
-        .icon-chevron-right {
-            transform: rotate(90deg);
-        }
-    }
+  .disclosure-button {
+    border: none;
+    display: flex;
+    gap: var(--space-3xs);
+    align-items: center;
+    color: var(--color-content-regular);
+    cursor: pointer;
+    align-self: flex-start;
+    background-color: transparent;
+    transition: color var(--motion-exit-small);
 
     .icon-chevron-right {
-        width: var(--step-0);
-        height: var(--step-0);
-        flex-shrink: 0;
-        transition: transform var(--motion-duration-regular);
+      color: var(--color-accent);
+      transition:
+        color,
+        transform var(--motion-exit-small);
     }
 
-    .visible-label {
-        font-size: var(--step--1);
+    &:hover {
+      color: var(--color-accent);
+      transition: color var(--motion-enter-small);
+
+      .icon-chevron-right {
+        transform: rotate(90deg);
+        transition: transform var(--motion-enter-small);
+      }
+    }
+  }
+
+  .disclosure-button[aria-expanded="true"] {
+    .icon-chevron-right {
+      transform: rotate(90deg);
+    }
+  }
+
+  .icon-chevron-right {
+    width: var(--step-0);
+    height: var(--step-0);
+    flex-shrink: 0;
+    transition: transform var(--motion-duration-regular);
+  }
+
+  .visible-label {
+    font-size: var(--step--1);
+  }
+
+  .details {
+    display: grid;
+
+    &[aria-hidden="false"] {
+      grid-template-rows: 1fr;
+      opacity: 1;
+      transition:
+        opacity var(--motion-duration-extra-slow),
+        grid-template-rows var(--motion-duration-fast);
+      margin-block-end: var(--space-m);
     }
 
-    // // @container my-container (min-width: 50ch) {
-    // //     .disclosure-button {
-    // //         .icon-chevron-right {
-    // //             transform: rotate(90deg);
-    // //         }
-
-    // //         &[aria-expanded="true"] {
-    // //             .icon-chevron-right {
-    // //                 transform: rotate(270deg);
-    // //             }
-    // //         }
-    // //     }
-
-    //     // .visible-label {
-    //     //     display: none;
-    //     // }
-    // }
-
-    .details {
-        display: grid;
-
-        &[aria-hidden="false"] {
-            grid-template-rows: 1fr;
-            opacity: 1;
-            transition:
-                opacity var(--motion-duration-extra-slow),
-                grid-template-rows var(--motion-duration-fast);
-            margin-block-end: var(--space-m);
-        }
-
-        &[aria-hidden="true"] {
-            grid-template-rows: 0fr;
-            opacity: 0;
-            transition:
-                opacity var(--motion-duration-fast),
-                grid-template-rows var(--motion-duration-regular);
-        }
+    &[aria-hidden="true"] {
+      grid-template-rows: 0fr;
+      opacity: 0;
+      transition:
+        opacity var(--motion-duration-fast),
+        grid-template-rows var(--motion-duration-regular);
     }
+  }
 
-    .details-inner {
-        overflow: hidden;
-    }
+  .details-inner {
+    overflow: hidden;
+  }
 </style>
 
 <script>
-    const disclosureButtons = document.querySelectorAll(".disclosure-button");
+  const disclosureButtons = document.querySelectorAll(".disclosure-button");
 
-    disclosureButtons.forEach((disclosureButton, idx) => {
-        const content: Element | null = disclosureButton.nextElementSibling;
-        content?.setAttribute("id", `content-${idx + 1}`);
-        disclosureButton.setAttribute("aria-controls", `content-${idx + 1}`);
+  disclosureButtons.forEach((disclosureButton, idx) => {
+    const content: Element | null = disclosureButton.nextElementSibling;
+    content?.setAttribute("id", `content-${idx + 1}`);
+    disclosureButton.setAttribute("aria-controls", `content-${idx + 1}`);
 
-        function toggleDisclosure() {
-            if (disclosureButton.getAttribute("aria-expanded") === "false") {
-                disclosureButton.setAttribute("aria-expanded", "true");
-                content?.setAttribute("aria-hidden", "false");
-            } else {
-                disclosureButton.setAttribute("aria-expanded", "false");
-                content?.setAttribute("aria-hidden", "true");
-            }
-        }
+    function toggleDisclosure() {
+      if (disclosureButton.getAttribute("aria-expanded") === "false") {
+        disclosureButton.setAttribute("aria-expanded", "true");
+        content?.setAttribute("aria-hidden", "false");
+      } else {
+        disclosureButton.setAttribute("aria-expanded", "false");
+        content?.setAttribute("aria-hidden", "true");
+      }
+    }
 
-        disclosureButton.addEventListener("click", toggleDisclosure);
-    });
+    disclosureButton.addEventListener("click", toggleDisclosure);
+  });
 </script>
