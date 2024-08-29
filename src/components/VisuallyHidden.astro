@@ -1,16 +1,27 @@
-<span class="visually-hidden">
-    <slot />
-</span>
+<span class="visually-hidden"><slot /></span>
 
 <style>
-    /* https://www.a11yproject.com/posts/how-to-hide-content/ */
-    .visually-hidden {
-        clip: rect(0 0 0 0);
-        clip-path: inset(50%);
-        height: 1px;
-        overflow: hidden;
-        position: absolute;
-        white-space: nowrap;
-        width: 1px;
-    }
+  /* 
+  - primary source: https://practical-accessibility.today/chapters/hiding-techniques/
+  - source referenced by primary source: https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html
+  - explanation of each css property: https://www.tpgi.com/the-anatomy-of-visually-hidden/ 
+  */
+
+  .visually-hidden:not(:focus):not(:active) {
+    /* shrink to a 1px square */
+    width: 1px;
+    height: 1px;
+
+    /* hide any resulting overflow */
+    overflow: hidden;
+
+    /* clip the element to remove any visual trace */
+    clip-path: inset(50%);
+
+    /* remove from page flow so it doesn’t affect surrounding layout */
+    position: absolute;
+
+    /* ensure proper text announcement by screen readers */
+    white-space: nowrap;
+  }
 </style>
