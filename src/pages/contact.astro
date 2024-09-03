@@ -5,10 +5,11 @@ import Heading from "../components/Heading.astro";
 import PageHeader from "../components/PageHeader.astro";
 import Paragraph from "../components/Paragraph.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+const title = "Contact";
 ---
 
-<BaseLayout>
-  <PageHeader heading="Contact">Find out how to get in touch</PageHeader>
+<BaseLayout pageTitle={title}>
+  <PageHeader heading={title}>Find out how to get in touch</PageHeader>
   <div class="wrapper-contact">
     <div class="wrapper-contact-section">
       <Heading as="h2">Email</Heading>

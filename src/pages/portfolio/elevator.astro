@@ -17,11 +17,12 @@ import HorizontalScrollList from "../../layouts/HorizontalScrollList.astro";
 import HorizontalScrollItem from "../../layouts/HorizontalScrollItem.astro";
 import TextContainer from "../../layouts/TextContainer.astro";
 import BackToPortfolio from "../../components/BackToPortfolio.astro";
+const title = "Ideal elevator experience";
 ---
 
-<BaseLayout>
+<BaseLayout pageTitle={title}>
   <BackToPortfolio />
-  <PageHeader heading="Ideal elevator experience">
+  <PageHeader heading={title}>
     I was once given the task to design the ideal elevator experience, as part
     of a job interview. In this case study, I walk you through my user-centered
     design process for tackling such design challenges.

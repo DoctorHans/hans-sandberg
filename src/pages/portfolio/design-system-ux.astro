@@ -20,11 +20,12 @@ import HorizontalScrollItem from "../../layouts/HorizontalScrollItem.astro";
 import HighlightAndImageList from "../../layouts/HighlightAndImageList.astro";
 import TextContainer from "../../layouts/TextContainer.astro";
 import BackToPortfolio from "../../components/BackToPortfolio.astro";
+const title = "Improving a design system’s UX";
 ---
 
-<BaseLayout>
+<BaseLayout pageTitle={title}>
   <BackToPortfolio />
-  <PageHeader heading=" Improving a design system’s UX">
+  <PageHeader heading={title}>
     The goal of this project was to evaluate and improve the UX of the design
     system I was working on. The project focused on the design system’s two main
     user groups: designers and developers. There was most room for improvement

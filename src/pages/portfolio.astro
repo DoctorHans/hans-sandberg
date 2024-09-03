@@ -3,10 +3,11 @@ import BlockLink from "../components/BlockLink.astro";
 import BlockLinkList from "../layouts/BlockLinkList.astro";
 import PageHeader from "../components/PageHeader.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+const title = "Portfolio";
 ---
 
-<BaseLayout>
-  <PageHeader heading="Portfolio">
+<BaseLayout pageTitle={title}>
+  <PageHeader heading={title}>
     Get a feel for how I tackle design challenges
   </PageHeader>
   <BlockLinkList>

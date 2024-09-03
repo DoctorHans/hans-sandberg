@@ -19,11 +19,12 @@ import HorizontalScrollList from "../../layouts/HorizontalScrollList.astro";
 import HorizontalScrollItem from "../../layouts/HorizontalScrollItem.astro";
 import TextContainer from "../../layouts/TextContainer.astro";
 import BackToPortfolio from "../../components/BackToPortfolio.astro";
+const title = "Moving a design system to Figma";
 ---
 
-<BaseLayout>
+<BaseLayout pageTitle={title}>
   <BackToPortfolio />
-  <PageHeader heading="Moving a design system to Figma">
+  <PageHeader heading={title}>
     This case study describes how I moved a design system from Sketch to Figma.
     Specifically, how I obtained management approval, created a new UI kit from
     scratch, and onboarded a team of designers.

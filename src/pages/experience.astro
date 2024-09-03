@@ -4,10 +4,11 @@ import ExperienceItem from "../components/ExperienceItem.astro";
 import ExperienceItemDetails from "../components/ExperienceItemDetails.astro";
 import Button from "../components/Button.astro";
 import PageHeader from "../components/PageHeader.astro";
+const title = "Experience";
 ---
 
-<BaseLayout>
-  <PageHeader heading="Experience">
+<BaseLayout pageTitle={title}>
+  <PageHeader heading={title}>
     Learn about where I’ve worked and what I’ve worked on
   </PageHeader>
   <div class="button-wrapper">
