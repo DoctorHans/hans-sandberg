@@ -211,9 +211,6 @@ ul {
 }
 
 :root {
-  --system-ui: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-
   --hue-neutral: 270;
 
   --neutral-800: oklch(var(--lightness-800) var(--chroma-neutral) var(--hue-neutral));
@@ -289,13 +286,21 @@ ul {
   --scale-down: 0.97;
 }
 
+@font-face {
+  font-family: 'Source Sans';
+  src:
+    url('../fonts/SourceSans3VF-Upright.otf.woff2') format('woff2 supports variations'),
+    url('../fonts/SourceSans3VF-Upright.otf.woff2') format('woff2-variations');
+  font-weight: 200 900;
+  font-display: fallback;
+}
+
 body {
-  font-family: var(--system-ui);
+  font-family: 'Source Sans', system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-size: var(--step--1);
   color: var(--color-content-regular);
   background: var(--color-background);
   margin-top: 0;
-  /* TO DO: REMOVE */
 }
 
 a {
