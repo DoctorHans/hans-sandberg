@@ -5,24 +5,33 @@ import BlockLinkList from "../layouts/BlockLinkList.astro";
 import PageHeader from "../components/PageHeader.astro";
 import { Image } from "astro:assets";
 import Portrait from "../images/me.jpeg";
+import Greeting from "../components/Greeting.astro";
+import Paragraph from "../components/Paragraph.astro";
+import Heading from "../components/Heading.astro";
 ---
 
 <BaseLayout pageTitle="Home">
-  <div class="wrapper-image-header">
-    <div class="image-container">
-      <Image
-        src={Portrait}
-        alt="john"
-        width="320"
-        densities={[2, 3, 4]}
-        class="image-portrait"
-      />
+  <div id="container">
+    <div id="header">
+      <div id="header-image">
+        <Image
+          src={Portrait}
+          alt="john"
+          width="320"
+          densities={[2, 3, 4]}
+          id="header-image-portrait"
+        />
+      </div>
+      <div id="header-text">
+        <Heading as="h1" id="header-text-greeting"><Greeting /></Heading>
+        <Paragraph size="0">
+          I'm Hans, a designer that likes to code. I'm currently working on a
+          design system at <a href="https://www.pleo.io/">Pleo</a> in Copenhagen.
+          Building bridges between design and development is what I do best and enjoy
+          most.
+        </Paragraph>
+      </div>
     </div>
-    <PageHeader heading="Hello, I'm Hans" spaceAtTop={false}
-      >I'm a designer that likes to code. I'm currently working on a design
-      system at <a href="https://www.pleo.io/">Pleo</a> in Copenhagen. Building bridges
-      between design and development is what I do best and enjoy most.
-    </PageHeader>
   </div>
   <BlockLinkList>
     <li>
@@ -57,22 +66,44 @@ import Portrait from "../images/me.jpeg";
 </BaseLayout>
 
 <style>
-  .image-portrait {
-    filter: grayscale();
-    object-fit: cover;
+  #container {
+    container-name: header;
+    container-type: inline-size;
   }
 
-  .image-container {
+  #header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-l);
+    margin-block: var(--space-2xl);
+
+    @container header (min-width: 40rem) {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: var(--space-xl);
+    }
+  }
+
+  #header-image {
     width: calc(2 * var(--space-3xl));
     height: calc(2 * var(--space-3xl));
     overflow: hidden;
     border-radius: 50%;
-    margin-block-start: var(--space-2xl);
+    flex-shrink: 0;
   }
 
-  .wrapper-image-header {
+  #header-image-portrait {
+    filter: grayscale();
+    object-fit: cover;
+  }
+
+  #header-text {
     display: flex;
     flex-direction: column;
-    gap: var(--space-l);
+    gap: var(--space-m);
+  }
+
+  #header-text-greeting {
+    color: var(--color-accent);
   }
 </style>
