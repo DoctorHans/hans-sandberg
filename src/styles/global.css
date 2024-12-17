@@ -340,3 +340,7 @@ body:has(.scroll-lock[aria-expanded="true"]) {
   color: var(--color-background);
   background-color: var(--color-accent);
 }
+
+@view-transition {
+  navigation: auto;
+}
