@@ -1,0 +1,95 @@
+[
+  {
+    "title": "Staff Product Designer",
+    "org": "Pleo",
+    "orgLink": "https://www.pleo.io",
+    "city": "Copenhagen",
+    "country": "Denmark",
+    "dateStart": "2022-06-01",
+    "dateEnd": "Present",
+    "details": ["TODO", "TODO", "TODO"]
+  },
+  {
+    "title": "Senior UX Designer",
+    "org": "Siteimprove",
+    "orgLink": "https://www.siteimprove.com",
+    "city": "Copenhagen",
+    "country": "Denmark",
+    "dateStart": "2017-12-01",
+    "dateEnd": "2022-05-31",
+    "details": [
+      "Helped found a design systems team.",
+      "Designed and helped code accessible UI components, wrote UX guidelines, and created UI kits in Sketch and Figma.",
+      "Designed features for a data-heavy enterprise web application, such as a dashboard and account settings."
+    ]
+  },
+  {
+    "title": "UX Designer",
+    "org": "DSW",
+    "orgLink": "https://www.dsw.nl",
+    "city": "Schiedam",
+    "country": "Netherlands",
+    "dateStart": "2014-07-01",
+    "dateEnd": "2017-06-30",
+    "details": [
+      "Created wireframes, mockups and prototypes for customer-facing websites and iOS and Android apps.",
+      "Implemented website designs using Bootstrap, HTML and CSS.",
+      "Conducted usability tests and a top task analysis."
+    ]
+  },
+  {
+    "title": "UX Researcher",
+    "org": "Netmarketing",
+    "orgLink": "http://www.netmarketing.nl/",
+    "city": "Rotterdam",
+    "country": "Netherlands",
+    "dateStart": "2013-10-01",
+    "dateEnd": "2014-02-28",
+    "details": [
+      "Coordinated participant recruitment, wrote test scripts, moderated usability tests, and wrote reports.",
+      "Created wireframes to clarify reccommendations",
+      "Worked for clients from various industries, such as banking, public transport, pension funds, and online classified ads."
+    ]
+  },
+  {
+    "title": "UX Designer",
+    "org": "Perceptive Software",
+    "orgLink": "https://www.hyland.com/en",
+    "city": "Apeldoorn",
+    "country": "Netherlands",
+    "dateStart": "2012-10-01",
+    "dateEnd": "2013-09-30",
+    "details": [
+      "Coordinated participant recruitment, wrote test scripts, moderated usability tests, and wrote reports.",
+      "Created wireframes to clarify reccommendations.",
+      "Worked for clients from various industries, such as banking, public transport, pension funds, and online classified ads."
+    ]
+  },
+  {
+    "title": "UX Design Intern",
+    "org": "Perceptive Software",
+    "orgLink": "https://www.hyland.com/en",
+    "city": "Apeldoorn",
+    "country": "Netherlands",
+    "dateStart": "2012-02-01",
+    "dateEnd": "2012-09-30",
+    "details": [
+      "Evaluated a complex enterprise application through contextual inquiries, stakeholder interviews, and a heuristic evaluation.",
+      "Wrote report containing discovered UX issues, user group descriptions, and recommendations accompanied by mockups."
+    ]
+  },
+  {
+    "title": "UX Research Intern",
+    "org": "Valsplat",
+    "orgLink": "https://www.valsplat.nl",
+    "city": "Amsterdam",
+    "country": "Netherlands",
+    "dateStart": "2010-03-01",
+    "dateEnd": "2010-08-31",
+    "details": [
+      "Recruited participants, wrote test scripts, moderated usability tests, analyzed test results, and wrote reports.",
+      "Created wireframes to clarify reccommendations",
+      "Worked on projects for clients such as PayPal, Microsoft, the Dutch government, ING Bank, and KLM Royal Dutch Airlines."
+    ]
+  }
+]
