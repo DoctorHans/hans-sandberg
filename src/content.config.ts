@@ -20,8 +20,8 @@ const experience = defineCollection({
       "Schiedam",
     ]),
     country: z.enum(["Denmark", "Netherlands"]),
-    dateStart: z.date(),
-    dateEnd: z.union([z.date(), z.literal("Present")]),
+    dateStart: z.coerce.date(),
+    dateEnd: z.union([z.coerce.date(), z.literal("Present")]),
     details: z.array(z.string()),
   }),
 });

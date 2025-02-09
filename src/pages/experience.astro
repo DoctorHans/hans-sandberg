@@ -5,6 +5,8 @@ import ExperienceItemDetails from "../components/ExperienceItemDetails.astro";
 import Button from "../components/Button.astro";
 import PageHeader from "../components/PageHeader.astro";
 const title = "Experience";
+import { getCollection } from "astro:content";
+const experienceData = await getCollection("experience");
 ---
 
 <BaseLayout pageTitle={title}>
@@ -21,135 +23,24 @@ const title = "Experience";
       Visit LinkedIn Profile
     </Button>
   </div>
-  <ExperienceItem
-    title="Senior DesignOps Designer"
-    org="Pleo"
-    orgLink="https://www.pleo.io"
-    location="Copenhagen, Denmark"
-    dateRange="Jun 2022 – Present"
-    duration="1 year, 6 months"
-  >
-    <ExperienceItemDetails>
-      <li>Design system stuff</li>
-      <li>DesignOps stuff</li>
-      <li>Other stuff</li>
-    </ExperienceItemDetails>
-  </ExperienceItem>
-  <ExperienceItem
-    title="Senior UX Designer"
-    org="Siteimprove"
-    orgLink="https://www.siteimprove.com"
-    location="Copenhagen, Denmark"
-    dateRange="Dec 2017 – Jun 2022"
-    duration="4 years, 7 months"
-  >
-    <ExperienceItemDetails>
-      <li>Helped found a design systems team.</li>
-      <li>
-        Designed and helped code accessible UI components, wrote UX guidelines,
-        and created UI kits in Sketch and Figma.
-      </li>
-      <li>
-        Designed features for a data-heavy enterprise web application, such as a
-        dashboard and account settings.
-      </li>
-    </ExperienceItemDetails>
-  </ExperienceItem>
-  <ExperienceItem
-    title="UX Designer"
-    org="DSW"
-    orgLink="https://www.dsw.nl"
-    location="Schiedam, Netherlands"
-    dateRange="Jul 2014 – Jun 2017"
-    duration="3 years"
-  >
-    <ExperienceItemDetails>
-      <li>
-        Created wireframes, mockups and prototypes for customer-facing websites
-        and iOS and Android apps.
-      </li>
-      <li>Implemented website designs using Bootstrap, HTML and CSS.</li>
-      <li>Conducted usability tests and a top task analysis.</li>
-    </ExperienceItemDetails>
-  </ExperienceItem>
-  <ExperienceItem
-    title="UX Researcher"
-    org="Netmarketing"
-    orgLink="http://www.netmarketing.nl/"
-    location="Rotterdam, Netherlands"
-    dateRange="Oct 2013 – Feb 2014"
-    duration="5 months"
-  >
-    <ExperienceItemDetails>
-      <li>
-        Coordinated participant recruitment, wrote test scripts, moderated
-        usability tests, and wrote reports.
-      </li>
-      <li>Created wireframes to clarify reccommendations.</li>
-      <li>
-        Worked for clients from various industries, such as banking, public
-        transport, pension funds, and online classified ads.
-      </li>
-    </ExperienceItemDetails>
-  </ExperienceItem>
-  <ExperienceItem
-    title="UX Designer"
-    org="Perceptive Software"
-    orgLink="https://www.hyland.com/en"
-    location="Apeldoorn, Netherlands"
-    dateRange="Dec 2017 – Jun 2022"
-    duration="1 year"
-  >
-    <ExperienceItemDetails>
-      <li>
-        Created wireframes, mockups, and prototypes for enterprise desktop and
-        web applications.
-      </li>
-      <li>
-        Was part of an international UX team and collaborated with developers,
-        business stakeholders and other UX designers.
-      </li>
-    </ExperienceItemDetails>
-  </ExperienceItem>
-  <ExperienceItem
-    title="UX Design Intern"
-    org="Perceptive Software"
-    orgLink="https://www.hyland.com/en"
-    location="Apeldoorn, Netherlands"
-    dateRange="Oct 2012 – Oct 2013"
-    duration="1 year"
-  >
-    <ExperienceItemDetails>
-      <li>
-        Evaluated a complex enterprise application through contextual inquiries,
-        stakeholder interviews, and a heuristic evaluation.
-      </li>
-      <li>
-        Wrote report containing discovered UX issues, user group descriptions,
-        and recommendations accompanied by mockups.
-      </li>
-    </ExperienceItemDetails>
-  </ExperienceItem>
-  <ExperienceItem
-    title="UX Research Intern"
-    org="Valsplat"
-    orgLink="https://www.valsplat.nl"
-    location="Amsterdam, Netherlands"
-    dateRange="Mar 2012 – Aug 2010"
-    duration="6 months"
-  >
-    <ExperienceItemDetails>
-      <li>
-        Recruited participants, wrote test scripts, moderated usability tests,
-        analyzed test results, and wrote reports.
-      </li>
-      <li>Created wireframes to clarify reccommendations.</li>
-      <li>
-        Worked on projects for clients such as PayPal, Microsoft, the Dutch
-        government, ING Bank, and KLM Royal Dutch Airlines.
-      </li>
-    </ExperienceItemDetails>
-  </ExperienceItem>
+  {
+    experienceData.map((experienceItem: any) => (
+      <ExperienceItem
+        title={experienceItem.data.title}
+        org={experienceItem.data.org}
+        orgLink={experienceItem.data.orgLink}
+        location={`${experienceItem.data.city}, ${experienceItem.data.country}`}
+        dateStart={experienceItem.data.dateStart}
+        dateEnd={experienceItem.data.dateEnd}
+      >
+        <ExperienceItemDetails>
+          {experienceItem.data.details.map((detail: string) => (
+            <li>{detail}</li>
+          ))}
+        </ExperienceItemDetails>
+      </ExperienceItem>
+    ))
+  }
 </BaseLayout>
 
 <style>

@@ -8,13 +8,56 @@ interface Props {
   org: string;
   orgLink: string;
   location: string;
-  duration: string;
-  dateRange: string;
+  dateStart: Date;
+  dateEnd: Date | string;
 }
 
-const { title, org, orgLink, location, duration, dateRange } = Astro.props;
+const { title, org, orgLink, location, dateStart, dateEnd } = Astro.props;
 
 const DisclosureLabel: string = `Details about ${title} position at ${org}`;
+
+function formatDate(date: Date | string): string {
+  if (typeof date === "string") return date;
+
+  return new Intl.DateTimeFormat("en-US", {
+    month: "short",
+    year: "numeric",
+  }).format(date);
+}
+
+const dateStartFormatted = formatDate(dateStart);
+const dateEndFormatted = formatDate(dateEnd);
+
+function calculateDuration(
+  startDate: Date,
+  endDate: Date | string
+): { years: number; months: number } {
+  const end = typeof endDate === "string" ? new Date() : endDate;
+
+  const yearsDifference = end.getFullYear() - startDate.getFullYear();
+  const monthsDifference = end.getMonth() - startDate.getMonth();
+
+  const monthsTotal = yearsDifference * 12 + monthsDifference + 1;
+
+  const years = Math.trunc(monthsTotal / 12);
+  const months = monthsTotal % 12;
+
+  return {
+    years: years,
+    months: months,
+  };
+}
+
+const duration = calculateDuration(dateStart, dateEnd);
+
+const formatDuration = (duration: number, unit: string) =>
+  // If the duration is zero, return an empty string. Otherwise, append the duration unit and pluralise if necessary.
+  duration ? `${duration} ${unit}${duration > 1 ? "s" : ""}` : "";
+
+const yearsFormatted = formatDuration(duration.years, "year");
+const monthsFormatted = formatDuration(duration.months, "month");
+
+const yearsMonthsSeparator = duration.years && duration.months ? ", " : "";
 ---
 
 <div class="container">
@@ -29,8 +72,14 @@ const DisclosureLabel: string = `Details about ${title} position at ${org}`;
       <Paragraph color="quiet">{location}</Paragraph>
     </div>
     <div class="when">
-      <Paragraph color="loud">{duration}</Paragraph>
-      <Paragraph color="quiet">{dateRange}</Paragraph>
+      <Paragraph color="loud"
+        >{
+          `${yearsFormatted} ${yearsMonthsSeparator} ${monthsFormatted}`
+        }</Paragraph
+      >
+      <Paragraph color="quiet"
+        >{`${dateStartFormatted} – ${dateEndFormatted}`}</Paragraph
+      >
     </div>
     <ExperienceDisclosure label={DisclosureLabel}>
       <slot />
