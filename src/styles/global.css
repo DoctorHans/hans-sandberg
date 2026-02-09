@@ -134,13 +134,13 @@ ul {
 
 :root {
   --page-max-width: 75rem;
-  --grid-gutter: var(--space-s-l, clamp(1rem, calc(0.27rem + 3.64vw), 3rem));
+  --page-gutter: var(--space-s-l, clamp(1rem, calc(0.27rem + 3.64vw), 3rem));
 }
 
 .page-wrapper {
   width: 100%;
   max-width: var(--page-max-width);
-  padding-inline: var(--grid-gutter);
+  padding-inline: var(--page-gutter);
   margin-inline: auto;
 }
 
