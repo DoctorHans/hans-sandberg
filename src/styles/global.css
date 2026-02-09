@@ -135,7 +135,6 @@ ul {
 :root {
   --grid-max-width: 75rem;
   --grid-gutter: var(--space-s-l, clamp(1rem, calc(0.27rem + 3.64vw), 3rem));
-  --grid-columns: 12;
 }
 
 .page-wrapper {
