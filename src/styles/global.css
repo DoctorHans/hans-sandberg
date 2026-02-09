@@ -145,11 +145,6 @@ ul {
   margin-inline: auto;
 }
 
-.u-grid {
-  display: grid;
-  gap: var(--grid-gutter);
-}
-
 /* Light color scheme (default and override) */
 :root,
 :root[data-theme="light"] {
