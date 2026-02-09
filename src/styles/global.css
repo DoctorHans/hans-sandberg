@@ -138,7 +138,7 @@ ul {
   --grid-columns: 12;
 }
 
-.u-container {
+.page-wrapper {
   width: 100%;
   max-width: var(--grid-max-width);
   padding-inline: var(--grid-gutter);
