@@ -2,13 +2,13 @@
 import Paragraph from "../components/Paragraph.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PageHeader from "../components/PageHeader.astro";
-import TextContainer from "../layouts/TextContainer.astro";
+import Prose from "../layouts/Prose.astro";
 const title = "About me";
 ---
 
 <BaseLayout pageTitle={title}>
   <PageHeader heading={title}>Get to know me a bit better</PageHeader>
-  <TextContainer>
+  <Prose>
     <Paragraph>
       I’ve been working as a designer for over ten years. I love to design and
       help build accessible, human-centered products.
@@ -24,5 +24,5 @@ const title = "About me";
       <a href="https://www.pleo.io/">Pleo</a>, where I'm part of the Design
       Systems Team.
     </Paragraph>
-  </TextContainer>
+  </Prose>
 </BaseLayout>

@@ -17,7 +17,7 @@ import ImageStep6 from "../../images/portfolio/figma/step6.png";
 import ImageWrapper from "../../components/ImageWrapper.astro";
 import HorizontalScrollList from "../../layouts/HorizontalScrollList.astro";
 import HorizontalScrollItem from "../../layouts/HorizontalScrollItem.astro";
-import TextContainer from "../../layouts/TextContainer.astro";
+import Prose from "../../layouts/Prose.astro";
 import BackToPortfolio from "../../components/BackToPortfolio.astro";
 const title = "Moving a design system to Figma";
 ---
@@ -29,7 +29,7 @@ const title = "Moving a design system to Figma";
     Specifically, how I obtained management approval, created a new UI kit from
     scratch, and onboarded a team of designers.
   </PageHeader>
-  <TextContainer>
+  <Prose>
     <Heading as="h2" step="1">Convince management</Heading>
     <Paragraph>
       The first step was to convince management to approve the purchase of
@@ -259,5 +259,5 @@ const title = "Moving a design system to Figma";
         </Highlight>
       </HorizontalScrollItem>
     </HorizontalScrollList>
-  </TextContainer>
+  </Prose>
 </BaseLayout>

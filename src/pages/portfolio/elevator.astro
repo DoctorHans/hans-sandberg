@@ -15,7 +15,7 @@ import ImageStep8 from "../../images/portfolio/elevator/step8.png";
 import ImageWrapper from "../../components/ImageWrapper.astro";
 import HorizontalScrollList from "../../layouts/HorizontalScrollList.astro";
 import HorizontalScrollItem from "../../layouts/HorizontalScrollItem.astro";
-import TextContainer from "../../layouts/TextContainer.astro";
+import Prose from "../../layouts/Prose.astro";
 import BackToPortfolio from "../../components/BackToPortfolio.astro";
 const title = "Ideal elevator experience";
 ---
@@ -27,7 +27,7 @@ const title = "Ideal elevator experience";
     of a job interview. In this case study, I walk you through my user-centered
     design process for tackling such design challenges.
   </PageHeader>
-  <TextContainer>
+  <Prose>
     <Heading as="h2" step="1">Research</Heading>
     <Paragraph>
       My first step was to learn more about elevators and people’s experiences
@@ -297,5 +297,5 @@ const title = "Ideal elevator experience";
         densities={[2, 3, 4]}
       />
     </ImageWrapper>
-  </TextContainer>
+  </Prose>
 </BaseLayout>

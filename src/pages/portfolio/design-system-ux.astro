@@ -18,7 +18,7 @@ import HighlightAndImageItem from "../../layouts/HighlightAndImageItem.astro";
 import HorizontalScrollList from "../../layouts/HorizontalScrollList.astro";
 import HorizontalScrollItem from "../../layouts/HorizontalScrollItem.astro";
 import HighlightAndImageList from "../../layouts/HighlightAndImageList.astro";
-import TextContainer from "../../layouts/TextContainer.astro";
+import Prose from "../../layouts/Prose.astro";
 import BackToPortfolio from "../../components/BackToPortfolio.astro";
 const title = "Improving a design system’s UX";
 ---
@@ -32,7 +32,7 @@ const title = "Improving a design system’s UX";
     with regards to the UX of designers, so that’s what I’ve chosen to focus on
     here.
   </PageHeader>
-  <TextContainer>
+  <Prose>
     <Heading as="h2" step="1">Quantitative research</Heading>
     <Paragraph>
       My first step was to send out an anonymous survey to all product
@@ -437,5 +437,5 @@ const title = "Improving a design system’s UX";
         </Highlight>
       </HorizontalScrollItem>
     </HorizontalScrollList>
-  </TextContainer>
+  </Prose>
 </BaseLayout>
