@@ -1,0 +1,29 @@
+---
+import type { GetStaticPaths } from "astro";
+import BackToPortfolio from "../../components/BackToPortfolio.astro";
+import PageHeader from "../../components/PageHeader.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import { render } from "astro:content";
+import Prose from "../../layouts/Prose.astro";
+
+export const getStaticPaths = (async () => {
+  const caseStudies = await getCollection("caseStudies");
+  return caseStudies.map((caseStudy) => ({
+    params: { slug: caseStudy.data.slug },
+    props: { caseStudy },
+  }));
+}) satisfies GetStaticPaths;
+
+const { caseStudy } = Astro.props;
+
+const { Content } = await render(caseStudy);
+---
+
+<BaseLayout pageTitle={caseStudy.data.title}>
+  <BackToPortfolio />
+  <PageHeader heading={caseStudy.data.title} />
+  <Prose>
+    <Content />
+  </Prose>
+</BaseLayout>
