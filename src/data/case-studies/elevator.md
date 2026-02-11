@@ -1,6 +1,6 @@
 ---
-title: "Reducing Perceived Waiting Time in Residential Elevators"
-description: "How I turned a job interview challenge into a user-centered design exploration using psychology and research to improve the everyday elevator experience"
+title: "Improving the everyday elevator experience"
+description: "A job interview challenge that became a user-centered design exploration, using psychology and research to shorten perceived waiting time"
 order: 3
 slug: "reducing-perceived-waiting-time-in-residential-elevators"
 ---

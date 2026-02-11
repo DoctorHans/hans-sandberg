@@ -1,8 +1,8 @@
 ---
-title: "Creating a designer-friendly design system"
-description: "How I transformed a design system from engineer-focused to designer-friendly by addressing workflow pain points, improving documentation, and fostering better communication"
+title: "Creating a more designer-friendly-design system"
+description: "How I improved adoption of Siteimprove's design system by making it less engineer-focused and more catered towards designers"
 order: 4
-slug: "my-contributions-to-pleos-design-system"
+slug: "creating-a-designer-friendly-design-system"
 ---
 
 ## TL;DR

@@ -1,6 +1,6 @@
 ---
 title: "Strengthening Pleo’s Design System"
-description: "How I contributed to Pleo’s design system across design and code to improve consistency, accessibility, and alignment between designers and engineers"
+description: "My contributions to Pleo’s design system across design and code to improve consistency, accessibility, and alignment between designers and engineers"
 order: 1
 slug: "my-contributions-to-pleos-design-system"
 ---
