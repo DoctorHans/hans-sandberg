@@ -2,9 +2,21 @@
 import { defineCollection, z } from "astro:content";
 
 // 2. Import loader(s)
-import { file } from "astro/loaders";
+import { file, glob } from "astro/loaders";
 
 // 3. Define collection(s)
+const caseStudies = defineCollection({
+  loader: glob({
+    pattern: "src/data/case-studies/*.md",
+  }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    order: z.number(),
+    slug: z.string(),
+  }),
+});
+
 const experience = defineCollection({
   loader: file("src/data/experience.json"),
   schema: z.object({
@@ -27,4 +39,4 @@ const experience = defineCollection({
 });
 
 // 4. Export a single `collections` object to register collection(s)
-export const collections = { experience };
+export const collections = { experience, caseStudies };
