@@ -1,8 +1,8 @@
 ---
-title: "Improving the everyday elevator experience"
+title: "Rethinking the everyday elevator experience"
 description: "A job interview challenge that became a user-centered design exploration, using psychology and research to shorten perceived waiting time"
 order: 3
-slug: "reducing-perceived-waiting-time-in-residential-elevators"
+slug: "rethinking-the-every-day-elevator-experience"
 ---
 
 ## TL;DR
