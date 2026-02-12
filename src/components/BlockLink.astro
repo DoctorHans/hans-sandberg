@@ -15,11 +15,11 @@ const { title = "Title", subTitle = "Subtitle", url } = Astro.props;
 <div class="wrapper">
   <div class="heading-wrapper">
     <Heading as="h2" class="heading"><a href={url}>{title}</a></Heading>
-    <div class="icon-wrapper">
-      <Icon name="arrowRight" class="icon" />
-    </div>
+    <Paragraph color="quiet">{subTitle}</Paragraph>
   </div>
-  <Paragraph color="quiet">{subTitle}</Paragraph>
+  <div class="icon-wrapper">
+    <Icon name="arrowRight" class="icon" />
+  </div>
 </div>
 
 <style lang="scss">
@@ -37,8 +37,8 @@ const { title = "Title", subTitle = "Subtitle", url } = Astro.props;
 
   .wrapper {
     display: flex;
-    flex-direction: column;
-    gap: var(--space-2xs);
+    justify-content: space-between;
+    gap: var(--space-m);
     padding-block: var(--space-m);
     border-bottom: var(--border-size-regular) solid var(--color-border-quiet);
     position: relative;
@@ -67,9 +67,8 @@ const { title = "Title", subTitle = "Subtitle", url } = Astro.props;
 
   .heading-wrapper {
     display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: var(--space-m);
+    flex-direction: column;
+    gap: var(--space-3xs);
   }
 
   a {
@@ -87,13 +86,13 @@ const { title = "Title", subTitle = "Subtitle", url } = Astro.props;
   }
 
   .icon-wrapper {
+    flex-shrink: 0;
     transition: var(--motion-exit-small);
     transition-property: transform;
 
     .icon {
       width: var(--step-0);
       height: var(--step-0);
-      flex-shrink: 0;
       color: var(--color-accent);
       transition: var(--motion-exit-small);
       transition-property: color;
