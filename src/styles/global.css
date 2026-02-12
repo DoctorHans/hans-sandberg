@@ -31,7 +31,6 @@ body {
     5. Improve text rendering
   */
 body {
-  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -242,6 +241,9 @@ ul {
   --font-weight-semibold: 500;
   --font-weight-bold: 700;
 
+  --line-height-regular: 1.5;
+  --line-height-tight: 1.2;
+
   --motion-duration-step: 100ms;
   --motion-duration-fast: calc(1*var(--motion-duration-step));
   --motion-duration-regular: calc(2*var(--motion-duration-step));
@@ -298,11 +300,12 @@ ul {
 }
 
 body {
+  background: var(--color-background);
+  color: var(--color-content-regular);
   font-family: 'Source Sans', system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-size: var(--step--1);
-  color: var(--color-content-regular);
-  background: var(--color-background);
-  margin-top: 0;
+  line-height: var(--line-height-regular);
+  margin: 0;
 }
 
 a {
