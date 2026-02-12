@@ -1,8 +1,8 @@
 ---
-title: "Creating a more designer-friendly-design system"
-description: "How I improved adoption of Siteimprove's design system by making it less engineer-focused and more catered towards designers"
+title: "Improving the UX of a design system"
+description: "How I led an initiative to improve adoption of Siteimprove's design system by making it less engineer-focused and more catered towards designers"
 order: 4
-slug: "creating-a-designer-friendly-design-system"
+slug: "improving-the-ux-of-a-design-system"
 ---
 
 ## TL;DR
