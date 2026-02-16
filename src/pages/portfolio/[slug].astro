@@ -6,6 +6,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import { render } from "astro:content";
 import Prose from "../../layouts/Prose.astro";
+import TableOfContents from "../../components/TableOfContents.astro";
 
 export const getStaticPaths = (async () => {
   const caseStudies = await getCollection("caseStudies");
@@ -17,13 +18,15 @@ export const getStaticPaths = (async () => {
 
 const { caseStudy } = Astro.props;
 
-const { Content } = await render(caseStudy);
+const { Content, headings } = await render(caseStudy);
+console.log(headings);
 ---
 
 <BaseLayout pageTitle={caseStudy.data.title}>
   <BackToPortfolio />
   <PageHeader heading={caseStudy.data.title} />
   <Prose>
+    <TableOfContents headings={headings} />
     <Content />
   </Prose>
 </BaseLayout>
