@@ -7,31 +7,24 @@ import "../styles/global.css";
 </div>
 
 <style>
-  :global(.prose > * + p) {
-    margin-block-start: var(--space-s);
+  :global(.prose > * + *) {
+    margin-block-start: var(--flow-space, var(--space-s));
   }
-
   :global(.prose > * + h2) {
-    margin-block-start: var(--space-2xl);
+    --flow-space: var(--space-2xl);
   }
 
   :global(.prose > * + h3) {
-    margin-block-start: var(--space-l);
+    --flow-space: var(--space-l);
   }
-
   :global(.prose > * + h4) {
-    margin-block-start: var(--space-m);
+    --flow-space: var(--space-m);
   }
-
-  :global(.prose > * + h5) {
-    margin-block-start: var(--space-s);
-  }
-
-  :global(.prose > * + h6) {
-    margin-block-start: var(--space-s);
-  }
-
   :global(.prose :is(h1, h2, h3, h4, h5, h6) + *) {
-    margin-block-start: var(--space-3xs);
+    --flow-space: var(--space-2xs);
+  }
+
+  :global(.prose > * + hr) {
+    --flow-space: var(--space-l);
   }
 </style>
