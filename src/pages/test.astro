@@ -18,8 +18,7 @@ const title = "Test page for global styles and prose content";
         title="abbreviation">abbr</abbr
       > (<code>&lt;abbr&gt;</code>) element. Lastly you can define <del
         >deleted text</del
-      >
-      <ins>inserted text</ins>.
+      > and <ins>inserted text</ins>.
     </p>
     <p>
       If you are referencing keyboard keys, make sure you use the <code
@@ -81,92 +80,74 @@ const title = "Test page for global styles and prose content";
     </details>
     <h2>Tables</h2>
     <table>
-      <caption>A nice caption for this table</caption>
+      <caption>Caption for this table</caption>
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Reference</th>
+          <th scope="col">Status</th>
+        </tr>
+      </thead>
       <tbody>
         <tr>
-          <th>Person</th>
-          <th>Number</th>
-          <th>Third Column</th>
-        </tr>
-        <tr>
-          <td>Someone Lastname</td>
-          <td>900</td>
-          <td>Nullam quis risus eget urna mollis ornare vel eu leo.</td>
+          <td>Anna Müller</td>
+          <td>8432</td>
+          <td>Active</td>
         </tr>
         <tr>
           <td>
-            <a href="#">Person Name</a>
+            <a href="#">Luca Rossi</a>
           </td>
-          <td>1200</td>
-          <td
-            >Vestibulum id ligula porta felis euismod semper. Donec ullamcorper
-            nulla non metus auctor fringilla.</td
-          >
+          <td>1127</td>
+          <td>Pending</td>
         </tr>
         <tr>
-          <td>Another Person</td>
-          <td>1500</td>
-          <td
-            >Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
-            auctor. Nullam id dolor id nibh ultricies vehicula ut id elit.</td
-          >
+          <td>Sofie Jensen</td>
+          <td>5590</td>
+          <td>Closed</td>
         </tr>
         <tr>
-          <td>Last One</td>
-          <td>2800</td>
-          <td
-            >Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras
-            mattis consectetur purus sit amet fermentum.</td
-          >
+          <td>Mateusz Kowalski</td>
+          <td>7741</td>
+          <td>Active</td>
         </tr>
       </tbody>
     </table>
     <p>Sometimes, a table has column headers</p>
     <table>
-      <caption>A nice caption for this table</caption>
-      <tbody>
+      <caption>Caption for this table</caption>
+      <thead>
         <tr>
           <th></th>
-          <th>Person</th>
-          <th>Number</th>
-          <th>Third Column</th>
+          <th scope="col">Name</th>
+          <th scope="col">Reference</th>
+          <th scope="col">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Nordic Team</th>
+          <td>Emil Sørensen</td>
+          <td>1042</td>
+          <td>Active</td>
         </tr>
         <tr>
-          <th>This column’s heading</th>
-          <td>Someone Lastname</td>
-          <td>900</td>
-          <td>Nullam quis risus eget urna mollis ornare vel eu leo.</td>
+          <th scope="row">Central Group</th>
+          <td><a href="#">Klara Novák</a></td>
+          <td>2871</td>
+          <td>Pending</td>
         </tr>
         <tr>
-          <th>Another column heading</th>
-          <td>
-            <a href="#">Person Name</a>
-          </td>
-          <td>1200</td>
-          <td
-            >Vestibulum id ligula porta felis euismod semper. Donec ullamcorper
-            nulla non metus auctor fringilla.</td
-          >
+          <th scope="row">Southern Unit</th>
+          <td>Giulia Bianchi</td>
+          <td>3910</td>
+          <td>Closed</td>
         </tr>
         <tr>
-          <th>Code in tables should have more paired back styles</th>
-          <td>Another Person</td>
-          <td>
-            <code>1500</code>
-          </td>
-          <td
-            >Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
-            auctor. Nullam id dolor id nibh ultricies vehicula ut id elit.</td
-          >
-        </tr>
-        <tr>
-          <th>Last column header</th>
-          <td>Last One</td>
-          <td>2800</td>
-          <td
-            >Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras
-            mattis consectetur purus sit amet fermentum.</td
-          >
+          <th scope="row">Western Division</th>
+          <td>Thomas Dubois</td>
+          <td>5823</td>
+          <td>Active</td>
         </tr>
       </tbody>
     </table>
