@@ -77,16 +77,6 @@ img {
   height: unset;
 }
 
-/*
-    10. Remove list styles without affecting semantics (https://www.matuzo.at/blog/2023/removing-list-styles-without-affecting-semantics)
-  */
-
-ul {
-  list-style-type: "";
-}
-
-/*
-
 /* GLOBAL STYLING */
 
 /* @link https://utopia.fyi/type/calculator?c=320,16,1.2,1200,24,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
@@ -237,6 +227,10 @@ ul {
   --color-border-loud: var(--neutral-600);
   --color-focusring: var(--neutral-800);
 
+  --font-family-regular: 'Source Sans', system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  ;
+  --font-family-mono: monospace;
+
   --font-weight-regular: 400;
   --font-weight-semibold: 500;
   --font-weight-bold: 700;
@@ -264,7 +258,13 @@ ul {
   --border-radius-small: 0.5rem;
   --border-radius-regular: 0.75rem;
   --border-radius-round: 99999rem;
+
   --border-size-regular: 1px;
+
+  --border-type: solid;
+  --border-regular: var(--border-size-regular) var(--border-type) var(--color-border-regular);
+  --border-quiet: var(--border-size-regular) var(--border-type) var(--color-border-quiet);
+  --border-accent: var(--border-size-regular) var(--border-type) var(--color-accent);
 
   --shadow-elevation-low:
     0.3px 0.5px 0.5px hsl(var(--shadow-color) / 0.38),
@@ -302,28 +302,278 @@ ul {
 body {
   background: var(--color-background);
   color: var(--color-content-regular);
-  font-family: 'Source Sans', system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: var(--font-family-regular);
   font-size: var(--step--1);
+  font-weight: var(--font-weight-regular);
   line-height: var(--line-height-regular);
   margin: 0;
+  /* Makes elements that use different fonts (e.g. <code> -> uses monospace) look more in proportion to the base font". More info: https://developer.mozilla.org/en-US/docs/Web/CSS/font-size-adjust */
+  font-size-adjust: from-font;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-content-loud);
+  line-height: var(--line-height-tight);
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: var(--step-2);
+}
+
+h2 {
+  font-size: var(--step-1);
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-size: var(--step-0);
+}
+
+small {
+  font-size: var(--step--2);
+}
+
+ins {
+  text-decoration: none;
+  background: var(--color-accent);
+  color: var(--color-content-inverted);
+  padding-inline: var(--space-3xs);
+}
+
+/* 
+  code → Inline code snippets (e.g. variable names, short code examples)
+  kbd → User input via keyboard (e.g. Cmd + C)
+  samp → Sample output from a program or system (e.g. Press F1 to continue)
+*/
+code,
+kbd,
+samp {
+  font-family: var(--font-family-mono);
+  padding: 0.2em 0.2em 0.05em 0.2em;
+  hyphens: none;
+  tab-size: 2;
+  text-align: left;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  /* Ensures presentational styles (e.g. padding and border-radius) carry over when element breaks on to multiple lines */
+  box-decoration-break: clone;
+}
+
+pre:has(code) {
+  width: max-content;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+pre code {
+  border: none;
+  background: none;
+  padding: none;
+}
+
+kbd {
+  border: 1px solid;
+  padding-block-end: 0.1em;
+}
+
+q {
+  font-style: italic;
+}
+
+/* Targets lists without a class, as these probably feature custom styling */
+:is(ol, ul):not([class]) {
+  /* Left-aligns list items with other content */
+  padding-inline-start: 1em;
+}
+
+/* Ensures the same marker at every nesting level */
+ul:not([class]) {
+  list-style-type: disc;
+}
+
+/* Gives numbers a heavier font-weight */
+ol ::marker {
+  font-weight: var(--font-weight-bold);
+}
+
+dt {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-content-loud);
+}
+
+*+dt {
+  margin-block-start: var(--space-2xs);
+}
+
+blockquote {
+  color: var(--color-content-quiet);
+}
+
+blockquote footer {
+  margin-block-start: var(--space-2xs);
+}
+
+blockquote q {
+  font-style: normal;
+}
+
+video,
+iframe[src*='youtube'] {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+}
+
+figcaption {
+  margin-block-start: var(--space-3xs);
+  font-size: var(--step--2);
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+thead,
+th[scope="row"] {
+  background: var(--color-background-loud);
+}
+
+th[scope="row"] {
+  border-inline-end: 1px solid var(--color-border-quiet);
+}
+
+tr {
+  border-bottom: 1px solid var(--color-border-quiet);
+}
+
+th {
+  text-align: left;
+  font-weight: var(--font-weight-semibold);
+}
+
+th,
+td {
+  padding: var(--space-3xs) var(--space-xs);
+}
+
+caption {
+  text-align: left;
+  font-size: var(--step--1);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-content-quiet);
+  margin-block-end: var(--space-2xs);
 }
 
 a {
   color: currentColor;
-  text-underline-offset: var(--space-3xs);
+  text-underline-offset: 0.3ex;
+  text-decoration-thickness: 0.2ex;
   text-decoration-color: var(--color-accent);
   transition: color, text-underline-offset var(--motion-exit-small);
 
   &:hover {
     color: var(--color-accent);
-    text-underline-offset: calc(var(--space-3xs) + 0.125rem);
+    text-underline-offset: 0.5ex;
     transition: color, text-underline-offset var(--motion-enter-small)
   }
+}
+
+hr {
+  border: none;
+  border-block-start: var(--border-quiet);
+  margin-block: var(--flow-space, var(--space-l));
+}
+
+svg {
+  flex-shrink: 0;
+}
+
+input,
+select,
+textarea {
+  accent-color: var(--color-accent);
 }
 
 :focus-visible {
   outline: var(--focusring);
   outline-offset: var(--offset-focusring);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-s);
+}
+
+:is(input:not([type='checkbox'], [type='radio'], [type='color']), select, textarea) {
+  padding: var(--space-2xs) var(--space-xs);
+  border-radius: var(--border-radius-small);
+  border: var(--border-regular);
+  background: var(--color-background-loud);
+  color: var(--color-content-loud);
+  width: 100%;
+
+  &::placeholder {
+    color: var(--color-content-quiet);
+  }
+}
+
+label {
+  font-weight: var(--font-weight-semibold);
+}
+
+label:has(input) {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2xs);
+  font-weight: var(--font-weight-regular);
+  cursor: pointer;
+}
+
+label:has(input) input {
+  transform: translateY(0.2ex);
+}
+
+input:disabled,
+input[readonly] {
+  border: none;
+}
+
+input:disabled,
+label input:disabled+* {
+  cursor: not-allowed;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3xs);
+  padding: var(--space-2xs) var(--space-xs);
+  border-radius: var(--border-radius-regular);
+}
+
+legend {
+  font-weight: var(--font-weight-semibold);
+  padding-inline: var(--space-3xs);
+}
+
+summary {
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+}
+
+details[open] summary {
+  margin-block-end: var(--space-2xs);
 }
 
 /* Source: https://robbowen.digital/wrote-about/locking-scroll-with-has/ */
@@ -344,6 +594,11 @@ body:has(.scroll-lock[aria-expanded="true"]) {
 ::selection {
   color: var(--color-background);
   background-color: var(--color-accent);
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5lh;
 }
 
 @view-transition {
