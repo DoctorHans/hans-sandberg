@@ -3,14 +3,15 @@ import "../styles/global.css";
 ---
 
 <ul>
-    <slot />
+  <slot />
 </ul>
 
 <style lang="scss">
-    ul {
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-m);
-        margin-block-start: var(--space-m);
-    }
+  ul {
+    list-style-type: "";
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-m);
+    margin-block-start: var(--space-m);
+  }
 </style>

@@ -3,17 +3,18 @@ import "../styles/global.css";
 ---
 
 <ul>
-    <slot />
+  <slot />
 </ul>
 
 <style lang="scss">
-    ul {
-        padding: 0;
-        display: flex;
-        flex-direction: row;
-        gap: var(--space-m);
-        overflow-x: scroll;
-        scroll-snap-type: x mandatory;
-        margin-block-start: var(--space-l);
-    }
+  ul {
+    list-style-type: "";
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-m);
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    margin-block-start: var(--space-l);
+  }
 </style>
