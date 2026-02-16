@@ -1,8 +1,8 @@
 ---
+import BaseLayout from "../../layouts/BaseLayout.astro";
 import BlockLink from "../../components/BlockLink.astro";
 import BlockLinkList from "../../layouts/BlockLinkList.astro";
 import PageHeader from "../../components/PageHeader.astro";
-import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 const title = "Portfolio";
 const caseStudies = await getCollection("caseStudies");

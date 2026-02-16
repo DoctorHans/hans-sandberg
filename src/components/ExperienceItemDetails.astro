@@ -1,23 +1,23 @@
 ---
-import "../styles/global.css";
+
 ---
 
 <ul>
-    <slot />
+  <slot />
 </ul>
 
 <style lang="scss">
-    ul {
-        list-style-type: circle;
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-2xs);
-        background-color: var(--color-background-loud);
-        padding: var(--space-s) var(--space-l);
-        border-radius: var(--border-radius-regular);
+  ul {
+    list-style-type: circle;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xs);
+    background-color: var(--color-background-loud);
+    padding: var(--space-s) var(--space-l);
+    border-radius: var(--border-radius-regular);
 
-        & :global(li) {
-            font-size: var(--step--1);
-        }
+    & :global(li) {
+      font-size: var(--step--1);
     }
+  }
 </style>

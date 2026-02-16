@@ -1,5 +1,4 @@
 ---
-import "../styles/global.css";
 import ExperienceDisclosure from "./ExperienceItemDisclosure.astro";
 import Paragraph from "./Paragraph.astro";
 
@@ -30,7 +29,7 @@ const dateEndFormatted = formatDate(dateEnd);
 
 function calculateDuration(
   startDate: Date,
-  endDate: Date | string
+  endDate: Date | string,
 ): { years: number; months: number } {
   const end = typeof endDate === "string" ? new Date() : endDate;
 

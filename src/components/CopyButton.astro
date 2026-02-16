@@ -1,5 +1,4 @@
 ---
-import "../styles/global.css";
 import Icon from "./Icon.astro";
 import VisuallyHidden from "./VisuallyHidden.astro";
 interface Props {
@@ -161,23 +160,23 @@ const { successMessage } = Astro.props;
         }
 
         copyContent?.forEach((element) =>
-          element.classList.add("copyContentAnimation")
+          element.classList.add("copyContentAnimation"),
         );
         successContent?.forEach((element) =>
-          element.classList.add("successContentAnimation")
+          element.classList.add("successContentAnimation"),
         );
       },
       () => {
         /* Clipboard write failed */
-      }
+      },
     );
 
     setTimeout(() => {
       copyContent?.forEach((element) =>
-        element.classList.remove("copyContentAnimation")
+        element.classList.remove("copyContentAnimation"),
       );
       successContent?.forEach((element) =>
-        element.classList.remove("successContentAnimation")
+        element.classList.remove("successContentAnimation"),
       );
     }, 2000);
 
