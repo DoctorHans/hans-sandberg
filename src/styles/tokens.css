@@ -1,0 +1,196 @@
+/* @link https://utopia.fyi/type/calculator?c=320,16,1.2,1200,24,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+:root {
+    --step--2: clamp(0.69rem, calc(0.6rem + 0.48vw), 0.96rem);
+    --step--1: clamp(0.83rem, calc(0.7rem + 0.67vw), 1.2rem);
+    --step-0: clamp(1rem, calc(0.82rem + 0.91vw), 1.5rem);
+    --step-1: clamp(1.2rem, calc(0.95rem + 1.23vw), 1.88rem);
+    --step-2: clamp(1.44rem, calc(1.11rem + 1.64vw), 2.34rem);
+    --step-3: clamp(1.73rem, calc(1.29rem + 2.19vw), 2.93rem);
+    --step-4: clamp(2.07rem, calc(1.5rem + 2.89vw), 3.66rem);
+    --step-5: clamp(2.49rem, calc(1.73rem + 3.8vw), 4.58rem);
+}
+
+/* @link https://utopia.fyi/space/calculator?c=320,16,1.2,1200,24,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+:root {
+    --space-3xs: clamp(0.25rem, calc(0.2rem + 0.23vw), 0.38rem);
+    --space-2xs: clamp(0.5rem, calc(0.41rem + 0.45vw), 0.75rem);
+    --space-xs: clamp(0.75rem, calc(0.61rem + 0.68vw), 1.13rem);
+    --space-s: clamp(1rem, calc(0.82rem + 0.91vw), 1.5rem);
+    --space-m: clamp(1.5rem, calc(1.23rem + 1.36vw), 2.25rem);
+    --space-l: clamp(2rem, calc(1.64rem + 1.82vw), 3rem);
+    --space-xl: clamp(3rem, calc(2.45rem + 2.73vw), 4.5rem);
+    --space-2xl: clamp(4rem, calc(3.27rem + 3.64vw), 6rem);
+    --space-3xl: clamp(6rem, calc(4.91rem + 5.45vw), 9rem);
+
+    /* One-up pairs */
+    --space-3xs-2xs: clamp(0.25rem, calc(0.07rem + 0.91vw), 0.75rem);
+    --space-2xs-xs: clamp(0.5rem, calc(0.27rem + 1.14vw), 1.13rem);
+    --space-xs-s: clamp(0.75rem, calc(0.48rem + 1.36vw), 1.5rem);
+    --space-s-m: clamp(1rem, calc(0.55rem + 2.27vw), 2.25rem);
+    --space-m-l: clamp(1.5rem, calc(0.95rem + 2.73vw), 3rem);
+    --space-l-xl: clamp(2rem, calc(1.09rem + 4.55vw), 4.5rem);
+    --space-xl-2xl: clamp(3rem, calc(1.91rem + 5.45vw), 6rem);
+    --space-2xl-3xl: clamp(4rem, calc(2.18rem + 9.09vw), 9rem);
+
+    /* Custom pairs */
+    --space-s-l: clamp(1rem, calc(0.27rem + 3.64vw), 3rem);
+}
+
+/* @link https://utopia.fyi/grid/calculator?c=320,16,1.2,1200,24,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,l,12 */
+
+:root {
+    --page-width: 75rem;
+    --page-max-width: 100%;
+    --page-gutter: var(--space-s-l, clamp(1rem, calc(0.27rem + 3.64vw), 3rem));
+}
+
+/* Light color scheme (default and override) */
+:root,
+:root[data-theme="light"] {
+    color-scheme: light;
+
+    --hue-accent: 30;
+    --chroma-neutral: 0;
+    --shadow-color: 0deg 0% 58%;
+
+    --lightness-800: 21%;
+    --lightness-700: 41%;
+    --lightness-600: 52%;
+    --lightness-500: 65%;
+    --lightness-400: 74%;
+    --lightness-300: 83%;
+    --lightness-200: 90%;
+    --lightness-100: 95%;
+    --lightness-000: 99%;
+}
+
+/* Dark color scheme (system preference)  */
+@media(prefers-color-scheme: dark) {
+    :root {
+        color-scheme: dark;
+
+        --hue-accent: 90;
+        --chroma-neutral: 0.02;
+        --shadow-color: 223deg 18% 10%;
+
+        --lightness-800: 95%;
+        --lightness-700: 92%;
+        --lightness-600: 85%;
+        --lightness-500: 76%;
+        --lightness-400: 67%;
+        --lightness-300: 57%;
+        --lightness-200: 45%;
+        --lightness-100: 32%;
+        --lightness-000: 18%;
+    }
+}
+
+/* Dark color scheme (override) */
+:root[data-theme="dark"] {
+    color-scheme: dark;
+
+    --hue-accent: 90;
+    --chroma-neutral: 0.02;
+    --shadow-color: 223deg 18% 10%;
+
+    --lightness-800: 95%;
+    --lightness-700: 92%;
+    --lightness-600: 85%;
+    --lightness-500: 76%;
+    --lightness-400: 67%;
+    --lightness-300: 57%;
+    --lightness-200: 45%;
+    --lightness-100: 32%;
+    --lightness-000: 18%;
+}
+
+:root {
+    --hue-neutral: 270;
+
+    --neutral-800: oklch(var(--lightness-800) var(--chroma-neutral) var(--hue-neutral));
+    --neutral-700: oklch(var(--lightness-700) var(--chroma-neutral) var(--hue-neutral));
+    --neutral-600: oklch(var(--lightness-600) var(--chroma-neutral) var(--hue-neutral));
+    --neutral-500: oklch(var(--lightness-500) var(--chroma-neutral) var(--hue-neutral));
+    --neutral-400: oklch(var(--lightness-400) var(--chroma-neutral) var(--hue-neutral));
+    --neutral-300: oklch(var(--lightness-300) var(--chroma-neutral) var(--hue-neutral));
+    --neutral-200: oklch(var(--lightness-200) var(--chroma-neutral) var(--hue-neutral));
+    --neutral-100: oklch(var(--lightness-100) var(--chroma-neutral) var(--hue-neutral));
+    --neutral-000: oklch(var(--lightness-000) var(--chroma-neutral) var(--hue-neutral));
+
+    --color-accent: oklch(var(--lightness-700) 0.3 var(--hue-accent));
+    --color-content-inverted: var(--neutral-000);
+    --color-content-quiet: var(--neutral-600);
+    --color-content-regular: var(--neutral-700);
+    --color-content-loud: var(--neutral-800);
+    --color-background-inverted: var(--neutral-700);
+    --color-background: var(--neutral-000);
+    --color-background-loud: var(--neutral-100);
+    --color-border-quiet: var(--neutral-200);
+    --color-border-regular: var(--neutral-500);
+    --color-border-loud: var(--neutral-600);
+    --color-focusring: var(--neutral-800);
+
+    --font-family-regular: 'Source Sans', system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    ;
+    --font-family-mono: monospace;
+
+    --font-weight-regular: 400;
+    --font-weight-semibold: 500;
+    --font-weight-bold: 700;
+
+    --line-height-regular: 1.5;
+    --line-height-tight: 1.2;
+
+    --motion-duration-step: 100ms;
+    --motion-duration-fast: calc(1*var(--motion-duration-step));
+    --motion-duration-regular: calc(2*var(--motion-duration-step));
+    --motion-duration-slow: calc(3*var(--motion-duration-step));
+    --motion-duration-extra-slow: calc(5*var(--motion-duration-step));
+    --motion-enter-small: var(--motion-duration-regular) var(--motion-easing-enter);
+    --motion-enter-large: var(--motion-duration-slow) var(--motion-easing-enter);
+    --motion-exit-small: var(--motion-duration-fast) var(--motion-easing-exit);
+    --motion-exit-large: var(--motion-duration-regular) var(--motion-easing-exit);
+    --motion-easing-enter: ease-out;
+    --motion-easing-exit: ease-in;
+    --motion-easing-enter-and-exit: ease-in-out;
+
+    --size-focusring: 2px;
+    --offset-focusring: var(--space-3xs);
+    --focusring: var(--size-focusring) solid var(--color-focusring);
+
+    --border-radius-small: 0.5rem;
+    --border-radius-regular: 0.75rem;
+    --border-radius-round: 99999rem;
+
+    --border-size-regular: 1px;
+
+    --border-type: solid;
+    --border-regular: var(--border-size-regular) var(--border-type) var(--color-border-regular);
+    --border-quiet: var(--border-size-regular) var(--border-type) var(--color-border-quiet);
+    --border-accent: var(--border-size-regular) var(--border-type) var(--color-accent);
+
+    --shadow-elevation-low:
+        0.3px 0.5px 0.5px hsl(var(--shadow-color) / 0.38),
+        0.3px 0.7px 0.7px -2px hsl(var(--shadow-color) / 0.29),
+        0.9px 1.7px 1.7px -4px hsl(var(--shadow-color) / 0.19);
+    --shadow-elevation-medium:
+        0.3px 0.5px 0.5px hsl(var(--shadow-color) / 0.4),
+        0.5px 1.1px 1.1px -1.3px hsl(var(--shadow-color) / 0.32),
+        1.6px 3.1px 3.1px -2.7px hsl(var(--shadow-color) / 0.25),
+        4.3px 8.5px 8.6px -4px hsl(var(--shadow-color) / 0.17);
+    --shadow-elevation-high:
+        0.3px 0.5px 0.5px hsl(var(--shadow-color) / 0.37),
+        0.6px 1.2px 1.2px -0.6px hsl(var(--shadow-color) / 0.34),
+        1.2px 2.4px 2.4px -1.1px hsl(var(--shadow-color) / 0.3),
+        2.2px 4.5px 4.5px -1.7px hsl(var(--shadow-color) / 0.27),
+        4.1px 8.2px 8.3px -2.3px hsl(var(--shadow-color) / 0.23),
+        7.1px 14.1px 14.2px -2.9px hsl(var(--shadow-color) / 0.2),
+        11.4px 22.9px 23px -3.4px hsl(var(--shadow-color) / 0.16),
+        17.5px 35px 35.2px -4px hsl(var(--shadow-color) / 0.13);
+
+    --scale-up-large: 1.03;
+    --scale-up-small: 1.015;
+    --scale-down: 0.97;
+}
