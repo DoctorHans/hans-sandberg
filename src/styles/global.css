@@ -368,16 +368,15 @@ samp {
   box-decoration-break: clone;
 }
 
-pre:has(code) {
-  width: max-content;
-  max-width: 100%;
-  overflow-x: auto;
+pre {
+  border-radius: var(--border-radius-regular);
+  padding: var(--space-xs) var(--space-m);
 }
 
 pre code {
   border: none;
   background: none;
-  padding: none;
+  padding: 0;
 }
 
 kbd {

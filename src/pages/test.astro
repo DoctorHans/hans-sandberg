@@ -1,9 +1,21 @@
 ---
-import Paragraph from "../components/Paragraph.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PageHeader from "../components/PageHeader.astro";
 import Prose from "../layouts/Prose.astro";
+import Code from "astro/components/Code.astro";
 const title = "Test page for global styles and prose content";
+const exampleCss = `.context-alert {
+  position: absolute;
+  inset: auto 0 calc(100% + 0.5em) 0;
+  padding: 0.25em;
+  background: var(--color-primary);
+  color: var(--color-light);
+  font-weight: var(--font-bold);
+  text-align: center;
+  transition:
+    opacity var(--transition-fade) 200ms,
+    transform var(--transition-bounce-fast) 200ms;
+}`;
 ---
 
 <BaseLayout pageTitle={title}>
@@ -252,7 +264,7 @@ const title = "Test page for global styles and prose content";
       <li>List item four</li>
     </ul>
     <h2>Preformatted text / blocks of code styles follow on next</h2>
-    <pre><code> TO DO</code></pre>
+    <Code code={exampleCss} lang="css" />
     <h2>Forms</h2>
     <form>
       <div>
