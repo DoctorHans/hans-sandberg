@@ -22,6 +22,8 @@ import VisuallyHidden from "./VisuallyHidden.astro";
 <style>
   fieldset {
     display: flex;
+    flex-direction: row;
+    padding: 0;
     gap: var(--space-3xs);
     border: none;
     border-radius: var(--border-radius-round);
@@ -39,7 +41,7 @@ import VisuallyHidden from "./VisuallyHidden.astro";
     align-items: center;
     padding-inline: var(--space-xs);
     padding-block: var(--space-3xs);
-    border: var(--border-size-regular) solid var(--color-accent);
+    border: var(--border-accent);
     border-radius: var(--border-radius-round);
     transition: transform var(--motion-exit-small);
 

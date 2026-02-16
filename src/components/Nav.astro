@@ -59,6 +59,7 @@ import VisuallyHidden from "./VisuallyHidden.astro";
   }
 
   ul {
+    list-style-type: "";
     background: var(--color-background);
     display: flex;
     align-items: var(--nav-list-align-items, start);
@@ -111,7 +112,7 @@ import VisuallyHidden from "./VisuallyHidden.astro";
     font-weight: var(--font-weight-semibold);
     color: var(--color-content-regular);
     background: var(--color-background-regular);
-    border: var(--border-size-regular) solid var(--color-accent);
+    border: var(--border-accent);
     border-radius: var(--border-radius-round);
     place-content: center;
     padding-block: var(--space-3xs);
@@ -137,7 +138,7 @@ import VisuallyHidden from "./VisuallyHidden.astro";
   const nav: HTMLElement | null = document.querySelector("#nav");
   const navToggle: HTMLElement | null = document.querySelector("#nav-toggle");
   const navToggleVisualLabel: HTMLElement | null = document.querySelector(
-    "#nav-toggle-visual-label"
+    "#nav-toggle-visual-label",
   );
   let isNavVisible = navToggle?.getAttribute("aria-expanded") === "true";
 
