@@ -136,15 +136,18 @@ dt {
 }
 
 blockquote {
-  color: var(--color-content-quiet);
+  padding: var(--space-2xs) var(--space-s);
+  border-left: var(--border-size-thick) var(--border-type) var(--color-accent);
+}
+
+blockquote p,
+q {
+  color: var(--color-content-loud);
+  font-style: italic;
 }
 
 blockquote footer {
   margin-block-start: var(--space-2xs);
-}
-
-blockquote q {
-  font-style: normal;
 }
 
 video,
