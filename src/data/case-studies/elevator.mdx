@@ -10,7 +10,7 @@ import HighlightList from "../../components/HighlightList.astro";
 
 ## TL;DR
 
-As part of a job interview, I explored how to improve the everyday elevator experience in residential buildings. Through user interviews, domain research, and insights from the psychology of waiting, I identified waiting uncertainty as the core problem. I then designed a set of environmental, informational, and accessible UI interventions aimed at reducing _perceived_ waiting time rather than raw elevator speed.
+As part of a job interview, I explored how to improve the everyday elevator experience in residential buildings. Through user interviews, domain research, and insights from the psychology of waiting, I identified waiting uncertainty as the core problem. I then designed a set of environmental, informational, and accessible UI interventions aimed at reducing perceived waiting time rather than raw elevator speed.
 
 ## Context
 
@@ -22,8 +22,8 @@ I started by learning about elevators and people’s experiences with them.
 
 <HighlightList>
   <Highlight title="User interviews" icon="qa">
-    I interviewed 9 people. Participants described a range of frustrations.
-    However, waiting for the elevator was by far their biggest complaint.
+    I interviewed 9 people, who described a wide range of frustrations. However,
+    waiting for the elevator was by far their biggest complaint.
   </Highlight>
   <Highlight title="Domain research" icon="upDown">
     To understand which aspects of the experience could realistically be
@@ -43,10 +43,22 @@ I started by learning about elevators and people’s experiences with them.
 
 To ground the concept, I defined the following assumptions and constraints:
 
-- **Client:** Mitsubishi, seeking differentiation through experience rather than speed
-- **Setting:** Luxury residential buildings with 4–12 floors, globally
-- **Users:** Residents of all ages, including people with sensory, motor, or other impairments
-- **Technical constraint:** A _collective control_ algorithm, meaning the elevator only changes direction when all requests in the current direction have been served
+<HighlightList>
+  <Highlight title="Client" icon="mitsubishi">
+    Mitsubishi, seeking differentiation through experience rather than speed
+  </Highlight>
+  <Highlight title="Setting" icon="lock">
+    Luxury residential buildings with 4–12 floors, anywhere in the world
+  </Highlight>
+  <Highlight title="Users" icon="groups">
+    Residents of all ages, including people with sensory, motor, or other
+    impairments
+  </Highlight>
+  <Highlight title="Technical constriants" icon="groups">
+    A _collective control_ algorithm, meaning the elevator only changes
+    direction when all requests in the current direction have been served
+  </Highlight>
+</HighlightList>
 
 ## Problem statement
 
@@ -58,14 +70,44 @@ I distilled my research, requirements and constraints into a concise problem sta
 
 I used what I had learned about elevators and the psychology of waiting to devise features that would reduce perceived waiting time.
 
-- **Speed** – The elevator will travel up at 83 km/h (above which people get sick) and down at 36 km/h (above which people experience the sensation of falling). This reduces both actual and perceived waiting time.
-- **Mirrors** – The shaft doors will feature mirrors. Occupied time feels shorter and people naturally tend to check their appearance. This classic trick reduces perceived waiting time.
-- **Time** – Computer screens behind the semi‑transparent mirrors will display the current time. Seeing a clock counters the tendency to overestimate waiting time.
-- **Weather** – The opposite mirror door will show weather information, providing useful context and sparking conversation, which makes group waiting feel shorter.
-- **Color** – Cool colors (e.g., blue) will be used in the waiting area, as warm tones are linked to longer perceived wait times.
-- **Light** – The waiting area will be dimly lit, as lower light levels are said to decrease perceived waiting time.
-- **Scent** – A diffuser will emit a low‑concentration blend of fragrances linked to reducing anxiety, such as lavender and nutmeg.
-- **Accessibility** – Call buttons will be placed low enough for wheelchair users and children, provide tactile feedback, include braille, and be complemented by a voice UI announcing floor, elevator location, direction, and upcoming stops.
+<HighlightList>
+  <Highlight title="Speed" icon="speed">
+    The elevator will travel up at 83 km/h (above which people get sick) and
+    down at 36 km/h (above which people experience the sensation of falling).
+    This reduces both actual and perceived waiting time.
+  </Highlight>
+  <Highlight title="Mirrors" icon="mirror">
+    The shaft doors will feature mirrors. Occupied time feels shorter and people
+    naturally tend to check their appearance. This classic trick reduces
+    perceived waiting time.
+  </Highlight>
+  <Highlight title="Time" icon="time">
+    Computer screens behind the semi‑transparent mirrors will display the
+    current time. Seeing a clock counters the tendency to overestimate waiting
+    time.
+  </Highlight>
+  <Highlight title="Weather" icon="sun">
+    The opposite mirror door will show weather information, providing useful
+    context and sparking conversation, which makes group waiting feel shorter.
+  </Highlight>
+  <Highlight title="Color" icon="paint">
+    Cool colors (e.g., blue) will be used in the waiting area, as warm tones are
+    linked to longer perceived wait times.
+  </Highlight>
+  <Highlight title="Light" icon="lightbulb">
+    The waiting area will be dimly lit, as lower light levels are said to
+    decrease perceived waiting time.
+  </Highlight>
+  <Highlight title="Scent" icon="air">
+    A diffuser will emit a low‑concentration blend of fragrances linked to
+    reducing anxiety, such as lavender and nutmeg.
+  </Highlight>
+  <Highlight title="Accessibility" icon="accessibility">
+    Call buttons will be placed low enough for wheelchair users and children,
+    provide tactile feedback, include braille, and be complemented by a voice UI
+    announcing floor, elevator location, direction, and upcoming stops.
+  </Highlight>
+</HighlightList>
 
 ## Explore visual UI concepts
 
@@ -73,18 +115,32 @@ The elevator will also feature a visual UI that communicates the same informatio
 
 Through sketching, I explored various UI details.
 
-- **Orientation** – Should the UI be vertical (matching the elevator’s movement) or horizontal (placed above the doors for better visibility)?
-- **Floor indicator** – Numbers are informative, but can cause cultural confusion (different ground‑floor conventions, “unlucky” numbers). Shapes avoid this, but convey less detail.
-- **Cause of stop** – Showing whether a stop is for pickup or drop‑off shortens perceived waiting time, but risks visual clutter.
+<HighlightList>
+  <Highlight title="Orientation" icon="upDown">
+    Should the UI be vertical (matching the elevator’s movement) or horizontal
+    (placed above the doors for better visibility)?
+  </Highlight>
+  <Highlight title="Floor indicator" icon="number">
+    Numbers are informative, but can cause cultural confusion (different
+    ground‑floor conventions, “unlucky” numbers). Shapes avoid this, but convey
+    less detail.
+  </Highlight>
+  <Highlight title="Cause of stop" icon="stop">
+    Showing whether a stop is for pickup or drop‑off shortens perceived waiting
+    time, but risks visual clutter.
+  </Highlight>
+</HighlightList>
 
 ## Create hi‑fi mockups
 
 I settled on displaying only four essential pieces of information:
 
-1. The floor the user is on
-2. The floor the elevator is on
-3. The floors the elevator will stop on
-4. The direction of the elevator
+<HighlightList>
+  <Highlight icon="person">The floor the user is on</Highlight>
+  <Highlight icon="number">The floor the elevator is on</Highlight>
+  <Highlight icon="stop">The floors the elevator will stop on</Highlight>
+  <Highlight icon="upDown">The direction of the elevator</Highlight>
+</HighlightList>
 
 ## User tests and iteration
 
@@ -100,15 +156,23 @@ A refined concept was tested with four new participants. Direction became obviou
 
 Based on research, testing, and iteration, the recommended feature set is:
 
-- High‑speed elevator
-- Semi‑transparent mirrors on shaft doors
-- Weather information displayed on one mirror door
-- Current time displayed on other mirror door
-- Cool‑colored (e.g., blue) waiting area paint
-- Dim lighting in the waiting area
-- Anxiety‑reducing fragrance diffusion
-- Low‑placed braille call buttons
-- Voice UI announcing floor, direction, and stops
+<HighlightList>
+  <Highlight icon="speed">High‑speed elevator</Highlight>
+  <Highlight icon="mirror">Semi‑transparent mirrors on shaft doors</Highlight>
+  <Highlight icon="sun">
+    Weather information displayed on one mirror door
+  </Highlight>
+  <Highlight icon="time">Current time displayed on other mirror door</Highlight>
+  <Highlight icon="paint">
+    Cool‑colored (e.g., blue) waiting area paint
+  </Highlight>
+  <Highlight icon="lightbulb">Dim lighting in the waiting area</Highlight>
+  <Highlight icon="air">Anxiety‑reducing fragrance diffusion</Highlight>
+  <Highlight icon="blind">Low‑placed braille call buttons</Highlight>
+  <Highlight icon="mic">
+    Voice UI announcing floor, direction, and stops
+  </Highlight>
+</HighlightList>
 
 These combined solutions aim to make the elevator experience smoother, faster, and psychologically more pleasant for residents of luxury apartments.
 
