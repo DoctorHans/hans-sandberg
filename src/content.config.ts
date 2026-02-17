@@ -7,7 +7,7 @@ import { file, glob } from "astro/loaders";
 // 3. Define collection(s)
 const caseStudies = defineCollection({
   loader: glob({
-    pattern: "src/data/case-studies/*.md",
+    pattern: "src/data/case-studies/*{.md,mdx}",
   }),
   schema: z.object({
     title: z.string(),

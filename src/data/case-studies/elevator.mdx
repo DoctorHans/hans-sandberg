@@ -5,6 +5,9 @@ order: 3
 slug: "rethinking-the-every-day-elevator-experience"
 ---
 
+import Highlight from "../../components/Highlight.astro";
+import HighlightList from "../../components/HighlightList.astro";
+
 ## TL;DR
 
 As part of a job interview, I explored how to improve the everyday elevator experience in residential buildings. Through user interviews, domain research, and insights from the psychology of waiting, I identified waiting uncertainty as the core problem. I then designed a set of environmental, informational, and accessible UI interventions aimed at reducing _perceived_ waiting time rather than raw elevator speed.
@@ -17,17 +20,32 @@ This was a conceptual design exercise completed during a job interview. Rather t
 
 I started by learning about elevators and people’s experiences with them.
 
-- **User interviews** – I interviewed 9 people. Participants described a wide range of frustrations. However, waiting for the elevator was by far their biggest complaint.
-- **Domain research** – To understand which aspects of the experience could realistically be influenced, I read 20 articles on elevator design and operation. The main insight was that user satisfaction is more strongly influenced by perceived waiting time than actual speed.
-- **Psychology of waiting** – I read up on the psychology of waiting. I learned that many factors influence our perception of waiting time. For instance, waiting time seems longer when we don’t know how long it’ll be, what is causing it, or when it’s perceived as unfair.
+<HighlightList>
+  <Highlight title="User interviews" icon="qa">
+    I interviewed 9 people. Participants described a range of frustrations.
+    However, waiting for the elevator was by far their biggest complaint.
+  </Highlight>
+  <Highlight title="Domain research" icon="upDown">
+    To understand which aspects of the experience could realistically be
+    influenced, I read 20 articles on elevator design and operation. The main
+    insight was that user satisfaction is more strongly influenced by perceived
+    waiting time than actual speed.
+  </Highlight>
+  <Highlight title="Psychology of waiting" icon="hourglass">
+    I read up on the psychology of waiting. I learned that many factors
+    influence our perception of waiting time. For instance, waiting time seems
+    longer when we don’t know how long it’ll be, what is causing it, or when
+    it’s perceived as unfair.
+  </Highlight>
+</HighlightList>
 
 ## Requirements and constraints
 
 To ground the concept, I defined the following assumptions and constraints:
 
-- **Client:** Mitsubishi, seeking differentiation through experience rather than speed  
-- **Setting:** Luxury residential buildings with 4–12 floors, globally  
-- **Users:** Residents of all ages, including people with sensory, motor, or other impairments  
+- **Client:** Mitsubishi, seeking differentiation through experience rather than speed
+- **Setting:** Luxury residential buildings with 4–12 floors, globally
+- **Users:** Residents of all ages, including people with sensory, motor, or other impairments
 - **Technical constraint:** A _collective control_ algorithm, meaning the elevator only changes direction when all requests in the current direction have been served
 
 ## Problem statement
