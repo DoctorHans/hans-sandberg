@@ -165,6 +165,8 @@
     --border-radius-round: 99999rem;
 
     --border-size-regular: 1px;
+    --border-size-thick: 2px;
+
 
     --border-type: solid;
     --border-regular: var(--border-size-regular) var(--border-type) var(--color-border-regular);
