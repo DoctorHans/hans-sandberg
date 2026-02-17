@@ -4,7 +4,7 @@ import type { HTMLAttributes } from "astro/types";
 import type { IconName } from "./Icon.astro";
 import Icon from "./Icon.astro";
 interface Props extends HTMLAttributes<"div"> {
-  title: string;
+  title?: string;
   listItem?: boolean;
   blockquote?: boolean;
   icon?: IconName;
@@ -19,12 +19,22 @@ const {
 } = Astro.props;
 const Wrapper = listItem ? "li" : "div";
 const Content = blockquote ? "blockquote" : "div";
+const hasTitle = !!title;
 ---
 
-<Wrapper class:list={["wrapper", className]} {...rest}>
+<Wrapper
+  class:list={[
+    "wrapper",
+    hasTitle ? "wrapper--with-title" : "wrapper--no-title",
+    className,
+  ]}
+  {...rest}
+>
   <Icon name={icon} class="icon" />
-  <strong class="title">{title}</strong>
-  <Content class="content"><slot /></Content>
+  {hasTitle && <strong class="title">{title}</strong>}
+  <Content class="content">
+    <slot />
+  </Content>
 </Wrapper>
 
 <style lang="scss">
@@ -39,21 +49,29 @@ const Content = blockquote ? "blockquote" : "div";
     padding: var(--space-s);
   }
 
+  .wrapper--with-title {
+    grid-template-areas:
+      "icon title"
+      ". content";
+  }
+
+  .wrapper--no-title {
+    grid-template-areas: "icon content";
+  }
+
   .icon {
     width: 1em;
     height: 1em;
     color: var(--color-accent);
-    grid-column: 1;
-    grid-row: 1;
+    grid-area: icon;
   }
   .title {
     font-size: var(--step--1);
-    grid-column: 2;
-    grid-row: 1;
+    color: var(--color-content-loud);
+    grid-area: title;
   }
 
   .content {
-    grid-column: 2;
-    grid-row: 2;
+    grid-area: content;
   }
 </style>
