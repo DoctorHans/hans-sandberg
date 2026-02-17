@@ -8,44 +8,56 @@ import Paragraph from "./Paragraph.astro";
 interface Props extends HTMLAttributes<"div"> {
   title: string;
   headingLevel?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  listItem?: boolean;
   blockquote?: boolean;
   icon?: IconName;
 }
 const {
   title,
   headingLevel = "h3",
+  listItem = true,
   blockquote = false,
   icon = "download",
   class: className,
   ...rest
 } = Astro.props;
+const Wrapper = listItem ? "li" : "div";
 const Content = blockquote ? "blockquote" : "div";
 ---
 
-<div class:list={["wrapper", className]} {...rest}>
+<Wrapper class:list={["wrapper", className]} {...rest}>
   <Icon name={icon} class="icon" />
   <Heading as={headingLevel} class="title">{title}</Heading>
-  <Content><Paragraph><slot /></Paragraph></Content>
-</div>
+  <Content class="content"><slot /></Content>
+</Wrapper>
 
 <style lang="scss">
   .wrapper {
     background: var(--color-background-loud);
-    border-radius: 0.75rem;
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-xs);
-    padding: var(--space-m);
-    height: 100%;
+    border-radius: var(--border-radius-regular);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: var(--space-2xs);
+    row-gap: var(--space-3xs);
+    align-items: center;
+    padding: var(--space-s);
   }
 
   .icon {
-    width: var(--step-0);
-    height: var(--step-0);
+    width: 1em;
+    height: 1em;
     color: var(--color-accent);
+    grid-column: 1;
+    grid-row: 1;
   }
-
   .title {
     font-size: var(--step--1);
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .content {
+    grid-column: 2;
+    grid-row: 2;
   }
 </style>

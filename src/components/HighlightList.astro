@@ -1,0 +1,13 @@
+---
+import type { HTMLAttributes } from "astro/types";
+---
+
+<ul class="list"><slot /></ul>
+
+<style>
+  .list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-s);
+  }
+</style>
