@@ -7,10 +7,19 @@ slug: "rethinking-the-every-day-elevator-experience"
 
 import Highlight from "../../components/Highlight.astro";
 import HighlightList from "../../components/HighlightList.astro";
+import { Image } from "astro:assets";
+import SketchVertical from "../../images/portfolio/elevator/sketch-vertical.png";
+import SketchHorizontal from "../../images/portfolio/elevator/sketch-horizontal.png";
+import HiFiConcepts from "../../images/portfolio/elevator/hi-fi-concepts.png";
+import FirstTest from "../../images/portfolio/elevator/first-test.png";
+import SecondTest from "../../images/portfolio/elevator/second-test.png";
+import Outcome from "../../images/portfolio/elevator/outcome.png";
 
 ## TL;DR
 
 As part of a job interview, I explored how to improve the everyday elevator experience in residential buildings. Through user interviews, domain research, and insights from the psychology of waiting, I identified uncertainty during waiting as the core problem. I then designed a set of environmental, informational, and accessible UI interventions aimed at reducing perceived waiting time rather than increasing raw elevator speed.
+
+---
 
 ## Context
 
@@ -107,13 +116,13 @@ I translated my research into a set of environmental, informational, and accessi
   </Highlight>
 </HighlightList>
 
-## Designing and refining the visual UI
+## Designing the visual interface
 
 To complement the voice UI, I designed a visual interface that communicates the same information to sighted and hearing-impaired residents. The goal was to further reduce perceived waiting time by making system behavior transparent and predictable.
 
-### Concept exploration
+### Exploring directions
 
-Through sketching, I explored several questions:
+Through sketching, I explored several key design questions:
 
 <HighlightList>
   <Highlight title="Orientation" icon="upDown">
@@ -130,9 +139,20 @@ Through sketching, I explored several questions:
   </Highlight>
 </HighlightList>
 
-### Final concept
+<Image
+  src={SketchVertical}
+  alt="Hand-drawn sketches of vertical elevator UI concepts with different layouts and indicators for the floors and elevator direction."
+  class="wrapper"
+/>
+<Image
+  src={SketchHorizontal}
+  alt="Hand-drawn sketches of horizontal elevator UI concepts with different layouts and indicators for the floors and elevator direction."
+  class="wrapper"
+/>
 
-I settled on displaying only four essential pieces of information:
+### Defining the core interface
+
+High-fidelity explorations helped clarify which information was essential. I narrowed the interface to four elements:
 
 <HighlightList>
   <Highlight icon="person">The floor the user is on</Highlight>
@@ -141,17 +161,50 @@ I settled on displaying only four essential pieces of information:
   <Highlight icon="upDown">The direction of the elevator</Highlight>
 </HighlightList>
 
-This balanced clarity with simplicity, ensuring the interface explained delays without overwhelming users.
+Reducing the interface to these elements balanced clarity with simplicity, helping explain delays without overwhelming users.
 
-### User testing and iteration
+<figure>
+  <Image
+    src={HiFiConcepts}
+    alt="Six high-fidelity mockups of horizontal elevator UI concepts with different floor and elevator direction indicators"
+    class="wrapper"
+  />
+  <figcaption>
+    High-fidelity concepts for the scenario where someone is waiting on the 4th
+    floor for an elevator that's on its way down from the 11th floor and
+    stopping on floors 10, 7, 2 and 0.
+  </figcaption>
+</figure>
 
-The first round of testing involved three participants evaluating two concepts. Both effectively conveyed floor and stop information, but direction and the user’s own floor were not consistently clear.
+### Validating and refining
+
+To assess clarity, I tested two refined concepts with three participants. Both clearly communicated current floor and upcoming stops, but direction and the user’s own floor were not consistently understood.
+
+<Image
+  src={FirstTest}
+  alt="Two high-fidelity elevator UI concepts. One has circle outlines around the floors the elevator will stop on and the floor the user is currently on is contained within a filled circle. The other concept has two rows of floor numbers: one for the floors the elevator will pass and the other for the floors the elevator will stop on. It features a circle outline around the floor the user is on."
+  class="wrapper"
+/>
 
 Based on this feedback, I refined the design and tested it with four new participants. Direction became obvious for all participants, though some still struggled to identify their own floor. A stronger floor indicator or additional signage near the elevator could resolve this remaining ambiguity.
 
+<Image
+  src={SecondTest}
+  alt="High-fidelity elevator UI showing stops with circle outlines, the user’s floor as a filled circle with an arrow, and a dot below the current floor."
+  class="wrapper"
+/>
+
 ## Outcome
 
-These interventions propose a new approach to elevator design that focuses on perception rather than raw speed. While the full system was not tested in a real building, early UI validation suggested that clearer system feedback reduced confusion. Taken together, the concept shows how small, layered interventions might make the elevator experience feel smoother, faster, and psychologically more pleasant for residents of luxury apartments.
+Together, the environmental interventions (light, color, scent, mirrors), informational elements (time, weather), accessibility features (low tactile buttons and voice announcements), and the validated visual interface form a cohesive system designed to reduce perceived waiting time.
+
+<Image
+  src={Outcome}
+  alt="A vector illustration of an elevator. There is a horizontal UI placed above the elevator doors. It shows the current floor, the floors the elevator will stop on, and the current floor the elevator is on and its direction. The elevator doors are reflective like mirrors and show the current weather and time. A large sign next to the elevator doors shows the current floor number. The elevator call buttons have braille text on them."
+  class="wrapper"
+/>
+
+Overall, the proposal explores how layered, research-driven interventions might make the elevator experience feel smoother and more psychologically pleasant for residents of luxury apartments.
 
 ## Reflection
 
