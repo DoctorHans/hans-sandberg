@@ -162,6 +162,15 @@ figcaption {
   font-size: var(--step--2);
 }
 
+img.wrapper {
+  display: grid;
+  place-content: center;
+  padding-block: var(--space-m);
+  padding-inline: var(--space-l);
+  background-color: var(--color-background-loud);
+  border-radius: var(--border-radius-regular);
+}
+
 table {
   border-collapse: collapse;
   width: 100%;
