@@ -5,6 +5,17 @@
     url('../fonts/SourceSans3VF-Upright.otf.woff2') format('woff2-variations');
   font-weight: 200 900;
   font-display: fallback;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Source Sans';
+  src:
+    url('../fonts/SourceSans3VF-Italic.otf.woff2') format('woff2 supports variations'),
+    url('../fonts/SourceSans3VF-Italic.otf.woff2') format('woff2-variations');
+  font-weight: 200 900;
+  font-display: fallback;
+  font-style: italic;
 }
 
 body {
@@ -224,7 +235,7 @@ a {
 hr {
   border: none;
   border-block-start: var(--border-quiet);
-  margin-block: var(--flow-space, var(--space-l));
+  margin-block: var(--flow-space);
 }
 
 svg {
