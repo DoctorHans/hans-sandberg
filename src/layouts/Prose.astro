@@ -31,4 +31,8 @@
   :global(.prose :is(p, li)) {
     text-wrap: pretty;
   }
+
+  :global(.prose > * + figure, img) {
+    --flow-space: var(--space-l);
+  }
 </style>

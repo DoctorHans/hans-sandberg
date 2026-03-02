@@ -169,8 +169,15 @@ iframe[src*='youtube'] {
 }
 
 figcaption {
-  margin-block-start: var(--space-3xs);
+  color: var(--color-content-quiet);
   font-size: var(--step--2);
+  font-weight: var(--font-weight-semibold);
+  margin-block-start: var(--space-3xs);
+}
+
+img.default {
+  border: var(--border-quiet);
+  border-radius: var(--border-radius-regular);
 }
 
 img.wrapper {
