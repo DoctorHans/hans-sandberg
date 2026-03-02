@@ -19,13 +19,13 @@ export const getStaticPaths = (async () => {
 const { caseStudy } = Astro.props;
 
 const { Content, headings } = await render(caseStudy);
-console.log(headings);
 ---
 
 <BaseLayout pageTitle={caseStudy.data.title}>
   <BackToPortfolio />
   <PageHeader heading={caseStudy.data.title} />
   <Prose>
+    <TableOfContents headings={headings} />
     <Content />
   </Prose>
 </BaseLayout>
