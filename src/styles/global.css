@@ -127,6 +127,7 @@ q {
   padding-inline-start: 1em;
 }
 
+
 /* Ensures the same marker at every nesting level */
 ul:not([class]) {
   list-style-type: disc;
@@ -146,7 +147,7 @@ dt {
   margin-block-start: var(--space-2xs);
 }
 
-blockquote {
+blockquote:not([class]) {
   padding: var(--space-2xs) var(--space-s);
   border-left: var(--border-size-thick) var(--border-type) var(--color-accent);
 }
