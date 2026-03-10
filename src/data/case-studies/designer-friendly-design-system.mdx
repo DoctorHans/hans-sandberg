@@ -5,13 +5,38 @@ order: 4
 slug: "improving-the-ux-of-a-design-system"
 ---
 
-## TL;DR
+import TLDR from "../../components/TLDR.astro";
+import Highlight from "../../components/Highlight.astro";
+import HighlightList from "../../components/HighlightList.astro";
+import { Image } from "astro:assets";
 
-I led an initiative at Siteimprove in 2021 to improve the UX of the design system for designers. Through surveys and interviews, I identified key UX gaps and turned them into a prioritized set of improvements across documentation, processes, and communication. The result: fewer repeat questions, smoother workflows, and a design system that felt more approachable and designer-friendly.
+{/* Make documentation more designer-oriented */}
+import Guidelines from "../../images/portfolio/design-system-ux/guidelines.png";
+import IconsFaq from "../../images/portfolio/design-system-ux/icons - faq.png";
+import AccessibilityChecklist from "../../images/portfolio/design-system-ux/accessibility - checklist.png";
+import AccessibilityGuidelines from "../../images/portfolio/design-system-ux/accessibility - guidelines.png";
+
+{/* Clarify the single source of truth */}
+import Warning from "../../images/portfolio/design-system-ux/warning.png";
+
+{/* Standardize terminology and processes */}
+import Faq from "../../images/portfolio/design-system-ux/faq.png";
+
+{/* Keep designers informed */}
+import Update from "../../images/portfolio/design-system-ux/update.png";
+
+<TLDR>
+  I led an initiative at Siteimprove in 2021 to improve the UX of the design
+  system for designers. Through surveys and interviews, I identified key UX gaps
+  and turned them into a prioritized set of improvements across documentation,
+  processes, and communication. The result: fewer repeat questions, smoother
+  workflows, and a design system that felt more approachable and
+  designer-friendly.
+</TLDR>
 
 ## Context
 
-In 2021, I was a designer on Siteimprove's design systems team. The design system was intended to support both engineers and designers. However, observations and informal conversations suggested designers often felt underserved. I set out to better understand these issues and make the system feel more supportive of designers’ needs.
+In 2021, I was a designer on Siteimprove's design systems team. The design system was intended to support both engineers and designers. However, observations and informal conversations suggested designers often felt underserved. I set out to better understand this issue and make the system more supportive of designers’ needs.
 
 ## Research
 
@@ -21,21 +46,37 @@ My first step was to send out an anonymous survey to all designers to measure to
 
 The survey consisted of 17 questions across 5 categories. Most were phrased as statements. Designers rated each statement on a five‑point agreement scale.
 
-**Example statements:**
+Here are some example statements:
 
-- “It’s clear what the design system’s single source of truth is.”
-- “I know what to do when a component I need is missing or doesn’t meet my needs.”
-- “I feel welcome to contribute new or improved components.”
+<HighlightList>
+  <Highlight blockquote icon="quote">
+    It’s clear what the design system’s single source of truth is.
+  </Highlight>
+  <Highlight blockquote icon="quote">
+    I know what to do when a component is missing or doesn’t meet my needs.
+  </Highlight>
+  <Highlight blockquote icon="quote">
+    I feel welcome to contribute new or improved components.
+  </Highlight>
+</HighlightList>
 
 ### Qualitative
 
-To understand the “why” behind the survey data, I interviewed every designer one-on-one.
+To understand the “why” behind the survey data, I interviewed every designer.
 
-**For each issue, I asked:**
+For each issue uncovered by the survey, I asked:
 
-- **Have you experienced this?** — to validate pain points
-- **How does it impact your work?** — to uncover workflow friction
-- **How can we do better?** — to collect practical, context-aware suggestions
+<HighlightList>
+  <Highlight title="Have you experienced this?" icon="questionAnswer">
+    To validate pain points.
+  </Highlight>
+  <Highlight title="How does it impact your work?" icon="work">
+    To uncover workflow friction.
+  </Highlight>
+  <Highlight title="How can we do better?" icon="lightbulb">
+    To collect practical, context-aware suggestions
+  </Highlight>
+</HighlightList>
 
 ## Changes
 
@@ -45,9 +86,69 @@ A key finding was that the design system website was too engineering-focused. De
 
 In response, I restructured and expanded the documentation to better support designers:
 
-- **Role-specific guidelines** — Split a single “Guidelines” section into dedicated sections for product designers, engineers, and content designers.
-- **Icons FAQ** — Created a single source of truth for icon usage by introducing an up-to-date Icons FAQ.
-- **Accessibility checklist** — Collaborated with accessibility experts to create a designer-focused accessibility checklist.
+<HighlightList>
+  <Highlight title="Role-specific guidelines" icon="groups">
+    Split a single “Guidelines” section into dedicated sections for product
+    designers, engineers, and content designers.
+  </Highlight>
+  <Highlight title="Icons FAQ" icon="help">
+    Created a single source of truth for icon usage by introducing an up-to-date
+    Icons FAQ.
+  </Highlight>
+  <Highlight title="Accessibility checklist" icon="checklist">
+    Collaborated with accessibility experts to create a designer-focused
+    accessibility checklist.
+  </Highlight>
+</HighlightList>
+
+<figure>
+  <Image
+    src={Guidelines}
+    alt="Before and after comparison of the main navigation showing “Guidelines” replaced by “Developing”, “Writing”, and “Designing”."
+    class="default"
+  />
+  <figcaption>
+    The “Guidelines” section was split into dedicated pages for engineers, UX
+    writers, and product designers, making it easier for each discipline to find
+    relevant documentation.
+  </figcaption>
+</figure>
+
+<figure>
+  <Image
+    src={IconsFaq}
+    alt="Design system documentation page with frequently asked questions about icon usage."
+    class="default"
+  />
+  <figcaption>
+    Icons were one of the topics designers most frequently asked the design
+    systems team about.
+  </figcaption>
+</figure>
+
+<figure>
+  <Image
+    src={AccessibilityChecklist}
+    alt="Design system documentation page featuring an accessibility checklist for designers."
+    class="default"
+  />
+  <figcaption>
+    The accessibility checklist gave designers practical steps for creating
+    accessible interfaces.
+  </figcaption>
+</figure>
+
+<figure>
+  <Image
+    src={AccessibilityGuidelines}
+    alt="Design system accessibility guidelines showing do and don’t examples for accessible interface design."
+    class="default"
+  />
+  <figcaption>
+    The checklist items consisted of do/don't guidelines illustrated with
+    concrete examples.
+  </figcaption>
+</figure>
 
 ### Clarify the single source of truth
 
@@ -55,15 +156,53 @@ Another insight was that designers were sometimes unclear about what the source 
 
 I focused on making the source of truth clearer and easier to navigate:
 
-- **Deprecated content warnings** — Added warnings to legacy pages that couldn’t be removed to prevent use of outdated guidance.
-- **Reduced access friction** — Shortened the documentation URL to _fancy.siteimprove.com_, making it easier to find and remember.
-- **Centralized guidelines** — Moved relevant, up-to-date content into the documentation site to reduce confusion and fragmentation.
+<HighlightList>
+  <Highlight title="Deprecated content warnings" icon="warning">
+    Added warnings to legacy pages that couldn’t be removed to prevent use of
+    outdated guidance
+  </Highlight>
+  <Highlight title="Reduced access friction" icon="link">
+    Shortened the documentation URL to _fancy.siteimprove.com_, making it easier
+    to find and remember.
+  </Highlight>
+  <Highlight title="Centralized guidelines" icon="hub">
+    Moved relevant, up-to-date content into the documentation site to reduce
+    confusion and fragmentation.
+  </Highlight>
+</HighlightList>
+
+<figure>
+  <Image
+    src={Warning}
+    alt="Warning banner indicating the components on a page are deprecated and directing designers to the updated documentation site."
+    class="default"
+  />
+  <figcaption>
+    The warning helped designers quickly see that the page contained deprecated
+    components and directed them to the updated documentation site.
+  </figcaption>
+</figure>
 
 ### Standardize terminology and processes
 
 Some design system terminology and processes were unclear and only explained informally.
 
-- **Designer FAQ** — Introduced a centralized FAQ to document common terms and workflows in a single, accessible place.
+<Highlight title="Designer FAQ" listItem={false} icon="help">
+  Introduced a centralized FAQ to document common terms and workflows in a
+  single, accessible place.
+</Highlight>
+
+<figure>
+  <Image
+    src={Faq}
+    alt="FAQ page featuring accordion-style answers to common terminology and process questions."
+    class="default"
+  />
+  <figcaption>
+    The FAQ aimed to help designers understand terminology and processes and
+    stay unblocked.
+  </figcaption>
+</figure>
 
 ### Keep designers informed
 
@@ -71,8 +210,27 @@ Designers sometimes felt out of the loop when it came to changes and additions t
 
 I introduced two initiatives to improve visibility into ongoing changes:
 
-- **Public changelogs** — Added designer-friendly changelogs to the documentation site, written for a non-technical audience.
-- **More frequent updates** — Shared updates more regularly in a dedicated Slack channel for designers.
+<HighlightList>
+  <Highlight title="Public changelogs" icon="history">
+    Added designer-friendly changelogs to the documentation site, written for a
+    non-technical audience.
+  </Highlight>
+  <Highlight title="More frequent updates" icon="announcement">
+    Shared updates more regularly in a dedicated Slack channel for designers.
+  </Highlight>
+</HighlightList>
+
+<figure>
+  <Image
+    src={Update}
+    alt="Slack message listing recent updates to the design system, including a Figma UI kit page, a new color section in the accessibility checklist, and a Message component."
+    class="default"
+  />
+  <figcaption>
+    Slack messages like this one were intended to keep designers both informed
+    and engaged.
+  </figcaption>
+</figure>
 
 ### Improve design review and feedback
 
@@ -80,19 +238,36 @@ Designers lacked clarity on how to get their designs reviewed by the design syst
 
 I collaborated with designers to define a new review-session format:
 
-- **Multidisciplinary sessions** — Combined feedback from the design system team, accessibility experts, and UX writers.
-- **Open participation** — Open to all designers to encourage shared learning and peer input.
-- **Optional and informal** — Positioned as lightweight and non-mandatory to encourage participation.
+<HighlightList>
+  <Highlight title="Multidisciplinary sessions" icon="groups">
+    Combined feedback from the design system team, accessibility experts, and UX
+    writers.
+  </Highlight>
+  <Highlight title="Open participation" icon="meetingRoom">
+    Open to all designers to encourage shared learning and peer input.
+  </Highlight>
+  <Highlight title="Optional and informal" icon="coffee">
+    Positioned as lightweight and non-mandatory to encourage participation.
+  </Highlight>
+</HighlightList>
 
 ## Impact
 
 Although the project didn’t include a follow-up survey, multiple qualitative and behavioral signals pointed in a positive direction:
 
-- Designers reported the documentation felt clearer and easier to navigate
-- Slack questions about icons and guidelines decreased
-- Contributors found guidance and processes more discoverable
-- The design system team received fewer repeat questions
-- Designers expressed appreciation and said the system now felt “more for us than before”
+<HighlightList>
+  <Highlight title="Clearer documentation" icon="menuBook">
+    Designers reported the documentation felt clearer and easier to navigate.
+  </Highlight>
+  <Highlight title="Fewer questions" icon="questionAnswer">
+    Questions about icons, guidelines, and design system processes decreased,
+    reducing support overhead for the design system team.
+  </Highlight>
+  <Highlight title="More designer ownership" icon="heart">
+    Designers expressed appreciation and said the system now felt{" "}
+    <q>more for us than before</q>.
+  </Highlight>
+</HighlightList>
 
 ## Reflection
 
