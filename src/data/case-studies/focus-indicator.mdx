@@ -5,13 +5,39 @@ order: 2
 slug: "redesigning-pleos-focus-indicator"
 ---
 
-## TL;DR
+import TLDR from "../../components/TLDR.astro";
+import Highlight from "../../components/Highlight.astro";
+import HighlightList from "../../components/HighlightList.astro";
+import { Image } from "astro:assets";
 
-I redesigned Pleo’s focus indicator to be on-brand, accessible, and robust across edge cases like Windows High Contrast Mode. The update replaced the off-brand blue ring with a high-contrast black focus style, introduced context-specific variants, improved spacing, and added system-level fallbacks. The result was a consistent, WCAG 2.2–compliant focus indicator standardised in the design system and adopted across Pleo’s products.
+{/* What do designers dislike about the existing focus indicator? */}
+import OldFocusRing from "../../images/portfolio/focus-ring/old-focus-ring.png";
+import BrandPalette from "../../images/portfolio/focus-ring/brand-palette.png";
+
+{/* What do other design systems do? */}
+import RegularFocusRings from "../../images/portfolio/focus-ring/regular-focus-rings.png";
+import InsetFocusRings from "../../images/portfolio/focus-ring/inset-focus-rings.png";
+
+{/* Result */}
+import RegularVariant from "../../images/portfolio/focus-ring/variant-regular.png";
+import OffsetVariant from "../../images/portfolio/focus-ring/variant-offset.png";
+import InsetVariant from "../../images/portfolio/focus-ring/variant-inset.png";
+import Colour from "../../images/portfolio/focus-ring/colour.png";
+import WindowsHighContrastMode from "../../images/portfolio/focus-ring/windows-high-contrast-mode.png";
+import SemanticToken from "../../images/portfolio/focus-ring/semantic-token.png";
+
+<TLDR>
+  I redesigned Pleo’s focus indicator to be on-brand, accessible, and robust
+  across edge cases like Windows High Contrast Mode. The update replaced the
+  off-brand blue ring with a high-contrast black focus style, introduced
+  context-specific variants, improved spacing, and added system-level fallbacks.
+  The result was a consistent, WCAG 2.2–compliant focus indicator standardised
+  in the design system and adopted across Pleo’s products.
+</TLDR>
 
 ## Context
 
-One of my first tasks on Pleo’s design systems team was to redesign our focus indicator. It was a `2px` blue ring, which designers had long complained looked off-brand. It even spawned a Slack emoji meme of our team lead’s face outlined in blue.
+One of my first tasks on Pleo’s design systems team was to redesign our focus indicator. It was a `2px` blue ring, which designers had long complained looked off-brand. It even spawned a Slack emoji of our team lead’s face outlined in blue.
 
 ## Research
 
@@ -25,9 +51,42 @@ A focus indicator is a visual cue (usually an outline) highlighting the currentl
 
 I interviewed five designers and identified three key issues:
 
-1. **Color**: The blue ring felt off-brand; black was preferred
-2. **Contrast**: Poor visibility against dark component borders
-3. **Spacing**: The ring sat too close to elements, feeling cramped
+<HighlightList>
+  <Highlight title="Colour" icon="colour">
+    The blue ring felt off-brand, black was preferred.
+  </Highlight>
+  <Highlight title="Contrast" icon="contrast">
+    Poor visibility against dark component borders.
+  </Highlight>
+  <Highlight title="Spacing" icon="spacing">
+    The ring sat too close to elements, feeling cramped.
+  </Highlight>
+</HighlightList>
+
+<figure>
+  <Image
+    src={OldFocusRing}
+    alt="A button, accordion, and date picker, all featuring a blue focus ring."
+    class="default"
+  />
+  <figcaption>
+    The blue focus indicator closely resembled the default styling used by
+    browsers, making it appear as though the focus state hadn't been
+    intentionally designed.
+  </figcaption>
+</figure>
+
+<figure>
+  <Image
+    src={BrandPalette}
+    alt="Brand styleguide page showing the core palette: white, black, pink, light pink, light grey, and yellow."
+    class="default"
+  />
+  <figcaption>
+    Blue wasn't part of either the core or the extended (not pictured) brand
+    palette.
+  </figcaption>
+</figure>
 
 ### What do other design systems do?
 
@@ -35,59 +94,162 @@ Reviewing the focus indicators of [Adobe](https://spectrum.adobe.com/), [IBM](ht
 
 - `2px` blue focus indicators are the norm
 - `box-shadow` or `outline` are preferred over `border` or `background`
-- Both inset and outset rings are used, depending on the component
+- Both inset and offset rings are used, depending on the component
+
+<figure>
+  <Image
+    src={RegularFocusRings}
+    alt="Primary buttons from Adobe, IBM, Shopify, and Atlassian, each showing a blue focus ring."
+    class="default"
+  />
+  <figcaption>
+    Primary buttons from Adobe, IBM, Shopify, and Atlassian. Adobe, Shopify, and
+    Atlassian use offset focus rings, while IBM uses an inset style. Atlassian
+    and IBM match the ring colour to their primary button colour.
+  </figcaption>
+</figure>
+
+<figure>
+  <Image
+    src={InsetFocusRings}
+    alt="Two action menu popovers with a focused option using an inset focus ring."
+    class="default"
+  />
+  <figcaption>
+    Adobe and IBM use inset focus rings when focusable elements sit flush
+    against the edge of a container.
+  </figcaption>
+</figure>
 
 ### What are the accessibility requirements?
 
 Based on [WCAG 2.2](https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance.html) and [Sara Soueidan’s guide](https://www.sarasoueidan.com/blog/focus-indicators/#new-focus-indicator-accessibility-requirements-in-wcag-2.2), focus indicators must:
 
-1. Feature at least 3:1 contrast between focused and unfocused states
-2. Cover a minimum area equivalent to a `2px` perimeter
-3. Maintain at least 3:1 contrast against adjacent colors
-4. Remain unobscured by surrounding content
+<HighlightList>
+  <Highlight icon="focusUnfocus">
+    Feature at least 3:1 contrast between focused and unfocused states
+  </Highlight>
+  <Highlight icon="area">
+    Cover a minimum area equivalent to a `2px` perimeter
+  </Highlight>
+  <Highlight icon="contrast">
+    Maintain at least 3:1 contrast against adjacent colours
+  </Highlight>
+  <Highlight icon="visibility">
+    Remain unobscured by surrounding content
+  </Highlight>
+</HighlightList>
 
 ### What about Windows High Contrast Mode?
 
-Windows High Contrast Mode (WHCM) is an OS-level feature that applies high-contrast color schemes across applications. Over 50% of low-vision users rely on some form of high-contrast mode ([WebAIM, 2018](https://webaim.org/projects/lowvisionsurvey2/#at)), making support essential. [WHCM disables box-shadows](https://accessabilly.com/accessibility-issues-concerning-windows-high-contrast-mode/), so focus indicators either need to use a visible `outline` or a transparent fallback.
+Windows High Contrast Mode is an OS-level feature that applies high-contrast colour schemes across applications. [Over 50% of low-vision users rely on some form of high-contrast mode](https://webaim.org/projects/lowvisionsurvey2/#at), making support essential.
+
+Focus indicators should use a visible `outline` or a transparent fallback, as [Windows High Contrast Mode disables box-shadows](https://accessabilly.com/accessibility-issues-concerning-windows-high-contrast-mode/).
 
 ### What’s the best way to style a focus indicator?
 
-I reviewed the trade-offs of [different CSS approaches](https://adhoc.team/2022/02/08/creating-focus-style-for-themable-design-system):
+I reviewed the trade-offs of [different CSS approaches](https://adhoc.team/2022/02/08/creating-focus-style-for-themable-design-system), all of which had downsides:
 
-| Scenario                                   | Outline | Box-shadow | Border    | Text-decoration underline | Background color |
-| :----------------------------------------- | :------ | :--------- | :-------- | :------------------------ | :--------------- |
-| Doesn’t take up height or width            | Good    | Good       | Poor      | Good                      | Good             |
-| Can control spacing from focused element   | Good    | Poor       | Poor      | Good                      | Good             |
-| Works well with Windows High Contrast mode | Good    | Supported  | Supported | Good                      | Supported        |
-| Consistently applied to all elements       | Good    | Good       | Good      | Poor                      | Good             |
-| Honors the border-radius property          | Poor    | Good       | Good      | Poor                      | Good             |
-| Works with letters that have descenders    | Good    | Good       | Poor      | Good                      | Good             |
-| More styling options                       | Poor    | Good       | Poor      | Poor                      | Poor             |
-| Can use more than one color                | Poor    | Good       | Poor      | Poor                      | Poor             |
+<HighlightList>
+  <Highlight title="Outline" icon="outline">
+    Ignores `border-radius`, limited styling options, no multi-colour support.
+  </Highlight>
+  <Highlight title="Border" icon="border">
+    Affects size and layout, difficult to control spacing from focused element,
+    can clash with letter descenders, limited styling options, no multi-colour
+    support, limited Windows High Contrast Mode support.
+  </Highlight>
+  <Highlight title="Text-decoration underline" icon="underline">
+    Cannot be consistently applied to all elements, ignores `border-radius`,
+    limited styling options, no multi-colour support.
+  </Highlight>
+  <Highlight title="Background colour" icon="background">
+    Limited styling options, no multi-colour support, limited Windows High
+    Contrast Mode support.
+  </Highlight>
+  <Highlight title="Box-shadow" icon="shadow">
+    Difficult to control spacing from the focused element, limited Windows High
+    Contrast Mode support.
+  </Highlight>
+</HighlightList>
 
 ## Requirements
 
-I created the following list of requirements based on the task description and research:
+I created the following requirements based on the task description and research:
 
-- Address designers' concerns regarding contrast, spacing, and brand alignment
-- Be accessible (including support for Windows High Contrast Mode)
-- Use `box-shadow` (with `outline` fallback)
+<HighlightList>
+  <Highlight icon="design">
+    Address concerns about contrast, spacing, and brand alignment
+  </Highlight>
+  <Highlight icon="accessibility">
+    Be accessible (including support for Windows High Contrast Mode)
+  </Highlight>
+  <Highlight icon="shadow">
+    Use `box-shadow` (with `outline` fallback)
+  </Highlight>
+</HighlightList>
 
 ## Result
+
+### Variants
+
+I introduced three focus ring variants to support different UI contexts.
+
+<figure>
+  <Image
+    src={RegularVariant}
+    alt="Borderless components with focus rings sitting flush against the element."
+    class="default"
+  />
+  <figcaption>
+    **Regular.** Sits flush against the focused element. Works well for elements
+    with padding but no border.
+  </figcaption>
+</figure>
+
+<figure>
+  <Image
+    src={OffsetVariant}
+    alt="Components with (dark) borders and offset focus rings separated by a white spacer."
+    class="default"
+  />
+  <figcaption>
+    **Offset.** Designed for elements with (dark) borders. A white spacer
+    increases separation and improves visibility, addressing feedback about
+    tight spacing.
+  </figcaption>
+</figure>
+
+<figure>
+  <Image
+    src={InsetVariant}
+    alt="UI components with inset focus rings drawn inside the element."
+    class="default"
+  />
+  <figcaption>
+    **Inset.** Used where space is constrained and external focus rings risk
+    being clipped.
+  </figcaption>
+</figure>
 
 ### Colour
 
 I changed the focus ring from blue (`#4588e3`) to pure black (`#000000`), which is part of [Pleo’s core brand palette](https://www.pleobrand.site/colour/). This addressed designer feedback that the previous colour felt off-brand.
 
-Pure black also simplified accessibility compliance. It provides maximum contrast against Pleo’s default white backgrounds (21:1) and comfortably exceeds the 3:1 requirement even on the darkest supported background (`#ececec`, 17.77:1).
+Pure black also simplified accessibility compliance. It provides maximum contrast against Pleo’s default white backgrounds and comfortably exceeds the 3:1 requirement even on the darkest supported background.
 
-### Variants
-
-I introduced three variants to support different UI contexts:
-
-1. **Regular**  — Sits flush against the focused element. Works well for elements with padding but no border.
-2. **Offset** — Designed for elements with dark borders. A white spacer increases separation and improves visibility, addressing feedback about tight spacing.
-3. **Inset** — Used where space is constrained and external focus rings risk being clipped. The ring is drawn inside the element instead.
+<figure>
+  <Image
+    src={Colour}
+    alt="Comparison of the old blue focus ring and the new black one shown against the darkest supported gray background."
+    class="default"
+  />
+  <figcaption>
+    The blue focus ring only barely exceeded the 3:1 contrast requirement on top
+    of the darkest supported background (3.02:1), while the new black focus ring
+    had no such problem (17.77:1).
+  </figcaption>
+</figure>
 
 ### Size
 
@@ -99,11 +261,42 @@ I used box-shadows to implement the focus rings, as they offer the most flexible
 
 The `offset` variant is created by layering a black box-shadow on top of a white one, visually separating the ring from the element on white backgrounds.
 
-Because [Windows High Contrast Mode hides box-shadows](https://accessabilly.com/accessibility-issues-concerning-windows-high-contrast-mode/), I added transparent outlines as a fallback. These remain invisible by default but become visible when WHCM is enabled.
+Because [Windows High Contrast Mode hides box-shadows](https://accessabilly.com/accessibility-issues-concerning-windows-high-contrast-mode/), I added transparent outlines as a fallback. These remain invisible by default but become visible when Windows High Contrast Mode is enabled.
+
+<figure>
+  <Image
+    src={WindowsHighContrastMode}
+    alt="Button with focus styling shown in normal mode and in Windows High Contrast Mode."
+    class="default"
+  />
+  <figcaption>
+    When High Contrast Mode is enabled (bottom), system colours replace the UI's
+    default colours (top). The transparent outline fallback keeps the focus ring
+    visible.
+  </figcaption>
+</figure>
 
 ### Semantic tokens
 
-I created semantic tokens exposing key styling parameters: colour (`--colorShadowFocus`, `--colorShadowFocusInvalid`), thickness (`--sizeFocusRing`), and fallback behaviour. This enabled product teams to implement custom focus rings where necessary, while maintaining alignment with the design system’s accessibility and visual standards.
+I created semantic tokens exposing key styling parameters:
+
+- `colourShadowFocus`
+- `colourShadowFocusInvalid`
+- `sizeFocusRing`
+
+This enabled product teams to implement custom focus rings where necessary, while maintaining alignment with the design system’s accessibility and visual standards.
+
+<figure>
+  <Image
+    src={SemanticToken}
+    alt="Text field in an invalid state with a red border and a matching red focus ring."
+    class="default"
+  />
+  <figcaption>
+    The semantic tokens were also used to define focus rings for form elements
+    in invalid states, ensuring consistent styling across validation states.
+  </figcaption>
+</figure>
 
 ## Impact
 
@@ -117,6 +310,17 @@ Overall, the work reduced design debt, improved cross-team consistency, and incr
 
 if I were to redo this project today, here are some things I'd do differently:
 
-1. **Use `outline instead of box-shadow`:** All modern browsers now support `border-radius` for outlines, removing the need to use box-shadows and simplifying implementation
-2. **Replace the polyfill with `:focus-visible`:** All modern browsers support it now, and it makes focus debugging significantly clearer
-3. **Revisit animation curve:** A faster ease-out or custom timing function would better reflect the purpose of a focus indicator, which should appear immediately rather than ease in.
+<HighlightList>
+  <Highlight title="Use outline instead of box-shadow" icon="outline">
+    All modern browsers now support `border-radius` for outlines, removing the
+    need to use box-shadows and simplifying implementation.
+  </Highlight>
+  <Highlight title="Replace the polyfill with focus-visible" icon="focus">
+    All modern browsers support it now, plus it makes focus debugging
+    significantly clearer.
+  </Highlight>
+  <Highlight title="Revisit animation curve" icon="animation">
+    A faster ease-out or custom timing function would better reflect the purpose
+    of a focus indicator, which should appear almost immediately.
+  </Highlight>
+</HighlightList>
