@@ -34,6 +34,7 @@ const experienceData = await getCollection("experience");
         dateEnd={experienceItem.data.dateEnd}
       >
         <ExperienceItemDetails>
+          <p>{experienceItem.data.intro}</p>
           {experienceItem.data.details.map((detail: string) => (
             <li>{detail}</li>
           ))}
