@@ -19,6 +19,14 @@ const pageTitleSuffix = " - Hans Sandberg";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <script is:inline>
+      // Apply cached theme before page renders to avoid flash of inaccurate color theme (FART).
+      // More info: https://chriskirknielsen.com/blog/my-under-engineered-way-to-avoid-a-flash-of-inaccurate-color-theme/
+      const cachedTheme = localStorage.getItem("theme");
+      if (cachedTheme) {
+        document.documentElement.dataset.theme = cachedTheme;
+      }
+    </script>
     <script src="../scripts/themePicker.js"></script>
     <noscript>
       <style>
