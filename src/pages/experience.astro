@@ -14,7 +14,12 @@ const experienceData = await getCollection("experience");
     Learn about where I’ve worked and what I’ve worked on
   </PageHeader>
   <div class="button-wrapper">
-    <Button icon="download">Download CV</Button>
+    <Button
+      icon="download"
+      as="a"
+      href="/cv.pdf"
+      download="hans sandberg - cv.pdf">Download CV</Button
+    >
     <Button
       icon="link"
       as="a"
