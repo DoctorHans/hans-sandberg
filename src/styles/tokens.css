@@ -54,6 +54,8 @@
     --hue-accent: 30;
     --chroma-neutral: 0;
     --shadow-color: 0deg 0% 58%;
+    --color-transparent: #000000;
+    --opacity: 0.06;
 
     --lightness-800: 21%;
     --lightness-700: 41%;
@@ -74,6 +76,8 @@
         --hue-accent: 90;
         --chroma-neutral: 0.02;
         --shadow-color: 223deg 18% 10%;
+        --color-transparent: #ffffff;
+        --opacity: 0.1;
 
         --lightness-800: 95%;
         --lightness-700: 92%;
@@ -94,6 +98,8 @@
     --hue-accent: 90;
     --chroma-neutral: 0.02;
     --shadow-color: 223deg 18% 10%;
+    --color-transparent: #ffffff;
+    --opacity: 0.1;
 
     --lightness-800: 95%;
     --lightness-700: 92%;
@@ -127,13 +133,13 @@
     --color-background-inverted: var(--neutral-700);
     --color-background: var(--neutral-000);
     --color-background-loud: var(--neutral-100);
+    --color-background-transparent: rgb(from var(--color-transparent) r g b / var(--opacity));
     --color-border-quiet: var(--neutral-200);
     --color-border-regular: var(--neutral-500);
     --color-border-loud: var(--neutral-600);
     --color-focusring: var(--neutral-800);
 
     --font-family-regular: 'Source Sans', system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    ;
     --font-family-mono: monospace;
 
     --font-weight-regular: 400;
