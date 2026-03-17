@@ -90,7 +90,7 @@ code,
 kbd,
 samp {
   font-family: var(--font-family-mono);
-  padding: 0.2em 0.2em 0.05em 0.2em;
+  padding: 0.1em 0.25em;
   hyphens: none;
   tab-size: 2;
   text-align: left;
@@ -99,6 +99,9 @@ samp {
   word-wrap: normal;
   /* Ensures presentational styles (e.g. padding and border-radius) carry over when element breaks on to multiple lines */
   box-decoration-break: clone;
+  background: var(--color-background-transparent);
+  border-radius: var(--border-radius-small);
+  corner-shape: squircle;
 }
 
 pre {
@@ -113,8 +116,7 @@ pre code {
 }
 
 kbd {
-  border: 1px solid;
-  padding-block-end: 0.1em;
+  border: var(--border-regular);
 }
 
 q {
