@@ -2,29 +2,39 @@
 import BackToTop from "./BackToTop.astro";
 import ThemePicker from "./ThemePicker.astro";
 import Copyright from "./Copyright.astro";
+import Contact from "./Contact.astro";
 ---
 
 <footer class="page-wrapper">
-  <div class="wrapper">
-    <Copyright />
+  <div id="footer__wrapper">
+    <div id="footer__copyright-and-contact">
+      <Copyright />
+      <Contact />
+    </div>
     <BackToTop />
     <ThemePicker />
   </div>
 </footer>
 
-<style lang="scss">
+<style>
   footer {
-    margin-block-start: auto;
-    margin-block-end: var(--space-m);
-  }
-  .wrapper {
+    font-size: var(--step--2);
     color: var(--color-content-quiet);
-    font-size: var(--step--1);
+    margin-block-start: auto;
+    margin-block-end: var(--space-s);
+  }
+  #footer__wrapper {
     display: flex;
     gap: var(--space-s);
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: baseline;
+  }
+
+  #footer__copyright-and-contact {
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-xs);
   }
 </style>
