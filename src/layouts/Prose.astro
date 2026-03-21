@@ -32,7 +32,7 @@
     text-wrap: pretty;
   }
 
-  :global(.prose > * + figure, img) {
+  :global(.prose > * + :is(figure, img)) {
     --flow-space: var(--space-m);
   }
 </style>
