@@ -18,7 +18,7 @@ import Icon from "./Icon.astro";
   }
 
   .icon {
-    color: var(--color-content-quiet);
+    color: var(--color-accent);
     width: var(--step--2);
     height: var(--step--2);
     transition: var(--motion-exit-small);
@@ -42,9 +42,6 @@ import Icon from "./Icon.astro";
       transition-property: color;
 
       .icon {
-        color: var(--color-accent);
-        transition: var(--motion-enter-small);
-        transition-property: color;
         animation: up-down-wiggle var(--motion-duration-slow)
           var(--motion-easing-enter-and-exit) both;
       }
