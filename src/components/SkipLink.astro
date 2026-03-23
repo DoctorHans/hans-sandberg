@@ -4,7 +4,7 @@ import Icon from "./Icon.astro";
 
 <a href="#main">Skip to content<Icon name={"arrowDown"} class="icon" /></a>
 
-<style lang="scss">
+<style>
   a {
     display: flex;
     align-items: center;
@@ -18,14 +18,20 @@ import Icon from "./Icon.astro";
     padding-block: var(--space-2xs);
     text-decoration: none;
     color: var(--color-background);
-    transform: translateY(calc(-100% - var(--space-xs)));
     border-radius: var(--border-radius-round);
-    transition: transform var(--motion-exit-small);
+    opacity: 0;
+    transform: translateY(calc(-100% - var(--space-l)));
+    transition:
+      transform var(--motion-exit-small),
+      opacity var(--motion-exit-small);
     will-change: transform;
     &:focus {
+      opacity: 1;
       transform: translateY(0%);
       outline: none;
-      transition: transform var(--motion-enter-small);
+      transition:
+        transform var(--motion-enter-small),
+        opacity var(--motion-enter-small);
       will-change: transform;
     }
   }
