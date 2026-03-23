@@ -3,38 +3,11 @@ import type { HTMLTag, Polymorphic } from "astro/types";
 
 type Props<Tag extends HTMLTag> = Polymorphic<{
   as: Tag;
-  step?: string;
 }>;
 
-const { as: Tag, step, ...props } = Astro.props;
+const { as: Tag, ...props } = Astro.props;
 ---
 
-<Tag {...props} class:list={[{ wrapper: step }]}>
-  {step && <span class="step">Step {step}.</span>}
+<Tag {...props}>
   <slot />
 </Tag>
-
-<style lang="scss">
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    color: var(--color-content-loud);
-  }
-
-  .step {
-    color: var(--color-content-quiet);
-  }
-
-  .wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-3xs);
-
-    &:not(.step) {
-      color: var(--color-accent);
-    }
-  }
-</style>
