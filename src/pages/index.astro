@@ -10,40 +10,32 @@ import Heading from "../components/Heading.astro";
 <BaseLayout pageTitle="Home">
   <div id="header">
     <Heading as="h1" id="header__greeting"><Greeting /></Heading>
-    <Paragraph size="0">
+    <Paragraph size="1">
       I’m Hans Sandberg, a designer who codes. I build accessible interfaces and
       design systems, and enjoy bridging the gap between design and engineering.
     </Paragraph>
   </div>
   <BlockLinkList>
-    <li>
-      <BlockLink
-        title="About"
-        subTitle="Get to know me a bit better"
-        url="about"
-      />
-    </li>
-    <li>
-      <BlockLink
-        title="Experience"
-        subTitle="Learn about where I’ve worked and what I’ve worked on"
-        url="experience"
-      />
-    </li>
-    <li>
-      <BlockLink
-        title="Portfolio"
-        subTitle="Get a feel for how I tackle design challenges"
-        url="portfolio"
-      />
-    </li>
-    <li>
-      <BlockLink
-        title="Contact"
-        subTitle="Find out how to get in touch"
-        url="contact"
-      />
-    </li>
+    <BlockLink
+      title="About"
+      subTitle="Get to know me a bit better"
+      url="about"
+    />
+    <BlockLink
+      title="Experience"
+      subTitle="Learn about where I’ve worked and what I’ve worked on"
+      url="experience"
+    />
+    <BlockLink
+      title="Portfolio"
+      subTitle="Get a feel for how I tackle design challenges"
+      url="portfolio"
+    />
+    <BlockLink
+      title="Contact"
+      subTitle="Find out how to get in touch"
+      url="contact"
+    />
   </BlockLinkList>
 </BaseLayout>
 
@@ -51,7 +43,7 @@ import Heading from "../components/Heading.astro";
   #header {
     display: flex;
     flex-direction: column;
-    gap: var(--space-m);
+    gap: var(--space-s);
     margin-block: var(--space-2xl);
   }
 

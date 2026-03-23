@@ -11,7 +11,7 @@ interface Props {
 const { title = "Title", subTitle = "Subtitle", url } = Astro.props;
 ---
 
-<div class="wrapper">
+<li class="wrapper">
   <div class="heading-wrapper">
     <Heading as="h2" class="heading"><a href={url}>{title}</a></Heading>
     <Paragraph color="quiet">{subTitle}</Paragraph>
@@ -19,7 +19,7 @@ const { title = "Title", subTitle = "Subtitle", url } = Astro.props;
   <div class="icon-wrapper">
     <Icon name="arrowRight" class="icon" />
   </div>
-</div>
+</li>
 
 <style lang="scss">
   @keyframes left-right-wiggle {

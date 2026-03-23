@@ -17,13 +17,11 @@ const caseStudies = await getCollection("caseStudies");
       caseStudies
         .sort((a, b) => a.data.order - b.data.order)
         .map((caseStudy) => (
-          <li>
-            <BlockLink
-              title={caseStudy.data.title}
-              subTitle={caseStudy.data.description}
-              url={`/portfolio/${caseStudy.data.slug}`}
-            />
-          </li>
+          <BlockLink
+            title={caseStudy.data.title}
+            subTitle={caseStudy.data.description}
+            url={`/portfolio/${caseStudy.data.slug}`}
+          />
         ))
     }
   </BlockLinkList>
