@@ -12,16 +12,16 @@ const { title = "Title", subTitle = "Subtitle", url } = Astro.props;
 ---
 
 <li class="wrapper">
-  <div class="heading-wrapper">
+  <div class="wrapper__heading-and-icon">
     <Heading as="h2" class="heading"><a href={url}>{title}</a></Heading>
-    <Paragraph color="quiet">{subTitle}</Paragraph>
+    <div class="wrapper__icon">
+      <Icon name="arrowRight" class="icon" />
+    </div>
   </div>
-  <div class="icon-wrapper">
-    <Icon name="arrowRight" class="icon" />
-  </div>
+  <Paragraph color="quiet">{subTitle}</Paragraph>
 </li>
 
-<style lang="scss">
+<style>
   @keyframes left-right-wiggle {
     0% {
       transform: translateX(0%);
@@ -36,8 +36,9 @@ const { title = "Title", subTitle = "Subtitle", url } = Astro.props;
 
   .wrapper {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    gap: var(--space-m);
+    gap: var(--space-2xs);
     padding-block: var(--space-m);
     border-bottom: var(--border-size-regular) solid var(--color-border-quiet);
     position: relative;
@@ -53,7 +54,7 @@ const { title = "Title", subTitle = "Subtitle", url } = Astro.props;
         color: var(--color-accent);
       }
 
-      .icon-wrapper {
+      .wrapper__icon {
         animation: left-right-wiggle var(--motion-duration-slow)
           var(--motion-easing-enter-and-exit) both;
       }
@@ -61,13 +62,15 @@ const { title = "Title", subTitle = "Subtitle", url } = Astro.props;
 
     &:has(:focus-visible) {
       outline: var(--focusring);
+      outline-offset: var(--offset-focusring);
     }
   }
 
-  .heading-wrapper {
+  .wrapper__heading-and-icon {
     display: flex;
-    flex-direction: column;
-    gap: var(--space-3xs);
+    justify-content: space-between;
+    flex-direction: row;
+    gap: var(--space-s);
   }
 
   a {
@@ -84,21 +87,20 @@ const { title = "Title", subTitle = "Subtitle", url } = Astro.props;
     position: absolute;
   }
 
-  .icon-wrapper {
+  .wrapper__icon {
+    display: flex;
+    height: calc(var(--step-2) * var(--line-height-tight));
+    align-items: center;
     flex-shrink: 0;
     transition: var(--motion-exit-small);
     transition-property: transform;
 
     .icon {
-      width: var(--step-0);
-      height: var(--step-0);
+      width: var(--step-1);
+      height: var(--step-1);
       color: var(--color-accent);
       transition: var(--motion-exit-small);
       transition-property: color;
     }
-  }
-
-  p {
-    color: var(--color-content-quiet);
   }
 </style>
