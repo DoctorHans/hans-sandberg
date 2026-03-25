@@ -10,7 +10,7 @@ const { label } = Astro.props;
 ---
 
 <button class="disclosure-button" aria-expanded="false"
-  ><span class="visible-label" aria-hidden="true">Details</span>
+  ><span aria-hidden="true">Details</span>
   <VisuallyHidden>{label}</VisuallyHidden><Icon
     name="chevronRight"
     class="icon-chevron-right"
@@ -28,7 +28,6 @@ const { label } = Astro.props;
     align-items: center;
     color: var(--color-content-regular);
     cursor: pointer;
-    align-self: flex-start;
     background-color: transparent;
     transition: color var(--motion-exit-small);
 
@@ -40,12 +39,9 @@ const { label } = Astro.props;
     }
 
     &:hover {
-      color: var(--color-accent);
-      transition: color var(--motion-enter-small);
-
-      .icon-chevron-right {
-        transform: rotate(90deg);
-        transition: transform var(--motion-enter-small);
+      @media (hover: hover) {
+        color: var(--color-accent);
+        transition: color var(--motion-enter-small);
       }
     }
   }
@@ -60,10 +56,6 @@ const { label } = Astro.props;
     width: var(--step-0);
     height: var(--step-0);
     transition: transform var(--motion-duration-regular);
-  }
-
-  .visible-label {
-    font-size: var(--step--1);
   }
 
   .details {
