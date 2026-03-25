@@ -8,12 +8,24 @@
     "country": "Denmark",
     "dateStart": "2022-06-01",
     "dateEnd": "Present",
-    "intro": "Worked on the design systems team to strengthen the foundations of a system used across Pleo’s web and mobile products. Contributed across design, code, and documentation to improve accessibility, scalability, and collaboration between designers and engineers.",
+    "intro": "Strengthened the foundations of a design system used across Pleo’s web and mobile products.",
     "details": [
-      "Led the introduction of semantic design tokens across design and code, defining the naming system, building Figma token libraries, and migrating components.",
-      "Designed and implemented accessible UI foundations, including a WCAG 2.2–compliant focus indicator and improved form accessibility guidelines.",
-      "Contributed directly to the React and TypeScript design system codebase by implementing components, fixing accessibility issues, and adding Storybook documentation.",
-      "Maintained and evolved the design system’s Figma libraries (tokens, components, and brand assets) used by 20+ designers and 60+ engineers."
+      {
+        "lead": "Led the introduction of semantic design tokens",
+        "rest": " across design and code, building Figma libraries, and migrating components."
+      },
+      {
+        "lead": "Designed and implemented accessible UI foundations, ",
+        "rest": "including a WCAG–compliant focus indicator and form accessibility guidelines."
+      },
+      {
+        "lead": "Contributed directly to the codebase",
+        "rest": " (React + TS) by implementing components and fixing styling and accessibility issues."
+      },
+      {
+        "lead": "Maintained and evolved the design system’s Figma libraries",
+        "rest": "(tokens, components, and brand assets) used by 20+ designers."
+      }
     ]
   },
   {
@@ -25,11 +37,20 @@
     "country": "Denmark",
     "dateStart": "2017-12-01",
     "dateEnd": "2022-05-31",
-    "intro": "Worked across product design and design systems for a complex enterprise platform focused on website governance and optimisation.",
+    "intro": "Worked across product design and design systems for an enterprise SaaS platform focused on website governance and optimisation.",
     "details": [
-      "Co-founded the design systems team and helped define its processes, responsibilities, and roadmap.",
-      "Designed and implemented accessible UI components, authored UX guidelines, and built UI libraries in Sketch and Figma.",
-      "Designed product features for a data-heavy enterprise web application, including dashboards and account settings."
+      {
+        "lead": "Co-founded the design systems team",
+        "rest": "and helped define its processes, responsibilities, and roadmap."
+      },
+      {
+        "lead": "Designed and implemented accessible UI components, ",
+        "rest": "authored UX guidelines, and built UI libraries in Figma and Sketch."
+      },
+      {
+        "lead": "Designed product features for a data-heavy enterprise web application, ",
+        "rest": "including dashboards and account settings."
+      }
     ]
   },
   {
@@ -43,9 +64,18 @@
     "dateEnd": "2017-06-30",
     "intro": "Designed digital experiences for a Dutch health insurer, working across UX research, product design, and front-end implementation.",
     "details": [
-      "Designed features and flows for customer-facing websites and iOS and Android apps through wireframes and interactive prototypes.",
-      "Implemented responsive website designs using HTML and CSS, translating design specifications into production front-end code.",
-      "Conducted usability tests and performed a top task analysis to prioritise improvements to the customer experience."
+      {
+        "lead": "Designed features and flows for customer-facing websites and iOS and Android apps",
+        "rest": " through wireframes and interactive prototypes."
+      },
+      {
+        "lead": "Implemented responsive website designs using HTML and CSS, ",
+        "rest": "translating design specifications into production front-end code."
+      },
+      {
+        "lead": "Conducted usability tests and performed a top task analysis",
+        "rest": " to prioritise improvements to the customer experience."
+      }
     ]
   },
   {
@@ -57,11 +87,20 @@
     "country": "Netherlands",
     "dateStart": "2013-10-01",
     "dateEnd": "2014-02-28",
-    "intro": "Conducted usability studies at a UX research consultancy, translating research findings into actionable design recommendations.",
+    "intro": "Conducted usability studies at a UX research consultancy, translating findings into actionable design recommendations.",
     "details": [
-      "Planned and moderated usability studies, including participant recruitment, test scripts, facilitation, and reporting.",
-      "Synthesised research findings into clear UX recommendations supported by wireframes and interaction concepts.",
-      "Delivered projects for clients in banking, public transport, pension funds, and online marketplaces."
+      {
+        "lead": "Planned and moderated usability studies,",
+        "rest": " including participant recruitment, test scripting, and moderation."
+      },
+      {
+        "lead": "Synthesised research findings into clear UX recommendations",
+        "rest": " supported by wireframes and interaction concepts."
+      },
+      {
+        "lead": "Delivered projects for clients across various industries",
+        "rest": " such as banking, public transport, pension funds, and online marketplaces."
+      }
     ]
   },
   {
@@ -73,11 +112,20 @@
     "country": "Netherlands",
     "dateStart": "2012-10-01",
     "dateEnd": "2013-09-30",
-    "intro": "Designed improvements for complex enterprise software used to manage documents and business processes.",
+    "intro": "Improved the UX of a complex enterprise SaaS platform used to manage documents and business processes.",
     "details": [
-      "Conducted usability research including participant recruitment, test scripting, moderation, and analysis.",
-      "Translated research insights into wireframes and interaction concepts to guide product improvements.",
-      "Collaborated with product and engineering teams to improve usability in a complex enterprise interface."
+      {
+        "lead": "Conducted usability research",
+        "rest": " including participant recruitment, test scripting, moderation, and analysis."
+      },
+      {
+        "lead": "Turned research insights into wireframes and interaction concepts",
+        "rest": " to guide product improvements."
+      },
+      {
+        "lead": "Collaborated with product and engineering teams",
+        "rest": " to resolve usability issues and improve overall workflow."
+      }
     ]
   },
   {
@@ -89,11 +137,20 @@
     "country": "Netherlands",
     "dateStart": "2012-02-01",
     "dateEnd": "2012-09-30",
-    "intro": "Conducted research and evaluation work for a complex enterprise application.",
+    "intro": "Researched the UX of a complex enterprise SaaS platform used to manage documents and business processes.",
     "details": [
-      "Evaluated the product through contextual inquiries, stakeholder interviews, and a heuristic evaluation.",
-      "Documented usability issues and user needs in a detailed research report.",
-      "Proposed UX improvements supported by wireframes and design recommendations."
+      {
+        "lead": "Evaluated the product",
+        "rest": " through contextual inquiries, stakeholder interviews, and a heuristic evaluation."
+      },
+      {
+        "lead": "Documented usability issues and user needs",
+        "rest": " in a research report."
+      },
+      {
+        "lead": "Proposed UX improvements",
+        "rest": " supported by wireframes and interaction design recommendations."
+      }
     ]
   },
   {
@@ -107,9 +164,18 @@
     "dateEnd": "2010-08-31",
     "intro": "Supported UX research projects for major Dutch and international clients at a UX research consultancy.",
     "details": [
-      "Conducted usability tests, including participant recruitment, test scripting, and moderation.",
-      "Communicated research insights and design recommendations through reports and presentations.",
-      "Contributed to projects for major clients including PayPal, Microsoft, the Dutch government, ING Bank, and KLM Royal Dutch Airlines."
+      {
+        "lead": "Conducted usability tests, ",
+        "rest": "including participant recruitment, test scripting, and moderation."
+      },
+      {
+        "lead": "Communicated research insights and design recommendations",
+        "rest": " through reports and presentations."
+      },
+      {
+        "lead": "Contributed to projects for clients",
+        "rest": " including PayPal, Microsoft, the Dutch government, ING Bank, and KLM Royal Dutch Airlines."
+      }
     ]
   }
 ]

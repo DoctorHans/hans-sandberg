@@ -1,7 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ExperienceItem from "../components/ExperienceItem.astro";
-import ExperienceItemDetails from "../components/ExperienceItemDetails.astro";
 import Button from "../components/Button.astro";
 import PageHeader from "../components/PageHeader.astro";
 const title = "Experience";
@@ -13,7 +12,7 @@ const experienceData = await getCollection("experience");
   <PageHeader heading={title}>
     Where I’ve worked and what I’ve worked on
   </PageHeader>
-  <div class="button-wrapper">
+  <div class="wrapper__buttons">
     <Button
       icon="download"
       as="a"
@@ -28,32 +27,71 @@ const experienceData = await getCollection("experience");
       Visit LinkedIn Profile
     </Button>
   </div>
-  {
-    experienceData.map((experienceItem: any) => (
-      <ExperienceItem
-        title={experienceItem.data.title}
-        org={experienceItem.data.org}
-        orgLink={experienceItem.data.orgLink}
-        location={`${experienceItem.data.city}, ${experienceItem.data.country}`}
-        dateStart={experienceItem.data.dateStart}
-        dateEnd={experienceItem.data.dateEnd}
-      >
-        <ExperienceItemDetails>
-          <p>{experienceItem.data.intro}</p>
-          {experienceItem.data.details.map((detail: string) => (
-            <li>{detail}</li>
-          ))}
-        </ExperienceItemDetails>
-      </ExperienceItem>
-    ))
-  }
+  <div class="wrapper__experience-items">
+    {
+      experienceData.map((experienceItem: any) => (
+        <ExperienceItem
+          title={experienceItem.data.title}
+          org={experienceItem.data.org}
+          orgLink={experienceItem.data.orgLink}
+          location={`${experienceItem.data.city}, ${experienceItem.data.country}`}
+          dateStart={experienceItem.data.dateStart}
+          dateEnd={experienceItem.data.dateEnd}
+        >
+          <div class="experience-item-details">
+            <p>{experienceItem.data.intro}</p>
+            <ul class="experience-items-details__list">
+              {experienceItem.data.details.map(
+                ({ lead, rest }: { lead: string; rest: string }) => (
+                  <li>
+                    <span class="experience-items-details__lead">{lead}</span>
+                    <span class="experience-items-details__rest">{rest}</span>
+                  </li>
+                ),
+              )}
+            </ul>
+          </div>
+        </ExperienceItem>
+      ))
+    }
+  </div>
 </BaseLayout>
 
 <style>
-  .button-wrapper {
+  .wrapper__buttons {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(16rem, 100%), 1fr));
     gap: var(--space-s);
-    margin-block-end: var(--space-xl);
+  }
+
+  .wrapper__experience-items {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+    margin-block-start: var(--space-2xl);
+  }
+
+  .experience-item-details {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-s);
+    background-color: var(--color-background-loud);
+    padding: var(--space-m);
+    border-radius: var(--border-radius-regular);
+  }
+
+  .experience-items-details__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    padding-inline-start: 1em;
+  }
+
+  .experience-items-details__lead {
+    color: var(--color-content-loud);
+    font-weight: var(--font-weight-bold);
+  }
+  .experience-items-details__rest {
+    color: var(--color-content-quiet);
   }
 </style>

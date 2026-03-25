@@ -35,7 +35,12 @@ const experience = defineCollection({
     dateStart: z.coerce.date(),
     dateEnd: z.union([z.coerce.date(), z.literal("Present")]),
     intro: z.string(),
-    details: z.array(z.string()),
+    details: z.array(
+      z.object({
+        lead: z.string(),
+        rest: z.string(),
+      }),
+    ),
   }),
 });
 
