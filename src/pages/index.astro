@@ -3,17 +3,16 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import BlockLink from "../components/BlockLink.astro";
 import BlockLinkList from "../layouts/BlockLinkList.astro";
 import Greeting from "../components/Greeting.astro";
-import Paragraph from "../components/Paragraph.astro";
 import Heading from "../components/Heading.astro";
 ---
 
 <BaseLayout pageTitle="Home">
-  <div id="header">
-    <Heading as="h1" id="header__greeting"><Greeting /></Heading>
-    <Paragraph size="1">
+  <div class="header">
+    <Heading as="h1" class="header__greeting"><Greeting /></Heading>
+    <p class="header__subtitle">
       I’m Hans Sandberg, a designer who codes. I build accessible interfaces and
       design systems, and enjoy bridging the gap between design and engineering.
-    </Paragraph>
+    </p>
   </div>
   <BlockLinkList>
     <BlockLink
@@ -40,14 +39,18 @@ import Heading from "../components/Heading.astro";
 </BaseLayout>
 
 <style>
-  #header {
+  .header {
     display: flex;
     flex-direction: column;
     gap: var(--space-s);
     margin-block-end: var(--space-xl);
   }
 
-  #header__greeting {
+  .header__greeting {
     color: var(--color-accent);
+  }
+
+  .header__subtitle {
+    font-size: var(--step-1);
   }
 </style>

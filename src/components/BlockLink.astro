@@ -1,7 +1,6 @@
 ---
 import Heading from "./Heading.astro";
 import Icon from "./Icon.astro";
-import Paragraph from "./Paragraph.astro";
 
 interface Props {
   title: string;
@@ -18,7 +17,7 @@ const { title = "Title", subTitle = "Subtitle", url } = Astro.props;
       <Icon name="arrowRight" class="icon" />
     </div>
   </div>
-  <Paragraph color="quiet">{subTitle}</Paragraph>
+  <p class="subtitle">{subTitle}</p>
 </li>
 
 <style>
@@ -102,5 +101,9 @@ const { title = "Title", subTitle = "Subtitle", url } = Astro.props;
       transition: var(--motion-exit-small);
       transition-property: color;
     }
+  }
+
+  .subtitle {
+    color: var(--color-content-quiet);
   }
 </style>
