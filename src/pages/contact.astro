@@ -11,19 +11,17 @@ const title = "Contact";
 <BaseLayout pageTitle={title}>
   <PageHeader heading={title}>Find out how to get in touch</PageHeader>
   <div class="wrapper-contact">
-    <div class="wrapper-contact-section">
+    <section>
       <Heading as="h2">Email</Heading>
-      <Paragraph color="quiet">sandberg.hans@gmail.com</Paragraph>
       <CopyButton successMessage="Email address copied to clipboard">
         Copy email address
       </CopyButton>
       <Button icon="compose" as="a" href="mailto:sandberg.hans@gmail.com">
         Compose email
       </Button>
-    </div>
-    <div class="wrapper-contact-section">
+    </section>
+    <section>
       <Heading as="h2">LinkedIn</Heading>
-      <Paragraph color="quiet">@hans-sandberg</Paragraph>
       <Button
         icon="link"
         as="a"
@@ -31,20 +29,20 @@ const title = "Contact";
       >
         Visit LinkedIn profile
       </Button>
-    </div>
+    </section>
   </div>
-
-  <style>
-    .wrapper-contact {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(16rem, 100%), 1fr));
-      gap: var(--space-l);
-    }
-
-    .wrapper-contact-section {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-s);
-    }
-  </style>
 </BaseLayout>
+
+<style>
+  .wrapper-contact {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-s);
+  }
+</style>
