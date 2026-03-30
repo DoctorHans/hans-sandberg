@@ -9,51 +9,53 @@ const experienceData = await getCollection("experience");
 ---
 
 <BaseLayout pageTitle={title}>
-  <PageHeader heading={title}>
-    Where I’ve worked and what I’ve worked on
-  </PageHeader>
-  <div class="wrapper__buttons">
-    <Button
-      icon="download"
-      as="a"
-      href="/cv.pdf"
-      download="hans sandberg - cv.pdf">Download CV</Button
-    >
-    <Button
-      icon="link"
-      as="a"
-      href="https://www.linkedin.com/in/hans-sandberg/"
-    >
-      Visit LinkedIn Profile
-    </Button>
-  </div>
-  <div class="wrapper__experience-items">
-    {
-      experienceData.map((experienceItem: any) => (
-        <ExperienceItem
-          title={experienceItem.data.title}
-          org={experienceItem.data.org}
-          orgLink={experienceItem.data.orgLink}
-          location={`${experienceItem.data.city}, ${experienceItem.data.country}`}
-          dateStart={experienceItem.data.dateStart}
-          dateEnd={experienceItem.data.dateEnd}
-        >
-          <div class="experience-item-details">
-            <p>{experienceItem.data.intro}</p>
-            <ul class="experience-items-details__list">
-              {experienceItem.data.details.map(
-                ({ lead, rest }: { lead: string; rest: string }) => (
-                  <li>
-                    <span class="experience-items-details__lead">{lead}</span>
-                    <span class="experience-items-details__rest">{rest}</span>
-                  </li>
-                ),
-              )}
-            </ul>
-          </div>
-        </ExperienceItem>
-      ))
-    }
+  <div class="grid">
+    <PageHeader heading={title}>
+      Where I’ve worked and what I’ve worked on
+    </PageHeader>
+    <div class="wrapper__buttons">
+      <Button
+        icon="download"
+        as="a"
+        href="/cv.pdf"
+        download="hans sandberg - cv.pdf">Download CV</Button
+      >
+      <Button
+        icon="link"
+        as="a"
+        href="https://www.linkedin.com/in/hans-sandberg/"
+      >
+        Visit LinkedIn Profile
+      </Button>
+    </div>
+    <div class="wrapper__experience-items">
+      {
+        experienceData.map((experienceItem: any) => (
+          <ExperienceItem
+            title={experienceItem.data.title}
+            org={experienceItem.data.org}
+            orgLink={experienceItem.data.orgLink}
+            location={`${experienceItem.data.city}, ${experienceItem.data.country}`}
+            dateStart={experienceItem.data.dateStart}
+            dateEnd={experienceItem.data.dateEnd}
+          >
+            <div class="experience-item-details">
+              <p>{experienceItem.data.intro}</p>
+              <ul class="experience-items-details__list">
+                {experienceItem.data.details.map(
+                  ({ lead, rest }: { lead: string; rest: string }) => (
+                    <li>
+                      <span class="experience-items-details__lead">{lead}</span>
+                      <span class="experience-items-details__rest">{rest}</span>
+                    </li>
+                  ),
+                )}
+              </ul>
+            </div>
+          </ExperienceItem>
+        ))
+      }
+    </div>
   </div>
 </BaseLayout>
 

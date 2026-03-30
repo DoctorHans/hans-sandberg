@@ -8,27 +8,29 @@ const title = "Contact";
 ---
 
 <BaseLayout pageTitle={title}>
-  <PageHeader heading={title}>Find out how to get in touch</PageHeader>
-  <div class="wrapper-contact">
-    <section>
-      <Heading as="h2">Email</Heading>
-      <CopyButton successMessage="Email address copied to clipboard">
-        Copy email address
-      </CopyButton>
-      <Button icon="compose" as="a" href="mailto:sandberg.hans@gmail.com">
-        Compose email
-      </Button>
-    </section>
-    <section>
-      <Heading as="h2">LinkedIn</Heading>
-      <Button
-        icon="link"
-        as="a"
-        href="https://www.linkedin.com/in/hans-sandberg/"
-      >
-        Visit LinkedIn profile
-      </Button>
-    </section>
+  <div class="grid">
+    <PageHeader heading={title}>Find out how to get in touch</PageHeader>
+    <div class="wrapper-contact">
+      <section>
+        <Heading as="h2">Email</Heading>
+        <CopyButton successMessage="Email address copied to clipboard">
+          Copy email address
+        </CopyButton>
+        <Button icon="compose" as="a" href="mailto:sandberg.hans@gmail.com">
+          Compose email
+        </Button>
+      </section>
+      <section>
+        <Heading as="h2">LinkedIn</Heading>
+        <Button
+          icon="link"
+          as="a"
+          href="https://www.linkedin.com/in/hans-sandberg/"
+        >
+          Visit LinkedIn profile
+        </Button>
+      </section>
+    </div>
   </div>
 </BaseLayout>
 

@@ -9,20 +9,22 @@ const caseStudies = await getCollection("caseStudies");
 ---
 
 <BaseLayout pageTitle={title}>
-  <PageHeader heading={title}>
-    Get a feel for how I tackle design challenges
-  </PageHeader>
-  <BlockLinkList>
-    {
-      caseStudies
-        .sort((a, b) => a.data.order - b.data.order)
-        .map((caseStudy) => (
-          <BlockLink
-            title={caseStudy.data.title}
-            subTitle={caseStudy.data.description}
-            url={`/portfolio/${caseStudy.data.slug}`}
-          />
-        ))
-    }
-  </BlockLinkList>
+  <div class="grid">
+    <PageHeader heading={title}>
+      Get a feel for how I tackle design challenges
+    </PageHeader>
+    <BlockLinkList>
+      {
+        caseStudies
+          .sort((a, b) => a.data.order - b.data.order)
+          .map((caseStudy) => (
+            <BlockLink
+              title={caseStudy.data.title}
+              subTitle={caseStudy.data.description}
+              url={`/portfolio/${caseStudy.data.slug}`}
+            />
+          ))
+      }
+    </BlockLinkList>
+  </div>
 </BaseLayout>

@@ -1,0 +1,20 @@
+<body>
+  <slot />
+</body>
+
+<style>
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    background: var(--color-background);
+    color: var(--color-content-regular);
+    font-family: var(--font-family-regular);
+    font-size: var(--step-0);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-regular);
+    margin: 0;
+    /* Makes elements that use different fonts (e.g. <code> -> uses monospace) look more in proportion to the base font". More info: https://developer.mozilla.org/en-US/docs/Web/CSS/font-size-adjust */
+    font-size-adjust: from-font;
+  }
+</style>

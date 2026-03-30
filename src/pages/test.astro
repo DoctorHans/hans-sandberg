@@ -1,7 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PageHeader from "../components/PageHeader.astro";
-import Prose from "../layouts/Prose.astro";
 import Code from "astro/components/Code.astro";
 const title = "Test page for global styles and prose content";
 const exampleCss = `.context-alert {
@@ -19,18 +18,20 @@ const exampleCss = `.context-alert {
 ---
 
 <BaseLayout pageTitle={title}>
-  <PageHeader heading={title}>Gotta make sure everything looks right</PageHeader
-  >
-  <Prose>
+  <div class="grid">
+    <PageHeader heading={title}
+      >Gotta make sure everything looks right</PageHeader
+    >
+  </div>
+  <div class="grid prose">
     <p>
       We start with a paragraph of text that features various HTML tags, used in
-      flow content. Account for <em>emphasis</em>, <strong>strong</strong> and <small
-        >small</small
-      > text. Don’t forget to account for abbreviations too, using the <abbr
-        title="abbreviation">abbr</abbr
-      > (<code>&lt;abbr&gt;</code>) element. Lastly you can define <del
-        >deleted text</del
-      > and <ins>inserted text</ins>.
+      flow content. Account for <em>emphasis</em>, <strong>strong</strong> and
+      <small>small</small> text. Don’t forget to account for abbreviations too, using
+      the <abbr title="abbreviation">abbr</abbr> (<code>&lt;abbr&gt;</code>)
+      element. Lastly you can define <del>deleted text</del> and <ins
+        >inserted text</ins
+      >.
     </p>
     <p>
       If you are referencing keyboard keys, make sure you use the <code
@@ -508,5 +509,5 @@ const exampleCss = `.context-alert {
     <h4>Sed posuere consectetur est at lobortis.</h4>
     <h5>Sed posuere consectetur est at lobortis.</h5>
     <h6>Sed posuere consectetur est at lobortis.</h6>
-  </Prose>
+  </div>
 </BaseLayout>
