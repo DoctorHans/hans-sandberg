@@ -1,6 +1,13 @@
 ---
 title: "Redesigning Pleo's focus indicator"
 description: "A deep dive into redesigning a core accessibility pattern, balancing brand, WCAG 2.2 compliance, and real-world edge cases"
+tldr:
+  "I redesigned Pleo’s focus indicator to be on-brand, accessible, and robust
+  across edge cases like Windows High Contrast Mode. The update replaced the
+  off-brand blue ring with a high-contrast black focus style, introduced
+  context-specific variants, improved spacing, and added system-level fallbacks.
+  The result was a consistent, WCAG 2.2–compliant focus indicator standardised
+  in the design system and adopted across Pleo’s products."
 order: 2
 slug: "redesigning-pleos-focus-indicator"
 ---
@@ -25,15 +32,6 @@ import InsetVariant from "../../images/portfolio/focus-ring/variant-inset.png";
 import Colour from "../../images/portfolio/focus-ring/colour.png";
 import WindowsHighContrastMode from "../../images/portfolio/focus-ring/windows-high-contrast-mode.png";
 import SemanticToken from "../../images/portfolio/focus-ring/semantic-token.png";
-
-<TLDR>
-  I redesigned Pleo’s focus indicator to be on-brand, accessible, and robust
-  across edge cases like Windows High Contrast Mode. The update replaced the
-  off-brand blue ring with a high-contrast black focus style, introduced
-  context-specific variants, improved spacing, and added system-level fallbacks.
-  The result was a consistent, WCAG 2.2–compliant focus indicator standardised
-  in the design system and adopted across Pleo’s products.
-</TLDR>
 
 ## Context
 

@@ -11,6 +11,7 @@ const { heading, ...rest } = Astro.props;
 
 <div class="wrapper" {...rest}>
   <Heading as="h1" class="title">{heading}</Heading>
+
   <p class="subtitle"><slot /></p>
 </div>
 
@@ -28,5 +29,6 @@ const { heading, ...rest } = Astro.props;
 
   .subtitle {
     color: var(--color-content-quiet);
+    font-style: italic;
   }
 </style>

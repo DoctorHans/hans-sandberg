@@ -1,13 +1,19 @@
 ---
 title: "Rethinking the everyday elevator experience"
 description: "A job interview challenge that became a user-centered design exploration, using psychology and research to shorten perceived waiting time"
+tldr:
+  "As part of a job interview, I explored how to improve the everyday elevator
+  experience in residential buildings. Through user interviews, domain research,
+  and insights from the psychology of waiting, I identified uncertainty during
+  waiting as the core problem. I then designed a set of environmental,
+  informational, and accessible UI interventions aimed at reducing perceived
+  waiting time."
 order: 3
 slug: "rethinking-the-every-day-elevator-experience"
 ---
 
 import Highlight from "../../components/Highlight.astro";
 import HighlightList from "../../components/HighlightList.astro";
-import TLDR from "../../components/TLDR.astro";
 import { Image } from "astro:assets";
 import SketchVertical from "../../images/portfolio/elevator/sketch-vertical.png";
 import SketchHorizontal from "../../images/portfolio/elevator/sketch-horizontal.png";
@@ -15,15 +21,6 @@ import HiFiConcepts from "../../images/portfolio/elevator/hi-fi-concepts.png";
 import FirstTest from "../../images/portfolio/elevator/first-test.png";
 import SecondTest from "../../images/portfolio/elevator/second-test.png";
 import Outcome from "../../images/portfolio/elevator/outcome.png";
-
-<TLDR>
-  As part of a job interview, I explored how to improve the everyday elevator
-  experience in residential buildings. Through user interviews, domain research,
-  and insights from the psychology of waiting, I identified uncertainty during
-  waiting as the core problem. I then designed a set of environmental,
-  informational, and accessible UI interventions aimed at reducing perceived
-  waiting time.
-</TLDR>
 
 ## Context
 
@@ -146,12 +143,10 @@ Through sketching, I explored several key design questions:
 <Image
   src={SketchVertical}
   alt="Hand-drawn sketches of vertical elevator UI concepts with different layouts and indicators for the floors and elevator direction."
-  class="wrapper"
 />
 <Image
   src={SketchHorizontal}
   alt="Hand-drawn sketches of horizontal elevator UI concepts with different layouts and indicators for the floors and elevator direction."
-  class="wrapper"
 />
 
 ### Defining the core interface
@@ -171,8 +166,9 @@ Reducing the interface to these elements balanced clarity with simplicity, helpi
   <Image
     src={HiFiConcepts}
     alt="Six high-fidelity mockups of horizontal elevator UI concepts with different floor and elevator direction indicators"
-    class="wrapper"
-  />
+
+/>
+
   <figcaption>
     High-fidelity concepts for the scenario where someone is waiting on the 4th
     floor for an elevator that's on its way down from the 11th floor and
@@ -187,7 +183,6 @@ To assess clarity, I tested two refined concepts with three participants. Both c
 <Image
   src={FirstTest}
   alt="Two high-fidelity elevator UI concepts. One has circle outlines around the floors the elevator will stop on and the floor the user is currently on is contained within a filled circle. The other concept has two rows of floor numbers: one for the floors the elevator will pass and the other for the floors the elevator will stop on. It features a circle outline around the floor the user is on."
-  class="wrapper"
 />
 
 Based on this feedback, I refined the design and tested it with four new participants. Direction became obvious for all participants, though some still struggled to identify their own floor. A stronger floor indicator or additional signage near the elevator could resolve this remaining ambiguity.
@@ -195,7 +190,6 @@ Based on this feedback, I refined the design and tested it with four new partici
 <Image
   src={SecondTest}
   alt="High-fidelity elevator UI showing stops with circle outlines, the user’s floor as a filled circle with an arrow, and a dot below the current floor."
-  class="wrapper"
 />
 
 ## Outcome
@@ -205,7 +199,6 @@ Together, the environmental interventions (light, color, scent, mirrors), inform
 <Image
   src={Outcome}
   alt="A vector illustration of an elevator. There is a horizontal UI placed above the elevator doors. It shows the current floor, the floors the elevator will stop on, and the current floor the elevator is on and its direction. The elevator doors are reflective like mirrors and show the current weather and time. A large sign next to the elevator doors shows the current floor number. The elevator call buttons have braille text on them."
-  class="wrapper"
 />
 
 Overall, the proposal explores how layered, research-driven interventions might make the elevator experience feel smoother and more psychologically pleasant for residents of luxury apartments.

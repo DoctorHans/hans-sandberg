@@ -23,10 +23,12 @@ const { Content, headings } = await render(caseStudy);
 <BaseLayout pageTitle={caseStudy.data.title}>
   <div class="grid">
     <BackToPortfolio />
-    <PageHeader heading={caseStudy.data.title} />
-    <TableOfContents headings={headings} />
+    <PageHeader heading={caseStudy.data.title}>
+      {caseStudy.data.tldr}
+    </PageHeader>
   </div>
   <div class="grid prose">
+    <TableOfContents headings={headings} />
     <Content />
   </div>
 </BaseLayout>
