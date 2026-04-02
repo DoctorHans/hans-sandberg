@@ -35,22 +35,36 @@
   grid-column: content;
 }
 
-.grid> :is(img, picture, video) {
-  grid-column: popout;
+.grid> :is(figure, img, picture, video) {
+  grid-column: full;
 }
 
 .grid>figure {
-  grid-column: popout;
   display: grid;
   grid-template-columns: subgrid;
 }
 
 .grid>figure>img {
-  grid-column: popout;
+  grid-column: full;
 }
 
 .grid>figure>figcaption {
   grid-column: content;
+}
+
+@media screen and (width > 50rem) {
+  .grid> :is(figure, img, picture, video) {
+    grid-column: popout;
+  }
+
+  .grid>figure>img {
+    grid-column: popout;
+  }
+
+  .grid :is(img, picture, video, figure > img) {
+    border: var(--border-quiet);
+    border-radius: var(--border-radius-regular);
+  }
 }
 
 .grid-full {
@@ -89,12 +103,16 @@
   --flow-space: var(--space-l);
 }
 
-.prose :is(p, li) {
-  text-wrap: pretty;
-}
-
 .prose>*+ :is(figure, img) {
   --flow-space: var(--space-xl);
+}
+
+.prose> :is(img, figure)+*:not(h1, h2, h3, h4, h5, h6) {
+  --flow-space: var(--space-xl);
+}
+
+.prose :is(p, li) {
+  text-wrap: pretty;
 }
 
 .grid {
@@ -248,9 +266,8 @@ figcaption {
   margin-block-start: var(--space-2xs);
 }
 
-img.default {
-  border: var(--border-quiet);
-  border-radius: var(--border-radius-regular);
+img {
+  border-block: var(--border-quiet);
 }
 
 img.wrapper {
@@ -259,7 +276,6 @@ img.wrapper {
   padding-block: var(--space-m);
   padding-inline: var(--space-l);
   background-color: var(--color-background-loud);
-  border-radius: var(--border-radius-regular);
 }
 
 table {
