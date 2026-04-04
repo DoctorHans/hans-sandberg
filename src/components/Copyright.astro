@@ -1,5 +1,19 @@
 ---
-const currentYear = new Date().getFullYear();
+const currentYear = new Date().getFullYear().toString();
 ---
 
-<p>© {currentYear} Hans Sandberg</p>
+<p>
+  © <span id="yearElement">{currentYear}</span> Hans Sandberg
+</p>
+
+<script>
+  const yearElement: HTMLSpanElement | null =
+    document.querySelector("#yearElement");
+
+  if (yearElement) {
+    const thisYear = new Date().getFullYear().toString();
+    if (yearElement.textContent !== thisYear) {
+      yearElement.textContent = thisYear;
+    }
+  }
+</script>
