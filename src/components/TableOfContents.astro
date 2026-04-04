@@ -56,13 +56,12 @@ const { headings } = Astro.props;
     padding-block: var(--space-s);
     > #button__label {
       color: var(--color-content-regular);
-      transition: color var(--motion-exit-small);
+      transition: color var(--motion-enter-and-exit-large);
     }
     &:hover {
       @media (hover: hover) {
         > #button__label {
           color: var(--color-accent);
-          transition: color var(--motion-enter-small);
         }
       }
     }

@@ -14,7 +14,7 @@ const { as: Tag = "button", icon = "download", ...props } = Astro.props;
 
 <Tag {...props}><slot /><Icon name={icon} class="icon" /></Tag>
 
-<style lang="scss">
+<style>
   button,
   a {
     font-weight: var(--font-weight-semibold);
@@ -28,8 +28,8 @@ const { as: Tag = "button", icon = "download", ...props } = Astro.props;
     border-radius: var(--border-radius-regular);
     cursor: pointer;
     text-align: left;
-    transition: var(--motion-exit-small);
-    transition-property: color, transform;
+    transition: var(--motion-enter-and-exit-large);
+    transition-property: color, border-color, transform;
 
     .icon {
       height: var(--step-0);
@@ -39,14 +39,12 @@ const { as: Tag = "button", icon = "download", ...props } = Astro.props;
 
     &:hover {
       color: var(--color-accent);
-      transform: scale(var(--scale-up-small));
+      border-color: var(--color-accent);
       transition: var(--motion-enter-small);
-      transition-property: color, transform;
     }
 
     &:active {
-      transform: scale(1);
-      transition: transform var(--motion-exit-small);
+      transform: scale(0.99);
     }
   }
 

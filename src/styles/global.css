@@ -319,12 +319,12 @@ a {
   text-underline-offset: 0.4ex;
   text-decoration-thickness: 0.1ex;
   text-decoration-color: var(--color-accent);
-  transition: color, text-underline-offset var(--motion-exit-small);
+  transition: color, text-underline-offset var(--motion-enter-and-exit-small);
 
   &:hover {
     color: var(--color-accent);
-    text-underline-offset: 0.5ex;
-    transition: color, text-underline-offset var(--motion-enter-small)
+    text-underline-offset: 0.6ex;
+    text-decoration-thickness: 0.2ex;
   }
 }
 
