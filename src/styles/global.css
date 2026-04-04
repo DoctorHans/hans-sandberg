@@ -345,7 +345,7 @@ textarea {
 }
 
 :focus-visible {
-  outline: var(--focusring);
+  outline: var(--focusring-regular);
   outline-offset: var(--offset-focusring);
 }
 

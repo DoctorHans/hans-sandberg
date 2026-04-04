@@ -188,9 +188,12 @@
     --motion-easing-exit: ease-in;
     --motion-easing-enter-and-exit: ease-in-out;
 
-    --size-focusring: 2px;
+    --size-focusring-regular: 2px;
+    --size-focusring-thick: 3px;
     --offset-focusring: var(--space-3xs);
-    --focusring: var(--size-focusring) solid var(--color-focusring);
+    --inset-focusring: calc(-1 * var(--size-focusring-thick));
+    --focusring-regular: var(--size-focusring-regular) solid var(--color-focusring);
+    --focusring-inset: var(--size-focusring-thick) solid var(--color-focusring);
 
     --border-radius-small: 0.5rem;
     --border-radius-regular: 0.75rem;
