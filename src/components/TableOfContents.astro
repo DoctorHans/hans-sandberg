@@ -1,4 +1,5 @@
 ---
+import Icon from "./Icon.astro";
 interface Props {
   headings: {
     depth: number;
@@ -11,41 +12,165 @@ const { headings } = Astro.props;
 ---
 
 <nav aria-labelledby="title">
-  <h2 id="title">Contents</h2>
-  <ul>
-    {
-      headings
-        .filter((heading) => heading.depth === 2)
-        .map((heading) => (
-          <li>
-            <a href={`#${heading.slug}`}>{heading.text}</a>
-          </li>
-        ))
-    }
-  </ul>
+  <h2 id="title">
+    <button aria-expanded="false" aria-controls="content">
+      <span>Contents</span>
+      <Icon id="icon" name="chevronUp" />
+    </button>
+  </h2>
+  <div id="content" aria-hidden="true">
+    <div id="anchored-element" aria-hidden="true"></div>
+    <ul>
+      {
+        headings
+          .filter((heading) => heading.depth === 2)
+          .map((heading) => (
+            <li>
+              <a href={`#${heading.slug}`}>{heading.text}</a>
+            </li>
+          ))
+      }
+    </ul>
+  </div>
 </nav>
 
 <style>
   nav {
     display: flex;
     flex-direction: column;
-    gap: var(--space-2xs);
-    background: var(--color-background-loud);
+    background: transparent;
+    border: var(--border-quiet);
+    border-radius: var(--border-radius-regular);
+  }
+
+  button {
+    border: none;
+    background: transparent;
+    text-align: left;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
     padding-inline: var(--space-m);
     padding-block: var(--space-s);
-    border-radius: var(--border-radius-regular);
+    transition: color var(--motion-exit-small);
+    &:hover {
+      color: var(--color-accent);
+      transition: color var(--motion-enter-small);
+    }
+    &[aria-expanded="true"] {
+      #icon {
+        transform: rotate(0deg);
+        transition: transform var(--motion-enter-small);
+      }
+    }
   }
   h2 {
     font-size: var(--step-0);
+    transition: color var(--motion-exit-small);
+  }
+  #icon {
+    width: var(--step-1);
+    height: var(--step-1);
+    color: var(--color-accent);
+    transform: rotate(180deg);
+    transition: transform var(--motion-enter-small);
   }
   ul {
-    padding-inline: 0;
     list-style: "";
     display: flex;
     flex-direction: column;
-    gap: var(--space-3xs);
+    overflow: hidden;
+    padding-inline-start: 0;
   }
+
+  #anchored-element {
+    position-anchor: --hovered-link;
+    content: "";
+    position: absolute;
+    top: anchor(top);
+    right: anchor(right);
+    bottom: anchor(bottom);
+    left: anchor(left);
+    background: var(--color-background-loud);
+    border-inline-start: var(--border-size-thick) solid var(--color-accent);
+    z-index: -1;
+    transition: var(--motion-duration-regular)
+      linear(
+        0,
+        0.013 1%,
+        0.051 2.2%,
+        0.404 9.8%,
+        0.51 12.6%,
+        0.602 15.5%,
+        0.683 18.7%,
+        0.754 22.2%,
+        0.813 26%,
+        0.861 30.2%,
+        0.9 34.8%,
+        0.931 40%,
+        0.972 52.7%,
+        0.992 70.2%,
+        1
+      );
+  }
+
   a {
     text-decoration: none;
+    display: inline-block;
+    width: 100%;
+    padding-inline: var(--space-m);
+    padding-block: var(--space-3xs);
+    &:hover {
+      anchor-name: --hovered-link;
+      color: var(--color-accent);
+      transition: color var(--motion-enter-small);
+      transition-duration: 200ms;
+    }
+
+    &:focus-visible {
+      outline: var(--focusring-inset);
+      outline-offset: var(--inset-focusring);
+    }
+  }
+
+  #content {
+    display: grid;
+
+    &[aria-hidden="false"] {
+      grid-template-rows: 1fr;
+      opacity: 1;
+      padding-block-end: var(--space-s);
+      transition:
+        opacity var(--motion-duration-extra-slow),
+        grid-template-rows var(--motion-duration-fast);
+    }
+
+    &[aria-hidden="true"] {
+      grid-template-rows: 0fr;
+      opacity: 0;
+      padding-block-end: 0;
+      transition:
+        opacity var(--motion-duration-fast),
+        grid-template-rows var(--motion-duration-regular);
+    }
   }
 </style>
+
+<script>
+  const button = document.querySelector("button");
+  const content = document.getElementById("content");
+
+  function toggleDisclosure() {
+    if (button?.getAttribute("aria-expanded") === "false") {
+      button?.setAttribute("aria-expanded", "true");
+      content?.setAttribute("aria-hidden", "false");
+    } else {
+      button?.setAttribute("aria-expanded", "false");
+      content?.setAttribute("aria-hidden", "true");
+    }
+  }
+
+  button?.addEventListener("click", toggleDisclosure);
+</script>
