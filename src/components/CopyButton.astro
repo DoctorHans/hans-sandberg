@@ -48,9 +48,11 @@ const { successMessage } = Astro.props;
     }
 
     &:hover {
-      color: var(--color-accent);
-      border-color: var(--color-accent);
-      transition: var(--motion-enter-small);
+      @media (hover: hover) {
+        color: var(--color-accent);
+        border-color: var(--color-accent);
+        transition: var(--motion-enter-small);
+      }
     }
     &:active {
       transform: scale(0.99);
