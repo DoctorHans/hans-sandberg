@@ -22,19 +22,31 @@ import Contact from "./Contact.astro";
     color: var(--color-content-quiet);
     margin-block-start: auto;
     padding-block: var(--space-s);
+    container-name: footer__container;
+    container-type: inline-size;
   }
   #footer__wrapper {
     display: flex;
+    flex-direction: column;
     gap: var(--space-s);
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: baseline;
   }
-
   #footer__copyright-and-contact {
     display: flex;
     flex-direction: row;
-    gap: var(--space-xs);
+    justify-content: space-between;
+    gap: var(--space-s);
+  }
+
+  @container footer__container (width > 25rem) {
+    #footer__wrapper {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    #footer__copyright-and-contact {
+      justify-content: flex-start;
+    }
   }
 </style>
