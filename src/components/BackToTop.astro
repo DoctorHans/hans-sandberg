@@ -37,15 +37,13 @@ import Icon from "./Icon.astro";
     gap: var(--space-3xs);
     border: var(--border-quiet);
     border-radius: var(--border-radius-regular);
-    transition: var(--motion-exit-small);
-    transition-property: color;
+    transition: var(--motion-enter-and-exit-large);
+    transition-property: color, border-color;
 
     &:hover {
       @media (hover: hover) {
         color: var(--color-accent);
         border-color: var(--color-accent);
-        transition: var(--motion-enter-small);
-        transition-property: color, border-color;
 
         .icon {
           animation: up-down-wiggle var(--motion-duration-slow)
