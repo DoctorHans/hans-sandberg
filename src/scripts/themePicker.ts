@@ -30,19 +30,30 @@ document.addEventListener("DOMContentLoaded", () => {
     // Store the new theme
     const theme = (e.target as HTMLInputElement)?.value;
 
-    // Check if the new theme is "system"
-    if (theme === "system") {
-      // Remove the key storing the preferred theme from the document root's dataset
-      delete THEME_OWNER.dataset[THEME_STORAGE_KEY];
+    const updateTheme = () => {
+      // Check if the new theme is "system"
+      if (theme === "system") {
+        // Remove the key storing the preferred theme from the document root's dataset
+        delete THEME_OWNER.dataset[THEME_STORAGE_KEY];
 
-      // Remove the previous theme stored in localStorage
-      localStorage.removeItem(THEME_STORAGE_KEY);
-    } else {
-      // Store the new theme in the document root's dataset
-      THEME_OWNER.dataset[THEME_STORAGE_KEY] = theme;
+        // Remove the previous theme stored in localStorage
+        localStorage.removeItem(THEME_STORAGE_KEY);
+      } else {
+        // Store the new theme in the document root's dataset
+        THEME_OWNER.dataset[THEME_STORAGE_KEY] = theme;
 
-      // Store the selected theme in localStorage
-      localStorage.setItem(THEME_STORAGE_KEY, theme);
+        // Store the selected theme in localStorage
+        localStorage.setItem(THEME_STORAGE_KEY, theme);
+      }
+    };
+
+    // Update theme without view transition support
+    if (!document.startViewTransition) {
+      updateTheme();
+      return;
     }
+
+    // Update theme with view transitions support
+    document.startViewTransition(updateTheme);
   });
 });
