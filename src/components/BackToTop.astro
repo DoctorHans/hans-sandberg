@@ -26,25 +26,36 @@ import Icon from "./Icon.astro";
   }
 
   a {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-3xs);
-    font-size: var(--step--1);
     color: var(--color-content-quiet);
+    font-size: var(--step--1);
+    padding-inline: var(--space-xs);
+    padding-block: var(--space-3xs);
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3xs);
+    border: var(--border-quiet);
+    border-radius: var(--border-radius-regular);
     transition: var(--motion-exit-small);
     transition-property: color;
-    border-radius: var(--border-radius-round);
 
     &:hover {
-      color: var(--color-accent);
-      transition: var(--motion-enter-small);
-      transition-property: color;
+      @media (hover: hover) {
+        color: var(--color-accent);
+        border-color: var(--color-accent);
+        transition: var(--motion-enter-small);
+        transition-property: color, border-color;
 
-      .icon {
-        animation: up-down-wiggle var(--motion-duration-slow)
-          var(--motion-easing-enter-and-exit) both;
+        .icon {
+          animation: up-down-wiggle var(--motion-duration-slow)
+            var(--motion-easing-enter-and-exit) both;
+        }
       }
+    }
+
+    &:active {
+      transform: scale(0.99);
     }
   }
 </style>
