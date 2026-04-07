@@ -51,12 +51,14 @@
   .nav__highlight {
     position: absolute;
     position-anchor: --active-link;
-    left: anchor(left);
+    top: anchor(top);
     right: anchor(right);
     bottom: calc(anchor(bottom) - var(--space-3xs));
+    left: anchor(left);
     height: var(--border-size-thick);
     background: var(--color-accent);
     transition: var(--motion-enter-and-exit-large);
+    transition-property: left, right;
     view-transition-name: nav-highlight;
   }
 </style>
