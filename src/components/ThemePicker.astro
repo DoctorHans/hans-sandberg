@@ -4,17 +4,18 @@ import VisuallyHidden from "./VisuallyHidden.astro";
 
 <fieldset id="theme-picker">
   <VisuallyHidden><legend>Theme</legend></VisuallyHidden>
+  <div class="theme-picker__highlight"></div>
   <label>
-    <input name="theme" type="radio" value="system" />
-    <span>System</span>
+    <input name="theme" type="radio" value="light" />
+    <span>Light</span>
   </label>
   <label>
     <input name="theme" type="radio" value="dark" />
     <span>Dark</span>
   </label>
   <label>
-    <input name="theme" type="radio" value="light" />
-    <span>Light</span>
+    <input name="theme" type="radio" value="system" />
+    <span>System</span>
   </label>
 </fieldset>
 
@@ -23,44 +24,50 @@ import VisuallyHidden from "./VisuallyHidden.astro";
     display: flex;
     flex-direction: row;
     padding: 0;
-    gap: var(--space-3xs);
-    border: none;
-    border-radius: var(--border-radius-round);
+    gap: 0;
+    border: var(--border-size-regular) solid var(--color-background-loud);
+    background: var(--color-background-loud);
+    border-radius: var(--border-radius-regular);
 
     &:has(input[type="radio"]:focus-visible) {
       outline: var(--focusring-regular);
       outline-offset: var(--offset-focusring);
     }
   }
+
+  .theme-picker__highlight {
+    position: absolute;
+    position-anchor: --active-theme;
+    top: anchor(top);
+    right: anchor(right);
+    bottom: anchor(bottom);
+    left: anchor(left);
+    background: var(--color-accent);
+    border-radius: var(--border-radius-regular);
+    transition: var(--motion-enter-and-exit-large);
+  }
   label {
+    flex-grow: 1;
     color: var(--color-content-regular);
     font-size: var(--step--1);
     position: relative;
     display: inline-flex;
-    align-items: center;
+    justify-content: center;
     padding-inline: var(--space-xs);
     padding-block: var(--space-3xs);
-    border: var(--border-accent);
-    border-radius: var(--border-radius-round);
+    border-radius: var(--border-radius-regular);
     transition: transform var(--motion-exit-small);
 
     &:hover {
       cursor: pointer;
       color: var(--color-accent);
-      transform: scale(var(--scale-up-large));
       transition: var(--motion-enter-small);
-      transition-property: color, transform;
-    }
-
-    &:active {
-      transform: scale(var(--scale-down));
-      transition: transform var(--motion-exit-small);
+      transition-property: color;
     }
 
     &:has(input[type="radio"]:checked) {
-      background: var(--color-accent);
+      anchor-name: --active-theme;
       color: var(--color-content-inverted);
-      font-weight: var(--font-weight-semibold);
     }
   }
   input[type="radio"] {
