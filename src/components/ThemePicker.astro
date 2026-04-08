@@ -36,14 +36,15 @@ import VisuallyHidden from "./VisuallyHidden.astro";
   }
 
   .theme-picker__highlight {
+    --theme-inset: 0.125rem;
     position: absolute;
     position-anchor: --active-theme;
-    top: anchor(top);
-    right: anchor(right);
-    bottom: anchor(bottom);
-    left: anchor(left);
+    top: calc(anchor(top) + var(--theme-inset));
+    right: calc(anchor(right) + var(--theme-inset));
+    bottom: calc(anchor(bottom) + var(--theme-inset));
+    left: calc(anchor(left) + var(--theme-inset));
     background: var(--color-accent);
-    border-radius: var(--border-radius-regular);
+    border-radius: calc(var(--border-radius-regular) - var(--theme-inset));
     transition: var(--motion-enter-and-exit-large);
   }
   label {
