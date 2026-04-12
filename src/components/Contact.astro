@@ -1,10 +1,33 @@
-<div id="contact__wrapper">
-  <a href="https://www.linkedin.com/in/hans-sandberg/">LinkedIn</a>
-  <a href="mailto:sandberg.hans@gmail.com">Email</a>
-</div>
+---
+const contactOptions = [
+  {
+    href: "https://www.linkedin.com/in/hans-sandberg/",
+    title: "LinkedIn",
+  },
+  {
+    href: "mailto:sandberg.hans@gmail.com",
+    title: "Email",
+  },
+  {
+    href: "https://github.com/DoctorHans",
+    title: "GitHub",
+  },
+];
+---
+
+<ul class="footer__contact">
+  {
+    contactOptions.map((contactOption) => (
+      <li>
+        <a href={contactOption.href}>{contactOption.title}</a>
+      </li>
+    ))
+  }
+</ul>
 
 <style>
-  #contact__wrapper {
+  .footer__contact {
+    list-style-type: "";
     display: flex;
     flex-direction: row;
     gap: var(--space-2xs);
