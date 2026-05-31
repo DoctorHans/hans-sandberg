@@ -11,14 +11,14 @@ interface Props {
 const { headings } = Astro.props;
 ---
 
-<nav aria-labelledby="title">
+<nav id="toc" aria-labelledby="title">
   <h2 id="title">
-    <button aria-expanded="false" aria-controls="content">
-      <span id="button__label">Contents</span>
-      <Icon id="icon" name="chevronUp" />
+    <button id="toc__button" aria-expanded="false" aria-controls="toc__content">
+      <span id="toc__button__label">Contents</span>
+      <Icon id="toc__button__icon" name="chevronUp" />
     </button>
   </h2>
-  <div id="content" aria-hidden="true">
+  <div id="toc__content" aria-hidden="true">
     <div id="anchored-element" aria-hidden="true"></div>
     <ul>
       {
@@ -35,7 +35,7 @@ const { headings } = Astro.props;
 </nav>
 
 <style>
-  nav {
+  #toc {
     display: flex;
     flex-direction: column;
     background: transparent;
@@ -43,7 +43,7 @@ const { headings } = Astro.props;
     border-radius: var(--border-radius-regular);
   }
 
-  button {
+  #toc__button {
     border: none;
     background: transparent;
     text-align: left;
@@ -54,19 +54,19 @@ const { headings } = Astro.props;
     cursor: pointer;
     padding-inline: var(--space-m);
     padding-block: var(--space-s);
-    > #button__label {
+    > #toc__button__label {
       color: var(--color-content-regular);
       transition: color var(--motion-enter-and-exit-large);
     }
     &:hover {
       @media (hover: hover) {
-        > #button__label {
+        > #toc__button__label {
           color: var(--color-accent);
         }
       }
     }
     &[aria-expanded="true"] {
-      #icon {
+      #toc__button__icon {
         transform: rotate(0deg);
         transition: transform var(--motion-enter-small);
       }
@@ -76,7 +76,7 @@ const { headings } = Astro.props;
     font-size: var(--step-0);
     transition: color var(--motion-exit-small);
   }
-  #icon {
+  #toc__button__icon {
     width: var(--step-1);
     height: var(--step-1);
     color: var(--color-accent);
@@ -142,7 +142,7 @@ const { headings } = Astro.props;
     }
   }
 
-  #content {
+  #toc__content {
     display: grid;
 
     &[aria-hidden="false"] {
@@ -166,8 +166,8 @@ const { headings } = Astro.props;
 </style>
 
 <script>
-  const button = document.querySelector("button");
-  const content = document.getElementById("content");
+  const button = document.getElementById("toc__button");
+  const content = document.getElementById("toc__content");
 
   function toggleDisclosure() {
     if (button?.getAttribute("aria-expanded") === "false") {
