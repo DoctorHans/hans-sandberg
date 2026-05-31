@@ -1,69 +1,292 @@
-<nav aria-label="main">
-  <ul>
-    <li class="nav__highlight" aria-hidden="true"></li>
-    <li>
-      <a href="/">Home</a>
-    </li>
-    <li>
-      <a href="/about">About</a>
-    </li>
-    <li>
-      <a href="/experience">Experience</a>
-    </li>
-    <li>
-      <a href="/portfolio">Portfolio</a>
-    </li>
-    <li>
-      <a href="/contact">Contact</a>
-    </li>
-  </ul>
+---
+import Icon from "./Icon.astro";
+import VisuallyHidden from "./VisuallyHidden.astro";
+
+const links = [
+  { title: "Home", href: "/" },
+  { title: "About", href: "/about" },
+  { title: "Experience", href: "/experience" },
+  { title: "Portfolio", href: "/portfolio" },
+  { title: "Contact", href: "/contact" },
+];
+---
+
+<nav>
+  <button id="open-button" commandfor="nav_dialog" command="show-modal"
+    >Menu <Icon name={"menu"} /></button
+  >
 </nav>
 
+<dialog id="nav_dialog" aria-labelledby="dialog__title" closedby="any">
+  <div id="close-button__wrapper">
+    <button id="close-button" commandfor="nav_dialog" command="close"
+      ><VisuallyHidden>Close</VisuallyHidden>
+      <Icon name={"close"} /></button
+    >
+  </div>
+  <VisuallyHidden id="dialog__title"><h2>Primary Navigation</h2></VisuallyHidden
+  >
+  <nav id="site-navigation">
+    <ul>
+      {
+        links.map((link) => (
+          <li>
+            <a href={link.href}>
+              {link.title}{" "}
+              <div class="link-icon-wrapper">
+                <Icon name="arrowRight" />
+              </div>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</dialog>
+
 <style>
+  html:has(dialog[open]) {
+    overflow: hidden;
+  }
+
+  #open-button {
+    background: transparent;
+    color: var(--color-content-regular);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3xs);
+    border: var(--border-quiet);
+    padding-inline: var(--space-xs);
+    padding-block: var(--space-3xs);
+    font-size: var(--step--1);
+    font-weight: var(--font-weight-semibold);
+    border-radius: var(--border-radius-regular);
+
+    transition: var(--motion-enter-and-exit-large);
+    transition-property: color, border-color;
+
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-accent);
+        border-color: var(--color-accent);
+        cursor: pointer;
+      }
+    }
+
+    &:active {
+      transform: scale(var(--scale-down));
+    }
+
+    svg {
+      inline-size: var(--step--1);
+      block-size: var(--step--1);
+      color: var(--color-accent);
+    }
+  }
+
+  #close-button {
+    background: transparent;
+    color: var(--color-content-regular);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: var(--border-size-regular) solid transparent;
+    border-radius: var(--border-radius-round);
+    padding: var(--space-2xs);
+
+    transition: var(--motion-enter-and-exit-large);
+    transition-property: border-color;
+
+    &:hover {
+      @media (hover: hover) {
+        border-color: var(--color-accent);
+        cursor: pointer;
+      }
+    }
+
+    &:active {
+      transform: scale(var(--scale-down));
+    }
+
+    svg {
+      inline-size: var(--step-0);
+      block-size: var(--step-0);
+      color: var(--color-accent);
+    }
+  }
+
+  #close-button__wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    padding-block: var(--space-xs);
+    padding-inline: var(--space-s-m);
+  }
+
   ul {
     list-style-type: "";
     padding-inline-start: 0;
     display: flex;
-    flex-direction: row;
-    align-items: baseline;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    column-gap: var(--space-2xs-m);
-    row-gap: var(--space-xs);
+    flex-direction: column;
   }
+
   a {
+    color: var(--color-content-regular);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-block: var(--space-xs);
+    padding-inline: var(--space-s-m);
+    border-block-start: var(--border-quiet);
     text-decoration: none;
-    color: var(--color-content-quiet);
-    transition: none;
+    transition: color var(--motion-enter-and-exit-small);
+
     &:hover {
       color: var(--color-accent);
+
+      svg {
+        animation: left-right-wiggle var(--motion-duration-slow)
+          var(--motion-easing-enter-and-exit) both;
+      }
     }
+
     &.active {
-      color: var(--color-content-loud);
       font-weight: var(--font-weight-semibold);
+
+      &::before {
+        content: "";
+        height: 0.5rem;
+        margin-inline-end: var(--space-2xs);
+        aspect-ratio: 1 / 1;
+        background-color: var(--color-accent);
+        border-radius: var(--border-radius-round);
+      }
+    }
+
+    svg {
+      inline-size: var(--step-0);
+      block-size: var(--step-0);
+      color: var(--color-accent);
+    }
+
+    &:focus-visible {
+      outline: var(--focusring-inset);
+      outline-offset: var(--inset-focusring);
     }
   }
 
-  li:has(a.active) {
-    anchor-name: --active-link;
+  .link-icon-wrapper {
+    padding: var(--space-2xs);
+    margin-inline-start: auto;
   }
 
-  .nav__highlight {
-    position: absolute;
-    position-anchor: --active-link;
-    right: anchor(right);
-    bottom: calc(anchor(bottom) - var(--space-3xs));
-    left: anchor(left);
-    height: var(--border-size-thick);
-    background: var(--color-accent);
-    transition: var(--motion-enter-and-exit-large);
-    transition-property: left, right;
-    view-transition-name: nav-highlight;
+  dialog {
+    border: none;
+    background: var(--color-background-loud);
+    border-radius: var(--border-radius-regular) var(--border-radius-regular) 0 0;
+
+    /* Remove browser styling  */
+    max-width: unset;
+
+    /* Make full-width */
+    inline-size: auto;
+
+    /* Stick to bottom of viewport */
+    inset-block-start: auto;
+
+    /* Prevent janky exit animation in Webkit */
+    inset-block-end: 0;
+
+    transition:
+      transform var(--motion-enter-and-exit-large),
+      opacity var(--motion-enter-and-exit-large),
+      overlay var(--motion-enter-and-exit-large) allow-discrete,
+      display var(--motion-enter-and-exit-large) allow-discrete;
+
+    &[open] {
+      /* Post-entry state */
+      transform: translateY(0);
+
+      /* Pre-entry state */
+      @starting-style {
+        transform: translateY(100%);
+      }
+    }
+
+    /* Exiting state */
+    &:not([open]) {
+      /* Move off screen */
+      transform: translateY(100%);
+      transition-duration: var(--motion-duration-fast);
+    }
+  }
+
+  @media screen and (width > 40rem) {
+    dialog {
+      border-radius: var(--border-radius-regular);
+      max-inline-size: calc(40rem - var(--page-gutter));
+      inset-block-start: 0;
+
+      /* Center horizontally */
+      margin-inline: auto;
+
+      /* Center vertically */
+      margin-block: auto;
+
+      &[open] {
+        /* Post-entry state */
+        transform: translateY(0) scale(1);
+        opacity: 100%;
+
+        /* Pre-entry state */
+        @starting-style {
+          transform: translateY(5%) scale(0.99);
+          opacity: 0;
+        }
+      }
+
+      /* Exiting state */
+      &:not([open]) {
+        /* Move off screen */
+        transform: translateY(5%) scale(0.99);
+        opacity: 0;
+        transition-duration: var(--motion-duration-fast);
+      }
+    }
+  }
+
+  dialog::backdrop {
+    transition:
+      display var(--motion-enter-and-exit-large) allow-discrete,
+      overlay var(--motion-enter-and-exit-large) allow-discrete,
+      background-color var(--motion-enter-and-exit-large),
+      backdrop-filter var(--motion-enter-and-exit-large);
+  }
+
+  /* Post-entry state */
+  dialog[open]::backdrop {
+    background-color: var(--color-background-backdrop);
+    backdrop-filter: blur(8px);
+  }
+
+  /* Pre-entry state */
+  @starting-style {
+    dialog[open]::backdrop {
+      background-color: transparent;
+      backdrop-filter: blur(0);
+    }
+  }
+
+  /* Exiting state */
+  dialog:not([open])::backdrop {
+    transition-duration: var(--motion-duration-fast);
+    backdrop-filter: blur(0);
   }
 </style>
 
 <script>
-  const nav: HTMLElement | null = document.querySelector("nav");
+  const nav: HTMLElement | null = document.getElementById("site-navigation");
 
   // Indicate active page visually and to screen readers
   nav?.querySelectorAll("a").forEach((link) => {
