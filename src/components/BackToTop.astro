@@ -5,18 +5,6 @@ import Icon from "./Icon.astro";
 <a href="#">Back to top<Icon name={"arrowUp"} class="icon" /></a>
 
 <style>
-  @keyframes up-down-wiggle {
-    0% {
-      transform: translateY(0%);
-    }
-    50% {
-      transform: translateY(-30%);
-    }
-    100% {
-      transform: translateY(0%);
-    }
-  }
-
   .icon {
     color: var(--color-accent);
     width: var(--step--1);
@@ -53,7 +41,7 @@ import Icon from "./Icon.astro";
     }
 
     &:active {
-      transform: scale(0.99);
+      transform: scale(var(--scale-down));
     }
   }
 </style>

@@ -447,3 +447,32 @@ body:has(.scroll-lock[aria-expanded="true"]) {
 
   }
 }
+
+/* Keyframe animations */
+@keyframes left-right-wiggle {
+  0% {
+    transform: translateX(0%);
+  }
+
+  50% {
+    transform: translateX(-25%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes up-down-wiggle {
+  0% {
+    transform: translateY(0%);
+  }
+
+  50% {
+    transform: translateY(-30%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+}
