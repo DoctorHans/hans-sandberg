@@ -151,7 +151,7 @@ const links = [
       }
     }
 
-    &.active {
+    &[aria-current="page"] {
       font-weight: var(--font-weight-semibold);
 
       &::before {
@@ -292,30 +292,6 @@ const links = [
   nav?.querySelectorAll("a").forEach((link) => {
     if (link.href === window.location.href) {
       link.setAttribute("aria-current", "page");
-    }
-
-    // Get the current path from the window location
-    // Example result: '/portfolio/design-system-ux'
-    const currentPath = window.location.pathname;
-
-    // Split the current path by "/", resulting in an array
-    // Example result: ['', 'portfolio', 'design-system-ux']
-    const currentPathSplit = currentPath.split("/");
-
-    // Get the first path segment after the root slash
-    // Example result: 'portfolio'
-    const currentPathFirstSegment = currentPathSplit[1];
-
-    // Get the path from the link element
-    // Example: '/portfolio'
-    const linkPath = link.pathname;
-
-    // Remove the leading "/" from the link's path to get the first segment
-    // Example: 'portfolio'
-    const linkPathFirstSegment = linkPath.slice(1);
-
-    if (currentPathFirstSegment === linkPathFirstSegment) {
-      link.classList.add("active");
     }
   });
 </script>
