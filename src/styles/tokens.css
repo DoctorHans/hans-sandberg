@@ -162,6 +162,8 @@
     --color-background: var(--neutral-000);
     --color-background-loud: var(--neutral-100);
     --color-background-transparent: rgb(from var(--color-transparent) r g b / var(--opacity));
+    --color-background-backdrop: rgba(0, 0, 0, 0.4);
+    --color-background-elevated: light-dark(var(--neutral-000), var(var(--neutral-100)));
     --color-border-quiet: var(--neutral-200);
     --color-border-regular: var(--neutral-500);
     --color-border-loud: var(--neutral-600);
@@ -247,5 +249,5 @@
 
     --scale-up-large: 1.02;
     --scale-up-small: 1.005;
-    --scale-down: 0.97;
+    --scale-down: 0.98;
 }
