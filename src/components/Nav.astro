@@ -286,11 +286,31 @@ const links = [
 </style>
 
 <script>
-  const nav: HTMLElement | null = document.getElementById("site-navigation");
+  const nav = document.getElementById("site-navigation");
+
+  // Get the current path from the window location
+  // Example result: '/portfolio/design-system-ux'
+  const currentPath = window.location.pathname;
+
+  // Split the current path by "/", resulting in an array
+  // Example result: ['', 'portfolio', 'design-system-ux']
+  const currentPathSplit = currentPath.split("/");
+
+  // Get the first path segment after the root slash
+  // Example result: 'portfolio'
+  const currentPathFirstSegment = currentPathSplit[1];
 
   // Indicate active page visually and to screen readers
   nav?.querySelectorAll("a").forEach((link) => {
-    if (link.href === window.location.href) {
+    // Get the path from the link element
+    // Example: '/portfolio'
+    const linkPath = link.pathname;
+
+    // Remove the leading "/" from the link's path
+    // Example: 'portfolio'
+    const linkPathFirstSegment = linkPath.slice(1);
+
+    if (currentPathFirstSegment === linkPathFirstSegment) {
       link.setAttribute("aria-current", "page");
     }
   });
